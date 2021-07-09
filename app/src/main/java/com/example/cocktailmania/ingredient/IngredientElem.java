@@ -2,11 +2,11 @@ package com.example.cocktailmania.ingredient;
 
 public class IngredientElem {
     private int id;
-    private String img;
+    private int img;
     private String nome;
     private String sottotitolo;
 
-    public IngredientElem(int id, String img, String nome, String sottotitolo) {
+    public IngredientElem(int id, int img, String nome, String sottotitolo) {
         this.id = id;
         this.img = img;
         this.nome = nome;
@@ -24,11 +24,11 @@ public class IngredientElem {
         this.id = id;
     }
 
-    public String getImg() {
+    public int getImg() {
         return img;
     }
 
-    public void setImg(String img) {
+    public void setImg(int img) {
         this.img = img;
     }
 

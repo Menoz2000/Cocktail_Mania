@@ -15,7 +15,7 @@ import com.example.cocktailmania.R;
 
 import java.util.ArrayList;
 
-public class IngredientAdapter extends RecyclerView.Adapter{
+public class IngredientAdapter extends RecyclerView.Adapter {
 
     ArrayList<IngredientElem> elems;
     Context context;
@@ -28,25 +28,20 @@ public class IngredientAdapter extends RecyclerView.Adapter{
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.ing_row,parent,false);
-        ViewHolder viewHolder=new ViewHolder(v);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.ing_row, parent, false);
+        ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ViewHolder myViewHolder=(ViewHolder)holder;
-        myViewHolder.img.setImageDrawable(elems.get(position));
-        myViewHolder.nome.setText(elems.get(position));
-        myViewHolder.sottotitolo.setText(elems.get(position));
+        ViewHolder myViewHolder = (ViewHolder) holder;
 
+        IngredientElem currentElem = elems.get(position);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), elems.get(position),Toast.LENGTH_LONG).show();
-            }
-        });
+        myViewHolder.img.setImageResource(currentElem.getImg());
+        myViewHolder.nome.setText(currentElem.getNome());
+        myViewHolder.sottotitolo.setText(currentElem.getSottotitolo());
 
     }
 
@@ -55,17 +50,17 @@ public class IngredientAdapter extends RecyclerView.Adapter{
         return elems.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView nome,sottotitolo;
+        TextView nome, sottotitolo;
         ImageView img;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            img=itemView.findViewById(R.id.imageView);
-            nome=itemView.findViewById(R.id.ingNome);
-            sottotitolo=itemView.findViewById(R.id.ingSottotitolo);
+            img = itemView.findViewById(R.id.imageView);
+            nome = itemView.findViewById(R.id.ingNome);
+            sottotitolo = itemView.findViewById(R.id.ingSottotitolo);
         }
     }
 }
