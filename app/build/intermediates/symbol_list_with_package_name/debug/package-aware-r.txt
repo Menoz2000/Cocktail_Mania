@@ -1695,6 +1695,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable custom_shape
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -1712,6 +1713,10 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ing_1
+drawable ing_2
+drawable ing_3
+drawable ing_4
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1944,7 +1949,11 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id info
+id ingNome
+id ingRv
+id ingSottotitolo
 id ingredientiButton
 id invisible
 id inward
@@ -2268,6 +2277,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout ing_row
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

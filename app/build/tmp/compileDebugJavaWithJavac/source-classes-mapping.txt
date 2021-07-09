@@ -1,9 +1,7 @@
-com/example/cocktailmania/BuildConfig.java
- com.example.cocktailmania.BuildConfig
+com/example/cocktailmania/ingredient/IngredientElem.java
+ com.example.cocktailmania.ingredient.IngredientElem
 com/example/cocktailmania/cocktail/CocktailActivity.java
  com.example.cocktailmania.cocktail.CocktailActivity
-com/example/cocktailmania/naviga/MainActivity.java
- com.example.cocktailmania.naviga.MainActivity
 com/example/cocktailmania/book/BookActivity.java
  com.example.cocktailmania.book.BookActivity
 com/example/cocktailmania/ingredient/IngredientActivity.java
