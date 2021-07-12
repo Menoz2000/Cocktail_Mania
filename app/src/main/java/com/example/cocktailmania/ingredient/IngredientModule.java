@@ -22,9 +22,9 @@ public class IngredientModule extends AppCompatActivity {
             IngredientElem ing = getIntent().getParcelableExtra("selected_ing");
             Log.d(TAG, "onCreate: " + ing.toString());
 
-            //controlla questa parte
+            //passaggio dei dati alla grafica
             TextView textView = findViewById(R.id.id);
-            textView.setText(ing.getId());
+            textView.setText(String.valueOf(ing.getId()));
 
             TextView textView1 = findViewById(R.id.nome);
             textView1.setText(ing.getNome());
