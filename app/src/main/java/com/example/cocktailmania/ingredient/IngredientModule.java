@@ -3,7 +3,6 @@ package com.example.cocktailmania.ingredient;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,7 +22,7 @@ public class IngredientModule extends AppCompatActivity {
             IngredientElem ing = getIntent().getParcelableExtra("selected_ing");
             Log.d(TAG, "onCreate: " + ing.toString());
 
-
+            //controlla questa parte
             TextView textView = findViewById(R.id.id);
             textView.setText(ing.getId());
 
