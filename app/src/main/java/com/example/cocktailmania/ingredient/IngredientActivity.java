@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -21,12 +22,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IngredientActivity extends AppCompatActivity {
+public class IngredientActivity extends AppCompatActivity implements IngredientAdapter.OnIngListener {
 
 
+    private static final String TAG = "IngredientActivity";
     Intent intent;
     RecyclerView recyclerView;
     List<IngredientElem> elems;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +76,7 @@ public class IngredientActivity extends AppCompatActivity {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        IngredientAdapter ingredientAdapter = new IngredientAdapter((ArrayList<IngredientElem>) elems, IngredientActivity.this);
+        IngredientAdapter ingredientAdapter = new IngredientAdapter((ArrayList<IngredientElem>) elems, IngredientActivity.this,this);
         recyclerView.setAdapter(ingredientAdapter);
         /*recyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,5 +88,14 @@ public class IngredientActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });*/
+    }
+
+    @Override
+    public void OnIngClick(int position) {
+        Log.d(TAG, "OnIngClick: clicked.");
+
+        Intent intent=new Intent(this,IngredientModule.class);
+        intent.putExtra("selected_ing", elems.get(position));
+        startActivity(intent);
     }
 }

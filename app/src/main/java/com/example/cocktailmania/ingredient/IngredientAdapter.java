@@ -19,17 +19,19 @@ public class IngredientAdapter extends RecyclerView.Adapter {
 
     ArrayList<IngredientElem> elems;
     Context context;
+    private OnIngListener onIngListener;
 
-    public IngredientAdapter(ArrayList<IngredientElem> elems, Context context) {
+    public IngredientAdapter(ArrayList<IngredientElem> elems, Context context,OnIngListener onIngListener) {
         this.elems = elems;
         this.context = context;
+        this.onIngListener=onIngListener;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.ing_row, parent, false);
-        ViewHolder viewHolder = new ViewHolder(v);
+        ViewHolder viewHolder = new ViewHolder(v,onIngListener);
         return viewHolder;
     }
 
@@ -50,17 +52,31 @@ public class IngredientAdapter extends RecyclerView.Adapter {
         return elems.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView nome, sottotitolo;
         ImageView img;
+        OnIngListener onIngListener;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView, OnIngListener onIngListener){
             super(itemView);
 
             img = itemView.findViewById(R.id.imageView);
             nome = itemView.findViewById(R.id.ingNome);
             sottotitolo = itemView.findViewById(R.id.ingSottotitolo);
+            this.onIngListener=onIngListener;
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            onIngListener.OnIngClick(getAdapterPosition());
         }
     }
+
+    public interface OnIngListener{
+        void OnIngClick(int position);
+    }
+
 }

@@ -1,6 +1,9 @@
 package com.example.cocktailmania.ingredient;
 
-public class IngredientElem {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class IngredientElem implements Parcelable {
     private int id;
     private int img;
     private String nome;
@@ -15,6 +18,25 @@ public class IngredientElem {
 
     public IngredientElem() {
     }
+
+    protected IngredientElem(Parcel in) {
+        id = in.readInt();
+        img = in.readInt();
+        nome = in.readString();
+        sottotitolo = in.readString();
+    }
+
+    public static final Creator<IngredientElem> CREATOR = new Creator<IngredientElem>() {
+        @Override
+        public IngredientElem createFromParcel(Parcel in) {
+            return new IngredientElem(in);
+        }
+
+        @Override
+        public IngredientElem[] newArray(int size) {
+            return new IngredientElem[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -56,5 +78,18 @@ public class IngredientElem {
                 ", nome='" + nome + '\'' +
                 ", sottotitolo='" + sottotitolo + '\'' +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeInt(img);
+        dest.writeString(nome);
+        dest.writeString(sottotitolo);
     }
 }

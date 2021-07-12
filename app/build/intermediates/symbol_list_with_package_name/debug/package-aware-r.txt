@@ -1945,11 +1945,13 @@ id homeAsUp
 id honorRequest
 id icon
 id icon_group
+id id
 id ifRoom
 id ignore
 id ignoreRequest
 id image
 id imageView
+id img
 id info
 id ingNome
 id ingRv
@@ -2033,6 +2035,7 @@ id navigation_bar_item_small_label_view
 id navigation_header_container
 id never
 id noScroll
+id nome
 id none
 id normal
 id notification_background
@@ -2058,6 +2061,7 @@ id position
 id postLayout
 id progress_circular
 id progress_horizontal
+id prova
 id radio
 id ratio
 id rectangles
@@ -2102,6 +2106,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id sottotitolo
 id spacer
 id special_effects_controller_view_tag
 id spline
@@ -2260,6 +2265,7 @@ layout abc_tooltip
 layout activity_book
 layout activity_cocktail
 layout activity_ingredient
+layout activity_ingredient_module
 layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item

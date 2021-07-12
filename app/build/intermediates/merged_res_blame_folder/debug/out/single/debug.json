@@ -4,12 +4,12 @@
         "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
@@ -74,6 +74,10 @@
     {
         "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_two_wheeler_24.xml.flat",
         "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ic_baseline_two_wheeler_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_ingredient_module.xml.flat",
+        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\layout\\activity_ingredient_module.xml"
     },
     {
         "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_shape.xml.flat",
