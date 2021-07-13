@@ -1713,6 +1713,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_search
 drawable ing_1
 drawable ing_2
 drawable ing_3
@@ -1818,6 +1819,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_search
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1862,6 +1864,7 @@ id chip3
 id chip_group
 id chronometer
 id circle_center
+id cktRv
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -1886,6 +1889,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id descrizione
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1953,7 +1957,6 @@ id image
 id imageView
 id img
 id info
-id ingNome
 id ingRv
 id ingSottotitolo
 id ingredientiButton
@@ -2071,6 +2074,7 @@ id rightToLeft
 id right_icon
 id right_side
 id rounded
+id rowNome
 id row_index_key
 id save_non_transition_alpha
 id save_overlay_view
@@ -2106,7 +2110,6 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
-id sottotitolo
 id spacer
 id special_effects_controller_view_tag
 id spline
@@ -2264,6 +2267,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_book
 layout activity_cocktail
+layout activity_cocktail_module
 layout activity_ingredient
 layout activity_ingredient_module
 layout activity_main
@@ -2283,7 +2287,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout ing_row
+layout list_row
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2362,6 +2366,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu bottom_menu
+menu search_bar
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description

@@ -18,6 +18,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CocktailMania" >
+        <activity android:name="com.example.cocktailmania.cocktail.CocktailModule" />
         <activity android:name="com.example.cocktailmania.ingredient.IngredientModule" />
         <activity android:name="com.example.cocktailmania.book.BookActivity" />
         <activity android:name="com.example.cocktailmania.cocktail.CocktailActivity" />

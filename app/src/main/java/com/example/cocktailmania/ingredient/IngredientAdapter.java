@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,24 +15,27 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cocktailmania.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class IngredientAdapter extends RecyclerView.Adapter {
+public class IngredientAdapter extends RecyclerView.Adapter implements Filterable {
 
-    ArrayList<IngredientElem> elems;
+    private ArrayList<IngredientElem> elems;
+    private ArrayList<IngredientElem> elemsCpy;
     Context context;
     private OnIngListener onIngListener;
 
-    public IngredientAdapter(ArrayList<IngredientElem> elems, Context context,OnIngListener onIngListener) {
+    public IngredientAdapter(ArrayList<IngredientElem> elems, Context context, OnIngListener onIngListener) {
         this.elems = elems;
+        elemsCpy = new ArrayList<>(elems);
         this.context = context;
-        this.onIngListener=onIngListener;
+        this.onIngListener = onIngListener;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.ing_row, parent, false);
-        return new ViewHolder(v,onIngListener);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row, parent, false);
+        return new ViewHolder(v, onIngListener);
     }
 
     @Override
@@ -56,13 +61,13 @@ public class IngredientAdapter extends RecyclerView.Adapter {
         ImageView img;
         OnIngListener onIngListener;
 
-        public ViewHolder(@NonNull View itemView, OnIngListener onIngListener){
+        public ViewHolder(@NonNull View itemView, OnIngListener onIngListener) {
             super(itemView);
 
             img = itemView.findViewById(R.id.imageView);
-            nome = itemView.findViewById(R.id.ingNome);
+            nome = itemView.findViewById(R.id.rowNome);
             sottotitolo = itemView.findViewById(R.id.ingSottotitolo);
-            this.onIngListener=onIngListener;
+            this.onIngListener = onIngListener;
 
             itemView.setOnClickListener(this);
         }
@@ -73,8 +78,43 @@ public class IngredientAdapter extends RecyclerView.Adapter {
         }
     }
 
-    public interface OnIngListener{
+    public interface OnIngListener {
         void OnIngClick(int position);
     }
 
+
+    @Override
+    public Filter getFilter() {
+        return ingFilter;
+    }
+
+    private Filter ingFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<IngredientElem> filteredList = new ArrayList<>();
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(elemsCpy);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (IngredientElem item : elemsCpy) {
+                    if (item.getNome().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+
+            elems.clear();
+            elems.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 }
