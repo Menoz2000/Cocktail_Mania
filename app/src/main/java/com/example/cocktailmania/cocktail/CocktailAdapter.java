@@ -47,7 +47,7 @@ public class CocktailAdapter extends RecyclerView.Adapter implements Filterable 
         myViewHolder.img.setImageResource(currentElem.getImg());
         myViewHolder.nome.setText(currentElem.getNome());
         /*-------------------------controlla la riga sotto-----------------------------*/
-        //myViewHolder.descrizione.setText(currentElem.getDescrizione());
+        myViewHolder.descrizione.setText(currentElem.getDescrizione());
     }
 
     @Override
@@ -66,7 +66,7 @@ public class CocktailAdapter extends RecyclerView.Adapter implements Filterable 
 
             img = itemView.findViewById(R.id.imageView);
             nome = itemView.findViewById(R.id.rowNome);
-            descrizione = itemView.findViewById(R.id.descrizione);
+            descrizione = itemView.findViewById(R.id.ingSottotitolo);
             this.onCktListener = onCktListener;
 
             itemView.setOnClickListener(this);
