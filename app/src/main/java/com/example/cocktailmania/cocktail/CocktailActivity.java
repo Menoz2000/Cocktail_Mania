@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -13,7 +14,9 @@ import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
 import android.widget.SearchView;
 
+import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.ingredient.IngredientActivity;
+import com.example.cocktailmania.ingredient.IngredientElem;
 import com.example.cocktailmania.naviga.MainActivity;
 import com.example.cocktailmania.R;
 import com.example.cocktailmania.book.BookActivity;
@@ -30,7 +33,7 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
     List<CocktailElem> elems;
     CocktailAdapter cocktailAdapter;
     private static final String TAG = "CocktailActivity";
-
+    private DbManager db = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,19 +74,22 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
         recyclerView = findViewById(R.id.cktRv);
 
         elems = new ArrayList<>();
-        elems.add(new CocktailElem(1, R.drawable.ing_1, "Ghiaccio", "Ghiaccio a cubetti"));
-        elems.add(new CocktailElem(2, R.drawable.ing_2, "Gin", "Gin mare"));
-        elems.add(new CocktailElem(3, R.drawable.ing_3, "Acqua Tonica", "xzfkjm"));
-        elems.add(new CocktailElem(4, R.drawable.ing_4, "Limone", "zsrfm"));
-        elems.add(new CocktailElem(5, R.drawable.ing_4, "Limone", "zfm"));
-        elems.add(new CocktailElem(6, R.drawable.ing_4, "Limone", "yks"));
-        elems.add(new CocktailElem(7, R.drawable.ing_4, "Limone", "zmfr"));
-        elems.add(new CocktailElem(8, R.drawable.ing_4, "Limone", "ykm"));
-        elems.add(new CocktailElem(9, R.drawable.ing_4, "Limone", "mxf"));
-        elems.add(new CocktailElem(10, R.drawable.ing_4, "Limone", "yks"));
-        elems.add(new CocktailElem(11, R.drawable.ing_4, "Limone", "xmy"));
-        elems.add(new CocktailElem(12, R.drawable.ing_4, "Limone", "xky"));
-        elems.add(new CocktailElem(13, R.drawable.ing_4, "Limone", "ksyt"));
+
+        db=new DbManager(this);
+
+        Cursor c = db.elencoIngredienti();
+        CocktailElem ckt;
+        if (c != null) {
+            while (c.moveToNext()) {
+                ckt = new CocktailElem(); // Note this addition
+                ckt.setId(c.getInt(0));
+                ckt.setImg(c.getInt(1));
+                ckt.setNome(c.getString(2));
+                ckt.setDescrizione(c.getString(3));
+                elems.add(ckt);
+            }
+            c.close();
+        }
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);

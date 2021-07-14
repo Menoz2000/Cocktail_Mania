@@ -17,6 +17,9 @@ public class CocktailElem implements Parcelable {
         this.descrizione = descrizione;
     }
 
+    public CocktailElem() {
+    }
+
     protected CocktailElem(Parcel in) {
         id = in.readInt();
         img = in.readInt();
