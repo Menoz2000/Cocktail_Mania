@@ -43,8 +43,12 @@ public class IngredientAdapter extends RecyclerView.Adapter implements Filterabl
         ViewHolder myViewHolder = (ViewHolder) holder;
 
         IngredientElem currentElem = elems.get(position);
+        try{
+            myViewHolder.img.setImageResource(currentElem.getImg());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        myViewHolder.img.setImageResource(currentElem.getImg());
         myViewHolder.nome.setText(currentElem.getNome());
         myViewHolder.sottotitolo.setText(currentElem.getSottotitolo());
 

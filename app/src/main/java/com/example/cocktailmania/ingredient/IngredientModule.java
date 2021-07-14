@@ -32,8 +32,12 @@ public class IngredientModule extends AppCompatActivity {
             TextView textView2 = findViewById(R.id.sottotitolo);
             textView2.setText(ing.getSottotitolo());
 
-            ImageView imageView = findViewById(R.id.img);
-            imageView.setImageResource(ing.getImg());
+            try{
+                ImageView imageView = findViewById(R.id.img);
+                imageView.setImageResource(ing.getImg());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
     }

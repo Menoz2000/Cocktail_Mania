@@ -81,8 +81,8 @@ public class IngredientActivity extends AppCompatActivity implements IngredientA
             while (c.moveToNext()) {
                 ing = new IngredientElem(); // Note this addition
                 ing.setId(c.getInt(0));
-                ing.setImg(c.getInt(1));
-                ing.setNome(c.getString(2));
+                ing.setImg(c.getInt(2));
+                ing.setNome(c.getString(1));
                 ing.setSottotitolo(c.getString(3));
                 elems.add(ing);
             }
