@@ -66,6 +66,8 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
             return true;
         });
 
+
+
         recyclerView = findViewById(R.id.cktRv);
 
         elems = new ArrayList<>();
@@ -123,4 +125,9 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
         });
         return true;
     }
+
+    /*@Override
+    public void onBackPressed(){
+        super.onBackPressed();
+    }*/
 }

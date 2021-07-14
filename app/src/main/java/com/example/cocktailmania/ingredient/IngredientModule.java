@@ -29,7 +29,7 @@ public class IngredientModule extends AppCompatActivity {
             TextView textView1 = findViewById(R.id.nome);
             textView1.setText(ing.getNome());
 
-            TextView textView2 = findViewById(R.id.descrizione);
+            TextView textView2 = findViewById(R.id.sottotitolo);
             textView2.setText(ing.getSottotitolo());
 
             ImageView imageView = findViewById(R.id.img);
