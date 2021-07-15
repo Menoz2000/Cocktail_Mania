@@ -120,4 +120,5 @@ public class IngredientElem implements Parcelable {
         dest.writeString(nome);
         dest.writeString(sottotitolo);
     }
+
 }

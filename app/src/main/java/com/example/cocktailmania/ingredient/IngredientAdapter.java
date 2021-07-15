@@ -44,7 +44,7 @@ public class IngredientAdapter extends RecyclerView.Adapter implements Filterabl
 
         IngredientElem currentElem = elems.get(position);
         /*try{*/
-            myViewHolder.img.setImageResource(currentElem.getImg());
+        myViewHolder.img.setImageResource(currentElem.getImg());
        /* } catch (Exception e) {
             e.printStackTrace();
         }*/

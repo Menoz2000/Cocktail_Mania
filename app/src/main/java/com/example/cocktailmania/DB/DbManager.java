@@ -25,13 +25,12 @@ public class DbManager {
     }
 
     public IngredientElem getSingleIngredient(int id) {
-        String query = "SELECT i.id,nome,img,sottotitolo,descrizione,nazione,grado_alcolico FROM Ingrediente i,Origine o WHERE i.id=" + id + " AND i.fk_origine=o.id";
+        String query = "SELECT i.id,nome,img,sottotitolo,descrizione,nazione,grado_alcolico FROM Ingrediente i LEFT JOIN Origine o ON i.fk_origine=o.id WHERE i.id=" + id;
 
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor c = db.rawQuery(query, null);
 
         IngredientElem ing = new IngredientElem();
-
 
         if (c != null) {
             if (c.moveToFirst()) {

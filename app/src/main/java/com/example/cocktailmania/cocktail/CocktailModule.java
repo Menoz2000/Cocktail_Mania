@@ -29,7 +29,7 @@ public class CocktailModule extends AppCompatActivity {
             TextView textView1 = findViewById(R.id.nome);
             textView1.setText(ckt.getNome());
 
-            TextView textView2 = findViewById(R.id.sottotitolo);
+            TextView textView2 = findViewById(R.id.origine);
             textView2.setText(ckt.getGradoAlcolico());
 
             ImageView imageView = findViewById(R.id.img);
