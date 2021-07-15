@@ -25,19 +25,27 @@ public class DbManager {
     }
 
     public IngredientElem getSingleIngredient(int id) {
-        String query = "SELECT i.id,nome,img,sottotitolo,descrizione,nazione,grado_alcolico FROM Ingrediente i,Origine o WHERE i.id=" + id+" AND i.fk_origine=o.id";
+        String query = "SELECT i.id,nome,img,sottotitolo,descrizione,nazione,grado_alcolico FROM Ingrediente i,Origine o WHERE i.id=" + id + " AND i.fk_origine=o.id";
 
         SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor c=db.rawQuery(query, null);
+        Cursor c = db.rawQuery(query, null);
 
-        IngredientElem ing = new IngredientElem(); // Note this addition
-        ing.setId(c.getInt(0));
-        ing.setNome(c.getString(1));
-        ing.setImg(c.getInt(2));
-        ing.setSottotitolo(c.getString(3));
-        ing.setDescrizione(c.getString(4));
-        ing.setOrigine(c.getString(5));
-        ing.setGrado_alcolico(c.getDouble(6));
+        IngredientElem ing = new IngredientElem();
+
+
+        if (c != null) {
+            if (c.moveToFirst()) {
+                ing.setId(id);
+                ing.setNome(c.getString(1));
+                ing.setImg(c.getInt(2));
+                ing.setSottotitolo(c.getString(3));
+                ing.setDescrizione(c.getString(4));
+                ing.setOrigine(c.getString(5));
+                ing.setGrado_alcolico(c.getDouble(6));
+            }
+            c.close();
+
+        }
 
         return ing;
     }

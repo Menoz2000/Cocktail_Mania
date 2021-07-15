@@ -20,7 +20,7 @@ public class IngredientModule extends AppCompatActivity {
         setContentView(R.layout.activity_ingredient_module);
 
         if (getIntent().hasExtra("selected_ing")) {
-            int ingN = getIntent().getIntExtra("selected_ing", 0);
+            int ingN = getIntent().getIntExtra("selected_ing",4);
 
 
             IngredientElem ing = db.getSingleIngredient(ingN);
@@ -32,9 +32,13 @@ public class IngredientModule extends AppCompatActivity {
 
             TextView textView1 = findViewById(R.id.nome);
             textView1.setText(ing.getNome());
+            try {
+                TextView textView2 = findViewById(R.id.sottotitolo);
+                textView2.setText(ing.getOrigine());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-            TextView textView2 = findViewById(R.id.sottotitolo);
-            textView2.setText(ing.getOrigine());
 
             try{
                 ImageView imageView = findViewById(R.id.img);
