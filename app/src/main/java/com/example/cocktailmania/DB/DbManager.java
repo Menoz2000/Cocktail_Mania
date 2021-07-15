@@ -25,7 +25,7 @@ public class DbManager {
     }
 
     public IngredientElem getSingleIngredient(int id) {
-        String query = "SELECT id,nome,img,sottotitolo,descrizione,nazione,grado_alcolico FROM Ingrediente i,Origine o WHERE i.id=" + id+" AND i.fk_origine=o.id";
+        String query = "SELECT i.id,nome,img,sottotitolo,descrizione,nazione,grado_alcolico FROM Ingrediente i,Origine o WHERE i.id=" + id+" AND i.fk_origine=o.id";
 
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor c=db.rawQuery(query, null);

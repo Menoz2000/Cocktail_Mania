@@ -15,15 +15,8 @@ com/example/cocktailmania/cocktail/CocktailAdapter.java
 com/example/cocktailmania/ingredient/IngredientElem.java
  com.example.cocktailmania.ingredient.IngredientElem
  com.example.cocktailmania.ingredient.IngredientElem$1
-com/example/cocktailmania/cocktail/CocktailActivity.java
- com.example.cocktailmania.cocktail.CocktailActivity
- com.example.cocktailmania.cocktail.CocktailActivity$1
-com/example/cocktailmania/ingredient/IngredientModule.java
- com.example.cocktailmania.ingredient.IngredientModule
-com/example/cocktailmania/DB/DbManager.java
- com.example.cocktailmania.DB.DbManager
-com/example/cocktailmania/naviga/MainActivity.java
- com.example.cocktailmania.naviga.MainActivity
+com/example/cocktailmania/naviga/start.java
+ com.example.cocktailmania.naviga.start
 com/example/cocktailmania/book/BookActivity.java
  com.example.cocktailmania.book.BookActivity
 com/example/cocktailmania/ingredient/IngredientAdapter.java
@@ -31,8 +24,15 @@ com/example/cocktailmania/ingredient/IngredientAdapter.java
  com.example.cocktailmania.ingredient.IngredientAdapter$1
  com.example.cocktailmania.ingredient.IngredientAdapter$OnIngListener
  com.example.cocktailmania.ingredient.IngredientAdapter$ViewHolder
+com/example/cocktailmania/naviga/MainActivity.java
+ com.example.cocktailmania.naviga.MainActivity
+com/example/cocktailmania/cocktail/CocktailActivity.java
+ com.example.cocktailmania.cocktail.CocktailActivity
+ com.example.cocktailmania.cocktail.CocktailActivity$1
+com/example/cocktailmania/ingredient/IngredientModule.java
+ com.example.cocktailmania.ingredient.IngredientModule
+com/example/cocktailmania/DB/DbManager.java
+ com.example.cocktailmania.DB.DbManager
 com/example/cocktailmania/ingredient/IngredientActivity.java
  com.example.cocktailmania.ingredient.IngredientActivity
  com.example.cocktailmania.ingredient.IngredientActivity$1
-com/example/cocktailmania/naviga/start.java
- com.example.cocktailmania.naviga.start
