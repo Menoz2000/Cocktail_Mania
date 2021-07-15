@@ -5,15 +5,29 @@ import android.os.Parcelable;
 
 public class IngredientElem implements Parcelable {
     private int id;
-    private int img;
     private String nome;
+    private int img;
     private String sottotitolo;
+    private String descrizione;
+    private String origine;
+    private double grado_alcolico;
+
 
     public IngredientElem(int id, int img, String nome, String sottotitolo) {
         this.id = id;
         this.img = img;
         this.nome = nome;
         this.sottotitolo = sottotitolo;
+    }
+
+    public IngredientElem(int id, String nome, int img, String sottotitolo, String descrizione, String origine, double grado_alcolico) {
+        this.id = id;
+        this.nome = nome;
+        this.img = img;
+        this.sottotitolo = sottotitolo;
+        this.descrizione = descrizione;
+        this.origine = origine;
+        this.grado_alcolico = grado_alcolico;
     }
 
     public IngredientElem() {
@@ -70,14 +84,28 @@ public class IngredientElem implements Parcelable {
         this.sottotitolo = sottotitolo;
     }
 
-    @Override
-    public String toString() {
-        return "IngredientElem{" +
-                "id=" + id +
-                ", img='" + img + '\'' +
-                ", nome='" + nome + '\'' +
-                ", sottotitolo='" + sottotitolo + '\'' +
-                '}';
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
+
+    public String getOrigine() {
+        return origine;
+    }
+
+    public void setOrigine(String origine) {
+        this.origine = origine;
+    }
+
+    public double getGrado_alcolico() {
+        return grado_alcolico;
+    }
+
+    public void setGrado_alcolico(double grado_alcolico) {
+        this.grado_alcolico = grado_alcolico;
     }
 
     @Override

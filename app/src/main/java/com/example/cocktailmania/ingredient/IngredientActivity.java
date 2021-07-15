@@ -81,9 +81,9 @@ public class IngredientActivity extends AppCompatActivity implements IngredientA
             while (c.moveToNext()) {
                 ing = new IngredientElem(); // Note this addition
                 ing.setId(c.getInt(0));
-                ing.setImg(c.getInt(2));
+                ing.setImg(c.getInt(3));
                 ing.setNome(c.getString(1));
-                ing.setSottotitolo(c.getString(3));
+                ing.setSottotitolo(c.getString(2));
                 elems.add(ing);
             }
             c.close();
@@ -101,7 +101,7 @@ public class IngredientActivity extends AppCompatActivity implements IngredientA
         Log.d(TAG, "OnIngClick: clicked.");
 
         Intent intent = new Intent(this, IngredientModule.class);
-        intent.putExtra("selected_ing", elems.get(position));
+        intent.putExtra("selected_ing", elems.get(position).getId());
         startActivity(intent);
     }
 

@@ -7,20 +7,24 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
 
 public class IngredientModule extends AppCompatActivity {
 
     private static final String TAG = "IngredientModule";
-
+    private DbManager db=new DbManager(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingredient_module);
 
         if (getIntent().hasExtra("selected_ing")) {
-            IngredientElem ing = getIntent().getParcelableExtra("selected_ing");
-            Log.d(TAG, "onCreate: " + ing.toString());
+            int ingN = getIntent().getIntExtra("selected_ing", 0);
+
+
+            IngredientElem ing = db.getSingleIngredient(ingN);
+
 
             //passaggio dei dati alla grafica
             TextView textView = findViewById(R.id.id);
@@ -30,7 +34,7 @@ public class IngredientModule extends AppCompatActivity {
             textView1.setText(ing.getNome());
 
             TextView textView2 = findViewById(R.id.sottotitolo);
-            textView2.setText(ing.getSottotitolo());
+            textView2.setText(ing.getOrigine());
 
             try{
                 ImageView imageView = findViewById(R.id.img);
