@@ -73,11 +73,13 @@ public class MyHelper extends SQLiteOpenHelper {
         db.execSQL(comando);
 
 
+        */
         comando = "CREATE TABLE Origine (" +
-                "id int PRIMARY KEY," +
-                "nazione varchar(25) NOT NULL" +
+                "id integer PRIMARY KEY," +
+                "nazione text NOT NULL" +
                 ");";
         db.execSQL(comando);
+        /*
 
 
         comando = "CREATE TABLE Strumento (" +
@@ -158,6 +160,35 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(166, 'Succo di lime', 0, '1 lime produce circa 30 ml di succo', "+R.drawable.ing_166+")," +
                 "(167, 'Succo di limone', 0, '1 limone produce circa 45 ml di succo', "+R.drawable.ing_167+")," +
                 "(175, 'Tonic', 0, 'Acqua tonica', "+R.drawable.ing_175+");";
+        db.execSQL(insert);
+
+        insert="INSERT INTO Origine (id, nazione)" +
+                "VALUES (1, 'Italia')," +
+                "(2, 'Francia')," +
+                "(3, 'Messico')," +
+                "(4, 'Stati Uniti')," +
+                "(5, 'Regno Unito')," +
+                "(6, 'Barbados')," +
+                "(7, 'Perù')," +
+                "(8, 'Giappone')," +
+                "(9, 'In tutto il mondo')," +
+                "(10, 'Olanda')," +
+                "(11, 'Portogallo')," +
+                "(12, 'Trinidad e Tobago')," +
+                "(13, 'Russia')," +
+                "(14, 'Giamaica')," +
+                "(15, 'Porto Rico')," +
+                "(16, 'Caraibico')," +
+                "(17, 'Brasile')," +
+                "(18, 'Danimarca')," +
+                "(19, 'Irlanda')," +
+                "(20, 'Guyana')," +
+                "(21, 'Scozia')," +
+                "(22,'Bermuda')," +
+                "(23, 'Spagna')," +
+                "(24, 'Israele')," +
+                "(25, 'Cuba')," +
+                "(26, 'Belgio');";
         db.execSQL(insert);
     }
 }
