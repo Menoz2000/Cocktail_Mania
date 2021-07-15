@@ -20,17 +20,19 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CocktailMania" >
+        <activity android:name="com.example.cocktailmania.naviga.start" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name="com.example.cocktailmania.cocktail.CocktailModule" />
         <activity android:name="com.example.cocktailmania.ingredient.IngredientModule" />
         <activity android:name="com.example.cocktailmania.book.BookActivity" />
         <activity android:name="com.example.cocktailmania.cocktail.CocktailActivity" />
         <activity android:name="com.example.cocktailmania.ingredient.IngredientActivity" />
         <activity android:name="com.example.cocktailmania.naviga.MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

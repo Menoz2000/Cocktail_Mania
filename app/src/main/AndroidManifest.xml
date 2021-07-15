@@ -3,25 +3,27 @@
     package="com.example.cocktailmania">
 
     <application
-        android:hardwareAccelerated="false"
-        android:largeHeap="true"
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CocktailMania">
-        <activity android:name=".cocktail.CocktailModule"></activity>
-        <activity android:name=".ingredient.IngredientModule" />
-        <activity android:name=".book.BookActivity" />
-        <activity android:name=".cocktail.CocktailActivity" />
-        <activity android:name=".ingredient.IngredientActivity" />
-        <activity android:name=".naviga.MainActivity">
+        <activity android:name=".naviga.start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".cocktail.CocktailModule" />
+        <activity android:name=".ingredient.IngredientModule" />
+        <activity android:name=".book.BookActivity" />
+        <activity android:name=".cocktail.CocktailActivity" />
+        <activity android:name=".ingredient.IngredientActivity" />
+        <activity android:name=".naviga.MainActivity">
         </activity>
     </application>
 

@@ -15,7 +15,7 @@ public class MyHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        /*String comando = "CREATE TABLE Cocktail (" +
+        String comando = "CREATE TABLE Cocktail (" +
                 "id integer PRIMARY KEY," +
                 "nome text NOT NULL," +
                 "fk_gradoAlcolico integer," +
@@ -29,10 +29,10 @@ public class MyHelper extends SQLiteOpenHelper {
                 "FOREIGN KEY (fk_gradoAlcolico) REFERENCES GradoAlcolico(id)," +
                 "FOREIGN KEY (fk_tipo) REFERENCES TipoCocktail(id)" +
                 ");";
-        db.execSQL(comando);*/
+        db.execSQL(comando);
 
 
-        String comando = "CREATE TABLE Ingrediente (" +
+        comando = "CREATE TABLE Ingrediente (" +
                 "    id integer PRIMARY KEY," +
                 "    nome text NOT NULL," +
                 "    img integer NOT NULL," +
@@ -45,14 +45,14 @@ public class MyHelper extends SQLiteOpenHelper {
         db.execSQL(comando);
 
 
-        /*comando = "CREATE TABLE GradoAlcolico (" +
+        comando = "CREATE TABLE GradoAlcolico (" +
                 "id integer PRIMARY KEY," +
                 "gradazione text NOT NULL" +
                 ");";
         db.execSQL(comando);
 
 
-        comando = "CREATE TABLE Composizione (" +
+        /*comando = "CREATE TABLE Composizione (" +
                 "fk_cocktail integer," +
                 "fk_ingrediente integer," +
                 "quantita," +
@@ -127,42 +127,42 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(180, 'Vodka', 40, 'La parola vodka è un''abbreviazione della parola slava voda (che significa acqua), che è da interpretare come ''poca acqua''. Oltre ai cereali e alle patate, la vodka può essere prodotta con una vasta gamma di materiali naturali come orzo, uva, linfa degli alberi o mais.', 'Acquavite prodotta distillando principalmente cereali o patate', 13, " + R.drawable.ing_180 + ");";
         db.execSQL(insert);
 
-        insert="INSERT INTO Ingrediente (id, nome, grado_alcolico, sottotitolo, fk_origine, img)" +
-                "VALUES (48, 'London Dry Gin', 45, 'Categoria del gin secchi', 5, "+R.drawable.ing_48+");";
+        insert = "INSERT INTO Ingrediente (id, nome, grado_alcolico, sottotitolo, fk_origine, img)" +
+                "VALUES (48, 'London Dry Gin', 45, 'Categoria del gin secchi', 5, " + R.drawable.ing_48 + ");";
         db.execSQL(insert);
 
-        insert="INSERT INTO Ingrediente (id, nome, grado_alcolico, img)" +
-                "VALUES (71, 'Salsa Worcestershire', 0, "+R.drawable.ing_71+")," +
-                "(77, 'Sciroppo di frutto della passione', 0, "+R.drawable.ing_77+")," +
-                "(110, 'Caffé', 0, "+R.drawable.ing_110+")," +
-                "(125, 'Ginger', 0, "+R.drawable.ing_125+")," +
-                "(138, 'Liquore di pesca', 20, "+R.drawable.ing_138+")," +
-                "(147, 'Pepe', 0, "+R.drawable.ing_147+")," +
-                "(157, 'Sale', 0, "+R.drawable.ing_157+")," +
-                "(158, 'Salsa tabasco', 0, "+R.drawable.ing_158+")," +
-                "(169, 'Succo di mirtillo rosso', 0, "+R.drawable.ing_169+")," +
-                "(171, 'Succo di pomodoro', 0, "+R.drawable.ing_171+")," +
-                "(184, 'Zucchero', 0, "+R.drawable.ing_184+")," +
-                "(186, 'Zucchero marrone', 0, "+R.drawable.ing_186+");";
+        insert = "INSERT INTO Ingrediente (id, nome, grado_alcolico, img)" +
+                "VALUES (71, 'Salsa Worcestershire', 0, " + R.drawable.ing_71 + ")," +
+                "(77, 'Sciroppo di frutto della passione', 0, " + R.drawable.ing_77 + ")," +
+                "(110, 'Caffé', 0, " + R.drawable.ing_110 + ")," +
+                "(125, 'Ginger', 0, " + R.drawable.ing_125 + ")," +
+                "(138, 'Liquore di pesca', 20, " + R.drawable.ing_138 + ")," +
+                "(147, 'Pepe', 0, " + R.drawable.ing_147 + ")," +
+                "(157, 'Sale', 0, " + R.drawable.ing_157 + ")," +
+                "(158, 'Salsa tabasco', 0, " + R.drawable.ing_158 + ")," +
+                "(169, 'Succo di mirtillo rosso', 0, " + R.drawable.ing_169 + ")," +
+                "(171, 'Succo di pomodoro', 0, " + R.drawable.ing_171 + ")," +
+                "(184, 'Zucchero', 0, " + R.drawable.ing_184 + ")," +
+                "(186, 'Zucchero marrone', 0, " + R.drawable.ing_186 + ");";
         db.execSQL(insert);
 
-        insert="INSERT INTO Ingrediente (id, nome, grado_alcolico, descrizione, sottotitolo, img)" +
-                "VALUES (73, 'Sciroppo Semplice', 0, 'Combina parti uguali di zucchero superfino e acqua calda in un contenitore. Agita o mescola fino a quando lo zucchero si sarà sciolto.', 'Sciroppo creato sciogliendo zucchero granulato in acqua', "+R.drawable.ing_73+")," +
-                "(120, 'Foglia di menta', 0, 'La menta è una pianta aromatica usata per i cocktail, come guarnizione o ingrediente mischiato nei drink per aggiungere un aroma fresco.', 'Usa foglie giovani di menta dopo averle lavate', "+R.drawable.ing_120+")," +
-                "(126, 'Granatina', 0, 'La granatina è un ingrediente popolare nei cocktail sia per il suo sapore che per il colore che dona una sfumatura rossastra ai drink mixati.', 'Sciroppo agrodolce non alcolico dal colore rosso profondo', "+R.drawable.ing_126+")," +
-                "(163, 'Succo d''arancia', 0, 'Il succo fresco spremuto muta nel tempo, a differenza degli altri agrumi. Il succo d''arancia ha un invecchiamento ottimale molto breve, deve essere usato nella prima ora in cui è stato spremuto fresco.', '1 arancia produce circa 90 ml di succo', "+R.drawable.ing_163+");";
+        insert = "INSERT INTO Ingrediente (id, nome, grado_alcolico, descrizione, sottotitolo, img)" +
+                "VALUES (73, 'Sciroppo Semplice', 0, 'Combina parti uguali di zucchero superfino e acqua calda in un contenitore. Agita o mescola fino a quando lo zucchero si sarà sciolto.', 'Sciroppo creato sciogliendo zucchero granulato in acqua', " + R.drawable.ing_73 + ")," +
+                "(120, 'Foglia di menta', 0, 'La menta è una pianta aromatica usata per i cocktail, come guarnizione o ingrediente mischiato nei drink per aggiungere un aroma fresco.', 'Usa foglie giovani di menta dopo averle lavate', " + R.drawable.ing_120 + ")," +
+                "(126, 'Granatina', 0, 'La granatina è un ingrediente popolare nei cocktail sia per il suo sapore che per il colore che dona una sfumatura rossastra ai drink mixati.', 'Sciroppo agrodolce non alcolico dal colore rosso profondo', " + R.drawable.ing_126 + ")," +
+                "(163, 'Succo d''arancia', 0, 'Il succo fresco spremuto muta nel tempo, a differenza degli altri agrumi. Il succo d''arancia ha un invecchiamento ottimale molto breve, deve essere usato nella prima ora in cui è stato spremuto fresco.', '1 arancia produce circa 90 ml di succo', " + R.drawable.ing_163 + ");";
         db.execSQL(insert);
 
-        insert="INSERT INTO Ingrediente (id, nome, grado_alcolico, sottotitolo, img)" +
-                "VALUES (101, 'Acqua di seltz', 0, 'Acqua gassata con minerali aggiunti', "+R.drawable.ing_101+")," +
-                "(122, 'Ghiaccio', 0, 'Anima di un cocktail', "+R.drawable.ing_122+")," +
-                "(146, 'Panna montata', 0, 'Anche conosciuta come cream Chantilly', "+R.drawable.ing_146+")," +
-                "(166, 'Succo di lime', 0, '1 lime produce circa 30 ml di succo', "+R.drawable.ing_166+")," +
-                "(167, 'Succo di limone', 0, '1 limone produce circa 45 ml di succo', "+R.drawable.ing_167+")," +
-                "(175, 'Tonic', 0, 'Acqua tonica', "+R.drawable.ing_175+");";
+        insert = "INSERT INTO Ingrediente (id, nome, grado_alcolico, sottotitolo, img)" +
+                "VALUES (101, 'Acqua di seltz', 0, 'Acqua gassata con minerali aggiunti', " + R.drawable.ing_101 + ")," +
+                "(122, 'Ghiaccio', 0, 'Anima di un cocktail', " + R.drawable.ing_122 + ")," +
+                "(146, 'Panna montata', 0, 'Anche conosciuta come cream Chantilly', " + R.drawable.ing_146 + ")," +
+                "(166, 'Succo di lime', 0, '1 lime produce circa 30 ml di succo', " + R.drawable.ing_166 + ")," +
+                "(167, 'Succo di limone', 0, '1 limone produce circa 45 ml di succo', " + R.drawable.ing_167 + ")," +
+                "(175, 'Tonic', 0, 'Acqua tonica', " + R.drawable.ing_175 + ");";
         db.execSQL(insert);
 
-        insert="INSERT INTO Origine (id, nazione)" +
+        insert = "INSERT INTO Origine (id, nazione)" +
                 "VALUES (1, 'Italia')," +
                 "(2, 'Francia')," +
                 "(3, 'Messico')," +
@@ -189,6 +189,19 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(24, 'Israele')," +
                 "(25, 'Cuba')," +
                 "(26, 'Belgio');";
+        db.execSQL(insert);
+
+        insert = "INSERT INTO Cocktail (id, nome, fk_gradoAlcolico, img)" +
+                "VALUES (2, '4th of July', 2, " + R.drawable.ckt_2 + ");";
+        db.execSQL(insert);
+
+        insert = "INSERT INTO GradoAlcolico (id, gradazione)" +
+                "VALUES (1, 'Estremamente Forte')," +
+                "(2, 'Forte')," +
+                "(3, 'Mediamente Forte')," +
+                "(4, 'Debole')," +
+                "(5, 'Leggero')," +
+                "(6, 'Analcolico');";
         db.execSQL(insert);
     }
 }

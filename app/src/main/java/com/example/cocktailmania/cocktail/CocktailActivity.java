@@ -77,15 +77,15 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
 
         db=new DbManager(this);
 
-        Cursor c = db.elencoIngredienti();
+        Cursor c = db.elencoCocktail();
         CocktailElem ckt;
         if (c != null) {
             while (c.moveToNext()) {
                 ckt = new CocktailElem(); // Note this addition
                 ckt.setId(c.getInt(0));
-                ckt.setImg(c.getInt(1));
-                ckt.setNome(c.getString(2));
-                ckt.setDescrizione(c.getString(3));
+                ckt.setImg(c.getInt(8));
+                ckt.setNome(c.getString(1));
+                ckt.setGradoAlcolico(c.getString(10));
                 elems.add(ckt);
             }
             c.close();
