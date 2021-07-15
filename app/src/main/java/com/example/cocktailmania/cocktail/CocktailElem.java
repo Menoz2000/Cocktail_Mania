@@ -8,13 +8,13 @@ public class CocktailElem implements Parcelable {
     private int id;
     private int img;
     private String nome;
-    private String descrizione;
+    private String gradoAlcolico;
 
-    public CocktailElem(int id, int img, String nome, String descrizione) {
+    public CocktailElem(int id, int img, String nome, String gradoAlcolico) {
         this.id = id;
         this.img = img;
         this.nome = nome;
-        this.descrizione = descrizione;
+        this.gradoAlcolico = gradoAlcolico;
     }
 
     public CocktailElem() {
@@ -24,7 +24,7 @@ public class CocktailElem implements Parcelable {
         id = in.readInt();
         img = in.readInt();
         nome = in.readString();
-        descrizione = in.readString();
+        gradoAlcolico = in.readString();
     }
 
     public static final Creator<CocktailElem> CREATOR = new Creator<CocktailElem>() {
@@ -63,12 +63,12 @@ public class CocktailElem implements Parcelable {
         this.nome = nome;
     }
 
-    public String getDescrizione() {
-        return descrizione;
+    public String getGradoAlcolico() {
+        return gradoAlcolico;
     }
 
-    public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
+    public void setGradoAlcolico(String descrizione) {
+        this.gradoAlcolico = descrizione;
     }
 
     @Override
@@ -77,7 +77,7 @@ public class CocktailElem implements Parcelable {
                 "id=" + id +
                 ", img=" + img +
                 ", nome='" + nome + '\'' +
-                ", preferito=" + descrizione +
+                ", gradoAlcolico=" + gradoAlcolico +
                 '}';
     }
 
@@ -91,6 +91,6 @@ public class CocktailElem implements Parcelable {
         dest.writeInt(id);
         dest.writeInt(img);
         dest.writeString(nome);
-        dest.writeString(descrizione);
+        dest.writeString(gradoAlcolico);
     }
 }
