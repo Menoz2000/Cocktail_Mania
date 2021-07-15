@@ -4,13 +4,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.cocktailmania.cocktail.CocktailElem;
 import com.example.cocktailmania.ingredient.IngredientElem;
 
 public class DbManager {
 
     MyHelper helper;
     private final static String DATABASE = "Ingrediente";
-    private final static int VERSIONE_DATABASE = 1;
+    private final static int VERSIONE_DATABASE = 2;
 
     public DbManager(Context context) {
 
@@ -56,4 +57,52 @@ public class DbManager {
         return db.rawQuery(query, null);
     }
 
+    public CocktailElem getSingleCocktail(int id) {
+        String query = "SELECT C.id,C.nome,G.gradazione,O.nazione,T.nome,C.preferito,C.iconico,C.my_cocktail,C.img " +
+                "FROM Cocktail C " +
+                "LEFT JOIN GradoAlcolico G ON G.id=C.fk_gradoAlcolico " +
+                "LEFT JOIN Origine O ON O.id=C.fk_gradoAlcolico " +
+                "LEFT JOIN TipoCocktail T ON T.id=C.fk_tipo " +
+                "WHERE C.id=" + id;
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        CocktailElem ckt = new CocktailElem();
+
+        if (c != null) {
+            if (c.moveToFirst()) {
+                ckt.setId(id);
+                ckt.setNome(c.getString(1));
+                ckt.setFk_gradoAlcolico(c.getString(2));
+                ckt.setFk_origine(c.getString(3));
+                ckt.setFk_tipo(c.getString(4));
+
+                if (c.getInt(5) == 0) {
+                    ckt.setPreferito(false);
+                } else {
+                    ckt.setPreferito(true);
+                }
+
+                if (c.getInt(6) == 0) {
+                    ckt.setIconico(false);
+                } else {
+                    ckt.setIconico(true);
+                }
+
+                if (c.getInt(7) == 0) {
+                    ckt.setMy_cocktail(false);
+                } else {
+                    ckt.setMy_cocktail(true);
+                }
+
+                ckt.setImg(c.getInt(8));
+
+            }
+            c.close();
+
+        }
+
+        return ckt;
+    }
 }

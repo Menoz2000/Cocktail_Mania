@@ -25,7 +25,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CocktailActivity extends AppCompatActivity implements CocktailAdapter.OnCktListener{
+public class CocktailActivity extends AppCompatActivity implements CocktailAdapter.OnCktListener {
 
 
     Intent intent;
@@ -48,19 +48,19 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
                 case R.id.navigaButton:
                     intent = new Intent(CocktailActivity.this, MainActivity.class);
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
 
                 case R.id.ingredientiButton:
                     intent = new Intent(CocktailActivity.this, IngredientActivity.class);
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
 
                 case R.id.bookButton:
                     intent = new Intent(CocktailActivity.this, BookActivity.class);
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
 
                 default:
@@ -70,12 +70,11 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
         });
 
 
-
         recyclerView = findViewById(R.id.cktRv);
 
         elems = new ArrayList<>();
 
-        db=new DbManager(this);
+        db = new DbManager(this);
 
         Cursor c = db.elencoCocktail();
         CocktailElem ckt;
@@ -85,7 +84,7 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
                 ckt.setId(c.getInt(0));
                 ckt.setImg(c.getInt(8));
                 ckt.setNome(c.getString(1));
-                ckt.setGradoAlcolico(c.getString(10));
+                ckt.setFk_gradoAlcolico(c.getString(10));
                 elems.add(ckt);
             }
             c.close();
@@ -93,7 +92,7 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        cocktailAdapter = new CocktailAdapter((ArrayList<CocktailElem>) elems, CocktailActivity.this,this);
+        cocktailAdapter = new CocktailAdapter((ArrayList<CocktailElem>) elems, CocktailActivity.this, this);
         recyclerView.setAdapter(cocktailAdapter);
     }
 
@@ -101,19 +100,19 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
     public void OnCktClick(int position) {
         Log.d(TAG, "OnCktClick: clicked.");
 
-        Intent intent=new Intent(this, CocktailModule.class);
-        intent.putExtra("selected_ckt", elems.get(position));
+        Intent intent = new Intent(this, CocktailModule.class);
+        intent.putExtra("selected_ckt", elems.get(position).getId());
         startActivity(intent);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.search_bar,menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_bar, menu);
 
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView=(SearchView) searchItem.getActionView();
+        SearchView searchView = (SearchView) searchItem.getActionView();
 
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
 

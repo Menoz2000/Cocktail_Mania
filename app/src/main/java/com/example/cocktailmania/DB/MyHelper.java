@@ -79,6 +79,14 @@ public class MyHelper extends SQLiteOpenHelper {
                 "nazione text NOT NULL" +
                 ");";
         db.execSQL(comando);
+
+        comando = "CREATE TABLE TipoCocktail (" +
+                "    id integer PRIMARY KEY," +
+                "    nome text NOT NULL" +
+                ");";
+        db.execSQL(comando);
+
+
         /*
 
 
@@ -195,6 +203,28 @@ public class MyHelper extends SQLiteOpenHelper {
                 "VALUES (2, '4th of July', 2, " + R.drawable.ckt_2 + ");";
         db.execSQL(insert);
 
+        insert = "INSERT INTO Cocktail (id, nome, fk_gradoAlcolico, fk_origine, fk_tipo, iconico, img)" +
+                "VALUES (37, 'Bloody Mary', 5, 4, 4, 1, " + R.drawable.ckt_37 + ")," +
+                "(46, 'Caipirinha', 1, 17, 3, 1, " + R.drawable.ckt_46 + ")," +
+                "(71, 'Irish Coffee', 5, 19, 2, 1, " + R.drawable.ckt_71 + ")," +
+                "(81, 'Margarita', 2, 3, 5, 1, " + R.drawable.ckt_81 + ")," +
+                "(83, 'Mojito', 5, 25, 4, 1, " + R.drawable.ckt_83 + ")," +
+                "(85, 'Moscow Mule', 5, 4, 4, 1, " + R.drawable.ckt_85 + ");";
+        db.execSQL(insert);
+
+
+        insert = "INSERT INTO Cocktail (id, nome, fk_gradoAlcolico, fk_origine, fk_tipo, img)" +
+                "VALUES (65, 'Gin Fizz', 5, 5, 1, " + R.drawable.ckt_65 + ")," +
+                "(94, 'Sex on the Beach', 3, 4, 4, " + R.drawable.ckt_94 + ")," +
+                "(104, 'Zombie', 2, 4, 5, " + R.drawable.ckt_104 + ");";
+        db.execSQL(insert);
+
+
+        insert = "INSERT INTO Cocktail (id, nome, fk_gradoAlcolico, fk_tipo, img)" +
+                "VALUES (66, 'Gin and Tonic', 5, 4, " + R.drawable.ckt_66 + ");";
+        db.execSQL(insert);
+
+
         insert = "INSERT INTO GradoAlcolico (id, gradazione)" +
                 "VALUES (1, 'Estremamente Forte')," +
                 "(2, 'Forte')," +
@@ -202,6 +232,16 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(4, 'Debole')," +
                 "(5, 'Leggero')," +
                 "(6, 'Analcolico');";
+        db.execSQL(insert);
+
+        insert = "INSERT INTO TipoCocktail (id, nome)" +
+                "VALUES (1, 'Classici')," +
+                "(2, 'Cremoso')," +
+                "(3, 'Corto')," +
+                "(4, 'Longdrink')," +
+                "(5, 'Tropicale')," +
+                "(6, 'Frizzante')," +
+                "(7, 'Martini');";
         db.execSQL(insert);
     }
 }

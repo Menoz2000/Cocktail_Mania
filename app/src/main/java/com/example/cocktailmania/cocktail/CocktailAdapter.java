@@ -47,7 +47,7 @@ public class CocktailAdapter extends RecyclerView.Adapter implements Filterable 
         myViewHolder.img.setImageResource(currentElem.getImg());
         myViewHolder.nome.setText(currentElem.getNome());
         /*-------------------------controlla la riga sotto-----------------------------*/
-        myViewHolder.gradoAlcolico.setText(currentElem.getGradoAlcolico());
+        myViewHolder.gradoAlcolico.setText(currentElem.getFk_gradoAlcolico());
     }
 
     @Override

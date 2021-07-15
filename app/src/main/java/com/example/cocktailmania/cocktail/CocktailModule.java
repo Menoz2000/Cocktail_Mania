@@ -3,15 +3,16 @@ package com.example.cocktailmania.cocktail;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
 
 public class CocktailModule extends AppCompatActivity {
 
     private static final String TAG = "CocktailModule";
+    private DbManager db = new DbManager(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +20,10 @@ public class CocktailModule extends AppCompatActivity {
         setContentView(R.layout.activity_cocktail_module);
 
         if (getIntent().hasExtra("selected_ckt")) {
-            CocktailElem ckt = getIntent().getParcelableExtra("selected_ckt");
-            Log.d(TAG, "onCreate: " + ckt.toString());
+            int cktN = getIntent().getIntExtra("selected_ckt", 0);
+
+
+            CocktailElem ckt = db.getSingleCocktail(cktN);
 
             //passaggio dei dati alla grafica
             TextView textView = findViewById(R.id.id);
@@ -30,10 +33,15 @@ public class CocktailModule extends AppCompatActivity {
             textView1.setText(ckt.getNome());
 
             TextView textView2 = findViewById(R.id.origine);
-            textView2.setText(ckt.getGradoAlcolico());
+            textView2.setText(ckt.getFk_gradoAlcolico());
 
-            ImageView imageView = findViewById(R.id.img);
-            imageView.setImageResource(ckt.getImg());
+            try {
+                ImageView imageView = findViewById(R.id.img);
+                imageView.setImageResource(ckt.getImg());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
     }
 }
