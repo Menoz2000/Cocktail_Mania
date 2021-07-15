@@ -105,14 +105,14 @@ public class MyHelper extends SQLiteOpenHelper {
     }
 
     private void inizializza(SQLiteDatabase db) {
-        String insert1 = "INSERT INTO Ingrediente (id, nome, grado_alcolico, fk_origine, img)" +
+        String insert = "INSERT INTO Ingrediente (id, nome, grado_alcolico, fk_origine, img)" +
                 "VALUES (12, 'Beefeater Gin', 40, 5, " + R.drawable.ing_12 + ")," +
                 "(42, 'Irish Whiskey', 40, 19, " + R.drawable.ing_42 + ")," +
                 "(64, 'Plymouth Gin', 41.2, 5, " + R.drawable.ing_64 + ")," +
                 "(90, 'Tanqueray Gin', 47.3, 5, " + R.drawable.ing_90 + ");";
-        db.execSQL(insert1);
+        db.execSQL(insert);
 
-        String insert2 = "INSERT INTO Ingrediente (id, nome, grado_alcolico, descrizione, sottotitolo, fk_origine, img)" +
+        insert = "INSERT INTO Ingrediente (id, nome, grado_alcolico, descrizione, sottotitolo, fk_origine, img)" +
                 "VALUES (4, 'Angostura', 44.7, 'L''amaro Angostura Aromatic è il marchio più famoso e più usato tra gli amari alle erbe. L''amaro è stato sviluppato da un chirurgo tedesco nell''esercito di Simon Bolivar in Venezuela per curare i disturbi di stomaco e l''indigestione. Da allora è diventato un ingrediente chiave in molti cocktail.', 'Aroma per cocktail', 12, " + R.drawable.ing_4 + ")," +
                 "(13, 'Blue Curacao', 40, 'Simile al Triple sec Curacao, è un liquore all''arancia ma prodotto con bucce essiccate di Laraha, l''arancia amara originaria dell''isola di Curacao. Il Curacao ha un sapore più sottile rispetto al Triple sec, e nello stesso tempo il sapore di Curacao è più complesso per via delle erbe e delle spezie aggiuntive.', 'Liquore al sapore d''arancia', 10, " + R.drawable.ing_13 + ")," +
                 "(15, 'Cachaca', 40, 'La Cachaca è il liquore nazionale del Brasile. Fuori dal Brasile, è usato quasi esclusivamente come ingrediente per drink miscelati, come la Caipirinha. La cachaca è un liquore a base di canna da zucchero (prodotta usando il succo pressato della canna da zucchero).', 'Acquavite distillata da succo di canna da zucchero fermentato', 17, " + R.drawable.ing_15 + ")," +
@@ -123,41 +123,41 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(156, 'rum scuro', 40, 'I rum scuri sono invecchiati per due anni o più in botti di rovere e rientrano nella categoria dei rum da gustare puri.', 'Conosciuto anche come Rum marrone o nero', 9, " + R.drawable.ing_156 + ")," +
                 "(174, 'tequila', 40, 'La tequila è prodotta da una sola specie di agave, l''Agave Azul Tequilana Weber. Le agave cotte vengono macinate, fermentate e distillate in vaso - o in colonna - almeno due volte.', 'Acquavite messicana distillata dall''agave blu', 3, " + R.drawable.ing_174 + ")," +
                 "(180, 'vodka', 40, 'La parola vodka è un''abbreviazione della parola slava voda (che significa acqua), che è da interpretare come ''poca acqua''. Oltre ai cereali e alle patate, la vodka può essere prodotta con una vasta gamma di materiali naturali come orzo, uva, linfa degli alberi o mais.', 'Acquavite prodotta distillando principalmente cereali o patate', 13, " + R.drawable.ing_180 + ");";
-        db.execSQL(insert2);
+        db.execSQL(insert);
 
-        String insert3="INSERT INTO Ingrediente (id, nome, grado_alcolico, sottotitolo, fk_origine, img)" +
+        insert="INSERT INTO Ingrediente (id, nome, grado_alcolico, sottotitolo, fk_origine, img)" +
                 "VALUES (48, 'London Dry Gin', 45, 'Categoria del gin secchi', 5, "+R.drawable.ing_48+");";
-        db.execSQL(insert3);
+        db.execSQL(insert);
 
-        /*insert="INSERT INTO Ingrediente (id, nome, grado_alcolico, img)" +
-                "VALUES (71, 'Salsa Worcestershire', 0, R.drawable.ing_71)," +
-                "(77, 'Sciroppo di frutto della passione', 0, R.drawable.ing_77)," +
-                "(110, 'caffé', 0, R.drawable.ing_110)," +
-                "(125, 'ginger', 0, R.drawable.ing_125)," +
-                "(138, 'liquore di pesca', 20, R.drawable.ing_138)," +
-                "(147, 'pepe', 0, R.drawable.ing_147)," +
-                "(157, 'sale', 0, R.drawable.ing_157)," +
-                "(158, 'salsa tabasco', 0, R.drawable.ing_158)," +
-                "(169, 'succo di mirtillo rosso', 0, R.drawable.ing_169)," +
-                "(171, 'succo di pomodoro', 0, R.drawable.ing_171)," +
-                "(184, 'zucchero', 0, R.drawable.ing_184)," +
-                "(186, 'zucchero marrone', 0, R.drawable.ing_186);";
+        insert="INSERT INTO Ingrediente (id, nome, grado_alcolico, img)" +
+                "VALUES (71, 'Salsa Worcestershire', 0, "+R.drawable.ing_71+")," +
+                "(77, 'Sciroppo di frutto della passione', 0, "+R.drawable.ing_77+")," +
+                "(110, 'caffé', 0, "+R.drawable.ing_110+")," +
+                "(125, 'ginger', 0, "+R.drawable.ing_125+")," +
+                "(138, 'liquore di pesca', 20, "+R.drawable.ing_138+")," +
+                "(147, 'pepe', 0, "+R.drawable.ing_147+")," +
+                "(157, 'sale', 0, "+R.drawable.ing_157+")," +
+                "(158, 'salsa tabasco', 0, "+R.drawable.ing_158+")," +
+                "(169, 'succo di mirtillo rosso', 0, "+R.drawable.ing_169+")," +
+                "(171, 'succo di pomodoro', 0, "+R.drawable.ing_171+")," +
+                "(184, 'zucchero', 0, "+R.drawable.ing_184+")," +
+                "(186, 'zucchero marrone', 0, "+R.drawable.ing_186+");";
         db.execSQL(insert);
 
         insert="INSERT INTO Ingrediente (id, nome, grado_alcolico, descrizione, sottotitolo, img)" +
-                "VALUES (73, 'Sciroppo Semplice', 0, 'Combina parti uguali di zucchero superfino e acqua calda in un contenitore. Agita o mescola fino a quando lo zucchero si sarà sciolto.', 'Sciroppo creato sciogliendo zucchero granulato in acqua', R.drawable.ing_173)," +
-                "(120, 'foglia di menta', 0, 'La menta è una pianta aromatica usata per i cocktail, come guarnizione o ingrediente mischiato nei drink per aggiungere un aroma fresco.', 'Usa foglie giovani di menta dopo averle lavate', R.drawable.ing_120)," +
-                "(126, 'granatina', 0, 'La granatina è un ingrediente popolare nei cocktail sia per il suo sapore che per il colore che dona una sfumatura rossastra ai drink mixati.', 'Sciroppo agrodolce non alcolico dal colore rosso profondo', R.drawable.ing_126)," +
-                "(163, 'succo d''arancia', 0, 'Il succo fresco spremuto muta nel tempo, a differenza degli altri agrumi. Il succo d''arancia ha un invecchiamento ottimale molto breve, deve essere usato nella prima ora in cui è stato spremuto fresco.', '1 arancia produce circa 90 ml di succo', R.drawable.ing_163);";
+                "VALUES (73, 'Sciroppo Semplice', 0, 'Combina parti uguali di zucchero superfino e acqua calda in un contenitore. Agita o mescola fino a quando lo zucchero si sarà sciolto.', 'Sciroppo creato sciogliendo zucchero granulato in acqua', "+R.drawable.ing_73+")," +
+                "(120, 'foglia di menta', 0, 'La menta è una pianta aromatica usata per i cocktail, come guarnizione o ingrediente mischiato nei drink per aggiungere un aroma fresco.', 'Usa foglie giovani di menta dopo averle lavate', "+R.drawable.ing_120+")," +
+                "(126, 'granatina', 0, 'La granatina è un ingrediente popolare nei cocktail sia per il suo sapore che per il colore che dona una sfumatura rossastra ai drink mixati.', 'Sciroppo agrodolce non alcolico dal colore rosso profondo', "+R.drawable.ing_126+")," +
+                "(163, 'succo d''arancia', 0, 'Il succo fresco spremuto muta nel tempo, a differenza degli altri agrumi. Il succo d''arancia ha un invecchiamento ottimale molto breve, deve essere usato nella prima ora in cui è stato spremuto fresco.', '1 arancia produce circa 90 ml di succo', "+R.drawable.ing_163+");";
         db.execSQL(insert);
 
         insert="INSERT INTO Ingrediente (id, nome, grado_alcolico, sottotitolo, img)" +
-                "VALUES (101, 'acqua di seltz', 0, 'Acqua gassata con minerali aggiunti, R.drawable.ing_101')," +
-                "(122, 'ghiaccio', 0, 'Anima di un cocktail', R.drawable.ing_122)," +
-                "(146, 'panna montata', 0, 'Anche conosciuta come cream Chantilly', R.drawable.ing_146)," +
-                "(166, 'succo di lime', 0, '1 lime produce circa 30 ml di succo', R.drawable.ing_166)," +
-                "(167, 'succo di limone', 0, '1 limone produce circa 45 ml di succo', R.drawable.ing_167)," +
-                "(175, 'tonic', 0, 'Acqua gassata', R.drawable.ing_175);";
-        db.execSQL(insert);*/
+                "VALUES (101, 'acqua di seltz', 0, 'Acqua gassata con minerali aggiunti', "+R.drawable.ing_101+")," +
+                "(122, 'ghiaccio', 0, 'Anima di un cocktail', "+R.drawable.ing_122+")," +
+                "(146, 'panna montata', 0, 'Anche conosciuta come cream Chantilly', "+R.drawable.ing_146+")," +
+                "(166, 'succo di lime', 0, '1 lime produce circa 30 ml di succo', "+R.drawable.ing_166+")," +
+                "(167, 'succo di limone', 0, '1 limone produce circa 45 ml di succo', "+R.drawable.ing_167+")," +
+                "(175, 'tonic', 0, 'Acqua gassata', "+R.drawable.ing_175+");";
+        db.execSQL(insert);
     }
 }

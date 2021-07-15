@@ -18,7 +18,7 @@ public class DbManager {
 
     public Cursor elencoIngredienti()
     {
-        String query="SELECT * FROM Ingrediente";
+        String query="SELECT * FROM Ingrediente ORDER BY nome";
 
         SQLiteDatabase db= helper.getReadableDatabase();
         return db.rawQuery(query, null);
