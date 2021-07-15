@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Cocktail Mania</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="naviga">Naviga</string>
     <string name="cocktail">Cocktail</string>
     <string name="ingredienti">Ingredienti</string>
