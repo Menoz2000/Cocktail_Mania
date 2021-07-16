@@ -1,11 +1,11 @@
 package com.example.cocktailmania.ingredient;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
@@ -23,7 +23,6 @@ public class IngredientModule extends AppCompatActivity {
         if (getIntent().hasExtra("selected_ing")) {
             int ingN = getIntent().getIntExtra("selected_ing", 0);
 
-
             IngredientElem ing = db.getSingleIngredient(ingN);
 
             //passaggio dei dati alla grafica
@@ -31,7 +30,11 @@ public class IngredientModule extends AppCompatActivity {
             textView.setText(ing.getNome());
 
             TextView textView1 = findViewById(R.id.sottotitolo);
-            textView1.setText(ing.getSottotitolo());
+            if (ing.getSottotitolo() != null) {
+                textView1.setText(ing.getSottotitolo());
+            } else {
+                textView1.setVisibility(TextView.GONE);
+            }
 
             try {
                 ImageView imageView = findViewById(R.id.img);
@@ -43,11 +46,19 @@ public class IngredientModule extends AppCompatActivity {
             TextView textView2 = findViewById(R.id.grado_alcolico);
             textView2.setText(Html.fromHtml("<b>Gradazione Alcolica:</b> " + ing.getGrado_alcolico() + "%"));
 
+            TextView textView3 = findViewById(R.id.origine);
             if (ing.getOrigine() != null) {
-                TextView textView3 = findViewById(R.id.origine);
                 textView3.setText(Html.fromHtml("<b>Origine:</b> " + ing.getOrigine()));
+            } else {
+                textView3.setVisibility(TextView.GONE);
             }
 
+            TextView textView4 = findViewById(R.id.descrizione);
+            if (ing.getSottotitolo() != null) {
+                textView4.setText(ing.getDescrizione());
+            } else {
+                textView4.setVisibility(TextView.GONE);
+            }
 
         }
 

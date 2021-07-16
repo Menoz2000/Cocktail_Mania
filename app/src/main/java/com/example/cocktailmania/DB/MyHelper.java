@@ -107,6 +107,8 @@ public class MyHelper extends SQLiteOpenHelper {
         db.execSQL(comando);*/
 
         inizializza(db);
+
+        db.close();
     }
 
     @Override

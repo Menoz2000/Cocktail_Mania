@@ -1945,6 +1945,7 @@ int id decor_content_parent 0x7f080083
 int id default_activity_button 0x7f080084
 int id deltaRelative 0x7f080085
 int id dependency_ordering 0x7f080086
+int id descrizione 0x7f0801bf
 int id design_bottom_sheet 0x7f080087
 int id design_menu_item_action_area 0x7f080088
 int id design_menu_item_action_area_stub 0x7f080089
