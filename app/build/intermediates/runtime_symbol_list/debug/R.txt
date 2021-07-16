@@ -1991,6 +1991,7 @@ int id fragment_container_view_tag 0x7f0800b1
 int id ghost_view 0x7f0800b2
 int id ghost_view_holder 0x7f0800b3
 int id gone 0x7f0800b4
+int id grado_alcolico 0x7f0801bd
 int id graph 0x7f0800b5
 int id graph_wrap 0x7f0800b6
 int id group_divider 0x7f0800b7
@@ -2166,6 +2167,7 @@ int id snackbar_action 0x7f080160
 int id snackbar_text 0x7f080161
 int id snap 0x7f080162
 int id snapMargins 0x7f080163
+int id sottotitolo 0x7f0801be
 int id spacer 0x7f080164
 int id special_effects_controller_view_tag 0x7f080165
 int id spline 0x7f080166

@@ -8,49 +8,62 @@
     tools:context=".ingredient.IngredientModule">
 
     <TextView
-        android:id="@+id/id"
+        android:id="@+id/nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="192dp"
-        android:layout_marginEnd="177dp"
+        android:layout_marginTop="30dp"
         android:text=""
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/nome"
-        android:layout_width="wrap_content"
+        android:id="@+id/sottotitolo"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="177dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="2dp"
+        android:gravity="center_horizontal"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id" />
-
-    <TextView
-        android:id="@+id/origine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="177dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="176dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nome" />
 
     <ImageView
         android:id="@+id/img"
         android:layout_width="wrap_content"
-        android:layout_height="128dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/origine"
+        app:layout_constraintTop_toBottomOf="@+id/sottotitolo"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/grado_alcolico"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img" />
+
+    <TextView
+        android:id="@+id/origine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grado_alcolico" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

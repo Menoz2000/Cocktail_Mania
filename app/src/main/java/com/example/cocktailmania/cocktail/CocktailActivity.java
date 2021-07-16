@@ -1,9 +1,5 @@
 package com.example.cocktailmania.cocktail;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -14,12 +10,15 @@ import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
 import android.widget.SearchView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.cocktailmania.DB.DbManager;
-import com.example.cocktailmania.ingredient.IngredientActivity;
-import com.example.cocktailmania.ingredient.IngredientElem;
-import com.example.cocktailmania.naviga.MainActivity;
 import com.example.cocktailmania.R;
 import com.example.cocktailmania.book.BookActivity;
+import com.example.cocktailmania.ingredient.IngredientActivity;
+import com.example.cocktailmania.naviga.MainActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
