@@ -86,9 +86,12 @@ public class MyHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(comando);
 
-
-        /*
-
+        comando = "CREATE TABLE Azione (" +
+                "    id integer PRIMARY KEY," +
+                "    nome text NOT NULL," +
+                "    img integer /*NOT NULL*/" +
+                ");";
+        db.execSQL(comando);
 
         comando = "CREATE TABLE Strumento (" +
                 "id integer PRIMARY KEY," +
@@ -99,12 +102,19 @@ public class MyHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(comando);
 
-
-        comando = "CREATE TABLE TipoCocktail (" +
-                "id integer PRIMARY KEY," +
-                "nome text NOT NULL" +
-                ")";
-        db.execSQL(comando);*/
+        comando="CREATE TABLE Preparazione (" +
+                "    id integer PRIMARY KEY AUTOINCREMENT," +
+                "    fk_cocktail integer NOT NULL," +
+                "    fk_ingrediente integer," +
+                "    step integer NOT NULL ," +
+                "    fk_strumento integer," +
+                "    fk_azione integer," +
+                "    FOREIGN KEY (fk_cocktail) REFERENCES Cocktail(id)," +
+                "    FOREIGN KEY (fk_ingrediente) REFERENCES Ingrediente(id)," +
+                "    FOREIGN KEY (fk_strumento) REFERENCES Strumento(id)," +
+                "    FOREIGN KEY (fk_azione) REFERENCES Azione(id)" +
+                ");";
+        db.execSQL(comando);
 
         inizializza(db);
 
@@ -245,5 +255,62 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(6, 'Frizzante')," +
                 "(7, 'Martini');";
         db.execSQL(insert);
+
+        insert = "INSERT INTO Azione (id, nome)" +
+                "VALUES (1, 'Aggiungi')," +
+                "(2, 'Agita Bene')," +
+                "(3, 'Filtra')," +
+                "(4, 'Frulla')," +
+                "(5, 'Guarnisci')," +
+                "(6, 'Lascia Cadere')," +
+                "(7, 'Mescola')," +
+                "(8, 'Mescola Bene')," +
+                "(9, 'Pesta')," +
+                "(10, 'Riempi')," +
+                "(11, 'Spruzza')," +
+                "(12, 'Versa');";
+        db.execSQL(insert);
+
+        insert = "INSERT INTO Strumento (id, nome, descrizione, capacita, img)\n" +
+                "VALUES (3, 'Bicchiere Da Irish Coffee', 'Il bicchiere da Irish coffee è un bicchiere molto resistente e adatto a sopportare alte temperature. Puoi usarlo infatti per servire i classici hot drink come appunto l''Irish coffee.', '130 ml', "+ R.drawable.strum_3 + ")," +
+                "(5, 'Bicchiere Da Margarita', 'Come dice il suo nome, questo bicchiere è stato inventato appositamente per il drink da cui prende il nome anche se puoi utilizzarlo per servire un''ampia gamma di frozen drink.', '330 ml', " + R.drawable.strum_5 + ")," +
+                "(9, 'Bicchiere Da Sherry', 'Questo bicchierino dotato di stelo e dalla capacità limitata è l''ideale se vuoi sorseggiare uno Sherry oppure se vuoi sstupire tutti preparando il famoso Brain Hemorrhage, uno scenografico cocktail.', '90 ml', " + R.drawable.strum_9 + ")," +
+                "(19, 'Doppio Old Fashion', 'Il doppio old fashion fa parte della categoria de Tumbler e viene chiamato anche doppio on-the-rocks perché potrai utilizzarlo per gustare drink a base di liquori con molto ghiaccio.', '350-440 ml', " + R.drawable.strum_19 + ")," +
+                "(22, 'Grande Collins', 'Questo bicchiere fa parte della categoria dei Tumbler (viene anche chiamato Tumbler alto) e ti servirà per gustare non solo i collins, ma anche long drink alla frutta o analcolici.', '330-410 ml', " + R.drawable.strum_22 + ")," +
+                "(25, 'Hurricane', 'Questo bicchiere elegante e sinuoso prende il nome dal famoso drink di New Orleans. Potrai sfoggiarlo per il servizio dell''Hurricane e di alcuni cocktails analcolici.', '250-440 ml', " + R.drawable.strum_25 + ")," +
+                "(10, 'Bicchiere Da Shot', 'Questo bicchierino è originariamente progettato per contenere o misurare liquori, che viene assorbito direttamente dal bicchiere o versato in un cocktail. Una bevanda alcolica servita in questo tipo di bicchiere è in genere consumata velocemente, in uno sorso.', '30 ml', " + R.drawable.strum_10 + ")," +
+                "(31, 'Old Fashion', 'L''Old fashion fa parte della categoria dei Tumbler (viene chiamato anche Tumbler basso). In pratica è il classico bicchiere on-the-rocks, nel quale potrai servire, manco a dirlo, l''Old Fashion.', '180-300 ml', " + R.drawable.strum_31 + ");";
+        db.execSQL(insert);
+
+        insert = "INSERT INTO Strumento (id, nome, descrizione, img)" +
+                "VALUES (30, 'Muddler', 'Ne esistono di varie forme, materiali e misure. Ti servirà per preparare cocktrail pestati.', " + R.drawable.strum_30 + ")," +
+                "(33, 'Passino Julep', 'Si tratta di un colino più praitco dell''Hawthorne. Normalmente è fatto di acciaio e potrai adoperarlo con lo shaker Boston o il mixing glass. Anche questo serve per fermare il ghiaccio al momento di versare i cocktail nei bicchieri o per evitare che cadano i residui dei frutti utilizzati in un cocktail.', " + R.drawable.strum_33 + ")," +
+                "(36, 'Shaker Boston', 'Questo recipiente è costituito da due parti, una inferiore di metallo ed una superiore di vetro in cui vengono versati gli ingredienti. Una volta unite le due parti devi agitare facendo finire il cocktail che hai preparato nel bicchiere dalla parte metallica.', " + R.drawable.strum_36 + ")," +
+                "(37, 'Shaker Continentale', 'Lo shaker continentale è composto da tre parti. Solitamente è realizato tutto in acciaio ed è costituito da un bicchiere inferiore dove dovrai versare gli ingredienti, una prima parte superiore costituita da un tappo-colino ed un tappo superiore che ti servirà per sigillare il tutto.', " + R.drawable.strum_37 + ")," +
+                "(39, 'Stir', 'È un cucchiaino lungo che ti tornerà utile in diverse occasioni come ad esempio mescolare i cocktails che non vanno shakerati (ha anche una spirale intorno alla lunghezza del manico, per facilitare la mescolatura), versare lo zucchero, pestare lo zucchero o altri ingredienti in un cocktail utilizzando il Muddler (il pestello) che si trova dalla parte opposta al cucchiaio e mescolare la base pestata in un cocktail.', " + R.drawable.strum_39 + ");";
+        db.execSQL(insert);
+
+        insert="INSERT INTO Preparazione (fk_cocktail, fk_ingrediente, fk_strumento, step, fk_azione)" +
+                "VALUES (2, 126, 10, 1, 12)," +
+                "(2, 180, 10, 2, 12)," +
+                "(2, 13, 10, 3, 12)," +
+                "(37, 122, 22, 1, 10)," +
+                "(37, 180, 22, 2, 12)," +
+                "(37, 167, 22, 2, 12)," +
+                "(37, 157, 22, 3, 1)," +
+                "(37, 147, 22, 3, 1)," +
+                "(37, 71, 22, 3, 1)," +
+                "(37, 158, 22, 3, 1)," +
+                "(37, 171, 22, 4, 10)," +
+                "(37, 131, 22, 6, 5)," +
+                "(37, 80, 22, 6, 5);";
+        db.execSQL(insert);
+
+        insert="INSERT INTO Preparazione (fk_cocktail, fk_strumento, step, fk_azione)" +
+                "VALUES (37, 39, 5, 8);";
+        db.execSQL(insert);
+
+
+
     }
 }

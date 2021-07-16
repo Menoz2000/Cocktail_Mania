@@ -5,13 +5,18 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.cocktailmania.cocktail.CocktailElem;
+import com.example.cocktailmania.cocktail.StepPrep;
 import com.example.cocktailmania.ingredient.IngredientElem;
+
+import java.util.ArrayList;
+
 
 public class DbManager {
 
     MyHelper helper;
     private final static String DATABASE = "Ingrediente";
     private final static int VERSIONE_DATABASE = 2;
+
 
     public DbManager(Context context) {
 
@@ -106,23 +111,64 @@ public class DbManager {
         return ckt;
     }
 
-    public void addMyCocktail() {
-                /*"CREATE TABLE Cocktail (" +
-                "id integer PRIMARY KEY," +
-                "nome text NOT NULL," +
-                "fk_gradoAlcolico integer," +
-                "fk_origine integer," +
-                "fk_tipo integer," +
-                "preferito integer NOT NULL DEFAULT 0," +
-                "iconico integer NOT NULL DEFAULT 0," +
-                "my_cocktail integer NOT NULL DEFAULT 0," +
-                "img integer NOT NULL," +
-                "FOREIGN KEY (fk_origine) REFERENCES Origine(id)," +
-                "FOREIGN KEY (fk_gradoAlcolico) REFERENCES GradoAlcolico(id)," +
-                "FOREIGN KEY (fk_tipo) REFERENCES TipoCocktail(id)" +
-                ");"*/
+    public ArrayList<StepPrep> getPrepCkt(int id) {
+
+        int cont = 1;
+        StepPrep stepPrep = new StepPrep();
+        ArrayList<StepPrep> arrStepPrep = new ArrayList<>();
+
+        while (true) {
+
+            String query = "SELECT i.nome,a.nome,s.nome,a.img " +
+                    "FROM Preparazione p " +
+                    "LEFT JOIN Strumento s ON p.fk_strumento=s.id " +
+                    "JOIN Azione a ON a.id=p.fk_azione " +
+                    "LEFT JOIN Ingrediente i  ON i.id=p.fk_ingrediente " +
+                    "WHERE p.step=" + cont +
+                    " AND p.fk_cocktail=" + id;
+
+            SQLiteDatabase db = helper.getReadableDatabase();
+            Cursor c = db.rawQuery(query, null);
 
 
+            //System.out.println("sono qua");
+            if (c != null) {
+                //System.out.println("sono qua");
+                if (c.moveToFirst()) {
+
+                    //System.out.println("sono qua");
+
+                    do{
+
+                        if (cont == 1) {
+
+                            stepPrep.setStepNum(cont);
+                            stepPrep.setCktId(id);
+                            stepPrep.setAzione(c.getString(1));
+                            stepPrep.setStrumento(c.getString(2));
+                            stepPrep.setAzioneImg(c.getInt(3));
+
+                        }
+
+                        stepPrep.addIng(c.getString(0));
+
+                    }while(c.moveToNext());
+
+
+                } else {
+                    break;
+                }
+                c.close();
+
+            } else {
+                break;
+            }
+
+            cont++;
+            arrStepPrep.add(stepPrep);
+        }
+
+        return arrStepPrep;
 
     }
 }

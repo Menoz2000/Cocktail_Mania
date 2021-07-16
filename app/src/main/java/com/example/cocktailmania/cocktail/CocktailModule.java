@@ -9,6 +9,8 @@ import android.widget.TextView;
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
 
+import java.util.ArrayList;
+
 public class CocktailModule extends AppCompatActivity {
 
     private static final String TAG = "CocktailModule";
@@ -21,8 +23,7 @@ public class CocktailModule extends AppCompatActivity {
 
         if (getIntent().hasExtra("selected_ckt")) {
             int cktN = getIntent().getIntExtra("selected_ckt", 0);
-
-
+            ArrayList<StepPrep> stepPrep = db.getPrepCkt(cktN);
             CocktailElem ckt = db.getSingleCocktail(cktN);
 
             //passaggio dei dati alla grafica
@@ -41,6 +42,16 @@ public class CocktailModule extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
+            TextView textView3 = findViewById(R.id.toStringPrep);
+            String s = "ingredienti: ";
+            System.out.println(stepPrep.size());
+            for (int i = 0; i < stepPrep.size(); i++) {
+                s = s + stepPrep.get(i).toString() +"/n";
+            }
+            textView3.setText(s);
+            System.out.println(s);
+
 
         }
     }
