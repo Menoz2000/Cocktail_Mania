@@ -44,7 +44,7 @@ public class CocktailModule extends AppCompatActivity {
             }
 
             TextView textView3 = findViewById(R.id.toStringPrep);
-            String s = "ingredienti: ";
+            String s = "";
             System.out.println(stepPrep.size());
             for (int i = 0; i < stepPrep.size(); i++) {
                 s = s + stepPrep.get(i).toString() +"/n";

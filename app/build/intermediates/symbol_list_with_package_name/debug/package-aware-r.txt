@@ -1730,9 +1730,12 @@ drawable ing_110
 drawable ing_12
 drawable ing_120
 drawable ing_122
+drawable ing_123
 drawable ing_125
 drawable ing_126
 drawable ing_13
+drawable ing_130
+drawable ing_131
 drawable ing_138
 drawable ing_145
 drawable ing_146
@@ -1762,6 +1765,7 @@ drawable ing_64
 drawable ing_71
 drawable ing_73
 drawable ing_77
+drawable ing_80
 drawable ing_90
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp

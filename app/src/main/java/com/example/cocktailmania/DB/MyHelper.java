@@ -141,6 +141,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(20, 'Cointreau', 40, 'Il Cointreau è un marchio di triple sec (un liquore all''arancia) prodotto a Saint-Barthélemy-d''Anjou, in Francia. Si beve come aperitivo e digestivo ed è un ingrediente di molti noti cocktail.', 'Liquore aromatizzato all''arancia', 2, " + R.drawable.ing_20 + ")," +
                 "(55, 'Old Tom Gin', 40, 'Cugino storico di London Dry che vanta un profilo aromatico simile al ginepro, ma con un corpo più ricco e un sapore più dolce. Tradizionalmente, il gin Old Tom veniva addolcito con zucchero e gli venivano aggiunti ingredienti botanici.', 'Categoria di gin leggermente più dolci', 5, " + R.drawable.ing_55 + ")," +
                 "(57, 'Orange Curacao', 40, 'Simile al Triple sec Curacao, è un liquore all''arancia ma prodotto con bucce essiccate di Laraha, l''arancia amara originaria dell''isola di Curacao. Il Curacao ha un sapore più sottile rispetto al Triple sec, e nello stesso tempo il sapore di Curacao è più complesso per via delle erbe e delle spezie aggiuntive.', 'Liquore al sapore d''arancia', 10, " + R.drawable.ing_57 + ")," +
+                "(123, 'Gin', 40, 'Il gin è prodotto ridistillando un liquore neutro ad alta resistenza con prodotti botanici ed include sempre il ginepro, ma può anche includere buccia d''arancia scorza di limone, anice, coriandolo, cacao e molti altri.', 'Acquavite prodotta ridistillando liquore neutro con sostanze vegetali (prevalentemente ginepro)', 9, " + R.drawable.ing_123 + ")," +
                 "(153, 'Rum bianco', 40, 'Che siano composti con melassa o succo di canna da zucchero, rum bianchi, coi sapori più leggere dei rum d''oro, sono un''ottima base per i cocktail. Molti contengono più del 40% di alcol e sono tenuti in contenitori in acciaio inox o botti per diverse settimane per ottenere aromi più morbidi.', 'Conosciuto anche come rum leggero', 9, " + R.drawable.ing_153 + ")," +
                 "(156, 'Rum scuro', 40, 'I rum scuri sono invecchiati per due anni o più in botti di rovere e rientrano nella categoria dei rum da gustare puri.', 'Conosciuto anche come Rum marrone o nero', 9, " + R.drawable.ing_156 + ")," +
                 "(174, 'Tequila', 40, 'La tequila è prodotta da una sola specie di agave, l''Agave Azul Tequilana Weber. Le agave cotte vengono macinate, fermentate e distillate in vaso - o in colonna - almeno due volte.', 'Acquavite messicana distillata dall''agave blu', 3, " + R.drawable.ing_174 + ")," +
@@ -154,8 +155,11 @@ public class MyHelper extends SQLiteOpenHelper {
         insert = "INSERT INTO Ingrediente (id, nome, grado_alcolico, img)" +
                 "VALUES (71, 'Salsa Worcestershire', 0, " + R.drawable.ing_71 + ")," +
                 "(77, 'Sciroppo di frutto della passione', 0, " + R.drawable.ing_77 + ")," +
+                "(80, 'Sedano', 0, " + R.drawable.ing_80 + "),"+
                 "(110, 'Caffé', 0, " + R.drawable.ing_110 + ")," +
                 "(125, 'Ginger', 0, " + R.drawable.ing_125 + ")," +
+                "(130, 'Lime', 0, " + R.drawable.ing_130 + ")," +
+                "(131, 'Limone', 0, " + R.drawable.ing_131 + "),"+
                 "(138, 'Liquore di pesca', 20, " + R.drawable.ing_138 + ")," +
                 "(147, 'Pepe', 0, " + R.drawable.ing_147 + ")," +
                 "(157, 'Sale', 0, " + R.drawable.ing_157 + ")," +

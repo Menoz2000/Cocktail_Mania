@@ -113,8 +113,8 @@ public class DbManager {
 
     public ArrayList<StepPrep> getPrepCkt(int id) {
 
-        int cont = 1;
-        StepPrep stepPrep = new StepPrep();
+        int cont = 1, contIng = 0;
+        StepPrep stepPrep;
         ArrayList<StepPrep> arrStepPrep = new ArrayList<>();
 
         while (true) {
@@ -137,32 +137,36 @@ public class DbManager {
                 if (c.moveToFirst()) {
 
                     //System.out.println("sono qua");
+                    stepPrep = new StepPrep();
 
-                    do{
+                    do {
 
-                        if (cont == 1) {
+                        if (contIng == 0) {
 
                             stepPrep.setStepNum(cont);
                             stepPrep.setCktId(id);
                             stepPrep.setAzione(c.getString(1));
                             stepPrep.setStrumento(c.getString(2));
                             stepPrep.setAzioneImg(c.getInt(3));
-
+                            stepPrep.setIng(c.getString(0));
+                        } else {
+                            stepPrep.addIng(c.getString(0));
                         }
 
-                        stepPrep.addIng(c.getString(0));
+                        contIng++;
 
-                    }while(c.moveToNext());
+                    } while (c.moveToNext());
 
-
+                    contIng = 0;
                 } else {
                     break;
                 }
-                c.close();
+
 
             } else {
                 break;
             }
+            c.close();
 
             cont++;
             arrStepPrep.add(stepPrep);

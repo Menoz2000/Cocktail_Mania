@@ -69,7 +69,7 @@ public class StepPrep {
     }
 
     public void addIng(String ing) {
-        this.ing = this.ing+" /n "+ing;
+        this.ing = this.ing + " /n " + ing;
     }
 
     @Override
