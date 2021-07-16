@@ -108,7 +108,7 @@ public class MyHelper extends SQLiteOpenHelper {
 
         inizializza(db);
 
-        db.close();
+        //db.close();
     }
 
     @Override
