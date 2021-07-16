@@ -26,7 +26,7 @@ public class IngredientModule extends AppCompatActivity {
             IngredientElem ing = db.getSingleIngredient(ingN);
 
             //passaggio dei dati alla grafica
-            TextView textView = findViewById(R.id.nome);
+            TextView textView = findViewById(R.id.CktName);
             textView.setText(ing.getNome());
 
             TextView textView1 = findViewById(R.id.sottotitolo);
@@ -46,7 +46,7 @@ public class IngredientModule extends AppCompatActivity {
             TextView textView2 = findViewById(R.id.grado_alcolico);
             textView2.setText(Html.fromHtml("<b>Gradazione Alcolica:</b> " + ing.getGrado_alcolico() + "%"));
 
-            TextView textView3 = findViewById(R.id.origine);
+            TextView textView3 = findViewById(R.id.CktOrigin);
             if (ing.getOrigine() != null) {
                 textView3.setText(Html.fromHtml("<b>Origine:</b> " + ing.getOrigine()));
             } else {

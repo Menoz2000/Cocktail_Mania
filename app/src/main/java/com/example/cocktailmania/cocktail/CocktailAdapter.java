@@ -55,7 +55,7 @@ public class CocktailAdapter extends RecyclerView.Adapter implements Filterable 
         return elems.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView nome, gradoAlcolico;
         ImageView img;

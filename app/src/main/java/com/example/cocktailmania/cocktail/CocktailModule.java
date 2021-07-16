@@ -3,7 +3,9 @@ package com.example.cocktailmania.cocktail;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.cocktailmania.DB.DbManager;
@@ -15,6 +17,7 @@ public class CocktailModule extends AppCompatActivity {
 
     private static final String TAG = "CocktailModule";
     private DbManager db = new DbManager(this);
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +30,8 @@ public class CocktailModule extends AppCompatActivity {
             CocktailElem ckt = db.getSingleCocktail(cktN);
 
             //passaggio dei dati alla grafica
-            TextView textView = findViewById(R.id.id);
-            textView.setText(String.valueOf(ckt.getId()));
-
-            TextView textView1 = findViewById(R.id.nome);
-            textView1.setText(ckt.getNome());
-
-            TextView textView2 = findViewById(R.id.origine);
-            textView2.setText(ckt.getFk_gradoAlcolico());
+            TextView textView = findViewById(R.id.CktName);
+            textView.setText(ckt.getNome());
 
             try {
                 ImageView imageView = findViewById(R.id.img);
@@ -43,15 +40,16 @@ public class CocktailModule extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            TextView textView3 = findViewById(R.id.toStringPrep);
-            String s = "";
-            System.out.println(stepPrep.size());
-            for (int i = 0; i < stepPrep.size(); i++) {
-                s = s + stepPrep.get(i).toString() +"/n";
-            }
-            textView3.setText(s);
-            System.out.println(s);
+            TextView textView1 = findViewById(R.id.AlcolicGrade);
+            textView1.setText(String.valueOf(ckt.getFk_gradoAlcolico()));
 
+            TextView textView2 = findViewById(R.id.CktOrigin);
+            textView2.setText(ckt.getFk_origine());
+
+            //ListView con gli step delle preparazioni
+            listView=(ListView)findViewById(R.id.StepPrep);
+            CustomAdapter arrayAdapter = new CustomAdapter(this, stepPrep);
+            listView.setAdapter(arrayAdapter);
 
         }
     }

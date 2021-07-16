@@ -1817,10 +1817,16 @@ drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
+id ActionName
+id AlcolicGrade
+id AzioneImg
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id CktName
+id CktOrigin
 id FUNCTION
+id IngList
 id META
 id NO_DEBUG
 id SHIFT
@@ -1828,6 +1834,8 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id StepNumber
+id StepPrep
 id TOP_END
 id TOP_START
 id accelerate
@@ -2012,7 +2020,6 @@ id homeAsUp
 id honorRequest
 id icon
 id icon_group
-id id
 id ifRoom
 id ignore
 id ignoreRequest
@@ -2101,7 +2108,6 @@ id navigation_bar_item_small_label_view
 id navigation_header_container
 id never
 id noScroll
-id nome
 id none
 id normal
 id notification_background
@@ -2109,7 +2115,6 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
-id origine
 id outline
 id outward
 id packed
@@ -2221,6 +2226,7 @@ id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textStrum
 id textTop
 id textView
 id text_input_end_icon
@@ -2236,7 +2242,6 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
-id toStringPrep
 id toggle
 id top
 id topPanel
