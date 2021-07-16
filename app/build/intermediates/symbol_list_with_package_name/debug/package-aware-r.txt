@@ -1707,7 +1707,6 @@ drawable ckt_83
 drawable ckt_85
 drawable ckt_94
 drawable custom_shape
-drawable def_azione
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off

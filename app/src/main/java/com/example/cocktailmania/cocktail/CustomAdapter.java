@@ -49,28 +49,28 @@ public class CustomAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ViewHolder holder=null;
+        ViewHolder holder = null;
 
-        LayoutInflater mInflater=(LayoutInflater)context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        if(convertView == null) {
+        LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+        if (convertView == null) {
 
             convertView = mInflater.inflate(R.layout.prep_row, null);
-            holder=new ViewHolder();
+            holder = new ViewHolder();
 
-            holder.action_name= convertView.findViewById(R.id.ActionName);
-            holder.action_image= convertView.findViewById(R.id.AzioneImg);
-            holder.ingList= convertView.findViewById(R.id.IngList);
-            holder.stepN= convertView.findViewById(R.id.StepNumber);
-            holder.strumName= convertView.findViewById(R.id.textStrum);
+            holder.action_name = convertView.findViewById(R.id.ActionName);
+            holder.action_image = convertView.findViewById(R.id.AzioneImg);
+            holder.ingList = convertView.findViewById(R.id.IngList);
+            holder.stepN = convertView.findViewById(R.id.StepNumber);
+            holder.strumName = convertView.findViewById(R.id.textStrum);
 
-            StepPrep row=stepPreps.get(position);
+            StepPrep row = stepPreps.get(position);
 
-            holder.action_image.setImageResource(R.drawable.def_azione);
-            //row.getAzioneImg()
+            holder.action_image.setImageResource(row.getAzioneImg());
             holder.action_name.setText(row.getAzione());
             holder.ingList.setText(row.getIng());
-            holder.stepN.setText(String.valueOf(row.getStepNum()));
+            holder.stepN.setText(String.valueOf(row.getStepNum())+"/"+stepPreps.size());
             holder.strumName.setText(row.getStrumento());
+
         }
 
         return convertView;

@@ -89,7 +89,7 @@ public class MyHelper extends SQLiteOpenHelper {
         comando = "CREATE TABLE Azione (" +
                 "    id integer PRIMARY KEY," +
                 "    nome text NOT NULL," +
-                "    img integer default "+R.drawable.def_azione+"/*NOT NULL*/" +
+                "    img integer default "+R.drawable.ing_131+"/*NOT NULL*/" +
                 ");";
         db.execSQL(comando);
 

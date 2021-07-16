@@ -125,7 +125,8 @@ public class DbManager {
                     "JOIN Azione a ON a.id=p.fk_azione " +
                     "LEFT JOIN Ingrediente i  ON i.id=p.fk_ingrediente " +
                     "WHERE p.step=" + cont +
-                    " AND p.fk_cocktail=" + id;
+                    " AND p.fk_cocktail=" + id +
+                    " ORDER BY p.step";
 
             SQLiteDatabase db = helper.getReadableDatabase();
             Cursor c = db.rawQuery(query, null);

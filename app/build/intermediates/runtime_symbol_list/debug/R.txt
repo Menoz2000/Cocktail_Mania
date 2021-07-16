@@ -1706,7 +1706,6 @@ int drawable ckt_83 0x7f070068
 int drawable ckt_85 0x7f070069
 int drawable ckt_94 0x7f07006a
 int drawable custom_shape 0x7f07006b
-int drawable def_azione 0x7f0700d9
 int drawable design_fab_background 0x7f07006c
 int drawable design_ic_visibility 0x7f07006d
 int drawable design_ic_visibility_off 0x7f07006e
