@@ -16,7 +16,7 @@ public class MyHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String comando = "CREATE TABLE Cocktail (" +
-                "id integer PRIMARY KEY," +
+                "id integer primary key AUTOINCREMENT," +
                 "nome text NOT NULL," +
                 "fk_gradoAlcolico integer," +
                 "fk_origine integer," +

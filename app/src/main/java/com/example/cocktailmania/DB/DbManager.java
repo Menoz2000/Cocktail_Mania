@@ -51,7 +51,7 @@ public class DbManager {
     }
 
     public Cursor elencoCocktail() {
-        String query = "SELECT * FROM Cocktail C, GradoAlcolico G WHERE G.id=C.fk_gradoAlcolico ORDER BY nome";
+        String query = "SELECT * FROM Cocktail C, GradoAlcolico G WHERE G.id=C.fk_gradoAlcolico AND my_cocktail=0 ORDER BY nome";
 
         SQLiteDatabase db = helper.getReadableDatabase();
         return db.rawQuery(query, null);
@@ -106,7 +106,7 @@ public class DbManager {
         return ckt;
     }
 
-    public void addMyCocktail(){
+    public void addMyCocktail() {
                 /*"CREATE TABLE Cocktail (" +
                 "id integer PRIMARY KEY," +
                 "nome text NOT NULL," +
@@ -121,5 +121,8 @@ public class DbManager {
                 "FOREIGN KEY (fk_gradoAlcolico) REFERENCES GradoAlcolico(id)," +
                 "FOREIGN KEY (fk_tipo) REFERENCES TipoCocktail(id)" +
                 ");"*/
+
+
+
     }
 }
