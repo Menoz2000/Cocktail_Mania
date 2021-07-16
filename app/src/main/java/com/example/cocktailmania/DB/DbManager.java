@@ -105,4 +105,21 @@ public class DbManager {
 
         return ckt;
     }
+
+    public void addMyCocktail(){
+                /*"CREATE TABLE Cocktail (" +
+                "id integer PRIMARY KEY," +
+                "nome text NOT NULL," +
+                "fk_gradoAlcolico integer," +
+                "fk_origine integer," +
+                "fk_tipo integer," +
+                "preferito integer NOT NULL DEFAULT 0," +
+                "iconico integer NOT NULL DEFAULT 0," +
+                "my_cocktail integer NOT NULL DEFAULT 0," +
+                "img integer NOT NULL," +
+                "FOREIGN KEY (fk_origine) REFERENCES Origine(id)," +
+                "FOREIGN KEY (fk_gradoAlcolico) REFERENCES GradoAlcolico(id)," +
+                "FOREIGN KEY (fk_tipo) REFERENCES TipoCocktail(id)" +
+                ");"*/
+    }
 }
