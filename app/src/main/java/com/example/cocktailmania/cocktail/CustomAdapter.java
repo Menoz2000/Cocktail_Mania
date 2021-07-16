@@ -65,10 +65,11 @@ public class CustomAdapter extends BaseAdapter {
 
             StepPrep row=stepPreps.get(position);
 
-            holder.action_image.setImageResource(row.getAzioneImg());
+            holder.action_image.setImageResource(R.drawable.def_azione);
+            //row.getAzioneImg()
             holder.action_name.setText(row.getAzione());
             holder.ingList.setText(row.getIng());
-            holder.stepN.setText(row.getStepNum());
+            holder.stepN.setText(String.valueOf(row.getStepNum()));
             holder.strumName.setText(row.getStrumento());
         }
 

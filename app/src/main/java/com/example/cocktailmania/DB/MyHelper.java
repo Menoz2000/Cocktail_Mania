@@ -89,7 +89,7 @@ public class MyHelper extends SQLiteOpenHelper {
         comando = "CREATE TABLE Azione (" +
                 "    id integer PRIMARY KEY," +
                 "    nome text NOT NULL," +
-                "    img integer /*NOT NULL*/" +
+                "    img integer default "+R.drawable.def_azione+"/*NOT NULL*/" +
                 ");";
         db.execSQL(comando);
 
@@ -259,6 +259,8 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(6, 'Frizzante')," +
                 "(7, 'Martini');";
         db.execSQL(insert);
+
+
 
         insert = "INSERT INTO Azione (id, nome)" +
                 "VALUES (1, 'Aggiungi')," +
