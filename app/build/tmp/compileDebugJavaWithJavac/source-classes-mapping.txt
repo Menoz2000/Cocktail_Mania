@@ -40,5 +40,3 @@ com/example/cocktailmania/cocktail/CocktailModule.java
  com.example.cocktailmania.cocktail.CocktailModule
 com/example/cocktailmania/cocktail/CustomAdapter.java
  com.example.cocktailmania.cocktail.CustomAdapter
- com.example.cocktailmania.cocktail.CustomAdapter$1
- com.example.cocktailmania.cocktail.CustomAdapter$ViewHolder
