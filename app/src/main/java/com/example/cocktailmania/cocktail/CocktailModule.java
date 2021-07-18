@@ -29,6 +29,11 @@ public class CocktailModule extends AppCompatActivity {
             ArrayList<StepPrep> stepPrep = db.getPrepCkt(cktN);
             CocktailElem ckt = db.getSingleCocktail(cktN);
 
+            for(int i=0;i<stepPrep.size();i++){
+                System.out.println(stepPrep.get(i).toString());
+            }
+
+
             //passaggio dei dati alla grafica
             TextView textView = findViewById(R.id.CktName);
             textView.setText(ckt.getNome());

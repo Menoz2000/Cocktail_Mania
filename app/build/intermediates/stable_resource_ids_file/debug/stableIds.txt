@@ -151,6 +151,7 @@ com.example.cocktailmania:styleable/TextAppearance = 0x7f11007a
 com.example.cocktailmania:style/Widget.AppCompat.PopupWindow = 0x7f100240
 com.example.cocktailmania:styleable/StateListDrawableItem = 0x7f110074
 com.example.cocktailmania:style/Base.Theme.AppCompat.CompactMenu = 0x7f100048
+com.example.cocktailmania:id/init = 0x7f0801c6
 com.example.cocktailmania:dimen/mtrl_btn_disabled_elevation = 0x7f0600d5
 com.example.cocktailmania:style/Widget.AppCompat.ListPopupWindow = 0x7f10023a
 com.example.cocktailmania:dimen/mtrl_calendar_header_divider_thickness = 0x7f0600fa

@@ -128,15 +128,20 @@ public class CocktailElem implements Parcelable {
         this.my_cocktail = my_cocktail;
     }
 
-    /*@Override
+    @Override
     public String toString() {
         return "CocktailElem{" +
                 "id=" + id +
-                ", img=" + img +
                 ", nome='" + nome + '\'' +
-                ", gradoAlcolico=" + fk_gradoAlcolico +
-                '}';
-    }*/
+                ", fk_gradoAlcolico='" + fk_gradoAlcolico + '\'' +
+                ", fk_origine='" + fk_origine + '\'' +
+                ", fk_tipo='" + fk_tipo + '\'' +
+                ", preferito=" + preferito +
+                ", iconico=" + iconico +
+                ", my_cocktail=" + my_cocktail +
+                ", img=" + img +
+                "}/n";
+    }
 
     @Override
     public int describeContents() {

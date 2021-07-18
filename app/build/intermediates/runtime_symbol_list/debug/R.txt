@@ -2029,6 +2029,7 @@ int id info 0x7f0800d2
 int id ingRv 0x7f0800d3
 int id ingSottotitolo 0x7f0800d4
 int id ingredientiButton 0x7f0800d5
+int id init 0x7f0801c6
 int id invisible 0x7f0800d6
 int id inward 0x7f0800d7
 int id italic 0x7f0800d8
