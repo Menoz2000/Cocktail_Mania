@@ -1,12 +1,11 @@
 package com.example.cocktailmania.cocktail;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
@@ -52,7 +51,7 @@ public class CocktailModule extends AppCompatActivity {
             textView2.setText(ckt.getFk_origine());
 
             //ListView con gli step delle preparazioni
-            listView=(ListView)findViewById(R.id.StepPrep);
+            listView= findViewById(R.id.StepPrep);
             CustomAdapter arrayAdapter = new CustomAdapter(this, stepPrep);
             listView.setAdapter(arrayAdapter);
 

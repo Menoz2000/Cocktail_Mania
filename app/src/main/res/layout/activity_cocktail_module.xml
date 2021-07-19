@@ -1,65 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?><!-- Parte in cui non scorre fino in fondo: arriva fino allo step 4 -->
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/init"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:isScrollContainer="false"
-    android:orientation="vertical"
-    tools:context=".cocktail.CocktailModule">
+    android:fillViewport="true">
 
-
-    <ScrollView
-        android:id="@+id/init"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/CktName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_gravity="center|center_vertical"
+            android:text=""
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/CktName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|center_vertical"
-                android:text=""
-                android:textSize="28sp"
-                android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center" />
 
-            <ImageView
-                android:id="@+id/img"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center" />
+        <TextView
+            android:id="@+id/AlcolicGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_vertical"
+            android:text="" />
 
-            <TextView
-                android:id="@+id/AlcolicGrade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|center_vertical"
-                android:text="" />
+        <TextView
+            android:id="@+id/CktOrigin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="" />
 
-            <TextView
-                android:id="@+id/CktOrigin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="" />
+        <ListView
+            android:id="@+id/StepPrep"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:fillViewport="true"
+            android:scrollingCache="false" />
 
-            <ListView
-                android:id="@+id/StepPrep"
-                android:layout_width="match_parent"
-                android:layout_height="450dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:scrollingCache="false" />
-
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
 
 
     <!-- Parte in cui fa casino con i dati (mescola gli step) nel CustomAdapter iniziale
