@@ -8,7 +8,7 @@
     <item
         android:id="@+id/cocktailButton"
         android:title="@string/cocktail"
-        android:icon="@drawable/ic_baseline_two_wheeler_24"/>
+        android:icon="@drawable/ic_cocktail"/>
     <item
         android:id="@+id/ingredientiButton"
         android:title="@string/ingredienti"

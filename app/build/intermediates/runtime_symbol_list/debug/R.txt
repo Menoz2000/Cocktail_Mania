@@ -1714,8 +1714,8 @@ int drawable design_snackbar_background 0x7f070070
 int drawable ic_baseline_branding_watermark_24 0x7f070071
 int drawable ic_baseline_home_24 0x7f070072
 int drawable ic_baseline_turned_in_24 0x7f070073
-int drawable ic_baseline_two_wheeler_24 0x7f070074
 int drawable ic_clock_black_24dp 0x7f070075
+int drawable ic_cocktail 0x7f0700d9
 int drawable ic_keyboard_black_24dp 0x7f070076
 int drawable ic_launcher_background 0x7f070077
 int drawable ic_launcher_foreground 0x7f070078

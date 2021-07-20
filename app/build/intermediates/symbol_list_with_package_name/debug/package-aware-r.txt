@@ -1715,8 +1715,8 @@ drawable design_snackbar_background
 drawable ic_baseline_branding_watermark_24
 drawable ic_baseline_home_24
 drawable ic_baseline_turned_in_24
-drawable ic_baseline_two_wheeler_24
 drawable ic_clock_black_24dp
+drawable ic_cocktail
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
