@@ -66,7 +66,7 @@ public class DbManager {
         String query = "SELECT C.id,C.nome,G.gradazione,O.nazione,T.nome,C.preferito,C.iconico,C.my_cocktail,C.img " +
                 "FROM Cocktail C " +
                 "LEFT JOIN GradoAlcolico G ON G.id=C.fk_gradoAlcolico " +
-                "LEFT JOIN Origine O ON O.id=C.fk_gradoAlcolico " +
+                "LEFT JOIN Origine O ON O.id=C.fk_origine " +
                 "LEFT JOIN TipoCocktail T ON T.id=C.fk_tipo " +
                 "WHERE C.id=" + id;
 

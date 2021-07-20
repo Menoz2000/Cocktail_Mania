@@ -41,7 +41,7 @@ public class StepPrep {
     }
 
     public void setIng(String ing) {
-        this.ing = ing;
+        this.ing = "-" + ing;
     }
 
     public String getAzione() {
@@ -69,7 +69,7 @@ public class StepPrep {
     }
 
     public void addIng(String ing) {
-        this.ing = this.ing + " /n " + ing;
+        this.ing = this.ing + "\n" + "-" + ing;
     }
 
     @Override

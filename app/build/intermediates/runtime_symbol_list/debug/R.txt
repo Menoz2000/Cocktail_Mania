@@ -2551,6 +2551,7 @@ int string path_password_eye 0x7f0f0067
 int string path_password_eye_mask_strike_through 0x7f0f0068
 int string path_password_eye_mask_visible 0x7f0f0069
 int string path_password_strike_through 0x7f0f006a
+int string prova 0x7f0f006d
 int string search_menu_title 0x7f0f006b
 int string status_bar_notification_info_overflow 0x7f0f006c
 int style AlertDialog_AppCompat 0x7f100000

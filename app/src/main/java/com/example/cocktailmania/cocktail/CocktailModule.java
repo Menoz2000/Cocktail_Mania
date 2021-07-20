@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class CocktailModule extends AppCompatActivity {
 
     private static final String TAG = "CocktailModule";
-    private DbManager db = new DbManager(this);
+    private final DbManager db = new DbManager(this);
     ListView listView;
 
     @Override
@@ -28,10 +28,10 @@ public class CocktailModule extends AppCompatActivity {
             ArrayList<StepPrep> stepPrep = db.getPrepCkt(cktN);
             CocktailElem ckt = db.getSingleCocktail(cktN);
 
-            for(int i=0;i<stepPrep.size();i++){
+            /*
+            for (int i = 0; i < stepPrep.size(); i++) {
                 System.out.println(stepPrep.get(i).toString());
-            }
-
+            }*/
 
             //passaggio dei dati alla grafica
             TextView textView = findViewById(R.id.CktName);
@@ -48,12 +48,17 @@ public class CocktailModule extends AppCompatActivity {
             textView1.setText(String.valueOf(ckt.getFk_gradoAlcolico()));
 
             TextView textView2 = findViewById(R.id.CktOrigin);
-            textView2.setText(ckt.getFk_origine());
+            if (ckt.getFk_origine() != null) {
+                textView2.setText(ckt.getFk_origine());
+            } else {
+                textView2.setVisibility(TextView.GONE);
+            }
 
             //ListView con gli step delle preparazioni
-            listView= findViewById(R.id.StepPrep);
+            listView = findViewById(R.id.StepPrep);
             CustomAdapter arrayAdapter = new CustomAdapter(this, stepPrep);
             listView.setAdapter(arrayAdapter);
+
 
         }
     }
