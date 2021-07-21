@@ -41,7 +41,12 @@ public class StepPrep {
     }
 
     public void setIng(String ing) {
-        this.ing = "-" + ing;
+        if(ing==null){
+            this.ing = ing;
+        }else{
+            this.ing = "-" + ing;
+        }
+
     }
 
     public String getAzione() {

@@ -105,6 +105,11 @@ public class CustomAdapter extends ArrayAdapter<StepPrep> {
 
         action_image.setImageResource(sp.getAzioneImg());
         action_name.setText(sp.getAzione());
+        /*if (sp.getIng() != "-null") {
+            ingList.setText(sp.getIng());
+        } else {
+            ingList.setText("");
+        }*/
         ingList.setText(sp.getIng());
         stepN.setText(String.valueOf(sp.getStepNum()) /*+ "/" + stepPreps.size()*/);
         sName.setText(sp.getStrumento());

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,16 +45,15 @@
                 android:text="@string/prova" />
         </LinearLayout>
 
-        <com.example.cocktailmania.cocktail.ExpandableHeightListView
+        <com.example.cocktailmania.NonScrollListView
             android:id="@+id/StepPrep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:fillViewport="true"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:scrollingCache="false" />
+            android:orientation="vertical" />
 
     </LinearLayout>
 </ScrollView>
