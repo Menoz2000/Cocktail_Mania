@@ -1714,8 +1714,8 @@ int drawable design_snackbar_background 0x7f070070
 int drawable ic_baseline_branding_watermark_24 0x7f070071
 int drawable ic_baseline_home_24 0x7f070072
 int drawable ic_baseline_turned_in_24 0x7f070073
-int drawable ic_clock_black_24dp 0x7f070075
-int drawable ic_cocktail 0x7f0700d9
+int drawable ic_clock_black_24dp 0x7f070074
+int drawable ic_cocktail 0x7f070075
 int drawable ic_keyboard_black_24dp 0x7f070076
 int drawable ic_launcher_background 0x7f070077
 int drawable ic_launcher_foreground 0x7f070078
@@ -2551,9 +2551,9 @@ int string path_password_eye 0x7f0f0067
 int string path_password_eye_mask_strike_through 0x7f0f0068
 int string path_password_eye_mask_visible 0x7f0f0069
 int string path_password_strike_through 0x7f0f006a
-int string prova 0x7f0f006d
-int string search_menu_title 0x7f0f006b
-int string status_bar_notification_info_overflow 0x7f0f006c
+int string prova 0x7f0f006b
+int string search_menu_title 0x7f0f006c
+int string status_bar_notification_info_overflow 0x7f0f006d
 int style AlertDialog_AppCompat 0x7f100000
 int style AlertDialog_AppCompat_Light 0x7f100001
 int style AndroidThemeColorAccentYellow 0x7f100002
