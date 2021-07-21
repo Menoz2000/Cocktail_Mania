@@ -15,7 +15,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
-            android:text="@string/prova"
             android:textSize="28sp"
             android:textStyle="bold" />
 
@@ -45,7 +44,7 @@
                 android:text="@string/prova" />
         </LinearLayout>
 
-        <ListView
+        <com.example.cocktailmania.cocktail.ExpandableHeightListView
             android:id="@+id/StepPrep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -1,8 +1,10 @@
 package com.example.cocktailmania.cocktail;
 
 import android.os.Bundle;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +18,7 @@ public class CocktailModule extends AppCompatActivity {
 
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
-    ListView listView;
+    ExpandableHeightListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +56,14 @@ public class CocktailModule extends AppCompatActivity {
                 textView2.setVisibility(TextView.GONE);
             }
 
+
+
             //ListView con gli step delle preparazioni
             listView = findViewById(R.id.StepPrep);
             CustomAdapter arrayAdapter = new CustomAdapter(this, stepPrep);
             listView.setAdapter(arrayAdapter);
+
+            listView.setExpanded(true);
 
 
         }
