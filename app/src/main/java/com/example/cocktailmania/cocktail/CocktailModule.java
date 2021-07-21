@@ -64,8 +64,7 @@ public class CocktailModule extends AppCompatActivity {
             listView = findViewById(R.id.StepPrep);
             CustomAdapter arrayAdapter = new CustomAdapter(this, stepPrep);
             listView.setAdapter(arrayAdapter);
-
-            //listView.setExpanded(true);
+            listView.setFocusable(false);
 
 
         }

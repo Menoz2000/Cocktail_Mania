@@ -6,14 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".book.BookActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/book"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -27,6 +20,9 @@
 
         app:layout_constraintStart_toStartOf="parent"
 
-        app:menu="@menu/bottom_menu" />
+        app:menu="@menu/bottom_menu" >
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

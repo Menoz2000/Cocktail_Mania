@@ -2100,6 +2100,7 @@ int id mtrl_picker_text_input_range_start 0x7f080119
 int id mtrl_picker_title_text 0x7f08011a
 int id mtrl_view_tag_bottom_padding 0x7f08011b
 int id multiply 0x7f08011c
+int id myCkt 0x7f0801c9
 int id navigaButton 0x7f08011d
 int id navigation_bar_item_icon_view 0x7f08011e
 int id navigation_bar_item_labels_group 0x7f08011f
@@ -2110,6 +2111,7 @@ int id never 0x7f080123
 int id noScroll 0x7f080124
 int id none 0x7f080125
 int id normal 0x7f080126
+int id note 0x7f0801ca
 int id notification_background 0x7f080127
 int id notification_main_column 0x7f080128
 int id notification_main_column_container 0x7f080129
@@ -2131,6 +2133,7 @@ int id percent 0x7f080138
 int id pin 0x7f080139
 int id position 0x7f08013a
 int id postLayout 0x7f08013b
+int id preferiti 0x7f0801cb
 int id progressBar 0x7f08013c
 int id progress_circular 0x7f08013d
 int id progress_horizontal 0x7f08013e

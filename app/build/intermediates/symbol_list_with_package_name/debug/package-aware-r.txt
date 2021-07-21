@@ -2101,6 +2101,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id myCkt
 id navigaButton
 id navigation_bar_item_icon_view
 id navigation_bar_item_labels_group
@@ -2111,6 +2112,7 @@ id never
 id noScroll
 id none
 id normal
+id note
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -2132,6 +2134,7 @@ id percent
 id pin
 id position
 id postLayout
+id preferiti
 id progressBar
 id progress_circular
 id progress_horizontal
