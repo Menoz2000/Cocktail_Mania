@@ -1,11 +1,7 @@
 package com.example.cocktailmania.cocktail;
 
 import android.os.Bundle;
-import android.widget.ExpandableListView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +16,7 @@ public class CocktailModule extends AppCompatActivity {
 
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
-    NonScrollListView listView;
+    NonScrollListView SteplistView, IngListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +26,7 @@ public class CocktailModule extends AppCompatActivity {
         if (getIntent().hasExtra("selected_ckt")) {
             int cktN = getIntent().getIntExtra("selected_ckt", 0);
             ArrayList<StepPrep> stepPrep = db.getPrepCkt(cktN);
+            ArrayList<IngRow> ingredients = db.getIngredients(cktN);
             CocktailElem ckt = db.getSingleCocktail(cktN);
 
             /*
@@ -58,13 +55,18 @@ public class CocktailModule extends AppCompatActivity {
                 textView2.setVisibility(TextView.GONE);
             }
 
+            //NonScrollListView con gli ingredienti necessari
+            IngListView = findViewById(R.id.IngredientList);
+            IngredientCustomAdapter iAdapter = new IngredientCustomAdapter(this, ingredients);
+            IngListView.setAdapter(iAdapter);
+            IngListView.setFocusable(false);
 
 
-            //ListView con gli step delle preparazioni
-            listView = findViewById(R.id.StepPrep);
-            CustomAdapter arrayAdapter = new CustomAdapter(this, stepPrep);
-            listView.setAdapter(arrayAdapter);
-            listView.setFocusable(false);
+            //NonScrollListView con gli step delle preparazioni
+            SteplistView = findViewById(R.id.StepPrep);
+            StepCustomAdapter arrayAdapter = new StepCustomAdapter(this, stepPrep);
+            SteplistView.setAdapter(arrayAdapter);
+            SteplistView.setFocusable(false);
 
 
         }

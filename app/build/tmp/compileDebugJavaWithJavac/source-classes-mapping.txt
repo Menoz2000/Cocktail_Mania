@@ -4,8 +4,12 @@ com/example/cocktailmania/NonScrollListView.java
  com.example.cocktailmania.NonScrollListView
 com/example/cocktailmania/DB/DbManager.java
  com.example.cocktailmania.DB.DbManager
+com/example/cocktailmania/cocktail/IngRow.java
+ com.example.cocktailmania.cocktail.IngRow
 com/example/cocktailmania/book/BookActivity.java
  com.example.cocktailmania.book.BookActivity
+com/example/cocktailmania/cocktail/IngredientCustomAdapter.java
+ com.example.cocktailmania.cocktail.IngredientCustomAdapter
 com/example/cocktailmania/BuildConfig.java
  com.example.cocktailmania.BuildConfig
 com/example/cocktailmania/naviga/start.java
@@ -23,6 +27,8 @@ com/example/cocktailmania/cocktail/CocktailAdapter.java
  com.example.cocktailmania.cocktail.CocktailAdapter$1
  com.example.cocktailmania.cocktail.CocktailAdapter$OnCktListener
  com.example.cocktailmania.cocktail.CocktailAdapter$ViewHolder
+com/example/cocktailmania/cocktail/StepCustomAdapter.java
+ com.example.cocktailmania.cocktail.StepCustomAdapter
 com/example/cocktailmania/cocktail/CocktailElem.java
  com.example.cocktailmania.cocktail.CocktailElem
  com.example.cocktailmania.cocktail.CocktailElem$1
@@ -32,8 +38,6 @@ com/example/cocktailmania/DB/MyHelper.java
  com.example.cocktailmania.DB.MyHelper
 com/example/cocktailmania/cocktail/CocktailModule.java
  com.example.cocktailmania.cocktail.CocktailModule
-com/example/cocktailmania/cocktail/CustomAdapter.java
- com.example.cocktailmania.cocktail.CustomAdapter
 com/example/cocktailmania/ingredient/IngredientAdapter.java
  com.example.cocktailmania.ingredient.IngredientAdapter
  com.example.cocktailmania.ingredient.IngredientAdapter$1

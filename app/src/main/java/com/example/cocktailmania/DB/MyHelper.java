@@ -52,10 +52,11 @@ public class MyHelper extends SQLiteOpenHelper {
         db.execSQL(comando);
 
 
-        /*comando = "CREATE TABLE Composizione (" +
+        comando = "CREATE TABLE Composizione (" +
                 "fk_cocktail integer," +
                 "fk_ingrediente integer," +
-                "quantita," +
+                "quantita real," +
+                "unita_misura text," +
                 "PRIMARY KEY(fk_cocktail, fk_ingrediente)," +
                 "FOREIGN KEY (fk_cocktail) REFERENCES Cocktail(id)," +
                 "FOREIGN KEY (fk_ingrediente) REFERENCES Ingrediente(id)" +
@@ -63,7 +64,7 @@ public class MyHelper extends SQLiteOpenHelper {
         db.execSQL(comando);
 
 
-        comando = "CREATE TABLE Procurare (" +
+         /*comando = "CREATE TABLE Procurare (" +
                 "fk_cocktail integer," +
                 "fk_strumento integer," +
                 "PRIMARY KEY (fk_cocktail, fk_strumento)," +
@@ -89,7 +90,7 @@ public class MyHelper extends SQLiteOpenHelper {
         comando = "CREATE TABLE Azione (" +
                 "    id integer PRIMARY KEY," +
                 "    nome text NOT NULL," +
-                "    img integer default "+R.drawable.ing_131+"/*NOT NULL*/" +
+                "    img integer default " + R.drawable.ing_131 + "/*NOT NULL*/" +
                 ");";
         db.execSQL(comando);
 
@@ -102,7 +103,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(comando);
 
-        comando="CREATE TABLE Preparazione (" +
+        comando = "CREATE TABLE Preparazione (" +
                 "    id integer PRIMARY KEY AUTOINCREMENT," +
                 "    fk_cocktail integer NOT NULL," +
                 "    fk_ingrediente integer," +
@@ -155,11 +156,11 @@ public class MyHelper extends SQLiteOpenHelper {
         insert = "INSERT INTO Ingrediente (id, nome, grado_alcolico, img)" +
                 "VALUES (71, 'Salsa Worcestershire', 0, " + R.drawable.ing_71 + ")," +
                 "(77, 'Sciroppo di frutto della passione', 0, " + R.drawable.ing_77 + ")," +
-                "(80, 'Sedano', 0, " + R.drawable.ing_80 + "),"+
+                "(80, 'Sedano', 0, " + R.drawable.ing_80 + ")," +
                 "(110, 'Caffé', 0, " + R.drawable.ing_110 + ")," +
                 "(125, 'Ginger', 0, " + R.drawable.ing_125 + ")," +
                 "(130, 'Lime', 0, " + R.drawable.ing_130 + ")," +
-                "(131, 'Limone', 0, " + R.drawable.ing_131 + "),"+
+                "(131, 'Limone', 0, " + R.drawable.ing_131 + ")," +
                 "(138, 'Liquore di pesca', 20, " + R.drawable.ing_138 + ")," +
                 "(147, 'Pepe', 0, " + R.drawable.ing_147 + ")," +
                 "(157, 'Sale', 0, " + R.drawable.ing_157 + ")," +
@@ -261,7 +262,6 @@ public class MyHelper extends SQLiteOpenHelper {
         db.execSQL(insert);
 
 
-
         insert = "INSERT INTO Azione (id, nome)" +
                 "VALUES (1, 'Aggiungi')," +
                 "(2, 'Agita Bene')," +
@@ -278,7 +278,7 @@ public class MyHelper extends SQLiteOpenHelper {
         db.execSQL(insert);
 
         insert = "INSERT INTO Strumento (id, nome, descrizione, capacita, img)\n" +
-                "VALUES (3, 'Bicchiere Da Irish Coffee', 'Il bicchiere da Irish coffee è un bicchiere molto resistente e adatto a sopportare alte temperature. Puoi usarlo infatti per servire i classici hot drink come appunto l''Irish coffee.', '130 ml', "+ R.drawable.strum_3 + ")," +
+                "VALUES (3, 'Bicchiere Da Irish Coffee', 'Il bicchiere da Irish coffee è un bicchiere molto resistente e adatto a sopportare alte temperature. Puoi usarlo infatti per servire i classici hot drink come appunto l''Irish coffee.', '130 ml', " + R.drawable.strum_3 + ")," +
                 "(5, 'Bicchiere Da Margarita', 'Come dice il suo nome, questo bicchiere è stato inventato appositamente per il drink da cui prende il nome anche se puoi utilizzarlo per servire un''ampia gamma di frozen drink.', '330 ml', " + R.drawable.strum_5 + ")," +
                 "(9, 'Bicchiere Da Sherry', 'Questo bicchierino dotato di stelo e dalla capacità limitata è l''ideale se vuoi sorseggiare uno Sherry oppure se vuoi sstupire tutti preparando il famoso Brain Hemorrhage, uno scenografico cocktail.', '90 ml', " + R.drawable.strum_9 + ")," +
                 "(19, 'Doppio Old Fashion', 'Il doppio old fashion fa parte della categoria de Tumbler e viene chiamato anche doppio on-the-rocks perché potrai utilizzarlo per gustare drink a base di liquori con molto ghiaccio.', '350-440 ml', " + R.drawable.strum_19 + ")," +
@@ -296,7 +296,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(39, 'Stir', 'È un cucchiaino lungo che ti tornerà utile in diverse occasioni come ad esempio mescolare i cocktails che non vanno shakerati (ha anche una spirale intorno alla lunghezza del manico, per facilitare la mescolatura), versare lo zucchero, pestare lo zucchero o altri ingredienti in un cocktail utilizzando il Muddler (il pestello) che si trova dalla parte opposta al cucchiaio e mescolare la base pestata in un cocktail.', " + R.drawable.strum_39 + ");";
         db.execSQL(insert);
 
-        insert="INSERT INTO Preparazione (fk_cocktail, fk_ingrediente, fk_strumento, step, fk_azione)" +
+        insert = "INSERT INTO Preparazione (fk_cocktail, fk_ingrediente, fk_strumento, step, fk_azione)" +
                 "VALUES (2, 126, 10, 1, 12)," +
                 "(2, 180, 10, 2, 12)," +
                 "(2, 13, 10, 3, 12)," +
@@ -312,11 +312,71 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(37, 80, 22, 6, 5);";
         db.execSQL(insert);
 
-        insert="INSERT INTO Preparazione (fk_cocktail, fk_strumento, step, fk_azione)" +
+        insert = "INSERT INTO Preparazione (fk_cocktail, fk_strumento, step, fk_azione)" +
                 "VALUES (37, 39, 5, 8);";
         db.execSQL(insert);
 
+        insert="INSERT INTO Composizione (fk_cocktail, fk_ingrediente, quantita, unita_misura)" +
+                "VALUES (2, 13, 1, 'parte')," +
+                "(2, 126, 1, 'parte')," +
+                "(2, 180, 1, 'parte')," +
+                "(37, 167, 1, 'parte')," +
+                "(37, 171, 6, 'parte')," +
+                "(37, 71, 2, 'spruzzo')," +
+                "(37, 158, 1, 'spruzzo')," +
+                "(37, 147, 1, 'pizzico')," +
+                "(37, 157, 1, 'pizzico')," +
+                "(37, 180, 3, 'parte')," +
+                "(46, 15, 2, 'parte')," +
+                "(46, 130, 4, 'pezzo')," +
+                "(46, 184, 2, 'cucchi.')," +
+                "(65, 123, 4.5, 'parte')," +
+                "(65, 167, 3, 'parte')," +
+                "(65, 101, 8, 'parte')," +
+                "(65, 73, 1, 'parte')," +
+                "(66, 123, 1, 'parte')," +
+                "(66, 175, 2, 'parte')," +
+                "(71, 42, 2, 'parte')," +
+                "(71, 186, 1, 'cucchi.')," +
+                "(71, 110, 4.5, 'parte')," +
+                "(71, 145, 1.5, 'parte')," +
+                "(81, 174, 1.75, 'parte')," +
+                "(81, 20, 1, 'parte')," +
+                "(81, 166, 0.75, 'parte')," +
+                "(83, 153, 2, 'parte')," +
+                "(83, 184, 2, 'cucchi.')," +
+                "(83, 166, 1.5, 'parte')," +
+                "(83, 101, 3, 'parte')," +
+                "(83, 120, 6, 'pezzo')," +
+                "(85, 166, 0.25, 'parte')," +
+                "(85, 125, 6, 'parte')," +
+                "(85, 180, 2.25, 'parte')," +
+                "(94, 180, 2, 'parte')," +
+                "(94, 138, 1, 'parte')," +
+                "(94, 126, 1, 'spruzzo')," +
+                "(94, 163, 2, 'parte')," +
+                "(94, 169, 2, 'parte')," +
+                "(104, 156, 4, 'parte')," +
+                "(104, 153, 4, 'parte')," +
+                "(104, 57, 4, 'parte')," +
+                "(104, 167, 2, 'parte')," +
+                "(104, 166, 2, 'parte')," +
+                "(104, 163, 6, 'parte')," +
+                "(104, 77, 2, 'parte')," +
+                "(104, 126, 1, 'parte')," +
+                "(104, 4, 2, 'spruzzo');";
+        db.execSQL(insert);
 
-
+        insert="INSERT INTO Composizione (fk_cocktail, fk_ingrediente)" +
+                "VALUES (37, 122)," +
+                "(46, 122)," +
+                "(65, 122)," +
+                "(66, 122)," +
+                "(81, 122)," +
+                "(83, 122)," +
+                "(85, 122)," +
+                "(94, 122)," +
+                "(104, 122);";
+        db.execSQL(insert);
     }
 }

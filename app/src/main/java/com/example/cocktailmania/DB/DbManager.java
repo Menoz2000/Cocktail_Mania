@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.cocktailmania.cocktail.CocktailElem;
+import com.example.cocktailmania.cocktail.IngRow;
 import com.example.cocktailmania.cocktail.StepPrep;
 import com.example.cocktailmania.ingredient.IngredientElem;
 
@@ -176,4 +177,57 @@ public class DbManager {
         return arrStepPrep;
 
     }
+
+    public ArrayList<IngRow> getIngredients(int id) {
+
+        int cont = 1;
+        IngRow ing;
+        ArrayList<IngRow> arrIng = new ArrayList<>();
+
+        while (true) {
+
+            String query = "SELECT c.quantita, c.unita_misura, i.nome " +
+                    "FROM Ingrediente i " +
+                    "JOIN Composizione c ON i.id=c.fk_ingrediente " +
+                    "WHERE c.fk_cocktail=" + id;
+
+            SQLiteDatabase db = helper.getReadableDatabase();
+            Cursor c = db.rawQuery(query, null);
+
+
+            //System.out.println("sono qua");
+            if (c != null) {
+                //System.out.println("sono qua");
+                if (c.moveToFirst()) {
+
+                    //System.out.println("sono qua");
+                    ing = new IngRow();
+
+                    do {
+
+                        ing.setQuantita(c.getDouble(0));
+                        ing.setUnita_misura(c.getString(1));
+                        ing.setIngName(c.getString(2));
+
+                    } while (c.moveToNext());
+
+                } else {
+                    break;
+                }
+
+
+            } else {
+                break;
+            }
+            c.close();
+
+            cont++;
+            arrIng.add(ing);
+        }
+
+        return arrIng;
+
+    }
 }
+
+

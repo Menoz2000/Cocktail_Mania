@@ -41,9 +41,9 @@ public class StepPrep {
     }
 
     public void setIng(String ing) {
-        if(ing==null){
+        if (ing == null) {
             this.ing = ing;
-        }else{
+        } else {
             this.ing = "-" + ing;
         }
 

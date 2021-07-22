@@ -1000,6 +1000,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color border_color
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1167,6 +1168,8 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color sfumatura1_ing
+color sfumatura2_ing
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1767,6 +1770,7 @@ drawable ing_73
 drawable ing_77
 drawable ing_80
 drawable ing_90
+drawable ingrediet_custom_shape
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1827,8 +1831,11 @@ id CktName
 id CktOrigin
 id FUNCTION
 id IngList
+id IngText
+id IngredientList
 id META
 id NO_DEBUG
+id QuantityIng
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -1838,6 +1845,7 @@ id StepNumber
 id StepPrep
 id TOP_END
 id TOP_START
+id UnityIng
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2101,7 +2109,6 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
-id myCkt
 id navigaButton
 id navigation_bar_item_icon_view
 id navigation_bar_item_labels_group
@@ -2112,7 +2119,6 @@ id never
 id noScroll
 id none
 id normal
-id note
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -2134,7 +2140,6 @@ id percent
 id pin
 id position
 id postLayout
-id preferiti
 id progressBar
 id progress_circular
 id progress_horizontal
@@ -2365,6 +2370,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout ingredient_row
 layout list_row
 layout material_chip_input_combo
 layout material_clock_display
@@ -2449,6 +2455,7 @@ menu search_bar
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+string PrepTitle
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

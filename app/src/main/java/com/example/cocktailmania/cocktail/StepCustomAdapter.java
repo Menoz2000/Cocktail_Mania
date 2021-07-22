@@ -1,12 +1,10 @@
 package com.example.cocktailmania.cocktail;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -80,11 +78,11 @@ private class ViewHolder {
     }
 }*/
 
-public class CustomAdapter extends ArrayAdapter<StepPrep> {
+public class StepCustomAdapter extends ArrayAdapter<StepPrep> {
     Context context;
     List<StepPrep> stepPreps;
 
-    public CustomAdapter(Context context, List<StepPrep> stepPreps) {
+    public StepCustomAdapter(Context context, List<StepPrep> stepPreps) {
         super(context, 0, stepPreps);
     }
 
