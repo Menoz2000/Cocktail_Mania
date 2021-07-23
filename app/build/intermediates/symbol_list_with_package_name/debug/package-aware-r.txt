@@ -1729,6 +1729,8 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_open_book
 drawable ic_search
 drawable ing_101
+drawable ing_102
+drawable ing_103
 drawable ing_110
 drawable ing_12
 drawable ing_120
@@ -2028,6 +2030,7 @@ id homeAsUp
 id honorRequest
 id icon
 id icon_group
+id idIng
 id ifRoom
 id ignore
 id ignoreRequest

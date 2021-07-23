@@ -16,6 +16,13 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/idIng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/QuantityIng"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

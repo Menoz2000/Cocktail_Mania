@@ -196,6 +196,10 @@
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_55.webp"
     },
     {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_102.png.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_102.png"
+    },
+    {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_4.jpg.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_4.jpg"
     },
@@ -326,6 +330,10 @@
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_175.png.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_175.png"
+    },
+    {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_103.png.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_103.png"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_alcohol.xml.flat",

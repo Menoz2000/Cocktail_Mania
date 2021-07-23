@@ -55,7 +55,7 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <com.example.cocktailmania.NonScrollListView
+        <com.example.cocktailmania.utility.NonScrollListView
             android:id="@+id/IngredientList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <com.example.cocktailmania.NonScrollListView
+        <com.example.cocktailmania.utility.NonScrollListView
             android:id="@+id/StepPrep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

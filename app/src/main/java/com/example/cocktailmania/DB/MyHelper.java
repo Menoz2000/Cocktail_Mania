@@ -63,18 +63,6 @@ public class MyHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(comando);
 
-
-         /*comando = "CREATE TABLE Procurare (" +
-                "fk_cocktail integer," +
-                "fk_strumento integer," +
-                "PRIMARY KEY (fk_cocktail, fk_strumento)," +
-                "FOREIGN KEY (fk_cocktail) REFERENCES Cocktail (id)," +
-                "FOREIGN KEY (fk_strumento) REFERENCES Strumento(id)" +
-                ");";
-        db.execSQL(comando);
-
-
-        */
         comando = "CREATE TABLE Origine (" +
                 "id integer PRIMARY KEY," +
                 "nazione text NOT NULL" +
@@ -114,6 +102,15 @@ public class MyHelper extends SQLiteOpenHelper {
                 "    FOREIGN KEY (fk_ingrediente) REFERENCES Ingrediente(id)," +
                 "    FOREIGN KEY (fk_strumento) REFERENCES Strumento(id)," +
                 "    FOREIGN KEY (fk_azione) REFERENCES Azione(id)" +
+                ");";
+        db.execSQL(comando);
+
+        comando = "CREATE TABLE Procurare (" +
+                "fk_cocktail integer," +
+                "fk_strumento integer," +
+                "PRIMARY KEY (fk_cocktail, fk_strumento)," +
+                "FOREIGN KEY (fk_cocktail) REFERENCES Cocktail (id)," +
+                "FOREIGN KEY (fk_strumento) REFERENCES Strumento(id)" +
                 ");";
         db.execSQL(comando);
 
@@ -157,6 +154,8 @@ public class MyHelper extends SQLiteOpenHelper {
                 "VALUES (71, 'Salsa Worcestershire', 0, " + R.drawable.ing_71 + ")," +
                 "(77, 'Sciroppo di frutto della passione', 0, " + R.drawable.ing_77 + ")," +
                 "(80, 'Sedano', 0, " + R.drawable.ing_80 + ")," +
+                "(102, 'Ananas', 0, " + R.drawable.ing_102 + ")," +
+                "(103, 'Arancia', 0, " + R.drawable.ing_103 + ")," +
                 "(110, 'Caffé', 0, " + R.drawable.ing_110 + ")," +
                 "(125, 'Ginger', 0, " + R.drawable.ing_125 + ")," +
                 "(130, 'Lime', 0, " + R.drawable.ing_130 + ")," +
@@ -277,7 +276,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(12, 'Versa');";
         db.execSQL(insert);
 
-        insert = "INSERT INTO Strumento (id, nome, descrizione, capacita, img)\n" +
+        insert = "INSERT INTO Strumento (id, nome, descrizione, capacita, img)" +
                 "VALUES (3, 'Bicchiere Da Irish Coffee', 'Il bicchiere da Irish coffee è un bicchiere molto resistente e adatto a sopportare alte temperature. Puoi usarlo infatti per servire i classici hot drink come appunto l''Irish coffee.', '130 ml', " + R.drawable.strum_3 + ")," +
                 "(5, 'Bicchiere Da Margarita', 'Come dice il suo nome, questo bicchiere è stato inventato appositamente per il drink da cui prende il nome anche se puoi utilizzarlo per servire un''ampia gamma di frozen drink.', '330 ml', " + R.drawable.strum_5 + ")," +
                 "(9, 'Bicchiere Da Sherry', 'Questo bicchierino dotato di stelo e dalla capacità limitata è l''ideale se vuoi sorseggiare uno Sherry oppure se vuoi sstupire tutti preparando il famoso Brain Hemorrhage, uno scenografico cocktail.', '90 ml', " + R.drawable.strum_9 + ")," +
@@ -316,7 +315,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "VALUES (37, 39, 5, 8);";
         db.execSQL(insert);
 
-        insert="INSERT INTO Composizione (fk_cocktail, fk_ingrediente, quantita, unita_misura)" +
+        insert = "INSERT INTO Composizione (fk_cocktail, fk_ingrediente, quantita, unita_misura)" +
                 "VALUES (2, 13, 1, 'parte')," +
                 "(2, 126, 1, 'parte')," +
                 "(2, 180, 1, 'parte')," +
@@ -367,7 +366,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(104, 4, 2, 'spruzzo');";
         db.execSQL(insert);
 
-        insert="INSERT INTO Composizione (fk_cocktail, fk_ingrediente)" +
+        insert = "INSERT INTO Composizione (fk_cocktail, fk_ingrediente)" +
                 "VALUES (37, 122)," +
                 "(46, 122)," +
                 "(65, 122)," +
@@ -376,7 +375,43 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(83, 122)," +
                 "(85, 122)," +
                 "(94, 122)," +
-                "(104, 122);";
+                "(104, 122)," +
+                "(37,131)," +
+                "(37,80)," +
+                "(65, 131)," +
+                "(66, 130)," +
+                "(83, 130)," +
+                "(85, 130)," +
+                "(94, 103)," +
+                "(104, 103)," +
+                "(104, 102);";
+        db.execSQL(insert);
+
+        insert = "INSERT INTO Procurare (fk_cocktail, fk_strumento)" +
+                "VALUES (2, 39)," +
+                "(2, 10)," +
+                "(37, 39)," +
+                "(37, 22)," +
+                "(46, 30)," +
+                "(46, 31)," +
+                "(65, 22)," +
+                "(65, 36)," +
+                "(65, 33)," +
+                "(66, 39)," +
+                "(66, 22)," +
+                "(71, 39)," +
+                "(71, 3)," +
+                "(81, 5)," +
+                "(81, 36)," +
+                "(81, 33)," +
+                "(83, 30)," +
+                "(83, 22)," +
+                "(85, 22)," +
+                "(85, 39)," +
+                "(94, 22)," +
+                "(104, 25)," +
+                "(104, 33)," +
+                "(104, 36);";
         db.execSQL(insert);
     }
 }

@@ -4,10 +4,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.cocktailmania.cocktail.CocktailElem;
-import com.example.cocktailmania.cocktail.IngRow;
-import com.example.cocktailmania.cocktail.StepPrep;
-import com.example.cocktailmania.ingredient.IngredientElem;
+import com.example.cocktailmania.utility.CocktailElem;
+import com.example.cocktailmania.utility.IngRow;
+import com.example.cocktailmania.utility.StepPrep;
+import com.example.cocktailmania.utility.IngredientElem;
 
 import java.util.ArrayList;
 
@@ -179,51 +179,45 @@ public class DbManager {
     }
 
     public ArrayList<IngRow> getIngredients(int id) {
-
-        int cont = 1;
+        int cont = 0;
         IngRow ing;
         ArrayList<IngRow> arrIng = new ArrayList<>();
 
-        while (true) {
+        String query = "SELECT i.id, i.nome, c.quantita, c.unita_misura " +
+                "FROM Ingrediente i " +
+                "JOIN Composizione c ON i.id=c.fk_ingrediente " +
+                "WHERE c.fk_cocktail=" + id + " " +
+                "ORDER BY c.unita_misura DESC, c.quantita DESC";
 
-            String query = "SELECT c.quantita, c.unita_misura, i.nome " +
-                    "FROM Ingrediente i " +
-                    "JOIN Composizione c ON i.id=c.fk_ingrediente " +
-                    "WHERE c.fk_cocktail=" + id;
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
 
-            SQLiteDatabase db = helper.getReadableDatabase();
-            Cursor c = db.rawQuery(query, null);
-
-
+        //System.out.println("sono qua");
+        if (c != null) {
             //System.out.println("sono qua");
-            if (c != null) {
-                //System.out.println("sono qua");
-                if (c.moveToFirst()) {
+            if (c.moveToFirst()) {
 
-                    //System.out.println("sono qua");
+                //System.out.println("sono qua");
+
+                do {
                     ing = new IngRow();
 
-                    do {
+                    ing.setIdIng(c.getInt(0));
+                    if (c.getString(2) != null)
+                        ing.setQuantita(c.getString(2));
+                    else
+                        ing.setQuantita("");
+                    ing.setUnita_misura(c.getString(3));
+                    ing.setIngName(c.getString(1));
 
-                        ing.setQuantita(c.getDouble(0));
-                        ing.setUnita_misura(c.getString(1));
-                        ing.setIngName(c.getString(2));
+                    arrIng.add(cont, ing);
+                    cont++;
+                } while (c.moveToNext());
 
-                    } while (c.moveToNext());
-
-                } else {
-                    break;
-                }
-
-
-            } else {
-                break;
             }
-            c.close();
 
-            cont++;
-            arrIng.add(ing);
         }
+        c.close();
 
         return arrIng;
 

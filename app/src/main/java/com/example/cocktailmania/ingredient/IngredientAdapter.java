@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cocktailmania.R;
+import com.example.cocktailmania.utility.IngredientElem;
 
 import java.util.ArrayList;
 import java.util.List;

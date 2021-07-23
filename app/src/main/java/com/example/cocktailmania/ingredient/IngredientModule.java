@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
+import com.example.cocktailmania.utility.IngredientElem;
 
 public class IngredientModule extends AppCompatActivity {
 

@@ -1,14 +1,20 @@
 package com.example.cocktailmania.cocktail;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cocktailmania.DB.DbManager;
-import com.example.cocktailmania.NonScrollListView;
 import com.example.cocktailmania.R;
+import com.example.cocktailmania.ingredient.IngredientModule;
+import com.example.cocktailmania.utility.CocktailElem;
+import com.example.cocktailmania.utility.IngRow;
+import com.example.cocktailmania.utility.NonScrollListView;
+import com.example.cocktailmania.utility.StepPrep;
 
 import java.util.ArrayList;
 
@@ -17,6 +23,8 @@ public class CocktailModule extends AppCompatActivity {
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
     NonScrollListView SteplistView, IngListView;
+    ArrayList<IngRow> ingredients;
+    ArrayList<StepPrep> stepPrep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +33,14 @@ public class CocktailModule extends AppCompatActivity {
 
         if (getIntent().hasExtra("selected_ckt")) {
             int cktN = getIntent().getIntExtra("selected_ckt", 0);
-            ArrayList<StepPrep> stepPrep = db.getPrepCkt(cktN);
-            ArrayList<IngRow> ingredients = db.getIngredients(cktN);
+            stepPrep = db.getPrepCkt(cktN);
+            ingredients = db.getIngredients(cktN);
             CocktailElem ckt = db.getSingleCocktail(cktN);
 
-            /*
-            for (int i = 0; i < stepPrep.size(); i++) {
-                System.out.println(stepPrep.get(i).toString());
-            }*/
+
+            for (int i = 0; i < ingredients.size(); i++) {
+                System.out.println(ingredients.get(i).toString());
+            }
 
             //passaggio dei dati alla grafica
             TextView textView = findViewById(R.id.CktName);
@@ -61,7 +69,6 @@ public class CocktailModule extends AppCompatActivity {
             IngListView.setAdapter(iAdapter);
             IngListView.setFocusable(false);
 
-
             //NonScrollListView con gli step delle preparazioni
             SteplistView = findViewById(R.id.StepPrep);
             StepCustomAdapter arrayAdapter = new StepCustomAdapter(this, stepPrep);
@@ -71,4 +78,5 @@ public class CocktailModule extends AppCompatActivity {
 
         }
     }
+
 }

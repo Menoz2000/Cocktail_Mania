@@ -19,6 +19,7 @@ import com.example.cocktailmania.R;
 import com.example.cocktailmania.book.BookActivity;
 import com.example.cocktailmania.ingredient.IngredientActivity;
 import com.example.cocktailmania.naviga.MainActivity;
+import com.example.cocktailmania.utility.CocktailElem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
