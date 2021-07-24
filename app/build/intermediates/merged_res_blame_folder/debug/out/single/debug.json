@@ -124,10 +124,6 @@
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\strum_5.png"
     },
     {
-        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_120.jpg.flat",
-        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_120.jpg"
-    },
-    {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_64.webp.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_64.webp"
     },
@@ -168,6 +164,10 @@
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_125.png.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_125.png"
+    },
+    {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_book.xml.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\layout\\activity_book.xml"
     },
@@ -202,10 +202,6 @@
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_4.jpg.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_4.jpg"
-    },
-    {
-        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_125.jpg.flat",
-        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_125.jpg"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_strum_22.jpg.flat",
@@ -254,6 +250,10 @@
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_120.png.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_120.png"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_171.jpg.flat",
