@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="50dp"
+    android:layout_height="35dp">
+
+    <ToggleButton
+        android:id="@+id/like_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/togglebutton_selector"
+        android:clickable="true"
+        android:elegantTextHeight="false"
+        android:focusable="true"
+        android:focusableInTouchMode="false"
+        android:textOff=""
+        android:textOn="" />
+</RelativeLayout>

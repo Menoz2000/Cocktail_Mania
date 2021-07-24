@@ -20,8 +20,8 @@ import java.util.List;
 
 public class CocktailAdapter extends RecyclerView.Adapter implements Filterable {
 
-    private final ArrayList<CocktailElem> elems;
-    private final ArrayList<CocktailElem> elemsCpy;
+    private ArrayList<CocktailElem> elems;
+    private ArrayList<CocktailElem> elemsCpy;
     Context context;
     private final OnCktListener onCktListener;
 

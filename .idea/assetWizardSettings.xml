@@ -28,8 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_like_button" />
+                            <entry key="color" value="7a7a7a" />
+                            <entry key="outputName" value="ic_like_unchecked" />
                             <entry key="sourceFile" value="C:\Users\menoz\Downloads\open-book.svg" />
                           </map>
                         </option>

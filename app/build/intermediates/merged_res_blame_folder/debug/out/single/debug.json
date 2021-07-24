@@ -16,12 +16,12 @@
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_80.png"
     },
     {
-        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cocktail.xml.flat",
-        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\layout\\activity_cocktail.xml"
-    },
-    {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ckt_94.png.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ckt_94.png"
+    },
+    {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cocktail.xml.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\layout\\activity_cocktail.xml"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_strum_19.png.flat",
@@ -40,12 +40,12 @@
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\layout\\ingredient_row.xml"
     },
     {
-        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ckt_71.png.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ckt_71.png"
+    },
+    {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_158.jpg.flat",
@@ -58,6 +58,10 @@
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_strum_30.jpg.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\strum_30.jpg"
+    },
+    {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\menu_like_bar.xml.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\menu\\like_bar.xml"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_shape.xml.flat",
@@ -76,12 +80,12 @@
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_15.jpg"
     },
     {
-        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_42.webp.flat",
-        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_42.webp"
-    },
-    {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_42.webp.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_42.webp"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_strum_3.jpg.flat",
@@ -114,6 +118,10 @@
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\menu_search_bar.xml.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\menu\\search_bar.xml"
+    },
+    {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_like_checked.xml.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ic_like_checked.xml"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_strum_37.jpg.flat",
@@ -268,8 +276,16 @@
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_101.jpg"
     },
     {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\layout_switch_item.xml.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\layout\\switch_item.xml"
+    },
+    {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ckt_66.png.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ckt_66.png"
+    },
+    {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_like_unchecked.xml.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ic_like_unchecked.xml"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_13.webp.flat",
@@ -286,6 +302,10 @@
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_strum_39.png.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\strum_39.png"
+    },
+    {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_togglebutton_selector.xml.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\togglebutton_selector.xml"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_146.webp.flat",

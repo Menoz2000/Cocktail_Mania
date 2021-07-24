@@ -2,7 +2,8 @@ package com.example.cocktailmania.cocktail;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -71,13 +72,10 @@ public class CocktailModule extends AppCompatActivity {
             IngListView.setFocusable(false);    //elimino focus sulla lista
             //rendo la lista cliccabile
             IngListView.setClickable(true);
-            IngListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent i = new Intent(CocktailModule.this, IngredientModule.class);
-                    i.putExtra("selected_ing", ingredients.get(position).getIdIng());
-                    startActivity(i);
-                }
+            IngListView.setOnItemClickListener((parent, view, position, id) -> {
+                Intent i = new Intent(CocktailModule.this, IngredientModule.class);
+                i.putExtra("selected_ing", ingredients.get(position).getIdIng());
+                startActivity(i);
             });
 
             //NonScrollListView con gli step delle preparazioni
@@ -88,6 +86,14 @@ public class CocktailModule extends AppCompatActivity {
 
 
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.like_bar, menu);
+
+        return true;
     }
 
 }
