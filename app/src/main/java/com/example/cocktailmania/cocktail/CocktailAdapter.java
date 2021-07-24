@@ -20,10 +20,10 @@ import java.util.List;
 
 public class CocktailAdapter extends RecyclerView.Adapter implements Filterable {
 
-    private ArrayList<CocktailElem> elems;
-    private ArrayList<CocktailElem> elemsCpy;
+    private final ArrayList<CocktailElem> elems;
+    private final ArrayList<CocktailElem> elemsCpy;
     Context context;
-    private OnCktListener onCktListener;
+    private final OnCktListener onCktListener;
 
     public CocktailAdapter(ArrayList<CocktailElem> elems, Context context, CocktailAdapter.OnCktListener onCktListener) {
         this.elems = elems;
@@ -88,7 +88,7 @@ public class CocktailAdapter extends RecyclerView.Adapter implements Filterable 
         return cktFilter;
     }
 
-    private Filter cktFilter = new Filter() {
+    private final Filter cktFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             List<CocktailElem> filteredList = new ArrayList<>();

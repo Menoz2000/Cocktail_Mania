@@ -3,6 +3,8 @@ package com.example.cocktailmania.cocktail;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,10 +39,9 @@ public class CocktailModule extends AppCompatActivity {
             ingredients = db.getIngredients(cktN);
             CocktailElem ckt = db.getSingleCocktail(cktN);
 
-
-            for (int i = 0; i < ingredients.size(); i++) {
+            /*for (int i = 0; i < ingredients.size(); i++) {
                 System.out.println(ingredients.get(i).toString());
-            }
+            }*/
 
             //passaggio dei dati alla grafica
             TextView textView = findViewById(R.id.CktName);
@@ -67,13 +68,23 @@ public class CocktailModule extends AppCompatActivity {
             IngListView = findViewById(R.id.IngredientList);
             IngredientCustomAdapter iAdapter = new IngredientCustomAdapter(this, ingredients);
             IngListView.setAdapter(iAdapter);
-            IngListView.setFocusable(false);
+            IngListView.setFocusable(false);    //elimino focus sulla lista
+            //rendo la lista cliccabile
+            IngListView.setClickable(true);
+            IngListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent i = new Intent(CocktailModule.this, IngredientModule.class);
+                    i.putExtra("selected_ing", ingredients.get(position).getIdIng());
+                    startActivity(i);
+                }
+            });
 
             //NonScrollListView con gli step delle preparazioni
             SteplistView = findViewById(R.id.StepPrep);
             StepCustomAdapter arrayAdapter = new StepCustomAdapter(this, stepPrep);
             SteplistView.setAdapter(arrayAdapter);
-            SteplistView.setFocusable(false);
+            SteplistView.setFocusable(false);      //elimino focus sulla lista
 
 
         }
