@@ -63,6 +63,12 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
                     overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
 
+                case R.id.cocktailButton:
+                    intent = new Intent(CocktailActivity.this, CocktailActivity.class);
+                    intent.putExtra("list_cocktail", 0);
+                    startActivity(intent);
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                    break;
                 default:
                     break;
             }
@@ -70,7 +76,7 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
         });
 
         if (getIntent().hasExtra("list_cocktail")) {
-            int config = getIntent().getIntExtra("lista_cocktail", 0);
+            int config = getIntent().getIntExtra("list_cocktail", 0);
 
             recyclerView = findViewById(R.id.cktRv);
 

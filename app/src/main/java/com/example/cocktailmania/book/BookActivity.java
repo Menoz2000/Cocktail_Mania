@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.cocktailmania.cocktail.CocktailActivity;
 import com.example.cocktailmania.ingredient.IngredientActivity;
@@ -28,20 +30,20 @@ public class BookActivity extends AppCompatActivity {
                 case R.id.navigaButton:
                     intent = new Intent(BookActivity.this, MainActivity.class);
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
 
                 case R.id.cocktailButton:
                     intent = new Intent(BookActivity.this, CocktailActivity.class);
                     intent.putExtra("list_cocktail", 0); //visualizzazione senza my_cocktail
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
 
                 case R.id.ingredientiButton:
                     intent = new Intent(BookActivity.this, IngredientActivity.class);
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
 
                 default:
@@ -50,5 +52,16 @@ public class BookActivity extends AppCompatActivity {
 
             return true;
         });
+
+        Button button = (Button) findViewById(R.id.ckt_pref);
+        button.setOnClickListener(v -> openActivityCkt(1));
     }
+
+    public void openActivityCkt(int n) {
+        Intent intent = new Intent(this, CocktailActivity.class);
+        intent.putExtra("list_cocktail", n);
+        startActivity(intent);
+
+    }
+
 }

@@ -7,6 +7,17 @@
     tools:context=".book.BookActivity">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/ckt_pref"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preferiti" />
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

@@ -1958,6 +1958,7 @@ id chip_group
 id chronometer
 id circle_center
 id cktRv
+id ckt_pref
 id clear_text
 id clip_horizontal
 id clip_vertical

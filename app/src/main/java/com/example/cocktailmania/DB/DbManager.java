@@ -234,7 +234,14 @@ public class DbManager {
 
     public void OnUpdateInvertPreferito(int id, boolean chk) {
 
-        String query = "UPDATE Cocktail SET preferito=" + !chk + " WHERE id=" + id;
+        int n;
+        if(chk==true){
+            n=0;
+        }else{
+            n=1;
+        }
+
+        String query = "UPDATE Cocktail SET preferito=" + n + " WHERE id=" + id;
 
         SQLiteDatabase db = helper.getReadableDatabase();
         db.execSQL(query);
