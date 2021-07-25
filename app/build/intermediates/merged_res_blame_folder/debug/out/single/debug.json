@@ -80,12 +80,12 @@
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_15.jpg"
     },
     {
-        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_42.webp.flat",
-        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_42.webp"
-    },
-    {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_42.webp.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_42.webp"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_strum_3.jpg.flat",
@@ -124,6 +124,10 @@
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\menu\\search_bar.xml"
     },
     {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\layout_strum_row.xml.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\layout\\strum_row.xml"
+    },
+    {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_strum_37.jpg.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\strum_37.jpg"
     },
@@ -150,6 +154,10 @@
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ckt_81.png.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ckt_81.png"
+    },
+    {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ingredient_custom_shape.xml.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ingredient_custom_shape.xml"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_186.png.flat",
@@ -236,6 +244,10 @@
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_73.jpg"
     },
     {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_step_custom_shape.xml.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\step_custom_shape.xml"
+    },
+    {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_12.jpg.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_12.jpg"
     },
@@ -302,6 +314,10 @@
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_strum_39.png.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\strum_39.png"
+    },
+    {
+        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_strum_custom_shape.xml.flat",
+        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\strum_custom_shape.xml"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_togglebutton_selector.xml.flat",
@@ -394,10 +410,6 @@
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_131.png.flat",
         "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_131.png"
-    },
-    {
-        "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ingrediet_custom_shape.xml.flat",
-        "source": "D:\\IdeaProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ingrediet_custom_shape.xml"
     },
     {
         "merged": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_cocktail.xml.flat",

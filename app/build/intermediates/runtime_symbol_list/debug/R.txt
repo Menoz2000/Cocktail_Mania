@@ -1170,7 +1170,11 @@ int color secondary_text_default_material_light 0x7f0500c9
 int color secondary_text_disabled_material_dark 0x7f0500ca
 int color secondary_text_disabled_material_light 0x7f0500cb
 int color sfumatura1_ing 0x7f0500cc
+int color sfumatura1_step 0x7f0500db
+int color sfumatura1_str 0x7f0500dc
 int color sfumatura2_ing 0x7f0500cd
+int color sfumatura2_step 0x7f0500dd
+int color sfumatura2_str 0x7f0500de
 int color switch_thumb_disabled_material_dark 0x7f0500ce
 int color switch_thumb_disabled_material_light 0x7f0500cf
 int color switch_thumb_material_dark 0x7f0500d0
@@ -1775,7 +1779,7 @@ int drawable ing_73 0x7f0700a8
 int drawable ing_77 0x7f0700a9
 int drawable ing_80 0x7f0700aa
 int drawable ing_90 0x7f0700ab
-int drawable ingrediet_custom_shape 0x7f0700ac
+int drawable ingredient_custom_shape 0x7f0700df
 int drawable material_cursor_drawable 0x7f0700ad
 int drawable material_ic_calendar_black_24dp 0x7f0700ae
 int drawable material_ic_clear_black_24dp 0x7f0700af
@@ -1809,6 +1813,7 @@ int drawable notification_template_icon_bg 0x7f0700ca
 int drawable notification_template_icon_low_bg 0x7f0700cb
 int drawable notification_tile_bg 0x7f0700cc
 int drawable notify_panel_notification_icon_bg 0x7f0700cd
+int drawable step_custom_shape 0x7f0700e1
 int drawable strum_10 0x7f0700ce
 int drawable strum_19 0x7f0700cf
 int drawable strum_22 0x7f0700d0
@@ -1822,6 +1827,7 @@ int drawable strum_37 0x7f0700d7
 int drawable strum_39 0x7f0700d8
 int drawable strum_5 0x7f0700d9
 int drawable strum_9 0x7f0700da
+int drawable strum_custom_shape 0x7f0700e0
 int drawable test_custom_background 0x7f0700db
 int drawable togglebutton_selector 0x7f0700dc
 int drawable tooltip_frame_dark 0x7f0700dd
@@ -1849,6 +1855,7 @@ int id SHOW_PROGRESS 0x7f080013
 int id SYM 0x7f080014
 int id StepNumber 0x7f080015
 int id StepPrep 0x7f080016
+int id StrumName 0x7f0801cf
 int id TOP_END 0x7f080017
 int id TOP_START 0x7f080018
 int id UnityIng 0x7f080019
@@ -2036,6 +2043,7 @@ int id honorRequest 0x7f0800ce
 int id icon 0x7f0800cf
 int id icon_group 0x7f0800d0
 int id idIng 0x7f0800d1
+int id idStrum 0x7f0801d0
 int id ifRoom 0x7f0800d2
 int id ignore 0x7f0800d3
 int id ignoreRequest 0x7f0800d4
@@ -2443,6 +2451,7 @@ int layout prep_row 0x7f0b006f
 int layout select_dialog_item_material 0x7f0b0070
 int layout select_dialog_multichoice_material 0x7f0b0071
 int layout select_dialog_singlechoice_material 0x7f0b0072
+int layout strum_row 0x7f0b0084
 int layout support_simple_spinner_dropdown_item 0x7f0b0073
 int layout switch_item 0x7f0b0074
 int layout test_action_chip 0x7f0b0075

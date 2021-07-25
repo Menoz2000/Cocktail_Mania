@@ -307,11 +307,22 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(37, 158, 22, 3, 1)," +
                 "(37, 171, 22, 4, 10)," +
                 "(37, 131, 22, 6, 5)," +
-                "(37, 80, 22, 6, 5);";
+                "(37, 80, 22, 6, 5)," +
+                "(46, 184, 31, 1, 1)," +
+                "(46, 130, 31, 1, 1)," +
+                "(46, 184, 30, 2, 9)," +
+                "(46, 130, 30, 2, 9)," +
+                "(46, 122, 31, 3, 10)," +
+                "(46, 15, 31, 4, 12)," +
+                "(46, 130, 31, 6, 5);";
         db.execSQL(insert);
 
         insert = "INSERT INTO Preparazione (fk_cocktail, fk_strumento, step, fk_azione)" +
                 "VALUES (37, 39, 5, 8);";
+        db.execSQL(insert);
+
+        insert = "INSERT INTO Preparazione (fk_cocktail, step, fk_azione)" +
+                "VALUES (46, 5, 8);";
         db.execSQL(insert);
 
         insert = "INSERT INTO Composizione (fk_cocktail, fk_ingrediente, quantita, unita_misura)" +
