@@ -101,6 +101,7 @@ public class CocktailModule extends AppCompatActivity {
         //setto il Like Button
         button.setChecked(ckt.isPreferito());
 
+        //creo listener sul LikeButton che nel caso venga premuto cambia lo stato nel database
         button.setOnCheckedChangeListener((buttonView, isChecked) -> {
             db.OnUpdateInvertPreferito(cktN, !isChecked);
             /*if (isChecked) {
@@ -112,5 +113,4 @@ public class CocktailModule extends AppCompatActivity {
 
         return true;
     }
-
 }

@@ -5,7 +5,7 @@
     android:layout_marginLeft="6dp"
     android:layout_marginTop="6dp"
     android:layout_marginRight="6dp"
-    android:background="@drawable/ingrediet_custom_shape"
+    android:background="@drawable/ingredient_custom_shape"
     android:orientation="vertical"
     android:padding="12dp">
 

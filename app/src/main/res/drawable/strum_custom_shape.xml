@@ -7,10 +7,10 @@
     <gradient
         android:angle="270"
         android:endColor="@color/sfumatura1_str"
-        android:startColor="@color/sfumatura2_str"/>
+        android:startColor="@color/sfumatura2_str" />
     <corners
-        android:bottomLeftRadius="7dp"
-        android:bottomRightRadius="7dp"
-        android:topLeftRadius="7dp"
-        android:topRightRadius="7dp"/>
+        android:bottomLeftRadius="15dp"
+        android:bottomRightRadius="15dp"
+        android:topLeftRadius="15dp"
+        android:topRightRadius="15dp" />
 </shape>

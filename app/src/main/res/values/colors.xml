@@ -7,11 +7,23 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="sfumatura2_ing">#FFEFB6</color>
-    <color name="sfumatura1_ing">#FFE074</color>
+
+    <!--colore bordi-->
     <color name="border_color">#FF000000</color>
 
-    //for like button
+    <!-- colore per item nella lista ingredienti di ogni cocktail -->
+    <color name="sfumatura2_ing">#FFEFB6</color>
+    <color name="sfumatura1_ing">#FFE074</color>
+
+    <!-- colore per item nella lista step di ogni cocktail-->
+    <color name="sfumatura2_step">#AAD875</color>
+    <color name="sfumatura1_step">#78BC29</color>
+
+    <!-- colore per item nella lista strumenti di ogni cocktail-->
+    <color name="sfumatura2_str">#9EA19B</color>
+    <color name="sfumatura1_str">#5A5A5A</color>
+
+    <!--for like button-->
     <color name="like_button_checked">#DA0505</color>
     <color name="like_button_unchecked">#5C5C5C</color>
 </resources>
