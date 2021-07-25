@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -92,6 +95,9 @@ public class CocktailModule extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.like_bar, menu);
+
+        MenuItem likeItem = menu.findItem(R.id.app_bar_like_button);
+        ToggleButton button = (ToggleButton) likeItem.getActionView();
 
         return true;
     }

@@ -57,7 +57,7 @@ public class DbManager {
     }
 
     public Cursor elencoCocktail() {
-        String query = "SELECT * FROM Cocktail C, GradoAlcolico G WHERE G.id=C.fk_gradoAlcolico AND my_cocktail=0 ORDER BY nome";
+        String query = "SELECT * FROM Cocktail C LEFT JOIN GradoAlcolico G ON G.id=C.fk_gradoAlcolico WHERE my_cocktail=0 ORDER BY nome";
 
         SQLiteDatabase db = helper.getReadableDatabase();
         return db.rawQuery(query, null);
@@ -132,13 +132,10 @@ public class DbManager {
             SQLiteDatabase db = helper.getReadableDatabase();
             Cursor c = db.rawQuery(query, null);
 
-
-            //System.out.println("sono qua");
             if (c != null) {
-                //System.out.println("sono qua");
+
                 if (c.moveToFirst()) {
 
-                    //System.out.println("sono qua");
                     stepPrep = new StepPrep();
 
                     do {
@@ -163,7 +160,6 @@ public class DbManager {
                 } else {
                     break;
                 }
-
 
             } else {
                 break;
@@ -192,12 +188,9 @@ public class DbManager {
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor c = db.rawQuery(query, null);
 
-        //System.out.println("sono qua");
         if (c != null) {
-            //System.out.println("sono qua");
-            if (c.moveToFirst()) {
 
-                //System.out.println("sono qua");
+            if (c.moveToFirst()) {
 
                 do {
                     ing = new IngRow();
@@ -217,9 +210,20 @@ public class DbManager {
             }
 
         }
-        c.close();
+        if (c != null) {
+            c.close();
+        }
 
         return arrIng;
+
+    }
+
+    public void OnUpdateInvertPreferito(int id, boolean chk) {
+
+        String query = "UPDATE Cockail SET preferito=" + !chk + " WHERE id=" + id;
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        db.execSQL(query);
 
     }
 }

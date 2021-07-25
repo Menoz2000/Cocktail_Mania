@@ -15,24 +15,7 @@ public class MyHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String comando = "CREATE TABLE Cocktail (" +
-                "id integer primary key AUTOINCREMENT," +
-                "nome text NOT NULL," +
-                "fk_gradoAlcolico integer," +
-                "fk_origine integer," +
-                "fk_tipo integer," +
-                "preferito integer NOT NULL DEFAULT 0," +
-                "iconico integer NOT NULL DEFAULT 0," +
-                "my_cocktail integer NOT NULL DEFAULT 0," +
-                "img integer NOT NULL," +
-                "FOREIGN KEY (fk_origine) REFERENCES Origine(id)," +
-                "FOREIGN KEY (fk_gradoAlcolico) REFERENCES GradoAlcolico(id)," +
-                "FOREIGN KEY (fk_tipo) REFERENCES TipoCocktail(id)" +
-                ");";
-        db.execSQL(comando);
-
-
-        comando = "CREATE TABLE Ingrediente (" +
+        String comando = "CREATE TABLE Ingrediente (" +
                 "    id integer PRIMARY KEY," +
                 "    nome text NOT NULL," +
                 "    img integer NOT NULL," +
@@ -88,6 +71,22 @@ public class MyHelper extends SQLiteOpenHelper {
                 "descrizione text," +
                 "capacita text," +
                 "img integer NOT NULL" +
+                ");";
+        db.execSQL(comando);
+
+        comando = "CREATE TABLE Cocktail (" +
+                "id integer primary key AUTOINCREMENT," +
+                "nome text NOT NULL," +
+                "fk_gradoAlcolico integer," +
+                "fk_origine integer," +
+                "fk_tipo integer," +
+                "preferito integer NOT NULL DEFAULT 0," +
+                "iconico integer NOT NULL DEFAULT 0," +
+                "my_cocktail integer NOT NULL DEFAULT 0," +
+                "img integer NOT NULL," +
+                "FOREIGN KEY (fk_origine) REFERENCES Origine(id)," +
+                "FOREIGN KEY (fk_gradoAlcolico) REFERENCES GradoAlcolico(id)," +
+                "FOREIGN KEY (fk_tipo) REFERENCES TipoCocktail(id)" +
                 ");";
         db.execSQL(comando);
 
