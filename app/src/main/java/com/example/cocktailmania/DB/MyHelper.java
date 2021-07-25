@@ -214,8 +214,8 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(26, 'Belgio');";
         db.execSQL(insert);
 
-        insert = "INSERT INTO Cocktail (id, nome, fk_gradoAlcolico, img)" +
-                "VALUES (2, '4th of July', 2, " + R.drawable.ckt_2 + ");";
+        insert = "INSERT INTO Cocktail (id, nome, fk_gradoAlcolico, img,preferito)" +
+                "VALUES (2, '4th of July', 2, " + R.drawable.ckt_2 + ",1);";
         db.execSQL(insert);
 
         insert = "INSERT INTO Cocktail (id, nome, fk_gradoAlcolico, fk_origine, fk_tipo, iconico, img)" +

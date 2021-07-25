@@ -68,6 +68,10 @@ public class CocktailModule extends AppCompatActivity {
                 textView2.setVisibility(TextView.GONE);
             }
 
+            //setto il pulsante preferito -CONTROLLARE
+            /*ToggleButton toggleButton = findViewById(R.id.like_button);
+            toggleButton.setChecked(ckt.isPreferito());*/
+
             //NonScrollListView con gli ingredienti necessari
             IngListView = findViewById(R.id.IngredientList);
             IngredientCustomAdapter iAdapter = new IngredientCustomAdapter(this, ingredients);
