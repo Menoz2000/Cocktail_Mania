@@ -69,31 +69,35 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
             return true;
         });
 
+        if (getIntent().hasExtra("list_cocktail")) {
+            int config = getIntent().getIntExtra("lista_cocktail", 0);
 
-        recyclerView = findViewById(R.id.cktRv);
+            recyclerView = findViewById(R.id.cktRv);
 
-        elems = new ArrayList<>();
+            elems = new ArrayList<>();
 
-        db = new DbManager(this);
+            db = new DbManager(this);
 
-        Cursor c = db.elencoCocktail();
-        CocktailElem ckt;
-        if (c != null) {
-            while (c.moveToNext()) {
-                ckt = new CocktailElem(); // Note this addition
-                ckt.setId(c.getInt(0));
-                ckt.setImg(c.getInt(8));
-                ckt.setNome(c.getString(1));
-                ckt.setFk_gradoAlcolico(c.getString(10));
-                elems.add(ckt);
+            Cursor c = db.elencoCocktail(config);
+            CocktailElem ckt;
+            if (c != null) {
+                while (c.moveToNext()) {
+                    ckt = new CocktailElem(); // Note this addition
+                    ckt.setId(c.getInt(0));
+                    ckt.setImg(c.getInt(8));
+                    ckt.setNome(c.getString(1));
+                    ckt.setFk_gradoAlcolico(c.getString(10));
+                    elems.add(ckt);
+                }
+                c.close();
             }
-            c.close();
+
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+            recyclerView.setLayoutManager(linearLayoutManager);
+            cocktailAdapter = new CocktailAdapter((ArrayList<CocktailElem>) elems, CocktailActivity.this, this);
+            recyclerView.setAdapter(cocktailAdapter);
         }
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(linearLayoutManager);
-        cocktailAdapter = new CocktailAdapter((ArrayList<CocktailElem>) elems, CocktailActivity.this, this);
-        recyclerView.setAdapter(cocktailAdapter);
     }
 
     @Override

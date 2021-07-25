@@ -33,6 +33,7 @@ public class BookActivity extends AppCompatActivity {
 
                 case R.id.cocktailButton:
                     intent = new Intent(BookActivity.this, CocktailActivity.class);
+                    intent.putExtra("list_cocktail", 0); //visualizzazione senza my_cocktail
                     startActivity(intent);
                     overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
                     break;

@@ -56,9 +56,23 @@ public class DbManager {
         return ing;
     }
 
-    public Cursor elencoCocktail() {
-        String query = "SELECT * FROM Cocktail C LEFT JOIN GradoAlcolico G ON G.id=C.fk_gradoAlcolico WHERE my_cocktail=0 ORDER BY nome";
+    public Cursor elencoCocktail(int config) {
+        String query = "SELECT * FROM Cocktail C LEFT JOIN GradoAlcolico G ON G.id=C.fk_gradoAlcolico ";
 
+        /*passo alla prossima activity il tipo di lista che voglio:
+                     [0] --> lista di tutti i cocktail non my_cocktail
+                     [1] --> lista dei cocktail preferiti
+                     [2] --> lista dei my_cocktail
+        */
+        if (config == 0)
+            query += "WHERE my_cocktail=0 ";
+        if (config == 1)
+            query += "WHERE preferito=1 ";
+        if (config == 2)
+            query += "WHERE my_cocktail=1 ";
+
+
+        query += "ORDER BY nome";
         SQLiteDatabase db = helper.getReadableDatabase();
         return db.rawQuery(query, null);
     }
@@ -220,7 +234,7 @@ public class DbManager {
 
     public void OnUpdateInvertPreferito(int id, boolean chk) {
 
-        String query = "UPDATE Cockail SET preferito=" + !chk + " WHERE id=" + id;
+        String query = "UPDATE Cocktail SET preferito=" + !chk + " WHERE id=" + id;
 
         SQLiteDatabase db = helper.getReadableDatabase();
         db.execSQL(query);

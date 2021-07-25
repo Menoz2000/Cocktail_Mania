@@ -5,10 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -31,6 +28,8 @@ public class CocktailModule extends AppCompatActivity {
     NonScrollListView SteplistView, IngListView;
     ArrayList<IngRow> ingredients;
     ArrayList<StepPrep> stepPrep;
+    int cktN;
+    CocktailElem ckt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +37,10 @@ public class CocktailModule extends AppCompatActivity {
         setContentView(R.layout.activity_cocktail_module);
 
         if (getIntent().hasExtra("selected_ckt")) {
-            int cktN = getIntent().getIntExtra("selected_ckt", 0);
+            cktN = getIntent().getIntExtra("selected_ckt",0);
             stepPrep = db.getPrepCkt(cktN);
             ingredients = db.getIngredients(cktN);
-            CocktailElem ckt = db.getSingleCocktail(cktN);
+            ckt = db.getSingleCocktail(cktN);
 
             /*for (int i = 0; i < ingredients.size(); i++) {
                 System.out.println(ingredients.get(i).toString());
@@ -67,10 +66,6 @@ public class CocktailModule extends AppCompatActivity {
             } else {
                 textView2.setVisibility(TextView.GONE);
             }
-
-            //setto il pulsante preferito -CONTROLLARE
-            /*ToggleButton toggleButton = findViewById(R.id.like_button);
-            toggleButton.setChecked(ckt.isPreferito());*/
 
             //NonScrollListView con gli ingredienti necessari
             IngListView = findViewById(R.id.IngredientList);
@@ -102,6 +97,18 @@ public class CocktailModule extends AppCompatActivity {
 
         MenuItem likeItem = menu.findItem(R.id.app_bar_like_button);
         ToggleButton button = (ToggleButton) likeItem.getActionView();
+
+        //setto il Like Button
+        button.setChecked(ckt.isPreferito());
+
+        button.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            db.OnUpdateInvertPreferito(cktN, !isChecked);
+            /*if (isChecked) {
+                // The toggle is enabled
+            } else {
+                // The toggle is disabled
+            }*/
+        });
 
         return true;
     }

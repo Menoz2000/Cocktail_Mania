@@ -53,6 +53,7 @@ public class IngredientActivity extends AppCompatActivity implements IngredientA
 
                 case R.id.cocktailButton:
                     intent = new Intent(IngredientActivity.this, CocktailActivity.class);
+                    intent.putExtra("list_cocktail", 0); //visualizzazione senza my_cocktail
                     startActivity(intent);
                     overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
