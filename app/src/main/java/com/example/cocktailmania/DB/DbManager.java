@@ -8,6 +8,7 @@ import com.example.cocktailmania.utility.CocktailElem;
 import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.StepPrep;
 import com.example.cocktailmania.utility.IngredientElem;
+import com.example.cocktailmania.utility.StrumRow;
 
 import java.util.ArrayList;
 
@@ -234,17 +235,54 @@ public class DbManager {
 
     public void OnUpdateInvertPreferito(int id, boolean chk) {
 
-        int n;
-        if(chk==true){
-            n=0;
-        }else{
-            n=1;
-        }
+        int n = 0;
+        if (!chk)
+            n = 1;
 
         String query = "UPDATE Cocktail SET preferito=" + n + " WHERE id=" + id;
 
         SQLiteDatabase db = helper.getReadableDatabase();
         db.execSQL(query);
+
+    }
+
+    public ArrayList<StrumRow> getInstruments(int id) {
+        int cont = 0;
+        StrumRow strum;
+        ArrayList<StrumRow> arrStrum = new ArrayList<>();
+
+        String query = "SELECT s.id, s.nome " +
+                "FROM Strumento s " +
+                "JOIN Procurare p ON s.id=p.fk_strumento " +
+                "WHERE p.fk_cocktail=" + id + " " +
+                "ORDER BY s.nome";
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        if (c != null) {
+
+            if (c.moveToFirst()) {
+
+                do {
+                    //inizializzo l'oggetto StrumRow
+                    strum = new StrumRow();
+                    //inserisco i dati al suo interno
+                    strum.setId(c.getInt(0));
+                    strum.setName(c.getString(1));
+                    //aggiungo l'oggetto al ArrayList
+                    arrStrum.add(cont, strum);
+                    cont++;
+                } while (c.moveToNext());
+
+            }
+
+        }
+        if (c != null) {
+            c.close();
+        }
+
+        return arrStrum;
 
     }
 }

@@ -2072,6 +2072,7 @@ id line1
 id line3
 id linear
 id listMode
+id list_instruments
 id list_item
 id masked
 id material_clock_display
@@ -2585,6 +2586,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string preferiti
 string prova
 string search_menu_title
 string status_bar_notification_info_overflow

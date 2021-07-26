@@ -21,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.navigaButton);
         bottomNavigationView.setOnItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) item -> {
@@ -32,19 +30,19 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, CocktailActivity.class);
                     intent.putExtra("list_cocktail", 0); //visualizzazione senza my_cocktail
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
 
                 case R.id.ingredientiButton:
                     intent = new Intent(MainActivity.this, IngredientActivity.class);
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
 
                 case R.id.bookButton:
                     intent = new Intent(MainActivity.this, BookActivity.class);
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     break;
 
                 default:

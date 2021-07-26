@@ -40,43 +40,49 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cocktail);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.cocktailButton);
-        bottomNavigationView.setOnItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) item -> {
-            switch (item.getItemId()) {
-
-                case R.id.navigaButton:
-                    intent = new Intent(CocktailActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                    break;
-
-                case R.id.ingredientiButton:
-                    intent = new Intent(CocktailActivity.this, IngredientActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                    break;
-
-                case R.id.bookButton:
-                    intent = new Intent(CocktailActivity.this, BookActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                    break;
-
-                case R.id.cocktailButton:
-                    intent = new Intent(CocktailActivity.this, CocktailActivity.class);
-                    intent.putExtra("list_cocktail", 0);
-                    startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                    break;
-                default:
-                    break;
-            }
-            return true;
-        });
-
         if (getIntent().hasExtra("list_cocktail")) {
             int config = getIntent().getIntExtra("list_cocktail", 0);
+
+            BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+            /*se config == 0 sono nella pagina Cocktail
+              se config == 1 sono in Preferiti nella pagina Book
+              se config == 2 sono in My_Cocktail nella pagina Book*/
+            if (config == 0)
+                bottomNavigationView.setSelectedItemId(R.id.cocktailButton);
+            if (config == 1 || config == 2)
+                bottomNavigationView.setSelectedItemId(R.id.bookButton);
+            //set Listener on BottomNavigationView
+            bottomNavigationView.setOnItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) item -> {
+                switch (item.getItemId()) {
+                    case R.id.navigaButton:
+                        intent = new Intent(CocktailActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                        break;
+
+                    case R.id.ingredientiButton:
+                        intent = new Intent(CocktailActivity.this, IngredientActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                        break;
+
+                    case R.id.bookButton:
+                        intent = new Intent(CocktailActivity.this, BookActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                        break;
+
+                    case R.id.cocktailButton:
+                        intent = new Intent(CocktailActivity.this, CocktailActivity.class);
+                        intent.putExtra("list_cocktail", 0);
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            });
 
             recyclerView = findViewById(R.id.cktRv);
 

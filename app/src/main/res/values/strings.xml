@@ -6,5 +6,6 @@
     <string name="book">Book</string>
     <string name="prova">TextView</string>
     <string name="PrepTitle">Preparazione</string>
+    <string name="preferiti">Preferiti</string>
 
 </resources>

@@ -16,7 +16,7 @@
             android:id="@+id/ckt_pref"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Preferiti" />
+            android:text="@string/preferiti" />
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

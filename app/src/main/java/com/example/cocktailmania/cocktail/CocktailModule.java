@@ -18,6 +18,7 @@ import com.example.cocktailmania.utility.CocktailElem;
 import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.NonScrollListView;
 import com.example.cocktailmania.utility.StepPrep;
+import com.example.cocktailmania.utility.StrumRow;
 
 import java.util.ArrayList;
 
@@ -25,9 +26,10 @@ public class CocktailModule extends AppCompatActivity {
 
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
-    NonScrollListView SteplistView, IngListView;
+    NonScrollListView SteplistView, IngListView, StrumListView;
     ArrayList<IngRow> ingredients;
     ArrayList<StepPrep> stepPrep;
+    ArrayList<StrumRow> instruments;
     int cktN;
     CocktailElem ckt;
 
@@ -41,6 +43,7 @@ public class CocktailModule extends AppCompatActivity {
             stepPrep = db.getPrepCkt(cktN);
             ingredients = db.getIngredients(cktN);
             ckt = db.getSingleCocktail(cktN);
+            instruments=db.getInstruments(cktN);
 
             /*for (int i = 0; i < ingredients.size(); i++) {
                 System.out.println(ingredients.get(i).toString());
@@ -59,6 +62,12 @@ public class CocktailModule extends AppCompatActivity {
 
             TextView textView1 = findViewById(R.id.AlcolicGrade);
             textView1.setText(String.valueOf(ckt.getFk_gradoAlcolico()));
+
+            //NonScrollListView con gli ingredienti necessari
+            StrumListView = findViewById(R.id.list_instruments);
+            StrumAdapter strumAdapter = new StrumAdapter(this, instruments);
+            StrumListView.setAdapter(strumAdapter);
+            StrumListView.setFocusable(false);    //elimino focus sulla lista
 
             TextView textView2 = findViewById(R.id.CktOrigin);
             if (ckt.getFk_origine() != null) {

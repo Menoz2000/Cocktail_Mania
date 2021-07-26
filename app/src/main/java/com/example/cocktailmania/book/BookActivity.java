@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.cocktailmania.cocktail.CocktailActivity;
+import com.example.cocktailmania.cocktail.CocktailModule;
 import com.example.cocktailmania.ingredient.IngredientActivity;
 import com.example.cocktailmania.naviga.MainActivity;
 import com.example.cocktailmania.R;
