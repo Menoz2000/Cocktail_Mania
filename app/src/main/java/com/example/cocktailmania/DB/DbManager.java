@@ -9,6 +9,7 @@ import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.StepPrep;
 import com.example.cocktailmania.utility.IngredientElem;
 import com.example.cocktailmania.utility.StrumRow;
+import com.example.cocktailmania.utility.TipoCocktail;
 
 import java.util.ArrayList;
 
@@ -284,6 +285,43 @@ public class DbManager {
 
         return arrStrum;
 
+    }
+
+    public ArrayList<TipoCocktail> getTipiCocktail(){
+        int cont = 0;
+        TipoCocktail tipe;
+        ArrayList<TipoCocktail> arrTipe = new ArrayList<>();
+
+        String query = "SELECT t.id, t.nome, t.img " +
+                "FROM TipoCocktail t";
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        if (c != null) {
+
+            if (c.moveToFirst()) {
+
+                do {
+                    //inizializzo l'oggetto StrumRow
+                    tipe = new TipoCocktail();
+                    //inserisco i dati al suo interno
+                    tipe.setId(c.getInt(0));
+                    tipe.setNome(c.getString(1));
+                    tipe.setImg(c.getInt(2));
+                    //aggiungo l'oggetto al ArrayList
+                    arrTipe.add(cont, tipe);
+                    cont++;
+                } while (c.moveToNext());
+
+            }
+
+        }
+        if (c != null) {
+            c.close();
+        }
+
+        return arrTipe;
     }
 }
 

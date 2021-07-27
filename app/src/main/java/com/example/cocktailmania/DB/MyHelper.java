@@ -54,7 +54,8 @@ public class MyHelper extends SQLiteOpenHelper {
 
         comando = "CREATE TABLE TipoCocktail (" +
                 "    id integer PRIMARY KEY," +
-                "    nome text NOT NULL" +
+                "    nome text NOT NULL," +
+                "    img integer NOT NULL" +
                 ");";
         db.execSQL(comando);
 
@@ -249,14 +250,14 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(6, 'Analcolico');";
         db.execSQL(insert);
 
-        insert = "INSERT INTO TipoCocktail (id, nome)" +
-                "VALUES (1, 'Classici')," +
-                "(2, 'Cremoso')," +
-                "(3, 'Corto')," +
-                "(4, 'Longdrink')," +
-                "(5, 'Tropicale')," +
-                "(6, 'Frizzante')," +
-                "(7, 'Martini');";
+        insert = "INSERT INTO TipoCocktail (id, nome, img)" +
+                "VALUES (1, 'Classici'," + R.drawable.classic_cocktail + ")," +
+                "(2, 'Cremoso'," + R.drawable.cremoso_cocktail + ")," +
+                "(3, 'Corto'," + R.drawable.short_cocktail + ")," +
+                "(4, 'Longdrink'," + R.drawable.longdrink_cocktail + ")," +
+                "(5, 'Tropicale'," + R.drawable.tropical_cocktail + ")," +
+                "(6, 'Frizzante'," + R.drawable.friz_cocktail + ")," +
+                "(7, 'Martini'," + R.drawable.martini_cocktail + ");";
         db.execSQL(insert);
 
 

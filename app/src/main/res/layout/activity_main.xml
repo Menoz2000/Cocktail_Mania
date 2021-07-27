@@ -29,7 +29,11 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
-            <GridView
+            <com.example.cocktailmania.utility.NonScrollGridView
+                android:id="@+id/GrigliaTipoCocktail"
+                android:numColumns="auto_fit"
+                android:gravity="center"
+                android:columnWidth="100dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
