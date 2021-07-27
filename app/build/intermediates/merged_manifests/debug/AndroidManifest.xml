@@ -32,8 +32,8 @@
         <activity android:name="com.example.cocktailmania.book.BookActivity" />
         <activity android:name="com.example.cocktailmania.cocktail.CocktailActivity" />
         <activity android:name="com.example.cocktailmania.ingredient.IngredientActivity" />
-        <activity android:name="com.example.cocktailmania.naviga.MainActivity" >
-        </activity>
+        <activity android:name="com.example.cocktailmania.naviga.MainActivity" />
+        <activity android:name="com.example.cocktailmania.naviga.TypeCocktailList" />
     </application>
 
 </manifest>

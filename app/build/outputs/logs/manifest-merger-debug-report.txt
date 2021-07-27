@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-30:12
+ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-31:16
+INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-31:16
+INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-31:16
+INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-31:16
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\Andrea\.gradle\caches\transforms-2\files-2.1\10046aad9e73cbf22653afacdcab8838\material-1.4.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Andrea\.gradle\caches\transforms-2\files-2.1\0db51bfebffdf02cab6c3906aa1040ae\constraintlayout-2.0.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.3.0] C:\Users\Andrea\.gradle\caches\transforms-2\files-2.1\77c7b97873973e149b09819f46c0a153\appcompat-1.3.0\AndroidManifest.xml:17:1-24:12
@@ -45,25 +45,25 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\Andrea\.gradle\caches\transforms-2\files-2.1\f8503f66578d12caa389b09e1e5eca48\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Andrea\.gradle\caches\transforms-2\files-2.1\a81ff3a6f4fe4cdba627ce49c2369465\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Andrea\.gradle\caches\transforms-2\files-2.1\8b1826e082b884f9fc593d27a9580a45\annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-31:16
+INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-31:16
+INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-31:16
 	package
 		ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml
 		INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml
-		ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-30:12
+		ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-31:16
 		INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml
-		ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-30:12
+		ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:1-31:16
 		INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:5:5-28:19
+ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:5:5-29:15
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\Andrea\.gradle\caches\transforms-2\files-2.1\10046aad9e73cbf22653afacdcab8838\material-1.4.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\Andrea\.gradle\caches\transforms-2\files-2.1\10046aad9e73cbf22653afacdcab8838\material-1.4.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Andrea\.gradle\caches\transforms-2\files-2.1\0db51bfebffdf02cab6c3906aa1040ae\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -125,9 +125,13 @@ ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:25:9-
 	android:name
 		ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:25:19-64
 activity#com.example.cocktailmania.naviga.MainActivity
-ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:26:9-27:20
+ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:26:9-57
 	android:name
 		ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:26:19-54
+activity#com.example.cocktailmania.naviga.TypeCocktailList
+ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:27:9-61
+	android:name
+		ADDED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:27:19-58
 uses-sdk
 INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml

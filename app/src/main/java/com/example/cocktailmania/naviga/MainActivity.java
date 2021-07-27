@@ -2,6 +2,8 @@ package com.example.cocktailmania.naviga;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +11,9 @@ import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
 import com.example.cocktailmania.book.BookActivity;
 import com.example.cocktailmania.cocktail.CocktailActivity;
+import com.example.cocktailmania.cocktail.CocktailModule;
 import com.example.cocktailmania.ingredient.IngredientActivity;
+import com.example.cocktailmania.ingredient.IngredientModule;
 import com.example.cocktailmania.utility.NonScrollGridView;
 import com.example.cocktailmania.utility.TipoCocktail;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -30,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //prendo i dati dal database
-        tipoCocktailArrayList=db.getTipiCocktail();
+        tipoCocktailArrayList = db.getType();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.navigaButton);
@@ -65,5 +69,13 @@ public class MainActivity extends AppCompatActivity {
         gridView = findViewById(R.id.GrigliaTipoCocktail);
         GridAdapter gridAdapter = new GridAdapter(this, tipoCocktailArrayList);
         gridView.setAdapter(gridAdapter);
+        gridView.setFocusable(false);    //elimino focus sulla lista
+        //rendo la lista cliccabile
+        gridView.setClickable(true);
+        gridView.setOnItemClickListener((parent, view, position, id) -> {
+            Intent i = new Intent(MainActivity.this, TypeCocktailList.class);
+            i.putExtra("tipo_cocktail", tipoCocktailArrayList.get(position).getId());
+            startActivity(i);
+        });
     }
 }

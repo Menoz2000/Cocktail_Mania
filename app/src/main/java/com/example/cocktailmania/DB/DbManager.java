@@ -287,7 +287,7 @@ public class DbManager {
 
     }
 
-    public ArrayList<TipoCocktail> getTipiCocktail(){
+    public ArrayList<TipoCocktail> getType() {
         int cont = 0;
         TipoCocktail tipe;
         ArrayList<TipoCocktail> arrTipe = new ArrayList<>();
@@ -322,6 +322,72 @@ public class DbManager {
         }
 
         return arrTipe;
+    }
+
+    public TipoCocktail getType(int id) {
+
+        TipoCocktail tipe = new TipoCocktail();
+
+        String query = "SELECT t.id, t.nome, t.img " +
+                "FROM TipoCocktail t " +
+                "WHERE t.id=" + id;
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        if (c != null) {
+
+            if (c.moveToFirst()) {
+                //inserisco i dati al suo interno
+                tipe.setId(c.getInt(0));
+                tipe.setNome(c.getString(1));
+                tipe.setImg(c.getInt(2));
+            }
+
+        }
+        if (c != null) {
+            c.close();
+        }
+
+        return tipe;
+    }
+
+    public ArrayList<CocktailElem> getCocktailType(int type) {
+        int cont = 0;
+        CocktailElem elem;
+        ArrayList<CocktailElem> arrElem = new ArrayList<>();
+
+        String query = "SELECT  c.id, c.nome, c.img, g.gradazione " +
+                "FROM Cocktail c " +
+                "LEFT JOIN GradoAlcolico g ON g.id=c.fk_gradoAlcolico " +
+                "WHERE c.fk_tipo=" + type + " ";
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        if (c != null) {
+
+            if (c.moveToFirst()) {
+
+                do {
+                    elem = new CocktailElem(c.getInt(0),
+                            c.getString(1),
+                            c.getInt(2),
+                            c.getString(3));
+
+                    arrElem.add(cont, elem);
+                    cont++;
+                } while (c.moveToNext());
+
+            }
+
+        }
+        if (c != null) {
+            c.close();
+        }
+
+        return arrElem;
+
     }
 }
 

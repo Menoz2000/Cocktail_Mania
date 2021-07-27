@@ -11,7 +11,7 @@
 9-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:5:5-28:19
+11-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:5:5-29:15
 12        android:allowBackup="true"
 12-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -61,10 +61,12 @@
 34        <activity android:name="com.example.cocktailmania.ingredient.IngredientActivity" />
 34-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:25:9-67
 34-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:25:19-64
-35        <activity android:name="com.example.cocktailmania.naviga.MainActivity" >
-35-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:26:9-27:20
+35        <activity android:name="com.example.cocktailmania.naviga.MainActivity" />
+35-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:26:9-57
 35-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:26:19-54
-36        </activity>
+36        <activity android:name="com.example.cocktailmania.naviga.TypeCocktailList" />
+36-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:27:9-61
+36-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:27:19-58
 37    </application>
 38
 39</manifest>

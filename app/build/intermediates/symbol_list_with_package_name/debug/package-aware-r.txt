@@ -1867,7 +1867,9 @@ id StepPrep
 id StrumName
 id TOP_END
 id TOP_START
+id TypeIMG
 id TypeName
+id TypeTitle
 id UnityIng
 id accelerate
 id accessibility_action_clickable_span
@@ -1973,6 +1975,7 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id cocktailButton
+id cocktailName
 id collapseActionView
 id confirm_button
 id container
@@ -2039,9 +2042,11 @@ id fragment_container_view_tag
 id ghost_view
 id ghost_view_holder
 id gone
+id gradeCocktail
 id grado_alcolico
 id graph
 id graph_wrap
+id grid_cocktail_type
 id group_divider
 id grouping
 id groups
@@ -2053,6 +2058,7 @@ id homeAsUp
 id honorRequest
 id icon
 id icon_group
+id idCocktail
 id idIng
 id idStrum
 id idType
@@ -2060,6 +2066,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageCocktail
 id imageType
 id imageView
 id img
@@ -2386,6 +2393,7 @@ layout activity_ingredient
 layout activity_ingredient_module
 layout activity_main
 layout activity_start
+layout activity_type_cocktail
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2403,6 +2411,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout ingredient_row
+layout item_grid_type_cocktail
 layout list_row
 layout material_chip_input_combo
 layout material_clock_display

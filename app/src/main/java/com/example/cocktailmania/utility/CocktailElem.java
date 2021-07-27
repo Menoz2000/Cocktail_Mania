@@ -22,6 +22,13 @@ public class CocktailElem implements Parcelable {
         this.fk_gradoAlcolico = gradoAlcolico;
     }
 
+    public CocktailElem(int id, String nome, int img, String fk_gradoAlcolico) {
+        this.id = id;
+        this.nome = nome;
+        this.img = img;
+        this.fk_gradoAlcolico = fk_gradoAlcolico;
+    }
+
     public CocktailElem(int id, String nome, String fk_gradoAlcolico, String fk_origine, String fk_tipo, boolean preferito, boolean iconico, boolean my_cocktail, int img) {
         this.id = id;
         this.nome = nome;

@@ -23,8 +23,9 @@
         <activity android:name=".book.BookActivity" />
         <activity android:name=".cocktail.CocktailActivity" />
         <activity android:name=".ingredient.IngredientActivity" />
-        <activity android:name=".naviga.MainActivity">
-        </activity>
-    </application>
+        <activity android:name=".naviga.MainActivity" />
+        <activity android:name=".naviga.TypeCocktailList" />
 
-</manifest>
+</application>
+
+    </manifest>
