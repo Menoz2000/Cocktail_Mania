@@ -1849,6 +1849,7 @@ int id CTRL 0x7f080006
 int id CktName 0x7f080007
 int id CktOrigin 0x7f080008
 int id FUNCTION 0x7f080009
+int id GradeName 0x7f0801df
 int id GrigliaTipoCocktail 0x7f08000a
 int id IngList 0x7f08000b
 int id IngText 0x7f08000c
@@ -2058,6 +2059,7 @@ int id honorRequest 0x7f0800d4
 int id icon 0x7f0800d5
 int id icon_group 0x7f0800d6
 int id idCocktail 0x7f0801dd
+int id idGrade 0x7f0801e0
 int id idIng 0x7f0800d7
 int id idStrum 0x7f0800d8
 int id idType 0x7f0800d9
@@ -2474,6 +2476,7 @@ int layout prep_row 0x7f0b0070
 int layout select_dialog_item_material 0x7f0b0071
 int layout select_dialog_multichoice_material 0x7f0b0072
 int layout select_dialog_singlechoice_material 0x7f0b0073
+int layout single_item_grade 0x7f0b0088
 int layout single_item_grid_type 0x7f0b0074
 int layout strum_row 0x7f0b0075
 int layout support_simple_spinner_dropdown_item 0x7f0b0076

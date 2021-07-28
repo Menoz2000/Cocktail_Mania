@@ -9,9 +9,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="547dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -31,11 +31,11 @@
 
             <com.example.cocktailmania.utility.NonScrollGridView
                 android:id="@+id/GrigliaTipoCocktail"
-                android:numColumns="auto_fit"
-                android:gravity="center"
-                android:columnWidth="100dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:columnWidth="100dp"
+                android:gravity="center"
+                android:numColumns="auto_fit" />
 
             <com.example.cocktailmania.utility.NonScrollListView
                 android:id="@+id/list_AlcolicGrade"
@@ -54,7 +54,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <ListView
                         android:layout_width="match_parent"

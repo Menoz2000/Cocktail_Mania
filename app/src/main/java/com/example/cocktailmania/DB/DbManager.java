@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.cocktailmania.utility.CocktailElem;
+import com.example.cocktailmania.utility.GradeCocktail;
 import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.StepPrep;
 import com.example.cocktailmania.utility.IngredientElem;
@@ -352,15 +353,89 @@ public class DbManager {
         return tipe;
     }
 
-    public ArrayList<CocktailElem> getCocktailType(int type) {
+    public ArrayList<GradeCocktail> getGrade() {
+        int cont = 0;
+        GradeCocktail grade;
+        ArrayList<GradeCocktail> arrGrade = new ArrayList<>();
+
+        String query = "SELECT g.id, g.gradazione " +
+                "FROM GradoAlcolico g " +
+                "ORDER BY g.id";
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        if (c != null) {
+
+            if (c.moveToFirst()) {
+
+                do {
+                    //inizializzo l'oggetto StrumRow
+                    grade = new GradeCocktail();
+                    //inserisco i dati al suo interno
+                    grade.setId(c.getInt(0));
+                    grade.setNome(c.getString(1));
+
+                    //aggiungo l'oggetto al ArrayList
+                    arrGrade.add(cont, grade);
+                    cont++;
+                } while (c.moveToNext());
+
+            }
+
+        }
+        if (c != null) {
+            c.close();
+        }
+
+        return arrGrade;
+    }
+
+    public GradeCocktail getGrade(int id) {
+
+        GradeCocktail grd = new GradeCocktail();
+
+        String query = "SELECT g.id, g.gradazione " +
+                "FROM GradoAlcolico g " +
+                "WHERE g.id=" + id;
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        if (c != null) {
+
+            if (c.moveToFirst()) {
+                //inserisco i dati al suo interno
+                grd.setId(c.getInt(0));
+                grd.setNome(c.getString(1));
+            }
+
+        }
+        if (c != null) {
+            c.close();
+        }
+
+        return grd;
+    }
+
+    public ArrayList<CocktailElem> getCocktail(int config, int type) {
         int cont = 0;
         CocktailElem elem;
         ArrayList<CocktailElem> arrElem = new ArrayList<>();
 
         String query = "SELECT  c.id, c.nome, c.img, g.gradazione " +
                 "FROM Cocktail c " +
-                "LEFT JOIN GradoAlcolico g ON g.id=c.fk_gradoAlcolico " +
-                "WHERE c.fk_tipo=" + type + " ";
+                "LEFT JOIN GradoAlcolico g ON g.id=c.fk_gradoAlcolico ";
+
+        /* [0] --> tipo cocktail
+           [1] --> grado cocktail
+           [2] --> origine */
+        if (config == 0)
+            query += "WHERE c.fk_tipo=" + type + " ";
+        if (config == 1)
+            query += "WHERE c.fk_gradoAlcolico=" + type + " ";
+        if (config == 2)
+            query += "WHERE c.fk_origine=" + type + " ";
 
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor c = db.rawQuery(query, null);

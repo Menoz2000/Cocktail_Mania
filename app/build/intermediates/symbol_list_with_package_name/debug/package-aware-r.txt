@@ -1850,6 +1850,7 @@ id CTRL
 id CktName
 id CktOrigin
 id FUNCTION
+id GradeName
 id GrigliaTipoCocktail
 id IngList
 id IngText
@@ -2059,6 +2060,7 @@ id honorRequest
 id icon
 id icon_group
 id idCocktail
+id idGrade
 id idIng
 id idStrum
 id idType
@@ -2475,6 +2477,7 @@ layout prep_row
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout single_item_grade
 layout single_item_grid_type
 layout strum_row
 layout support_simple_spinner_dropdown_item

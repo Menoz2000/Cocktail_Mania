@@ -11,6 +11,7 @@ import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
 import com.example.cocktailmania.cocktail.CocktailModule;
 import com.example.cocktailmania.utility.CocktailElem;
+import com.example.cocktailmania.utility.GradeCocktail;
 import com.example.cocktailmania.utility.NonScrollGridView;
 import com.example.cocktailmania.utility.TipoCocktail;
 
@@ -21,7 +22,8 @@ public class TypeCocktailList extends AppCompatActivity {
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
     ArrayList<CocktailElem> cocktailElems;
-    TipoCocktail selectedType;
+    TextView name = findViewById(R.id.TypeTitle);
+    ImageView image = findViewById(R.id.TypeIMG);
     NonScrollGridView gridView;
 
     @Override
@@ -29,18 +31,31 @@ public class TypeCocktailList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_type_cocktail);
 
-        if (getIntent().hasExtra("tipo_cocktail")) {
-            int idType = getIntent().getIntExtra("tipo_cocktail", 0);
-            cocktailElems=db.getCocktailType(idType);
-            selectedType=db.getType(idType);
+        if (getIntent().hasExtra("cocktail")) {
+            int[] val = getIntent().getIntArrayExtra("cocktail");
+            cocktailElems = db.getCocktail(val[0], val[1]); //passo al metodo la configurazione e l'id
 
-            //setto le informazione del tipo
-            TextView name_type=findViewById(R.id.TypeTitle);
-            ImageView image_type=findViewById(R.id.TypeIMG);
-            name_type.setText(selectedType.getNome());
-            image_type.setImageResource(selectedType.getImg());
+            //tipo cocktail
+            if (val[0] == 0) {
+                TipoCocktail selected;
+                selected = db.getType(val[1]);
 
-            //imposto la griglia dei cocktail del tipo selezionato
+                //setto le informazione del tipo
+                name.setText(selected.getNome());
+                image.setImageResource(selected.getImg());
+            }
+
+            //grado alcolico
+            if (val[0] == 1) {
+                GradeCocktail selected;
+                selected = db.getGrade(val[1]);
+
+                //setto le informazione del grado alcolico
+                name.setText(selected.getNome());
+                image.setVisibility(TextView.GONE);
+            }
+
+            //imposto la griglia dei cocktail
             gridView = findViewById(R.id.grid_cocktail_type);
             GridCocktailAdapter gridAdapter = new GridCocktailAdapter(this, cocktailElems);
             gridView.setAdapter(gridAdapter);
@@ -52,6 +67,7 @@ public class TypeCocktailList extends AppCompatActivity {
                 i.putExtra("selected_ckt", cocktailElems.get(position).getId());
                 startActivity(i);
             });
+
         }
     }
 }
