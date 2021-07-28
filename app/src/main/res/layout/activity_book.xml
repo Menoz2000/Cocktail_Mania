@@ -10,13 +10,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/ckt_pref"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/preferiti" />
+
+        <Button
+            android:id="@+id/my_ckt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MY COCKTAIL" />
+
+        <Button
+            android:id="@+id/addCkt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADD NEW COCKTAIL" />
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

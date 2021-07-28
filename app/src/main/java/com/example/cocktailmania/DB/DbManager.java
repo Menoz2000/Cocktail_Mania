@@ -464,6 +464,11 @@ public class DbManager {
         return arrElem;
 
     }
+
+    public boolean updateNewMyCkt (){
+        return false;
+    }
+
 }
 
 

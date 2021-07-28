@@ -1,17 +1,16 @@
 package com.example.cocktailmania.book;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cocktailmania.R;
 import com.example.cocktailmania.cocktail.CocktailActivity;
-import com.example.cocktailmania.cocktail.CocktailModule;
 import com.example.cocktailmania.ingredient.IngredientActivity;
 import com.example.cocktailmania.naviga.MainActivity;
-import com.example.cocktailmania.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BookActivity extends AppCompatActivity {
@@ -56,6 +55,19 @@ public class BookActivity extends AppCompatActivity {
 
         Button button = (Button) findViewById(R.id.ckt_pref);
         button.setOnClickListener(v -> openActivityCkt(1));
+
+        Button button1 = (Button) findViewById(R.id.my_ckt);
+        button1.setOnClickListener(v -> openActivityCkt(2));
+
+        Button button2 = (Button) findViewById(R.id.addCkt);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(this, MyCocktail.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void openActivityCkt(int n) {

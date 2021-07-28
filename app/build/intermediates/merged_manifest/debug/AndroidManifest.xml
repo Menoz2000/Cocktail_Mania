@@ -18,8 +18,8 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.CocktailMania" >
+        <activity android:name="com.example.cocktailmania.book.MyCocktail" />
         <activity android:name="com.example.cocktailmania.naviga.start" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
