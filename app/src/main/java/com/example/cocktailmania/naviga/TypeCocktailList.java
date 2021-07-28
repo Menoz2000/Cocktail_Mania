@@ -22,8 +22,6 @@ public class TypeCocktailList extends AppCompatActivity {
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
     ArrayList<CocktailElem> cocktailElems;
-    TextView name = findViewById(R.id.TypeTitle);
-    ImageView image = findViewById(R.id.TypeIMG);
     NonScrollGridView gridView;
 
     @Override
@@ -32,6 +30,9 @@ public class TypeCocktailList extends AppCompatActivity {
         setContentView(R.layout.activity_type_cocktail);
 
         if (getIntent().hasExtra("cocktail")) {
+            TextView name = findViewById(R.id.TypeTitle);
+            ImageView image = findViewById(R.id.TypeIMG);
+
             int[] val = getIntent().getIntArrayExtra("cocktail");
             cocktailElems = db.getCocktail(val[0], val[1]); //passo al metodo la configurazione e l'id
 

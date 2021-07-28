@@ -55,12 +55,12 @@ com/example/cocktailmania/ingredient/IngredientModule.java
  com.example.cocktailmania.ingredient.IngredientModule
 com/example/cocktailmania/DB/DbManager.java
  com.example.cocktailmania.DB.DbManager
-com/example/cocktailmania/naviga/MainActivity.java
- com.example.cocktailmania.naviga.MainActivity
-com/example/cocktailmania/cocktail/CocktailModule.java
- com.example.cocktailmania.cocktail.CocktailModule
 com/example/cocktailmania/ingredient/IngredientActivity.java
  com.example.cocktailmania.ingredient.IngredientActivity
  com.example.cocktailmania.ingredient.IngredientActivity$1
+com/example/cocktailmania/cocktail/CocktailModule.java
+ com.example.cocktailmania.cocktail.CocktailModule
+com/example/cocktailmania/naviga/MainActivity.java
+ com.example.cocktailmania.naviga.MainActivity
 com/example/cocktailmania/naviga/TypeCocktailList.java
  com.example.cocktailmania.naviga.TypeCocktailList
