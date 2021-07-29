@@ -46,9 +46,11 @@ public class MyHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(comando);
 
+        //TODO: delete DEFAULT image
         comando = "CREATE TABLE Origine (" +
                 "id integer PRIMARY KEY," +
-                "nazione text NOT NULL" +
+                "nazione text NOT NULL," +
+                "img integer NOT NULL DEFAULT " + R.drawable.ing_131 +
                 ");";
         db.execSQL(comando);
 
@@ -59,6 +61,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(comando);
 
+        //TODO: delete DEFAULT IMAGE from table
         comando = "CREATE TABLE Azione (" +
                 "    id integer PRIMARY KEY," +
                 "    nome text NOT NULL," +
@@ -186,6 +189,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(175, 'Tonic', 0, 'Acqua tonica', " + R.drawable.ing_175 + ");";
         db.execSQL(insert);
 
+        //TODO: add image for each nation
         insert = "INSERT INTO Origine (id, nazione)" +
                 "VALUES (1, 'Italia')," +
                 "(2, 'Francia')," +
@@ -260,7 +264,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(7, 'Martini'," + R.drawable.martini_cocktail + ");";
         db.execSQL(insert);
 
-
+        //TODO: add action image for each action
         insert = "INSERT INTO Azione (id, nome)" +
                 "VALUES (1, 'Aggiungi')," +
                 "(2, 'Agita Bene')," +
@@ -295,6 +299,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(39, 'Stir', 'È un cucchiaino lungo che ti tornerà utile in diverse occasioni come ad esempio mescolare i cocktails che non vanno shakerati (ha anche una spirale intorno alla lunghezza del manico, per facilitare la mescolatura), versare lo zucchero, pestare lo zucchero o altri ingredienti in un cocktail utilizzando il Muddler (il pestello) che si trova dalla parte opposta al cucchiaio e mescolare la base pestata in un cocktail.', " + R.drawable.strum_39 + ");";
         db.execSQL(insert);
 
+        //TODO: add all cocktail preparation
         insert = "INSERT INTO Preparazione (fk_cocktail, fk_ingrediente, fk_strumento, step, fk_azione)" +
                 "VALUES (2, 126, 10, 1, 12)," +
                 "(2, 180, 10, 2, 12)," +

@@ -7,8 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.cocktailmania.utility.CocktailElem;
 import com.example.cocktailmania.utility.GradeCocktail;
 import com.example.cocktailmania.utility.IngRow;
-import com.example.cocktailmania.utility.StepPrep;
 import com.example.cocktailmania.utility.IngredientElem;
+import com.example.cocktailmania.utility.OriginCocktail;
+import com.example.cocktailmania.utility.StepPrep;
 import com.example.cocktailmania.utility.StrumRow;
 import com.example.cocktailmania.utility.TipoCocktail;
 
@@ -465,7 +466,75 @@ public class DbManager {
 
     }
 
-    public boolean updateNewMyCkt (){
+    public ArrayList<OriginCocktail> getOrigin() {
+        int cont = 0;
+        OriginCocktail origin;
+        ArrayList<OriginCocktail> arrOrigin = new ArrayList<>();
+
+        String query = "SELECT o.id, o.nazione, o.img " +
+                "FROM Origine o " +
+                "ORDER BY g.id";
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        if (c != null) {
+
+            if (c.moveToFirst()) {
+
+                do {
+                    //inizializzo l'oggetto origin
+                    origin = new OriginCocktail();
+                    //inserisco i dati al suo interno
+                    origin.setId(c.getInt(0));
+                    origin.setNazione(c.getString(1));
+                    origin.setImg(c.getInt(3));
+
+                    //aggiungo l'oggetto al ArrayList
+                    arrOrigin.add(cont, origin);
+                    cont++;
+                } while (c.moveToNext());
+
+            }
+
+        }
+        if (c != null) {
+            c.close();
+        }
+
+        return arrOrigin;
+    }
+
+    public OriginCocktail getOrigin(int id) {
+
+        OriginCocktail orig = new OriginCocktail();
+
+        String query = "SELECT o.id, o.nazione, o.img " +
+                "FROM Origine o " +
+                "WHERE o.id=" + id;
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        if (c != null) {
+
+            if (c.moveToFirst()) {
+                //inserisco i dati al suo interno
+                orig.setId(c.getInt(0));
+                orig.setNazione(c.getString(1));
+                orig.setImg(c.getInt(2));
+            }
+
+        }
+        if (c != null) {
+            c.close();
+        }
+
+        return orig;
+    }
+
+    public boolean updateNewMyCkt() {
+        //TODO: implement method
         return false;
     }
 

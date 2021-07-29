@@ -94,5 +94,10 @@ public class MainActivity extends AppCompatActivity {
             i.putExtra("cocktail", val);
             startActivity(i);
         });
+
+        /*TODO: horizontal scrollview
+        * make adpater
+        * */
+
     }
 }

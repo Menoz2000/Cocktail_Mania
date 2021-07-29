@@ -2396,7 +2396,6 @@ layout activity_cocktail_module
 layout activity_ingredient
 layout activity_ingredient_module
 layout activity_main
-layout activity_my_cocktail
 layout activity_start
 layout activity_type_cocktail
 layout custom_dialog

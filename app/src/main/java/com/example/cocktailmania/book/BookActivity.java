@@ -2,7 +2,6 @@ package com.example.cocktailmania.book;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,19 +52,17 @@ public class BookActivity extends AppCompatActivity {
             return true;
         });
 
-        Button button = (Button) findViewById(R.id.ckt_pref);
+        Button button = findViewById(R.id.ckt_pref);
         button.setOnClickListener(v -> openActivityCkt(1));
 
-        Button button1 = (Button) findViewById(R.id.my_ckt);
+        Button button1 = findViewById(R.id.my_ckt);
         button1.setOnClickListener(v -> openActivityCkt(2));
 
-        Button button2 = (Button) findViewById(R.id.addCkt);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(this, MyCocktail.class);
-                startActivity(intent);
-            }
+        Button button2 = findViewById(R.id.addCkt);
+        button2.setOnClickListener(v -> {
+            //TODO: implement MyCocktail.class
+            //Intent intent = new Intent(this, MyCocktail.class);
+            //startActivity(intent);
         });
 
     }
