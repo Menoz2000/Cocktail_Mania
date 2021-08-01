@@ -473,7 +473,7 @@ public class DbManager {
 
         String query = "SELECT o.id, o.nazione, o.img " +
                 "FROM Origine o " +
-                "ORDER BY g.id";
+                "ORDER BY o.id";
 
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor c = db.rawQuery(query, null);
@@ -488,7 +488,7 @@ public class DbManager {
                     //inserisco i dati al suo interno
                     origin.setId(c.getInt(0));
                     origin.setNazione(c.getString(1));
-                    origin.setImg(c.getInt(3));
+                    origin.setImg(c.getInt(2));
 
                     //aggiungo l'oggetto al ArrayList
                     arrOrigin.add(cont, origin);

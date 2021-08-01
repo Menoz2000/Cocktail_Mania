@@ -13,6 +13,7 @@ import com.example.cocktailmania.cocktail.CocktailModule;
 import com.example.cocktailmania.utility.CocktailElem;
 import com.example.cocktailmania.utility.GradeCocktail;
 import com.example.cocktailmania.utility.NonScrollGridView;
+import com.example.cocktailmania.utility.OriginCocktail;
 import com.example.cocktailmania.utility.TipoCocktail;
 
 import java.util.ArrayList;
@@ -53,6 +54,16 @@ public class TypeCocktailList extends AppCompatActivity {
 
                 //setto le informazione del grado alcolico
                 name.setText(selected.getNome());
+                image.setVisibility(TextView.GONE);
+            }
+
+            //origine
+            if (val[0] == 2) {
+                OriginCocktail selected;
+                selected = db.getOrigin(val[1]);
+
+                //setto le informazione del grado alcolico
+                name.setText(selected.getNazione());
                 image.setVisibility(TextView.GONE);
             }
 

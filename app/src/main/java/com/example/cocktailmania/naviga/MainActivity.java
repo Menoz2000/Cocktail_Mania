@@ -2,6 +2,7 @@ package com.example.cocktailmania.naviga;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +14,7 @@ import com.example.cocktailmania.ingredient.IngredientActivity;
 import com.example.cocktailmania.utility.GradeCocktail;
 import com.example.cocktailmania.utility.NonScrollGridView;
 import com.example.cocktailmania.utility.NonScrollListView;
+import com.example.cocktailmania.utility.OriginCocktail;
 import com.example.cocktailmania.utility.TipoCocktail;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -25,8 +27,10 @@ public class MainActivity extends AppCompatActivity {
     Intent intent;
     NonScrollGridView TypeGridView;
     NonScrollListView GradeListView;
+    ListView OriginListView;
     ArrayList<TipoCocktail> tipoCocktailArrayList;
     ArrayList<GradeCocktail> gradeCocktailArrayList;
+    ArrayList<OriginCocktail> originCocktailArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         //prendo i dati dal database
         tipoCocktailArrayList = db.getType();
         gradeCocktailArrayList = db.getGrade();
+        originCocktailArrayList = db.getOrigin();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.navigaButton);
@@ -95,9 +100,18 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         });
 
-        /*TODO: horizontal scrollview
-        * make adpater
-        * */
+        /*TODO: horizontal scrollview*/
+        OriginListView = findViewById(R.id.OriginList);
+        OriginListAdapter originListAdapter = new OriginListAdapter(this, originCocktailArrayList);
+        OriginListView.setAdapter(originListAdapter);
+        //rendo la lista cliccabile
+        OriginListView.setClickable(true);
+        OriginListView.setOnItemClickListener((parent, view, position, id) -> {
+            Intent i = new Intent(MainActivity.this, TypeCocktailList.class);
+            int[] val = {2, tipoCocktailArrayList.get(position).getId()}; //array con {config, id}
+            i.putExtra("cocktail", val);
+            startActivity(i);
+        });
 
     }
 }

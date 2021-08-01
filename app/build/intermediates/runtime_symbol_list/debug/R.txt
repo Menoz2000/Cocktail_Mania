@@ -1818,6 +1818,7 @@ int drawable notification_template_icon_bg 0x7f0700cf
 int drawable notification_template_icon_low_bg 0x7f0700d0
 int drawable notification_tile_bg 0x7f0700d1
 int drawable notify_panel_notification_icon_bg 0x7f0700d2
+int drawable origin_custom_shape 0x7f0700e8
 int drawable short_cocktail 0x7f0700d3
 int drawable step_custom_shape 0x7f0700d4
 int drawable strum_10 0x7f0700d5
@@ -1856,6 +1857,9 @@ int id IngText 0x7f08000d
 int id IngredientList 0x7f08000e
 int id META 0x7f08000f
 int id NO_DEBUG 0x7f080010
+int id OrigName 0x7f0801e3
+int id OriginImage 0x7f0801e4
+int id OriginList 0x7f0801e5
 int id QuantityIng 0x7f080011
 int id SHIFT 0x7f080012
 int id SHOW_ALL 0x7f080013
@@ -2062,6 +2066,7 @@ int id icon_group 0x7f0800db
 int id idCocktail 0x7f0800dc
 int id idGrade 0x7f0800dd
 int id idIng 0x7f0800de
+int id idOrig 0x7f0801e6
 int id idStrum 0x7f0800df
 int id idType 0x7f0800e0
 int id ifRoom 0x7f0800e1
@@ -2480,6 +2485,7 @@ int layout select_dialog_multichoice_material 0x7f0b0073
 int layout select_dialog_singlechoice_material 0x7f0b0074
 int layout single_item_grade 0x7f0b0075
 int layout single_item_grid_type 0x7f0b0076
+int layout single_item_origin 0x7f0b0089
 int layout strum_row 0x7f0b0077
 int layout support_simple_spinner_dropdown_item 0x7f0b0078
 int layout switch_item 0x7f0b0079
