@@ -60,9 +60,8 @@ public class BookActivity extends AppCompatActivity {
 
         Button button2 = findViewById(R.id.addCkt);
         button2.setOnClickListener(v -> {
-            //TODO: implement MyCocktail.class
-            //Intent intent = new Intent(this, MyCocktail.class);
-            //startActivity(intent);
+            Intent intent = new Intent(this, MyCocktail.class);
+            startActivity(intent);
         });
 
     }
