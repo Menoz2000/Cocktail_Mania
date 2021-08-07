@@ -1739,6 +1739,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_open_book
 drawable ic_search
+drawable ic_search_black_24dp
 drawable ing_101
 drawable ing_102
 drawable ing_103
@@ -1848,12 +1849,12 @@ id AzioneImg
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
-id CktName
 id CktOrigin
 id FUNCTION
 id GradeName
 id GrigliaTipoCocktail
 id IngList
+id IngName
 id IngText
 id IngredientList
 id META
@@ -1870,6 +1871,7 @@ id SYM
 id StepNumber
 id StepPrep
 id StrumName
+id StrumTitle
 id TOP_END
 id TOP_START
 id TypeIMG
@@ -1960,6 +1962,7 @@ id buttonPanel
 id cache_measures
 id cancel_action
 id cancel_button
+id capacita
 id center
 id center_horizontal
 id center_vertical
@@ -2002,6 +2005,7 @@ id default_activity_button
 id deltaRelative
 id dependency_ordering
 id descrizione
+id descrizioneStrum
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -2077,7 +2081,8 @@ id image
 id imageCocktail
 id imageType
 id imageView
-id img
+id imgIng
+id imgStrum
 id info
 id ingRv
 id ingSottotitolo
@@ -2191,7 +2196,6 @@ id postLayout
 id progressBar
 id progress_circular
 id progress_horizontal
-id prova
 id radio
 id ratio
 id rectangles
@@ -2403,6 +2407,7 @@ layout activity_ingredient_module
 layout activity_main
 layout activity_my_cocktail
 layout activity_start
+layout activity_strum
 layout activity_type_cocktail
 layout custom_dialog
 layout design_bottom_navigation_item

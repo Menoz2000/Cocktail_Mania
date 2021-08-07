@@ -27,7 +27,7 @@ public class IngredientModule extends AppCompatActivity {
             IngredientElem ing = db.getSingleIngredient(ingN);
 
             //passaggio dei dati alla grafica
-            TextView textView = findViewById(R.id.CktName);
+            TextView textView = findViewById(R.id.IngName);
             textView.setText(ing.getNome());
 
             TextView textView1 = findViewById(R.id.sottotitolo);
@@ -38,7 +38,7 @@ public class IngredientModule extends AppCompatActivity {
             }
 
             try {
-                ImageView imageView = findViewById(R.id.img);
+                ImageView imageView = findViewById(R.id.imgIng);
                 imageView.setImageResource(ing.getImg());
             } catch (Exception e) {
                 e.printStackTrace();
@@ -55,7 +55,7 @@ public class IngredientModule extends AppCompatActivity {
             }
 
             TextView textView4 = findViewById(R.id.descrizione);
-            if (ing.getSottotitolo() != null) {
+            if (ing.getDescrizione() != null) {
                 textView4.setText(ing.getDescrizione());
             } else {
                 textView4.setVisibility(TextView.GONE);

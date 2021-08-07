@@ -11,6 +11,7 @@ import com.example.cocktailmania.utility.IngredientElem;
 import com.example.cocktailmania.utility.OriginCocktail;
 import com.example.cocktailmania.utility.StepPrep;
 import com.example.cocktailmania.utility.StrumRow;
+import com.example.cocktailmania.utility.Strumento;
 import com.example.cocktailmania.utility.TipoCocktail;
 
 import java.util.ArrayList;
@@ -249,10 +250,35 @@ public class DbManager {
 
     }
 
-    public ArrayList<StrumRow> getInstruments(int id) {
+    public Strumento getInstrument(int id) {
+        String query = "SELECT s.nome, s.img, s.descrizione, s.capacita " +
+                "FROM Strumento s " +
+                "WHERE s.id=" + id;
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        Strumento str = new Strumento();
+
+        if (c != null) {
+            if (c.moveToFirst()) {
+                str.setId(id);
+                str.setNome(c.getString(0));
+                str.setImg(c.getInt(1));
+                str.setDescrizione(c.getString(2));
+                str.setCapacita(c.getString(3));
+            }
+            c.close();
+
+        }
+
+        return str;
+    }
+
+    public ArrayList<Strumento> getInstruments(int id) {
         int cont = 0;
-        StrumRow strum;
-        ArrayList<StrumRow> arrStrum = new ArrayList<>();
+        Strumento strum;
+        ArrayList<Strumento> arrStrum = new ArrayList<>();
 
         String query = "SELECT s.id, s.nome " +
                 "FROM Strumento s " +
@@ -268,11 +294,12 @@ public class DbManager {
             if (c.moveToFirst()) {
 
                 do {
-                    //inizializzo l'oggetto StrumRow
-                    strum = new StrumRow();
-                    //inserisco i dati al suo interno
-                    strum.setId(c.getInt(0));
-                    strum.setName(c.getString(1));
+                    //inizializzo l'oggetto Strumento ed inserisco i dati al suo interno
+                    strum = new Strumento(
+                            c.getInt(0),
+                            c.getString(1)
+                    );
+
                     //aggiungo l'oggetto al ArrayList
                     arrStrum.add(cont, strum);
                     cont++;

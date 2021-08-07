@@ -8,22 +8,22 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.cocktailmania.R;
-import com.example.cocktailmania.utility.StrumRow;
+import com.example.cocktailmania.utility.Strumento;
 
 import java.util.List;
 
-public class StrumAdapter extends ArrayAdapter<StrumRow> {
+public class StrumAdapter extends ArrayAdapter<Strumento> {
     Context context;
-    List<StrumRow> strumElems;
+    List<Strumento> strumElems;
 
-    public StrumAdapter(Context context, List<StrumRow> strumElems) {
+    public StrumAdapter(Context context, List<Strumento> strumElems) {
         super(context, 0, strumElems);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        StrumRow sp = getItem(position);
+        Strumento sp = getItem(position);
 
         if (convertView == null)
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.strum_row, parent, false);
@@ -32,7 +32,7 @@ public class StrumAdapter extends ArrayAdapter<StrumRow> {
         TextView strum_name = convertView.findViewById(R.id.StrumName);
 
         id_strum.setText(String.valueOf(sp.getId()));
-        strum_name.setText(sp.getName());
+        strum_name.setText(sp.getNome());
 
         return convertView;
     }

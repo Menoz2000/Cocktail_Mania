@@ -20,6 +20,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CocktailMania" >
+        <activity android:name="com.example.cocktailmania.cocktail.StrumActivity" />
         <activity android:name="com.example.cocktailmania.book.MyCocktail" />
         <activity android:name="com.example.cocktailmania.naviga.start" >
             <intent-filter>

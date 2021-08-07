@@ -19,6 +19,7 @@ import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.NonScrollListView;
 import com.example.cocktailmania.utility.StepPrep;
 import com.example.cocktailmania.utility.StrumRow;
+import com.example.cocktailmania.utility.Strumento;
 
 import java.util.ArrayList;
 
@@ -29,7 +30,7 @@ public class CocktailModule extends AppCompatActivity {
     NonScrollListView SteplistView, IngListView, StrumListView;
     ArrayList<IngRow> ingredients;
     ArrayList<StepPrep> stepPrep;
-    ArrayList<StrumRow> instruments;
+    ArrayList<Strumento> instruments;
     int cktN;
     CocktailElem ckt;
 
@@ -50,11 +51,11 @@ public class CocktailModule extends AppCompatActivity {
             }*/
 
             //passaggio dei dati alla grafica
-            TextView textView = findViewById(R.id.CktName);
+            TextView textView = findViewById(R.id.StrumTitle);
             textView.setText(ckt.getNome());
 
             try {
-                ImageView imageView = findViewById(R.id.img);
+                ImageView imageView = findViewById(R.id.imgStrum);
                 imageView.setImageResource(ckt.getImg());
             } catch (Exception e) {
                 e.printStackTrace();
@@ -68,6 +69,13 @@ public class CocktailModule extends AppCompatActivity {
             StrumAdapter strumAdapter = new StrumAdapter(this, instruments);
             StrumListView.setAdapter(strumAdapter);
             StrumListView.setFocusable(false);    //elimino focus sulla lista
+            //rendo la lista cliccabile
+            StrumListView.setClickable(true);
+            StrumListView.setOnItemClickListener((parent, view, position, id) -> {
+                Intent i = new Intent(CocktailModule.this, StrumActivity.class);
+                i.putExtra("selected_strum", instruments.get(position).getId());
+                startActivity(i);
+            });
 
             TextView textView2 = findViewById(R.id.CktOrigin);
             if (ckt.getFk_origine() != null) {

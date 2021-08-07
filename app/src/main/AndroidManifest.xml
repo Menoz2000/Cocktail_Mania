@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CocktailMania">
-        <activity android:name=".book.MyCocktail"></activity>
+        <activity android:name=".cocktail.StrumActivity"></activity>
+        <activity android:name=".book.MyCocktail" />
         <activity android:name=".naviga.start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
