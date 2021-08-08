@@ -2,9 +2,12 @@ package com.example.cocktailmania.book;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.example.cocktailmania.R;
+import com.example.cocktailmania.cocktail.CocktailActivity;
 
 public class MyCocktail extends AppCompatActivity {
 
@@ -12,9 +15,18 @@ public class MyCocktail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_cocktail);
+
+        //provvisorio, da controllare
+        Button addButton=findViewById(R.id.add_button);
+        addButton.setOnClickListener(v -> openAddCkt());
+
+    }
+
+    private void openAddCkt(){
+        Intent intent = new Intent(this, addCocktail.class);
+        startActivity(intent);
     }
 }
-
 
 /*
 * passaggi per inserire un myCocktail

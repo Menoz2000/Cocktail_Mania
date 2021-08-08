@@ -26,8 +26,9 @@ com/example/cocktailmania/utility/StrumRow.java
 com/example/cocktailmania/utility/CocktailElem.java
  com.example.cocktailmania.utility.CocktailElem
  com.example.cocktailmania.utility.CocktailElem$1
-com/example/cocktailmania/book/MyCocktail.java
- com.example.cocktailmania.book.MyCocktail
+com/example/cocktailmania/ingredient/IngredientActivity.java
+ com.example.cocktailmania.ingredient.IngredientActivity
+ com.example.cocktailmania.ingredient.IngredientActivity$1
 com/example/cocktailmania/naviga/GridCocktailAdapter.java
  com.example.cocktailmania.naviga.GridCocktailAdapter
 com/example/cocktailmania/ingredient/IngredientModule.java
@@ -46,9 +47,8 @@ com/example/cocktailmania/cocktail/StrumAdapter.java
  com.example.cocktailmania.cocktail.StrumAdapter
 com/example/cocktailmania/cocktail/StrumActivity.java
  com.example.cocktailmania.cocktail.StrumActivity
-com/example/cocktailmania/cocktail/CocktailActivity.java
- com.example.cocktailmania.cocktail.CocktailActivity
- com.example.cocktailmania.cocktail.CocktailActivity$1
+com/example/cocktailmania/naviga/GridAdapter.java
+ com.example.cocktailmania.naviga.GridAdapter
 com/example/cocktailmania/cocktail/CocktailAdapter.java
  com.example.cocktailmania.cocktail.CocktailAdapter
  com.example.cocktailmania.cocktail.CocktailAdapter$1
@@ -69,10 +69,10 @@ com/example/cocktailmania/ingredient/IngredientAdapter.java
  com.example.cocktailmania.ingredient.IngredientAdapter$ViewHolder
 com/example/cocktailmania/naviga/OriginListAdapter.java
  com.example.cocktailmania.naviga.OriginListAdapter
-com/example/cocktailmania/ingredient/IngredientActivity.java
- com.example.cocktailmania.ingredient.IngredientActivity
- com.example.cocktailmania.ingredient.IngredientActivity$1
-com/example/cocktailmania/naviga/GridAdapter.java
- com.example.cocktailmania.naviga.GridAdapter
+com/example/cocktailmania/book/MyCocktail.java
+ com.example.cocktailmania.book.MyCocktail
+com/example/cocktailmania/cocktail/CocktailActivity.java
+ com.example.cocktailmania.cocktail.CocktailActivity
+ com.example.cocktailmania.cocktail.CocktailActivity$1
 com/example/cocktailmania/book/addCocktail.java
  com.example.cocktailmania.book.addCocktail
