@@ -19,8 +19,7 @@ public class MyCocktail extends AppCompatActivity {
 /*
 * passaggi per inserire un myCocktail
 * nome e foto
-* ingredienti con quantita
-* guarnizioni con quantità
+* ingredienti/guarnizioni con quantita
 * strumenti
 * bicchiere
 * categoria grado alcolico

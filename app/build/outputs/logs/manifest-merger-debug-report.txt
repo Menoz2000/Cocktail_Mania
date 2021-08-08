@@ -91,7 +91,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\co
 	android:theme
 		ADDED from D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:13:9-51
 activity#com.example.cocktailmania.cocktail.StrumActivity
-ADDED from D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:14:9-69
+ADDED from D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:14:9-59
 	android:name
 		ADDED from D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:14:19-57
 activity#com.example.cocktailmania.book.MyCocktail

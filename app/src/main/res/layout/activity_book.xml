@@ -26,13 +26,15 @@
             android:id="@+id/my_ckt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MY COCKTAIL" />
+            android:text="@string/my_cocktail" />
 
+        <!--
         <Button
             android:id="@+id/addCkt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ADD NEW COCKTAIL" />
+        -->
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -58,12 +58,13 @@ public class BookActivity extends AppCompatActivity {
         Button button1 = findViewById(R.id.my_ckt);
         button1.setOnClickListener(v -> openActivityCkt(2));
 
+        /*
         Button button2 = findViewById(R.id.addCkt);
         button2.setOnClickListener(v -> {
             Intent intent = new Intent(this, MyCocktail.class);
             startActivity(intent);
         });
-
+        */
     }
 
     public void openActivityCkt(int n) {

@@ -7,5 +7,6 @@
     <string name="prova">TextView</string>
     <string name="PrepTitle">Preparazione</string>
     <string name="preferiti">Preferiti</string>
+    <string name="my_cocktail">MY COCKTAIL</string>
 
 </resources>

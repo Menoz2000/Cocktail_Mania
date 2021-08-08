@@ -21,7 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+    /* TODO: change app icon */
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
     Intent intent;
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
-        //griglia con i tipi di cocktail
+        /* griglia con i tipi di cocktail */
         TypeGridView = findViewById(R.id.GrigliaTipoCocktail);
         GridAdapter gridAdapter = new GridAdapter(this, tipoCocktailArrayList);
         TypeGridView.setAdapter(gridAdapter);

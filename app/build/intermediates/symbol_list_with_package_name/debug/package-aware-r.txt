@@ -1724,6 +1724,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable friz_cocktail
+drawable ic_add
 drawable ic_alcohol
 drawable ic_baseline_home_24
 drawable ic_clock_black_24dp
@@ -1935,6 +1936,8 @@ id actions
 id activity_chooser_view_content
 id add
 id addCkt
+id add_button
+id add_myckt
 id alertTitle
 id aligned
 id all
@@ -2409,6 +2412,7 @@ layout activity_my_cocktail
 layout activity_start
 layout activity_strum
 layout activity_type_cocktail
+layout add_button
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2513,6 +2517,7 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu bottom_menu
 menu like_bar
+menu my_cocktail_bar
 menu search_bar
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -2619,6 +2624,7 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string my_cocktail
 string naviga
 string password_toggle_content_description
 string path_password_eye

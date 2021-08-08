@@ -1723,6 +1723,7 @@ int drawable design_ic_visibility_off 0x7f070070
 int drawable design_password_eye 0x7f070071
 int drawable design_snackbar_background 0x7f070072
 int drawable friz_cocktail 0x7f070073
+int drawable ic_add 0x7f0700ea
 int drawable ic_alcohol 0x7f070074
 int drawable ic_baseline_home_24 0x7f070075
 int drawable ic_clock_black_24dp 0x7f070076
@@ -1934,6 +1935,8 @@ int id actions 0x7f080059
 int id activity_chooser_view_content 0x7f08005a
 int id add 0x7f08005b
 int id addCkt 0x7f08005c
+int id add_button 0x7f0801eb
+int id add_myckt 0x7f0801ea
 int id alertTitle 0x7f08005d
 int id aligned 0x7f08005e
 int id all 0x7f08005f
@@ -2408,6 +2411,7 @@ int layout activity_my_cocktail 0x7f0b0022
 int layout activity_start 0x7f0b0023
 int layout activity_strum 0x7f0b0024
 int layout activity_type_cocktail 0x7f0b0025
+int layout add_button 0x7f0b008c
 int layout custom_dialog 0x7f0b0026
 int layout design_bottom_navigation_item 0x7f0b0027
 int layout design_bottom_sheet_dialog 0x7f0b0028
@@ -2512,6 +2516,7 @@ int layout text_view_with_theme_line_height 0x7f0b008a
 int layout text_view_without_line_height 0x7f0b008b
 int menu bottom_menu 0x7f0c0000
 int menu like_bar 0x7f0c0001
+int menu my_cocktail_bar 0x7f0c0003
 int menu search_bar 0x7f0c0002
 int mipmap ic_launcher 0x7f0d0000
 int mipmap ic_launcher_round 0x7f0d0001
@@ -2618,6 +2623,7 @@ int string mtrl_picker_toggle_to_calendar_input_mode 0x7f0f0062
 int string mtrl_picker_toggle_to_day_selection 0x7f0f0063
 int string mtrl_picker_toggle_to_text_input_mode 0x7f0f0064
 int string mtrl_picker_toggle_to_year_selection 0x7f0f0065
+int string my_cocktail 0x7f0f0070
 int string naviga 0x7f0f0066
 int string password_toggle_content_description 0x7f0f0067
 int string path_password_eye 0x7f0f0068

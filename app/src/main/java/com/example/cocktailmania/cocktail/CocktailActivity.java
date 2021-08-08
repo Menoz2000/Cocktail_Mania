@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
 import com.example.cocktailmania.book.BookActivity;
+import com.example.cocktailmania.book.MyCocktail;
 import com.example.cocktailmania.ingredient.IngredientActivity;
 import com.example.cocktailmania.naviga.MainActivity;
 import com.example.cocktailmania.utility.CocktailElem;
@@ -27,13 +29,12 @@ import java.util.List;
 
 public class CocktailActivity extends AppCompatActivity implements CocktailAdapter.OnCktListener {
 
-
     Intent intent;
     RecyclerView recyclerView;
     List<CocktailElem> elems;
     CocktailAdapter cocktailAdapter;
     private static final String TAG = "CocktailActivity";
-    private DbManager db = null;
+    int config;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
         setContentView(R.layout.activity_cocktail);
 
         if (getIntent().hasExtra("list_cocktail")) {
-            int config = getIntent().getIntExtra("list_cocktail", 0);
+            config = getIntent().getIntExtra("list_cocktail", 0);
 
             BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
             /*se config == 0 sono nella pagina Cocktail
@@ -88,7 +89,7 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
 
             elems = new ArrayList<>();
 
-            db = new DbManager(this);
+            DbManager db = new DbManager(this);
 
             Cursor c = db.elencoCocktail(config);
             CocktailElem ckt;
@@ -124,10 +125,24 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.search_bar, menu);
 
+        if (config == 2) {
+            inflater.inflate(R.menu.my_cocktail_bar, menu);
+            MenuItem addItem = menu.findItem(R.id.add_myckt);
+
+            Button add_ckt = (Button) addItem.getActionView();
+
+            addItem.setOnMenuItemClickListener(item -> {
+                Intent intent = new Intent(this, MyCocktail.class);
+                startActivity(intent);
+                return false;
+            });
+        } else {
+            inflater.inflate(R.menu.search_bar, menu);
+        }
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
+
         SearchView searchView = (SearchView) searchItem.getActionView();
 
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
@@ -144,6 +159,7 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
                 return false;
             }
         });
+
         return true;
     }
 
