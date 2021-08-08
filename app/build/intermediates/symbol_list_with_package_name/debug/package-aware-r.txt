@@ -1935,7 +1935,6 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id addCkt
 id add_button
 id add_myckt
 id alertTitle
