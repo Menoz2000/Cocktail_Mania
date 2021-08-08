@@ -69,10 +69,10 @@ com/example/cocktailmania/ingredient/IngredientAdapter.java
  com.example.cocktailmania.ingredient.IngredientAdapter$ViewHolder
 com/example/cocktailmania/naviga/OriginListAdapter.java
  com.example.cocktailmania.naviga.OriginListAdapter
+com/example/cocktailmania/book/addCocktail.java
+ com.example.cocktailmania.book.addCocktail
 com/example/cocktailmania/book/MyCocktail.java
  com.example.cocktailmania.book.MyCocktail
 com/example/cocktailmania/cocktail/CocktailActivity.java
  com.example.cocktailmania.cocktail.CocktailActivity
  com.example.cocktailmania.cocktail.CocktailActivity$1
-com/example/cocktailmania/book/addCocktail.java
- com.example.cocktailmania.book.addCocktail

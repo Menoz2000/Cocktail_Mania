@@ -17,7 +17,7 @@ public class MyCocktail extends AppCompatActivity {
         setContentView(R.layout.activity_my_cocktail);
 
         //provvisorio, da controllare
-        Button addButton=findViewById(R.id.add_button);
+        Button addButton=findViewById(R.id.add_myckt);
         addButton.setOnClickListener(v -> openAddCkt());
 
     }

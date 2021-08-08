@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_add_cocktail.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_ingredient_module.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_my_cocktail.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_start.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_type_cocktail.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/add_button.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/menu/my_cocktail_bar.xml" value="0.20520833333333333" />
       </map>
     </option>
   </component>
