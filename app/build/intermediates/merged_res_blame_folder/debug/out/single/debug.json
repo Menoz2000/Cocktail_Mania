@@ -20,12 +20,12 @@
         "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_153.webp"
     },
     {
-        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ing_48.png.flat",
-        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable-v24\\ing_48.png"
-    },
-    {
         "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_126.png.flat",
         "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_126.png"
+    },
+    {
+        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ing_48.png.flat",
+        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable-v24\\ing_48.png"
     },
     {
         "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_strum_31.png.flat",
@@ -56,12 +56,16 @@
         "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ic_like_checked.xml"
     },
     {
+        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_146.webp.flat",
+        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_146.webp"
+    },
+    {
         "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_169.jpg.flat",
         "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_169.jpg"
     },
     {
-        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_146.webp.flat",
-        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_146.webp"
+        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_add_cocktail.xml.flat",
+        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\layout\\activity_add_cocktail.xml"
     },
     {
         "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_120.png.flat",
@@ -96,20 +100,20 @@
         "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_71.jpg"
     },
     {
-        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_20.jpg.flat",
-        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_20.jpg"
-    },
-    {
-        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ckt_104.png.flat",
-        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ckt_104.png"
+        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_open_book.xml.flat",
         "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ic_open_book.xml"
     },
     {
-        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ckt_104.png.flat",
+        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ckt_104.png"
+    },
+    {
+        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ing_20.jpg.flat",
+        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_20.jpg"
     },
     {
         "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_like_unchecked.xml.flat",

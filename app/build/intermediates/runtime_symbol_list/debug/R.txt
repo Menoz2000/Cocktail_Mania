@@ -1978,6 +1978,7 @@ int id chip3 0x7f080084
 int id chip_group 0x7f080085
 int id chronometer 0x7f080086
 int id circle_center 0x7f080087
+int id cktName 0x7f0801eb
 int id cktRv 0x7f080088
 int id ckt_pref 0x7f080089
 int id clear_text 0x7f08008a
@@ -2084,6 +2085,7 @@ int id imageType 0x7f0800ee
 int id imageView 0x7f0800ef
 int id imgIng 0x7f0800f0
 int id imgStrum 0x7f0800f1
+int id imgUpload 0x7f0801ec
 int id info 0x7f0800f2
 int id ingRv 0x7f0800f3
 int id ingSottotitolo 0x7f0800f4
@@ -2321,6 +2323,7 @@ int id unchecked 0x7f0801db
 int id uniform 0x7f0801dc
 int id unlabeled 0x7f0801dd
 int id up 0x7f0801de
+int id uploadButton 0x7f0801ed
 int id useLogo 0x7f0801df
 int id view_offset_helper 0x7f0801e0
 int id view_tree_lifecycle_owner 0x7f0801e1
@@ -2400,6 +2403,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
+int layout activity_add_cocktail 0x7f0b008d
 int layout activity_book 0x7f0b001c
 int layout activity_cocktail 0x7f0b001d
 int layout activity_cocktail_module 0x7f0b001e

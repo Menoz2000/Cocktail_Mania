@@ -1979,6 +1979,7 @@ id chip3
 id chip_group
 id chronometer
 id circle_center
+id cktName
 id cktRv
 id ckt_pref
 id clear_text
@@ -2085,6 +2086,7 @@ id imageType
 id imageView
 id imgIng
 id imgStrum
+id imgUpload
 id info
 id ingRv
 id ingSottotitolo
@@ -2322,6 +2324,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id uploadButton
 id useLogo
 id view_offset_helper
 id view_tree_lifecycle_owner
@@ -2401,6 +2404,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_cocktail
 layout activity_book
 layout activity_cocktail
 layout activity_cocktail_module
