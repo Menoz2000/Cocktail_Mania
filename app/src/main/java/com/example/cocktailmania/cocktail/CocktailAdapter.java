@@ -25,6 +25,7 @@ public class CocktailAdapter extends RecyclerView.Adapter implements Filterable 
     Context context;
     private final OnCktListener onCktListener;
 
+
     public CocktailAdapter(ArrayList<CocktailElem> elems, Context context, CocktailAdapter.OnCktListener onCktListener) {
         this.elems = elems;
         elemsCpy = new ArrayList<>(elems);
