@@ -10,7 +10,6 @@ import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.IngredientElem;
 import com.example.cocktailmania.utility.OriginCocktail;
 import com.example.cocktailmania.utility.StepPrep;
-import com.example.cocktailmania.utility.StrumRow;
 import com.example.cocktailmania.utility.Strumento;
 import com.example.cocktailmania.utility.TipoCocktail;
 
@@ -500,7 +499,11 @@ public class DbManager {
 
         String query = "SELECT o.id, o.nazione, o.img " +
                 "FROM Origine o " +
-                "ORDER BY o.id";
+                "JOIN Cocktail c ON o.id=c.fk_origine " +
+                "GROUP BY o.id " +
+                "HAVING COUNT(*) > 0 " +
+                "ORDER BY COUNT(*) DESC " +
+                "LIMIT 5";
 
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor c = db.rawQuery(query, null);

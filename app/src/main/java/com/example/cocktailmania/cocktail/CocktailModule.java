@@ -18,7 +18,6 @@ import com.example.cocktailmania.utility.CocktailElem;
 import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.NonScrollListView;
 import com.example.cocktailmania.utility.StepPrep;
-import com.example.cocktailmania.utility.StrumRow;
 import com.example.cocktailmania.utility.Strumento;
 
 import java.util.ArrayList;

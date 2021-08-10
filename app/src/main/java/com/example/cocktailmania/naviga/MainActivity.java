@@ -2,8 +2,6 @@ package com.example.cocktailmania.naviga;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -15,7 +13,6 @@ import com.example.cocktailmania.R;
 import com.example.cocktailmania.book.BookActivity;
 import com.example.cocktailmania.cocktail.CocktailActivity;
 import com.example.cocktailmania.ingredient.IngredientActivity;
-import com.example.cocktailmania.ingredient.IngredientModule;
 import com.example.cocktailmania.utility.GradeCocktail;
 import com.example.cocktailmania.utility.NonScrollGridView;
 import com.example.cocktailmania.utility.NonScrollListView;
@@ -25,7 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OriginListAdapter.OnOriginListener{
     /* TODO: change app icon */
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
@@ -106,21 +103,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         });
 
-        /*TODO: make horizontal scrollview clickable*/
-        /*OriginListView = findViewById(R.id.OriginList);
-        OriginListAdapter originListAdapter = new OriginListAdapter(this, originCocktailArrayList);
-        OriginListView.setAdapter(originListAdapter);
-        //rendo la lista cliccabile
-        OriginListView.setClickable(true);
-        OriginListView.setOnItemClickListener((parent, view, position, id) -> {
-            Intent i = new Intent(MainActivity.this, TypeCocktailList.class);
-            int[] val = {2, tipoCocktailArrayList.get(position).getId()}; //array con {config, id}
-            i.putExtra("cocktail", val);
-            startActivity(i);
-        });*/
-
         recyclerView = findViewById(R.id.OriginList);
-        OriginListAdapter oAdapter = new OriginListAdapter(originCocktailArrayList);
+        OriginListAdapter oAdapter = new OriginListAdapter(originCocktailArrayList, MainActivity.this,this);
         LinearLayoutManager oLayoutManager = new LinearLayoutManager(getApplicationContext());
         oLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(oLayoutManager);
@@ -129,4 +113,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void OnOriginClick(int position) {
+        Intent i = new Intent(MainActivity.this, TypeCocktailList.class);
+        int[] val = {2, originCocktailArrayList.get(position).getId()}; //array con {config, id}
+        i.putExtra("cocktail", val);
+        startActivity(i);
+    }
 }
