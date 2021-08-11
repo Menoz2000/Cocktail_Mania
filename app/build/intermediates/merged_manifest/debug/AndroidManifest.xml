@@ -8,6 +8,8 @@
         android:minSdkVersion="21"
         android:targetSdkVersion="30" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -20,9 +22,6 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CocktailMania" >
-        <activity
-            android:name="com.example.cocktailmania.book.addCocktail"
-            android:exported="true" />
         <activity android:name="com.example.cocktailmania.cocktail.StrumActivity" />
         <activity android:name="com.example.cocktailmania.book.MyCocktail" />
         <activity android:name="com.example.cocktailmania.naviga.start" >

@@ -20,6 +20,12 @@ public class IngredientElem implements Parcelable {
         this.sottotitolo = sottotitolo;
     }
 
+    public IngredientElem(int id, String nome, int img) {
+        this.id = id;
+        this.nome = nome;
+        this.img = img;
+    }
+
     public IngredientElem(int id, String nome, int img, String sottotitolo, String descrizione, String origine, double grado_alcolico) {
         this.id = id;
         this.nome = nome;

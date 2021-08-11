@@ -35,6 +35,32 @@ public class DbManager {
         return db.rawQuery(query, null);
     }
 
+    public ArrayList<IngredientElem> getIngredients() {
+        int cont = 0;
+        String query = "SELECT id,nome,img FROM Ingrediente ORDER BY nome";
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        IngredientElem ing;
+        ArrayList<IngredientElem> elems = new ArrayList<>();
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                ing = new IngredientElem(
+                        c.getInt(0),
+                        c.getString(1),
+                        c.getInt(2));
+
+                elems.add(cont,ing);
+                cont++;
+            }
+            c.close();
+        }
+
+        return elems;
+    }
+
     public IngredientElem getSingleIngredient(int id) {
         String query = "SELECT i.id,nome,i.img,sottotitolo,descrizione,nazione,grado_alcolico FROM Ingrediente i LEFT JOIN Origine o ON i.fk_origine=o.id WHERE i.id=" + id;
 

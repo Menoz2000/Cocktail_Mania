@@ -1,38 +1,75 @@
 package com.example.cocktailmania.book;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
-import com.example.cocktailmania.cocktail.CocktailActivity;
+import com.example.cocktailmania.utility.IngRow;
+import com.example.cocktailmania.utility.IngredientElem;
+import com.example.cocktailmania.utility.Strumento;
+
+import java.util.ArrayList;
 
 public class MyCocktail extends AppCompatActivity implements View.OnClickListener{
 
     private static final int RESULT_LOAD_IMAGE = 1;
-    ImageView imgToUpload;
+    private static final String TAG = "IngredientActivity";
+    private final DbManager db = new DbManager(this);
+
     Button uploadButton;
-    EditText uploadCktName;
+    Spinner spIngrendient;
+
+    ArrayList<IngredientElem> ingredientList;
+
+    SpinnerAdapter spinnerAdapter;
+
+    static TextView nomeMyCkt;
+    static ImageView imgMyCkt;
+    static ArrayList<IngRow> ingMyCkt;
+    static ArrayList<Strumento> strumMyCkt;
+    static int gradoAlcolico;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_cocktail);
 
-        imgToUpload = (ImageView) findViewById(R.id.imgUpload);
-        uploadButton = (Button) findViewById(R.id.uploadButton);
-        uploadCktName = (EditText) findViewById(R.id.cktName);
+        //prendo i dati dal database
+        ingredientList=db.getIngredients();
 
-        imgToUpload.setOnClickListener(this);
-        uploadButton.setOnClickListener(this);
+        imgMyCkt = (ImageView) findViewById(R.id.imgUpload);
+        nomeMyCkt=findViewById(R.id.cktName);
+        spIngrendient=(Spinner)findViewById(R.id.IngSpinner);
+
+        imgMyCkt.setOnClickListener(this);
+
+        spinnerAdapter=new SpinnerAdapter(this,ingredientList);
+        spIngrendient.setAdapter(spinnerAdapter);
+        spIngrendient.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(),ingredientList.get(position).getNome(), Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     @Override
@@ -42,7 +79,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                 Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
                 break;
-            case R.id.uploadButton:
+            case R.id.OnButton:
 
                 break;
             default:
@@ -55,7 +92,8 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null) {
             Uri selectedImage=data.getData();
-            imgToUpload.setImageURI(selectedImage);
+            imgMyCkt.setImageURI(selectedImage);
+            imgMyCkt.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT) );
         }
     }
 }

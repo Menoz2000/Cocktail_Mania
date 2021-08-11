@@ -117,6 +117,12 @@ public class MyHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(comando);
 
+        comando="CREATE TABLE Immagini_MyCocktail (" +
+                "id integer," +
+                "img longblob" +
+                ");";
+        db.execSQL(comando);
+
         inizializza(db);
 
         //db.close();
@@ -177,7 +183,8 @@ public class MyHelper extends SQLiteOpenHelper {
                 "VALUES (73, 'Sciroppo Semplice', 0, 'Combina parti uguali di zucchero superfino e acqua calda in un contenitore. Agita o mescola fino a quando lo zucchero si sarà sciolto.', 'Sciroppo creato sciogliendo zucchero granulato in acqua', " + R.drawable.ing_73 + ")," +
                 "(120, 'Foglia di menta', 0, 'La menta è una pianta aromatica usata per i cocktail, come guarnizione o ingrediente mischiato nei drink per aggiungere un aroma fresco.', 'Usa foglie giovani di menta dopo averle lavate', " + R.drawable.ing_120 + ")," +
                 "(126, 'Granatina', 0, 'La granatina è un ingrediente popolare nei cocktail sia per il suo sapore che per il colore che dona una sfumatura rossastra ai drink mixati.', 'Sciroppo agrodolce non alcolico dal colore rosso profondo', " + R.drawable.ing_126 + ")," +
-                "(163, 'Succo d''arancia', 0, 'Il succo fresco spremuto muta nel tempo, a differenza degli altri agrumi. Il succo d''arancia ha un invecchiamento ottimale molto breve, deve essere usato nella prima ora in cui è stato spremuto fresco.', '1 arancia produce circa 90 ml di succo', " + R.drawable.ing_163 + ");";
+                "(163, 'Succo d''arancia', 0, 'Il succo fresco spremuto muta nel tempo, a differenza degli altri agrumi. Il succo d''arancia ha un invecchiamento ottimale molto breve, deve essere usato nella prima ora in cui è stato spremuto fresco.', '1 arancia produce circa 90 ml di succo', " + R.drawable.ing_163 + ")," +
+                "(145, 'Panna', 0, 'La crema è conosciuta anche come crema leggera o crema da tavola. Può contenere dal 18% al 30% di grassi, ma in genere ne contiene circa il 20%.', 'Anche conosciuta come Light Cream o Table Cream', " + R.drawable.ing_145 + ");";
         db.execSQL(insert);
 
         insert = "INSERT INTO Ingrediente (id, nome, grado_alcolico, sottotitolo, img)" +
