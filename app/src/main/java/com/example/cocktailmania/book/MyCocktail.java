@@ -24,7 +24,7 @@ import com.example.cocktailmania.utility.Strumento;
 
 import java.util.ArrayList;
 
-public class MyCocktail extends AppCompatActivity implements View.OnClickListener{
+public class MyCocktail extends AppCompatActivity implements View.OnClickListener {
 
     private static final int RESULT_LOAD_IMAGE = 1;
     private static final String TAG = "IngredientActivity";
@@ -49,20 +49,20 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_my_cocktail);
 
         //prendo i dati dal database
-        ingredientList=db.getIngredients();
+        ingredientList = db.getIngredients();
 
-        imgMyCkt = (ImageView) findViewById(R.id.imgUpload);
-        nomeMyCkt=findViewById(R.id.cktName);
-        spIngrendient=(Spinner)findViewById(R.id.IngSpinner);
+        imgMyCkt = findViewById(R.id.imgUpload);
+        nomeMyCkt = findViewById(R.id.cktName);
+        spIngrendient = findViewById(R.id.IngSpinner);
 
         imgMyCkt.setOnClickListener(this);
 
-        spinnerAdapter=new SpinnerAdapter(this,ingredientList);
+        spinnerAdapter = new SpinnerAdapter(this, ingredientList);
         spIngrendient.setAdapter(spinnerAdapter);
         spIngrendient.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(),ingredientList.get(position).getNome(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), ingredientList.get(position).getNome(), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -91,23 +91,23 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null) {
-            Uri selectedImage=data.getData();
+            Uri selectedImage = data.getData();
             imgMyCkt.setImageURI(selectedImage);
-            imgMyCkt.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT) );
+            imgMyCkt.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         }
     }
 }
 
 /*
-* passaggi per inserire un myCocktail
-* nome e foto
-* ingredienti/guarnizioni con quantita
-* strumenti
-* bicchiere
-* categoria grado alcolico
-* preparazione con aggiunta step by step
-* opzione dove controlli il cocktail con tutte le caratteristiche e se vanno bene tasto pubblica
-*
-*
-* nella pagina con elenco di mycocktail ci deve essere in alto il pulsante per aggiungere un nuovo cocktail
-* e sotto l'elenco dei my cocktail fatti e ci deve essere l'opzione per eliminare i cocktail inseriti*/
+ * passaggi per inserire un myCocktail
+ * nome e foto
+ * ingredienti/guarnizioni con quantita
+ * strumenti
+ * bicchiere
+ * categoria grado alcolico
+ * preparazione con aggiunta step by step
+ * opzione dove controlli il cocktail con tutte le caratteristiche e se vanno bene tasto pubblica
+ *
+ *
+ * nella pagina con elenco di mycocktail ci deve essere in alto il pulsante per aggiungere un nuovo cocktail
+ * e sotto l'elenco dei my cocktail fatti e ci deve essere l'opzione per eliminare i cocktail inseriti*/
