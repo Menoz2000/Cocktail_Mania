@@ -31,10 +31,12 @@ public class SpinnerAdapter extends ArrayAdapter<IngredientElem> {
         if (convertView == null)
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.spinner_item, parent, false);
 
-        TextView t1 = convertView.findViewById(R.id.spinnerText);
+        TextView id = convertView.findViewById(R.id.spinnerId);
+        TextView text = convertView.findViewById(R.id.spinnerText);
         ImageView i1 = convertView.findViewById(R.id.spinnerImage);
 
-        t1.setText(sp.getNome());
+        id.setText(String.valueOf(sp.getId()));
+        text.setText(sp.getNome());
         i1.setImageResource(sp.getImg());
 
         return convertView;
@@ -47,10 +49,12 @@ public class SpinnerAdapter extends ArrayAdapter<IngredientElem> {
         if (convertView == null)
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.spinner_item, parent, false);
 
-        TextView t1 = convertView.findViewById(R.id.spinnerText);
+        TextView id = convertView.findViewById(R.id.spinnerId);
+        TextView text = convertView.findViewById(R.id.spinnerText);
         ImageView i1 = convertView.findViewById(R.id.spinnerImage);
 
-        t1.setText(sp.getNome());
+        id.setText(String.valueOf(sp.getId()));
+        text.setText(sp.getNome());
         i1.setImageResource(sp.getImg());
 
         return convertView;

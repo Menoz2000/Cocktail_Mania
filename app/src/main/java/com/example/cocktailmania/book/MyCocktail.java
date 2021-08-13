@@ -33,7 +33,8 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     Button uploadButton;
     Spinner spIngrendient;
 
-    ArrayList<IngredientElem> ingredientList;
+    ArrayList<IngredientElem> ingredientList;   //arraylist con tutti gli ingredienti disponibili
+    ArrayList<IngredientElem> MyIngredients;    //arraylist con gli ingredienti scelti dall'utente
 
     SpinnerAdapter spinnerAdapter;
 
@@ -103,7 +104,8 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
  * nome e foto
  * ingredienti/guarnizioni con quantita
  * strumenti
- * bicchiere
+ * (per lista "dinamica" ingredienti e strumenti: https://stackoverflow.com/questions/2250770/how-to-refresh-android-listview)
+ * (per rimuovere gli ingredienti o strumenti: https://youtu.be/hJQmvRHF5xg)
  * categoria grado alcolico
  * preparazione con aggiunta step by step
  * opzione dove controlli il cocktail con tutte le caratteristiche e se vanno bene tasto pubblica

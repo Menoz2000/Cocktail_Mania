@@ -16,6 +16,13 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
+        <TextView
+            android:id="@+id/spinnerId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"/>
+
         <ImageView
             android:id="@+id/spinnerImage"
             android:layout_width="0dp"

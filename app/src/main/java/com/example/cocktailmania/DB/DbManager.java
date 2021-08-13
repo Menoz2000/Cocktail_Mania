@@ -50,9 +50,10 @@ public class DbManager {
                 ing = new IngredientElem(
                         c.getInt(0),
                         c.getString(1),
-                        c.getInt(2));
+                        c.getInt(2)
+                );
 
-                elems.add(cont,ing);
+                elems.add(cont, ing);
                 cont++;
             }
             c.close();
