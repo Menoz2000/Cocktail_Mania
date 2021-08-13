@@ -2258,6 +2258,7 @@ id snapMargins
 id sottotitolo
 id spacer
 id special_effects_controller_view_tag
+id spinnerId
 id spinnerImage
 id spinnerText
 id spline

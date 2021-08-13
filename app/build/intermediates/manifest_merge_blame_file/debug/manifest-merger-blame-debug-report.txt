@@ -6,77 +6,77 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml
+8-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml
+9-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-11-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:32:5-79
-11-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:32:22-77
+11-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:32:5-79
+11-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:32:22-77
 12
 13    <application
-13-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:5:5-30:19
+13-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:5:5-30:19
 14        android:allowBackup="true"
-14-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:6:9-35
+14-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:6:9-35
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-15-->[androidx.core:core:1.5.0] C:\Users\Andrea\.gradle\caches\transforms-3\e759884e8e1539e68246ec4d8729cc98\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+15-->[androidx.core:core:1.5.0] C:\Users\comet adua\.gradle\caches\transforms-3\e759884e8e1539e68246ec4d8729cc98\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
 16        android:debuggable="true"
 17        android:hardwareAccelerated="false"
-17-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:7:9-44
+17-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:7:9-44
 18        android:icon="@mipmap/ic_launcher"
-18-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:8:9-43
+18-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:8:9-43
 19        android:label="@string/app_name"
-19-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:9:9-41
+19-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:9:9-41
 20        android:largeHeap="true"
-20-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:10:9-33
+20-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:10:9-33
 21        android:roundIcon="@mipmap/ic_launcher_round"
-21-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:11:9-54
+21-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:11:9-54
 22        android:supportsRtl="true"
-22-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:12:9-35
+22-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:12:9-35
 23        android:testOnly="true"
 24        android:theme="@style/Theme.CocktailMania" >
-24-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:13:9-51
+24-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:13:9-51
 25        <activity android:name="com.example.cocktailmania.cocktail.StrumActivity" />
-25-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:14:9-60
-25-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:14:19-57
+25-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:14:9-60
+25-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:14:19-57
 26        <activity android:name="com.example.cocktailmania.book.MyCocktail" />
-26-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:15:9-53
-26-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:15:19-50
+26-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:15:9-53
+26-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:15:19-50
 27        <activity android:name="com.example.cocktailmania.naviga.start" >
-27-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:16:9-22:20
-27-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:16:19-47
+27-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:16:9-22:20
+27-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:16:19-47
 28            <intent-filter>
-28-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:17:13-21:29
+28-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:17:13-21:29
 29                <action android:name="android.intent.action.MAIN" />
-29-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:18:17-69
-29-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:18:25-66
+29-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:18:17-69
+29-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:18:25-66
 30
 31                <category android:name="android.intent.category.LAUNCHER" />
-31-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:20:17-77
-31-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:20:27-74
+31-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:20:17-77
+31-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:20:27-74
 32            </intent-filter>
 33        </activity>
 34        <activity android:name="com.example.cocktailmania.cocktail.CocktailModule" />
-34-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:23:9-61
-34-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:23:19-58
+34-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:23:9-61
+34-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:23:19-58
 35        <activity android:name="com.example.cocktailmania.ingredient.IngredientModule" />
-35-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:24:9-65
-35-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:24:19-62
+35-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:24:9-65
+35-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:24:19-62
 36        <activity android:name="com.example.cocktailmania.book.BookActivity" />
-36-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:25:9-55
-36-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:25:19-52
+36-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:25:9-55
+36-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:25:19-52
 37        <activity android:name="com.example.cocktailmania.cocktail.CocktailActivity" />
-37-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:26:9-63
-37-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:26:19-60
+37-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:26:9-63
+37-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:26:19-60
 38        <activity android:name="com.example.cocktailmania.ingredient.IngredientActivity" />
-38-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:27:9-67
-38-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:27:19-64
+38-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:27:9-67
+38-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:27:19-64
 39        <activity android:name="com.example.cocktailmania.naviga.MainActivity" />
-39-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:28:9-57
-39-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:28:19-54
+39-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:28:9-57
+39-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:28:19-54
 40        <activity android:name="com.example.cocktailmania.naviga.TypeCocktailList" />
-40-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:29:9-61
-40-->D:\IdeaProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:29:19-58
+40-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:29:9-61
+40-->D:\AndroidStudioProjects\Cocktail_Mania\app\src\main\AndroidManifest.xml:29:19-58
 41    </application>
 42
 43</manifest>

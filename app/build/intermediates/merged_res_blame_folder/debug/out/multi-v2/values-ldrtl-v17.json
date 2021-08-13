@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+            "outputFile": "D:\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldrtl-v17\\values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Andrea\\.gradle\\caches\\transforms-3\\e44905d88435b8a284dfc0fee1bf9165\\transformed\\material-1.4.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "source": "C:\\Users\\comet adua\\.gradle\\caches\\transforms-3\\e44905d88435b8a284dfc0fee1bf9165\\transformed\\material-1.4.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
