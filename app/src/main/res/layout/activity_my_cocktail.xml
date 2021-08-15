@@ -87,6 +87,7 @@
         </LinearLayout>
 
         <com.example.cocktailmania.utility.NonScrollListView
+            android:id="@+id/MyIngList"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -122,6 +123,7 @@
         </LinearLayout>
 
         <com.example.cocktailmania.utility.NonScrollListView
+            android:id="@+id/MyStrumList"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

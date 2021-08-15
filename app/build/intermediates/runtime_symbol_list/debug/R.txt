@@ -1726,6 +1726,7 @@ int drawable friz_cocktail 0x7f070073
 int drawable ic_add 0x7f070074
 int drawable ic_alcohol 0x7f070075
 int drawable ic_baseline_home_24 0x7f070076
+int drawable ic_clear 0x7f0700eb
 int drawable ic_clock_black_24dp 0x7f070077
 int drawable ic_cocktail 0x7f070078
 int drawable ic_keyboard_black_24dp 0x7f070079
@@ -1852,6 +1853,7 @@ int id BOTTOM_END 0x7f080006
 int id BOTTOM_START 0x7f080007
 int id CTRL 0x7f080008
 int id CktOrigin 0x7f080009
+int id DeleteButton 0x7f0801fc
 int id DeleteIng 0x7f08000a
 int id DeleteStrum 0x7f08000b
 int id FUNCTION 0x7f08000c
@@ -1866,6 +1868,8 @@ int id IngText 0x7f080014
 int id IngUnity 0x7f080015
 int id IngredientList 0x7f080016
 int id META 0x7f080017
+int id MyIngList 0x7f0801fa
+int id MyStrumList 0x7f0801fb
 int id NO_DEBUG 0x7f080018
 int id OnButton 0x7f080019
 int id OrigName 0x7f08001a
@@ -2443,6 +2447,7 @@ int layout design_navigation_menu_item 0x7f0b0034
 int layout design_text_input_end_icon 0x7f0b0035
 int layout design_text_input_start_icon 0x7f0b0036
 int layout ingredient_row 0x7f0b0037
+int layout ingredient_row_deletable 0x7f0b008e
 int layout item_grid_type_cocktail 0x7f0b0038
 int layout list_row 0x7f0b0039
 int layout material_chip_input_combo 0x7f0b003a

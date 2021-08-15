@@ -1727,6 +1727,7 @@ drawable friz_cocktail
 drawable ic_add
 drawable ic_alcohol
 drawable ic_baseline_home_24
+drawable ic_clear
 drawable ic_clock_black_24dp
 drawable ic_cocktail
 drawable ic_keyboard_black_24dp
@@ -1853,6 +1854,7 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id CktOrigin
+id DeleteButton
 id DeleteIng
 id DeleteStrum
 id FUNCTION
@@ -1867,6 +1869,8 @@ id IngText
 id IngUnity
 id IngredientList
 id META
+id MyIngList
+id MyStrumList
 id NO_DEBUG
 id OnButton
 id OrigName
@@ -2444,6 +2448,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout ingredient_row
+layout ingredient_row_deletable
 layout item_grid_type_cocktail
 layout list_row
 layout material_chip_input_combo

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,6 +24,8 @@ import com.example.cocktailmania.utility.IngredientElem;
 import com.example.cocktailmania.utility.Strumento;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MyCocktail extends AppCompatActivity implements View.OnClickListener {
 
@@ -31,46 +34,98 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     private final DbManager db = new DbManager(this);
 
     Button uploadButton;
+    Button addIngButton;
     Spinner spIngrendient;
+    Spinner spQuantity;
+    Spinner spUnity;
 
-    ArrayList<IngredientElem> ingredientList;   //arraylist con tutti gli ingredienti disponibili
-    ArrayList<IngredientElem> MyIngredients;    //arraylist con gli ingredienti scelti dall'utente
+    IngRow ingredient=new IngRow();
+    static ArrayList<IngRow> MyIngredients = new ArrayList<>();    //arraylist con gli ingredienti scelti dall'utente
 
     SpinnerAdapter spinnerAdapter;
 
     static TextView nomeMyCkt;
     static ImageView imgMyCkt;
-    static ArrayList<IngRow> ingMyCkt;
     static ArrayList<Strumento> strumMyCkt;
     static int gradoAlcolico;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //final int[] idIngSelect = new int[1];  //id ingrediente selezionato
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_cocktail);
 
-        //prendo i dati dal database
-        ingredientList = db.getIngredients();
-
-        imgMyCkt = findViewById(R.id.imgUpload);
+        //nome cocktail
         nomeMyCkt = findViewById(R.id.cktName);
-        spIngrendient = findViewById(R.id.IngSpinner);
-
+        //immagine cocktail
+        imgMyCkt = findViewById(R.id.imgUpload);
         imgMyCkt.setOnClickListener(this);
+        //button addIng
+        addIngButton=findViewById(R.id.AddIng);
+        addIngButton.setOnClickListener(this);
 
+        //Ingredient Spinner
+        ArrayList<IngredientElem> ingredientList = db.getIngredients();   //arraylist con tutti gli ingredienti disponibili (presi dal database)
+        spIngrendient = findViewById(R.id.IngSpinner);
         spinnerAdapter = new SpinnerAdapter(this, ingredientList);
         spIngrendient.setAdapter(spinnerAdapter);
         spIngrendient.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), ingredientList.get(position).getNome(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), ingredientList.get(position).getNome(), Toast.LENGTH_LONG).show();
+
+                ingredient.setIdIng(ingredientList.get(position).getId());
+                ingredient.setIngName(ingredientList.get(position).getNome());
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
+
+        //Quantity Spinner
+        spQuantity = findViewById(R.id.IngQty);
+        //creo l'arraylist con tutte le quantità
+        List<String> QList = new ArrayList<>(Arrays.asList("-", "0.25", "0.50", "0.75", "1", "1.5", "2", "2.5"));
+        for (int i = 3; i <= 100; i++)
+            QList.add(String.valueOf(i));
+        ArrayAdapter<String> quantityAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, QList);
+        quantityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spQuantity.setAdapter(quantityAdapter);
+        spQuantity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ingredient.setQuantita(spQuantity.getSelectedItem().toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        //Unity Spinner
+        spUnity = findViewById(R.id.IngUnity);
+        //creo arraylist con unità di misura
+        List<String> UList = new ArrayList<>(Arrays.asList("-", "parte", "spruzzo", "cucchi.", "pezzo", "pizzico"));
+        ArrayAdapter<String> unityAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, UList);
+        unityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spUnity.setAdapter(unityAdapter);
+        spUnity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ingredient.setUnita_misura(spUnity.getSelectedItem().toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        //ListView con gli ingredienti
+
     }
 
     @Override
@@ -81,7 +136,10 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                 startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
                 break;
             case R.id.OnButton:
-
+                break;
+            case R.id.AddIng:
+                MyIngredients.add(ingredient);
+                System.out.println(ingredient.toString());
                 break;
             default:
                 break;
@@ -97,6 +155,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
             imgMyCkt.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         }
     }
+
 }
 
 /*
