@@ -15,6 +15,12 @@ public class Strumento {
         this.nome = nome;
     }
 
+    public Strumento(int id, String nome, int img) {
+        this.id = id;
+        this.nome = nome;
+        this.img = img;
+    }
+
     public Strumento(int id, String nome, String capacita, String descrizione, int img) {
         this.id = id;
         this.nome = nome;
@@ -61,5 +67,16 @@ public class Strumento {
 
     public void setImg(int img) {
         this.img = img;
+    }
+
+    @Override
+    public String toString() {
+        return "Strumento{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", capacita='" + capacita + '\'' +
+                ", descrizione='" + descrizione + '\'' +
+                ", img=" + img +
+                '}';
     }
 }

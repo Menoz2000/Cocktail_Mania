@@ -15,5 +15,6 @@
     <string name="gradazione_alcolicaMyCkt">GRADAZIONE ALCOLICA</string>
     <string name="quantita">Quantità</string>
     <string name="unità">Unità</string>
+    <string name="delete">Delete</string>
 
 </resources>

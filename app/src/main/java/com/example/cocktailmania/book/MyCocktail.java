@@ -19,8 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
 import com.example.cocktailmania.utility.IngRow;
-import com.example.cocktailmania.utility.IngredientElem;
 import com.example.cocktailmania.utility.NonScrollListView;
+import com.example.cocktailmania.utility.SpinnerElem;
 import com.example.cocktailmania.utility.Strumento;
 
 import java.util.ArrayList;
@@ -33,22 +33,30 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     private static final String TAG = "IngredientActivity";
     private final DbManager db = new DbManager(this);
 
+    TextView nomeMyCkt;
+    ImageView imgMyCkt;
     Button uploadButton;
     Button addIngButton;
+    Button addStrumButton;
     Spinner spIngrendient;
     Spinner spQuantity;
     Spinner spUnity;
+    Spinner spStrumenti;
     NonScrollListView ingListView;
+    NonScrollListView strumListView;
 
     IngRow ingredient;
     static ArrayList<IngRow> MyIngredients = new ArrayList<>();    //arraylist con gli ingredienti scelti dall'utente
 
-    SpinnerAdapter spinnerAdapter;
-    IngredientDeletableAdapter iAdapter;
+    Strumento strum;
+    static ArrayList<Strumento> MyStrums = new ArrayList<>();     //arraylist con gli strumenti scelti dall'utente
 
-    static TextView nomeMyCkt;
-    static ImageView imgMyCkt;
-    static ArrayList<Strumento> strumMyCkt;
+    SpinnerAdapter spinnerIngAdapter;
+    SpinnerAdapter spinnerStrAdapter;
+    IngredientDeletableAdapter iAdapter;
+    StrumDeletableAdapter sAdapter;
+
+
     static int gradoAlcolico;
 
     @Override
@@ -58,6 +66,9 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_cocktail);
 
+        ingListView = findViewById(R.id.MyIngList); //ListView con gli ingredienti
+        strumListView = findViewById(R.id.MyStrumList); //ListView con gli strumenti
+
         //nome cocktail
         nomeMyCkt = findViewById(R.id.cktName);
         //immagine cocktail
@@ -66,13 +77,16 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         //button addIng
         addIngButton = findViewById(R.id.AddIng);
         addIngButton.setOnClickListener(this);
+        //button addStrum
+        addStrumButton = findViewById(R.id.AddStrum);
+        addStrumButton.setOnClickListener(this);
 
         //Ingredient Spinner
         ingredient = new IngRow(); //oggetto passadati
-        ArrayList<IngredientElem> ingredientList = db.getIngredients();   //arraylist con tutti gli ingredienti disponibili (presi dal database)
+        ArrayList<SpinnerElem> ingredientList = db.getIngredients();   //arraylist con tutti gli ingredienti disponibili (presi dal database)
         spIngrendient = findViewById(R.id.IngSpinner);
-        spinnerAdapter = new SpinnerAdapter(this, ingredientList);
-        spIngrendient.setAdapter(spinnerAdapter);
+        spinnerIngAdapter = new SpinnerAdapter(this, ingredientList);
+        spIngrendient.setAdapter(spinnerIngAdapter);
         spIngrendient.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -127,9 +141,25 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
             }
         });
 
-        //ListView con gli ingredienti
-        ingListView = findViewById(R.id.MyIngList);
+        //Strumenti Spinner
+        strum = new Strumento(); //oggetto passadati
+        ArrayList<SpinnerElem> strumList = db.getInstruments();   //arraylist con tutti gli strumenti disponibili (presi dal database)
+        spStrumenti = findViewById(R.id.StrumSpinner);
+        spinnerStrAdapter = new SpinnerAdapter(this, strumList);
+        spStrumenti.setAdapter(spinnerStrAdapter);
+        spStrumenti.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(getApplicationContext(), strumList.get(position).getNome(), Toast.LENGTH_LONG).show();
 
+                strum.setId(strumList.get(position).getId());
+                strum.setNome(strumList.get(position).getNome());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
     }
 
     @Override
@@ -161,6 +191,26 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                 spUnity.setSelection(0);
                 spQuantity.setSelection(0);
                 spIngrendient.setSelection(0);
+
+                break;
+            case R.id.AddStrum:
+                //aggiungo lo strumento all'arraylist degli strumenti del my cocktail
+                MyStrums.add(strum);
+                strum = new Strumento(); //inizializzo l'oggetto utilizzato come passadati
+
+                System.out.println(MyStrums.toString());
+
+                //aggiorno la lista degli strumenti
+                if (MyStrums.size() == 1) {
+                    sAdapter = new StrumDeletableAdapter(this, MyStrums);
+                    strumListView.setAdapter(sAdapter);
+                    strumListView.setFocusable(false);    //elimino focus sulla lista
+                }
+                if (MyStrums.size() != 0 && MyStrums.size() != 1)
+                    sAdapter.notifyDataSetChanged();
+
+                //resetto tutti gli spinner riguardanti gli strumenti
+                spStrumenti.setSelection(0);
 
                 break;
             default:

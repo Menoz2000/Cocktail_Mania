@@ -1854,7 +1854,8 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id CktOrigin
-id DeleteButton
+id DeleteIngButton
+id DeleteStrumButton
 id FUNCTION
 id GradeName
 id GradeSpinner
@@ -1884,6 +1885,7 @@ id StepNumber
 id StepPrep
 id StrumName
 id StrumSpinner
+id StrumText
 id StrumTitle
 id TOP_END
 id TOP_START
@@ -2517,6 +2519,7 @@ layout single_item_grade
 layout single_item_grid_type
 layout single_item_origin
 layout spinner_item
+layout strum_deletable_row
 layout strum_row
 layout support_simple_spinner_dropdown_item
 layout switch_item
@@ -2581,6 +2584,7 @@ string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
 string cocktail
+string delete
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior

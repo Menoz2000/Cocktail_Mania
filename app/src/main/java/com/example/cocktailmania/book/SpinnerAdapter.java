@@ -9,24 +9,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.cocktailmania.R;
-import com.example.cocktailmania.utility.GradeCocktail;
-import com.example.cocktailmania.utility.IngredientElem;
+import com.example.cocktailmania.utility.SpinnerElem;
 
 import java.util.ArrayList;
 
 
-public class SpinnerAdapter extends ArrayAdapter<IngredientElem> {
+public class SpinnerAdapter extends ArrayAdapter<SpinnerElem> {
     Context context;
-    ArrayList<IngredientElem> elems;
+    ArrayList<SpinnerElem> elems;
 
-    public SpinnerAdapter(Context context, ArrayList<IngredientElem> elems) {
+    public SpinnerAdapter(Context context, ArrayList<SpinnerElem> elems) {
         super(context, 0, elems);
     }
 
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
 
-        IngredientElem sp = getItem(position);
+        SpinnerElem sp = getItem(position);
 
         if (convertView == null)
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.spinner_item, parent, false);
@@ -44,7 +43,7 @@ public class SpinnerAdapter extends ArrayAdapter<IngredientElem> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        IngredientElem sp = getItem(position);
+        SpinnerElem sp = getItem(position);
 
         if (convertView == null)
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.spinner_item, parent, false);

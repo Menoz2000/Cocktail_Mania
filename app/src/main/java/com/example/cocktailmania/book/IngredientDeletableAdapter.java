@@ -36,7 +36,7 @@ public class IngredientDeletableAdapter extends IngredientCustomAdapter {
         unity.setText(sp.getUnita_misura());
         ingredient_name.setText(sp.getIngName());
 
-        Button delButton = convertView.findViewById(R.id.DeleteButton);
+        Button delButton = convertView.findViewById(R.id.DeleteIngButton);
         delButton.setOnClickListener(v -> {
             MyCocktail.MyIngredients.remove(position);
             notifyDataSetChanged();

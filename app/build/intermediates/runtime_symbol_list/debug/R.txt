@@ -1853,7 +1853,8 @@ int id BOTTOM_END 0x7f080006
 int id BOTTOM_START 0x7f080007
 int id CTRL 0x7f080008
 int id CktOrigin 0x7f080009
-int id DeleteButton 0x7f0801fc
+int id DeleteIngButton 0x7f0801ff
+int id DeleteStrumButton 0x7f080200
 int id FUNCTION 0x7f08000c
 int id GradeName 0x7f08000d
 int id GradeSpinner 0x7f08000e
@@ -1883,6 +1884,7 @@ int id StepNumber 0x7f080023
 int id StepPrep 0x7f080024
 int id StrumName 0x7f080025
 int id StrumSpinner 0x7f080026
+int id StrumText 0x7f080201
 int id StrumTitle 0x7f080027
 int id TOP_END 0x7f080028
 int id TOP_START 0x7f080029
@@ -2516,6 +2518,7 @@ int layout single_item_grade 0x7f0b0078
 int layout single_item_grid_type 0x7f0b0079
 int layout single_item_origin 0x7f0b007a
 int layout spinner_item 0x7f0b007b
+int layout strum_deletable_row 0x7f0b008f
 int layout strum_row 0x7f0b007c
 int layout support_simple_spinner_dropdown_item 0x7f0b007d
 int layout switch_item 0x7f0b007e
@@ -2580,6 +2583,7 @@ int string character_counter_pattern 0x7f0f0023
 int string chip_text 0x7f0f0024
 int string clear_text_end_icon_content_description 0x7f0f0025
 int string cocktail 0x7f0f0026
+int string delete 0x7f0f0078
 int string error_icon_content_description 0x7f0f0027
 int string exposed_dropdown_menu_content_description 0x7f0f0028
 int string fab_transformation_scrim_behavior 0x7f0f0029

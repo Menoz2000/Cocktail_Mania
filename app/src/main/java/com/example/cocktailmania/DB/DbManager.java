@@ -3,12 +3,14 @@ package com.example.cocktailmania.DB;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Spinner;
 
 import com.example.cocktailmania.utility.CocktailElem;
 import com.example.cocktailmania.utility.GradeCocktail;
 import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.IngredientElem;
 import com.example.cocktailmania.utility.OriginCocktail;
+import com.example.cocktailmania.utility.SpinnerElem;
 import com.example.cocktailmania.utility.StepPrep;
 import com.example.cocktailmania.utility.Strumento;
 import com.example.cocktailmania.utility.TipoCocktail;
@@ -33,33 +35,6 @@ public class DbManager {
 
         SQLiteDatabase db = helper.getReadableDatabase();
         return db.rawQuery(query, null);
-    }
-
-    public ArrayList<IngredientElem> getIngredients() {
-        int cont = 0;
-        String query = "SELECT id,nome,img FROM Ingrediente ORDER BY nome";
-
-        SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor c = db.rawQuery(query, null);
-
-        IngredientElem ing;
-        ArrayList<IngredientElem> elems = new ArrayList<>();
-
-        if (c != null) {
-            while (c.moveToNext()) {
-                ing = new IngredientElem(
-                        c.getInt(0),
-                        c.getString(1),
-                        c.getInt(2)
-                );
-
-                elems.add(cont, ing);
-                cont++;
-            }
-            c.close();
-        }
-
-        return elems;
     }
 
     public IngredientElem getSingleIngredient(int id) {
@@ -277,6 +252,7 @@ public class DbManager {
     }
 
     public Strumento getInstrument(int id) {
+        //query per tutti i dati di un ingrediente specifico
         String query = "SELECT s.nome, s.img, s.descrizione, s.capacita " +
                 "FROM Strumento s " +
                 "WHERE s.id=" + id;
@@ -590,9 +566,64 @@ public class DbManager {
         return orig;
     }
 
+    //query per sezione My_Cocktail
     public boolean updateNewMyCkt() {
         //TODO: implement method
         return false;
+    }
+
+    public ArrayList<SpinnerElem> getInstruments() {
+        int cont = 0;
+        String query = "SELECT id,nome,img FROM Strumento ORDER BY nome";
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        SpinnerElem str;
+        ArrayList<SpinnerElem> elems = new ArrayList<>();
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                str = new SpinnerElem(
+                        c.getInt(0),
+                        c.getString(1),
+                        c.getInt(2)
+                );
+
+                elems.add(cont, str);
+                cont++;
+            }
+            c.close();
+        }
+
+        return elems;
+    }
+
+    public ArrayList<SpinnerElem> getIngredients() {
+        int cont = 0;
+        String query = "SELECT id,nome,img FROM Ingrediente ORDER BY nome";
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        SpinnerElem ing;
+        ArrayList<SpinnerElem> elems = new ArrayList<>();
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                ing = new SpinnerElem(
+                        c.getInt(0),
+                        c.getString(1),
+                        c.getInt(2)
+                );
+
+                elems.add(cont, ing);
+                cont++;
+            }
+            c.close();
+        }
+
+        return elems;
     }
 
 }

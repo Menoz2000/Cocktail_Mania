@@ -58,7 +58,7 @@
             android:textSize="15sp" />
 
         <Button
-            android:id="@+id/DeleteButton"
+            android:id="@+id/DeleteIngButton"
             android:layout_width="35dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
