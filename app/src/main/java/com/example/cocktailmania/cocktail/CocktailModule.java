@@ -63,7 +63,7 @@ public class CocktailModule extends AppCompatActivity {
             TextView textView1 = findViewById(R.id.AlcolicGrade);
             textView1.setText(String.valueOf(ckt.getFk_gradoAlcolico()));
 
-            //NonScrollListView con gli ingredienti necessari
+            //NonScrollListView con gli strumenti necessari
             StrumListView = findViewById(R.id.list_instruments);
             StrumAdapter strumAdapter = new StrumAdapter(this, instruments);
             StrumListView.setAdapter(strumAdapter);

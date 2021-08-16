@@ -3,10 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_my_cocktail.xml" value="0.22447916666666667" />
+        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_my_cocktail.xml" value="0.15625" />
         <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/add_button.xml" value="0.13645833333333332" />
         <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/ingredient_row.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/ingredient_row_deletable.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/ingredient_row_deletable.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/single_item_grade.xml" value="0.22447916666666667" />
         <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/spinner_item.xml" value="0.22447916666666667" />
         <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/menu/my_cocktail_bar.xml" value="0.13645833333333332" />

@@ -1854,8 +1854,6 @@ int id BOTTOM_START 0x7f080007
 int id CTRL 0x7f080008
 int id CktOrigin 0x7f080009
 int id DeleteButton 0x7f0801fc
-int id DeleteIng 0x7f08000a
-int id DeleteStrum 0x7f08000b
 int id FUNCTION 0x7f08000c
 int id GradeName 0x7f08000d
 int id GradeSpinner 0x7f08000e
@@ -2111,6 +2109,8 @@ int id italic 0x7f080105
 int id item_touch_helper_previous_elevation 0x7f080106
 int id jumpToEnd 0x7f080107
 int id jumpToStart 0x7f080108
+int id labelQuantity 0x7f0801fd
+int id labelUnity 0x7f0801fe
 int id labeled 0x7f080109
 int id layout 0x7f08010a
 int id left 0x7f08010b
@@ -2656,9 +2656,11 @@ int string path_password_eye_mask_visible 0x7f0f006f
 int string path_password_strike_through 0x7f0f0070
 int string preferiti 0x7f0f0071
 int string prova 0x7f0f0072
+int string quantita 0x7f0f0076
 int string search_menu_title 0x7f0f0073
 int string status_bar_notification_info_overflow 0x7f0f0074
 int string strumentiMyCkt 0x7f0f0075
+int string unità 0x7f0f0077
 int style AlertDialog_AppCompat 0x7f100000
 int style AlertDialog_AppCompat_Light 0x7f100001
 int style AndroidThemeColorAccentYellow 0x7f100002

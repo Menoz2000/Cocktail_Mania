@@ -1855,8 +1855,6 @@ id BOTTOM_START
 id CTRL
 id CktOrigin
 id DeleteButton
-id DeleteIng
-id DeleteStrum
 id FUNCTION
 id GradeName
 id GradeSpinner
@@ -2112,6 +2110,8 @@ id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id labelQuantity
+id labelUnity
 id labeled
 id layout
 id left
@@ -2657,9 +2657,11 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string preferiti
 string prova
+string quantita
 string search_menu_title
 string status_bar_notification_info_overflow
 string strumentiMyCkt
+string unità
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

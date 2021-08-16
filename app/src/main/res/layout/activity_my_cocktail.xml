@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,14 +14,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nomeMyCkt"/>
+            android:text="@string/nomeMyCkt"
+            android:labelFor="@id/cktName"/>
 
         <EditText
             android:id="@+id/cktName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:autofillHints="name" />
 
         <TextView
             android:layout_width="match_parent"
@@ -40,7 +41,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ingredientiMyCkt"/>
+            android:labelFor="@id/IngSpinner"
+            android:text="@string/ingredientiMyCkt" />
 
         <Spinner
             android:id="@+id/IngSpinner"
@@ -51,19 +53,47 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
-            <Spinner
-                android:id="@+id/IngQty"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <Spinner
-                android:id="@+id/IngUnity"
+                <TextView
+                    android:id="@+id/labelQuantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/IngQty"
+                    android:text="@string/quantita" />
+
+                <Spinner
+                    android:id="@+id/IngQty"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelUnity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/IngUnity"
+                    android:text="@string/unità" />
+
+                <Spinner
+                    android:id="@+id/IngUnity"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -73,17 +103,11 @@
 
             <Button
                 android:id="@+id/AddIng"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="+" />
 
-            <Button
-                android:id="@+id/DeleteIng"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="-" />
         </LinearLayout>
 
         <com.example.cocktailmania.utility.NonScrollListView
@@ -94,7 +118,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/strumentiMyCkt"/>
+            android:text="@string/strumentiMyCkt"
+            android:labelFor="@id/StrumSpinner"/>
 
         <Spinner
             android:id="@+id/StrumSpinner"
@@ -109,17 +134,11 @@
 
             <Button
                 android:id="@+id/AddStrum"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="+" />
 
-            <Button
-                android:id="@+id/DeleteStrum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="-" />
         </LinearLayout>
 
         <com.example.cocktailmania.utility.NonScrollListView
@@ -130,7 +149,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/gradazione_alcolicaMyCkt"/>
+            android:text="@string/gradazione_alcolicaMyCkt"
+            android:labelFor="@id/GradeSpinner"/>
 
         <Spinner
             android:id="@+id/GradeSpinner"

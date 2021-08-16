@@ -16,51 +16,46 @@
         android:layout_height="25dp"
         android:orientation="horizontal">
 
-        <androidx.cardview.widget.CardView
+        <TextView
+            android:id="@+id/idIng"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:cardBackgroundColor="#00850000" >
+            android:visibility="gone" />
 
-            <TextView
-                android:id="@+id/idIng"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:visibility="gone" />
+        <TextView
+            android:id="@+id/QuantityIng"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="0dp"
+            android:text=""
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/QuantityIng"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:paddingStart="15dp"
-                android:paddingEnd="0dp"
-                android:text=""
-                android:textSize="15sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/UnityIng"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="5dp"
+            android:paddingEnd="0dp"
+            android:text=""
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/UnityIng"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:paddingStart="5dp"
-                android:paddingEnd="0dp"
-                android:text=""
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/IngText"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:paddingStart="15dp"
-                android:paddingEnd="0dp"
-                android:text=""
-                android:textSize="15sp" />
-        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/IngText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="start"
+            android:paddingStart="15dp"
+            android:paddingEnd="0dp"
+            android:text=""
+            android:textAlignment="textStart"
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/DeleteButton"

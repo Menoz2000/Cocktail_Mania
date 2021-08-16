@@ -13,5 +13,7 @@
     <string name="ingredientiMyCkt">INGREDIENTI</string>
     <string name="strumentiMyCkt">STRUMENTI</string>
     <string name="gradazione_alcolicaMyCkt">GRADAZIONE ALCOLICA</string>
+    <string name="quantita">Quantità</string>
+    <string name="unità">Unità</string>
 
 </resources>

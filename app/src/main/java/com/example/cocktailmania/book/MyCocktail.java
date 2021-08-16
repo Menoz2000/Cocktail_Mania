@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +20,7 @@ import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
 import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.IngredientElem;
+import com.example.cocktailmania.utility.NonScrollListView;
 import com.example.cocktailmania.utility.Strumento;
 
 import java.util.ArrayList;
@@ -38,11 +38,13 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     Spinner spIngrendient;
     Spinner spQuantity;
     Spinner spUnity;
+    NonScrollListView ingListView;
 
-    IngRow ingredient=new IngRow();
+    IngRow ingredient;
     static ArrayList<IngRow> MyIngredients = new ArrayList<>();    //arraylist con gli ingredienti scelti dall'utente
 
     SpinnerAdapter spinnerAdapter;
+    IngredientDeletableAdapter iAdapter;
 
     static TextView nomeMyCkt;
     static ImageView imgMyCkt;
@@ -62,10 +64,11 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         imgMyCkt = findViewById(R.id.imgUpload);
         imgMyCkt.setOnClickListener(this);
         //button addIng
-        addIngButton=findViewById(R.id.AddIng);
+        addIngButton = findViewById(R.id.AddIng);
         addIngButton.setOnClickListener(this);
 
         //Ingredient Spinner
+        ingredient = new IngRow(); //oggetto passadati
         ArrayList<IngredientElem> ingredientList = db.getIngredients();   //arraylist con tutti gli ingredienti disponibili (presi dal database)
         spIngrendient = findViewById(R.id.IngSpinner);
         spinnerAdapter = new SpinnerAdapter(this, ingredientList);
@@ -87,7 +90,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         //Quantity Spinner
         spQuantity = findViewById(R.id.IngQty);
         //creo l'arraylist con tutte le quantità
-        List<String> QList = new ArrayList<>(Arrays.asList("-", "0.25", "0.50", "0.75", "1", "1.5", "2", "2.5"));
+        List<String> QList = new ArrayList<>(Arrays.asList("", "0.25", "0.50", "0.75", "1", "1.5", "2", "2.5"));
         for (int i = 3; i <= 100; i++)
             QList.add(String.valueOf(i));
         ArrayAdapter<String> quantityAdapter = new ArrayAdapter<>(this,
@@ -108,7 +111,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         //Unity Spinner
         spUnity = findViewById(R.id.IngUnity);
         //creo arraylist con unità di misura
-        List<String> UList = new ArrayList<>(Arrays.asList("-", "parte", "spruzzo", "cucchi.", "pezzo", "pizzico"));
+        List<String> UList = new ArrayList<>(Arrays.asList("", "parte", "spruzzo", "cucchi.", "pezzo", "pizzico"));
         ArrayAdapter<String> unityAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, UList);
         unityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -116,7 +119,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         spUnity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                ingredient.setUnita_misura(spUnity.getSelectedItem().toString());
+                ingredient.setUnita_misura(spQuantity.getSelectedItem().toString());
             }
 
             @Override
@@ -125,6 +128,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         });
 
         //ListView con gli ingredienti
+        ingListView = findViewById(R.id.MyIngList);
 
     }
 
@@ -138,8 +142,26 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
             case R.id.OnButton:
                 break;
             case R.id.AddIng:
+                //aggiungo l'ingrediente all'arraylist degli ingredienti del my cocktail
                 MyIngredients.add(ingredient);
-                System.out.println(ingredient.toString());
+                ingredient = new IngRow(); //inizializzo l'oggetto utilizzato come passadati
+
+                System.out.println(MyIngredients.toString());
+
+                //aggiorno la lista degli ingredienti
+                if (MyIngredients.size() == 1) {
+                    iAdapter = new IngredientDeletableAdapter(this, MyIngredients);
+                    ingListView.setAdapter(iAdapter);
+                    ingListView.setFocusable(false);    //elimino focus sulla lista
+                }
+                if (MyIngredients.size() != 0 && MyIngredients.size() != 1)
+                    iAdapter.notifyDataSetChanged();
+
+                //resetto tutti gli spinner riguardanti gli ingredienti
+                spUnity.setSelection(0);
+                spQuantity.setSelection(0);
+                spIngrendient.setSelection(0);
+
                 break;
             default:
                 break;
