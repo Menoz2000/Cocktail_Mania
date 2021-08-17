@@ -626,6 +626,32 @@ public class DbManager {
         return elems;
     }
 
+    public ArrayList<GradeCocktail> getGrades() {
+        int cont = 0;
+        String query = "SELECT id,gradazione FROM GradoAlcolico ORDER BY id";
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        GradeCocktail grade;
+        ArrayList<GradeCocktail> elems = new ArrayList<>();
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                grade = new GradeCocktail(
+                        c.getInt(0),
+                        c.getString(1)
+                );
+
+                elems.add(cont, grade);
+                cont++;
+            }
+            c.close();
+        }
+
+        return elems;
+    }
+
 }
 
 

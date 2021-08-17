@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
+import com.example.cocktailmania.utility.GradeCocktail;
 import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.NonScrollListView;
 import com.example.cocktailmania.utility.SpinnerElem;
@@ -33,7 +34,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     private static final String TAG = "IngredientActivity";
     private final DbManager db = new DbManager(this);
 
-    TextView nomeMyCkt;
+    TextView nomeText;
     ImageView imgMyCkt;
     Button uploadButton;
     Button addIngButton;
@@ -42,6 +43,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     Spinner spQuantity;
     Spinner spUnity;
     Spinner spStrumenti;
+    Spinner spGrade;
     NonScrollListView ingListView;
     NonScrollListView strumListView;
 
@@ -55,9 +57,10 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     SpinnerAdapter spinnerStrAdapter;
     IngredientDeletableAdapter iAdapter;
     StrumDeletableAdapter sAdapter;
+    SpinnerGradeAdapter spinnerGradeAdapter;
 
-
-    static int gradoAlcolico;
+    static String nomeMyCkt;
+    static GradeCocktail gradoAlcolico = new GradeCocktail();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +73,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         strumListView = findViewById(R.id.MyStrumList); //ListView con gli strumenti
 
         //nome cocktail
-        nomeMyCkt = findViewById(R.id.cktName);
+        nomeText = findViewById(R.id.cktName);
         //immagine cocktail
         imgMyCkt = findViewById(R.id.imgUpload);
         imgMyCkt.setOnClickListener(this);
@@ -160,6 +163,25 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
+        //Grade Spinner
+        spGrade = findViewById(R.id.GradeSpinner);
+        //creo l'arraylist con tutti i gradi alcolici
+        ArrayList<GradeCocktail> gradeList = db.getGrades();   //arraylist con tutti i gradi alcolici (presi dal database)
+        spinnerGradeAdapter = new SpinnerGradeAdapter(this, gradeList);
+        spGrade.setAdapter(spinnerGradeAdapter);
+        spGrade.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(getApplicationContext(), strumList.get(position).getNome(), Toast.LENGTH_LONG).show();
+                gradoAlcolico.setId(gradeList.get(position).getId());
+                gradoAlcolico.setNome(gradeList.get(position).getNome());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
     }
 
     @Override
@@ -170,6 +192,8 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                 startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
                 break;
             case R.id.OnButton:
+                nomeMyCkt = nomeText.getText().toString();
+
                 break;
             case R.id.AddIng:
                 //aggiungo l'ingrediente all'arraylist degli ingredienti del my cocktail

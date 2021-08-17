@@ -2264,6 +2264,8 @@ id snapMargins
 id sottotitolo
 id spacer
 id special_effects_controller_view_tag
+id spinnerGradeId
+id spinnerGradeText
 id spinnerId
 id spinnerImage
 id spinnerText
@@ -2518,6 +2520,7 @@ layout select_dialog_singlechoice_material
 layout single_item_grade
 layout single_item_grid_type
 layout single_item_origin
+layout spinner_grade_row
 layout spinner_item
 layout strum_deletable_row
 layout strum_row

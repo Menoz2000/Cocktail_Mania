@@ -168,6 +168,10 @@
         "source": "D:\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_156.webp"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\merged_res\\debug\\layout_spinner_grade_row.xml.flat",
+        "source": "D:\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\layout\\spinner_grade_row.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\merged_res\\debug\\drawable_ing_123.webp.flat",
         "source": "D:\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ing_123.webp"
     },
