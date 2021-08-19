@@ -41,11 +41,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:labelFor="@id/IngSpinner"
+            android:labelFor="@id/AzioneSpinner"
             android:text="@string/ingredientiMyCkt" />
 
         <Spinner
-            android:id="@+id/IngSpinner"
+            android:id="@+id/AzioneSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp" />
@@ -63,14 +63,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/labelQuantity"
+                    android:id="@+id/labelIngredient"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:labelFor="@id/IngQty"
+                    android:labelFor="@id/ingredientCkt"
                     android:text="@string/quantita" />
 
                 <Spinner
-                    android:id="@+id/IngQty"
+                    android:id="@+id/ingredientCkt"
                     android:layout_width="match_parent"
                     android:layout_height="48dp" />
             </LinearLayout>
@@ -82,14 +82,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/labelUnity"
+                    android:id="@+id/labelStrum"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:labelFor="@id/IngUnity"
+                    android:labelFor="@id/strumCkt"
                     android:text="@string/unità" />
 
                 <Spinner
-                    android:id="@+id/IngUnity"
+                    android:id="@+id/strumCkt"
                     android:layout_width="match_parent"
                     android:layout_height="48dp" />
             </LinearLayout>

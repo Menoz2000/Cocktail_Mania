@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Spinner;
 
+import com.example.cocktailmania.book.MyCocktail;
 import com.example.cocktailmania.utility.CocktailElem;
 import com.example.cocktailmania.utility.GradeCocktail;
 import com.example.cocktailmania.utility.IngRow;
@@ -104,23 +105,11 @@ public class DbManager {
                 ckt.setFk_origine(c.getString(3));
                 ckt.setFk_tipo(c.getString(4));
 
-                if (c.getInt(5) == 0) {
-                    ckt.setPreferito(false);
-                } else {
-                    ckt.setPreferito(true);
-                }
+                ckt.setPreferito(c.getInt(5) != 0);
 
-                if (c.getInt(6) == 0) {
-                    ckt.setIconico(false);
-                } else {
-                    ckt.setIconico(true);
-                }
+                ckt.setIconico(c.getInt(6) != 0);
 
-                if (c.getInt(7) == 0) {
-                    ckt.setMy_cocktail(false);
-                } else {
-                    ckt.setMy_cocktail(true);
-                }
+                ckt.setMy_cocktail(c.getInt(7) != 0);
 
                 ckt.setImg(c.getInt(8));
 
@@ -566,12 +555,6 @@ public class DbManager {
         return orig;
     }
 
-    //query per sezione My_Cocktail
-    public boolean updateNewMyCkt() {
-        //TODO: implement method
-        return false;
-    }
-
     public ArrayList<SpinnerElem> getInstruments() {
         int cont = 0;
         String query = "SELECT id,nome,img FROM Strumento ORDER BY nome";
@@ -650,6 +633,59 @@ public class DbManager {
         }
 
         return elems;
+    }
+
+    public boolean controllaSeEsiste(String nomeNuovo) {
+        String query = "SELECT nome FROM Cocktail where my_cocktail=1";
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+        ArrayList<String> elenco = new ArrayList<>();
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                elenco.add(c.getString(0));
+            }
+            c.close();
+        }
+
+        for (int i = 0; i < elenco.size(); i++) {
+            if (elenco.get(i).equals(nomeNuovo)) {
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
+    public boolean uploadMyCkt() {
+
+        //todo controlli su insert e su select
+
+        MyCocktail newCocktail=new MyCocktail();
+        int idCkt;
+
+        //inserisco il cocktail
+        String insert = "insert into Cocktail(nome,fk_gradoAlcolico,my_cocktail)" +
+                "values(" + newCocktail.nomeMyCkt + "," + newCocktail.gradoAlcolico.getId() + ",1)";
+        SQLiteDatabase db = helper.getReadableDatabase();
+        db.execSQL(insert);
+
+        //recupero l'id del cocktail
+        String query = "SELECT id FROM Cocktail where my_cocktail=1 and nome like" + newCocktail.nomeMyCkt;
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        idCkt=c.getInt(1);
+
+        System.out.println("-----------------");
+        System.out.println(idCkt);
+        System.out.println("-----------------");
+
+        //todo: inserico gli ingredienti
+        //todo: inserisco gli strumenti
+
+
+        return true;
     }
 
 }
