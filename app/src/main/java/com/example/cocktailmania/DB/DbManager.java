@@ -662,26 +662,36 @@ public class DbManager {
 
         //todo controlli su insert e su select
 
-        MyCocktail newCocktail=new MyCocktail();
         int idCkt;
+        String comp = "";
 
         //inserisco il cocktail
         String insert = "insert into Cocktail(nome,fk_gradoAlcolico,my_cocktail)" +
-                "values(" + newCocktail.nomeMyCkt + "," + newCocktail.gradoAlcolico.getId() + ",1)";
+                "values(" + MyCocktail.nomeMyCkt + "," + MyCocktail.gradoAlcolico.getId() + ",1)";
         SQLiteDatabase db = helper.getReadableDatabase();
         db.execSQL(insert);
 
         //recupero l'id del cocktail
-        String query = "SELECT id FROM Cocktail where my_cocktail=1 and nome like" + newCocktail.nomeMyCkt;
+        String query = "SELECT id FROM Cocktail where my_cocktail=1 and nome like" + MyCocktail.nomeMyCkt;
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
-        idCkt=c.getInt(1);
+        idCkt = c.getInt(1);
 
         System.out.println("-----------------");
         System.out.println(idCkt);
         System.out.println("-----------------");
 
         //todo: inserico gli ingredienti
+
+        for (int i = 0; i < MyCocktail.MyIngredients.size(); i++) {
+
+            comp = "(" + idCkt + "," + MyCocktail.MyIngredients.get(i).getIdIng() + "," + MyCocktail.MyIngredients.get(i).getQuantitaFloat() + "," + MyCocktail.MyIngredients.get(i).getUnita_misura() + "),";
+
+        }
+
+        insert = "insert into Composizione (fk_cocktail,fk_ingrediente,quantita,unita_misura)" +
+                "values " + comp + ";";
+
         //todo: inserisco gli strumenti
 
 
