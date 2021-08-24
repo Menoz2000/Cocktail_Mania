@@ -1847,9 +1847,11 @@ drawable tropical_cocktail
 id ALT
 id ActionName
 id AddIng
+id AddStep
 id AddStrum
 id AlcolicGrade
 id AzioneImg
+id AzioneSpinner
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
@@ -1862,16 +1864,15 @@ id GradeSpinner
 id GrigliaTipoCocktail
 id IngList
 id IngName
-id IngQty
-id IngSpinner
 id IngText
-id IngUnity
 id IngredientList
 id META
 id MyIngList
+id MyStepList
 id MyStrumList
 id NO_DEBUG
 id OnButton
+id OnStepButton
 id OrigName
 id OriginImage
 id OriginList
@@ -2104,6 +2105,7 @@ id imgUpload
 id info
 id ingRv
 id ingSottotitolo
+id ingredientCkt
 id ingredientiButton
 id init
 id invisible
@@ -2112,8 +2114,8 @@ id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
-id labelQuantity
-id labelUnity
+id labelIngredient
+id labelStrum
 id labeled
 id layout
 id left
@@ -2287,6 +2289,7 @@ id staticPostLayout
 id status_bar_latest_event_content
 id stop
 id stretch
+id strumCkt
 id submenuarrow
 id submit_area
 id tabMode
@@ -2432,6 +2435,7 @@ layout activity_ingredient_module
 layout activity_main
 layout activity_my_cocktail
 layout activity_start
+layout activity_step_my_cocktail
 layout activity_strum
 layout activity_type_cocktail
 layout add_button

@@ -48,10 +48,12 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     NonScrollListView ingListView;
     NonScrollListView strumListView;
 
-    IngRow ingredient;
+    ArrayList<SpinnerElem> ingredientList = new ArrayList<>();
+    IngRow ingredient = new IngRow();   //oggetto passadati
     public static ArrayList<IngRow> MyIngredients = new ArrayList<>();    //arraylist con gli ingredienti scelti dall'utente
 
-    Strumento strum;
+    ArrayList<SpinnerElem> strumList = new ArrayList<>();
+    Strumento strum = new Strumento();  //oggetto passadati
     public static ArrayList<Strumento> MyStrums = new ArrayList<>();     //arraylist con gli strumenti scelti dall'utente
 
     SpinnerAdapter spinnerIngAdapter;
@@ -88,8 +90,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         addStrumButton.setOnClickListener(this);
 
         //Ingredient Spinner
-        ingredient = new IngRow(); //oggetto passadati
-        ArrayList<SpinnerElem> ingredientList = db.getIngredients();   //arraylist con tutti gli ingredienti disponibili (presi dal database)
+        ingredientList = db.getIngredients();   //arraylist con tutti gli ingredienti disponibili (presi dal database)
         spIngrendient = findViewById(R.id.AzioneSpinner);
         spinnerIngAdapter = new SpinnerAdapter(this, ingredientList);
         spIngrendient.setAdapter(spinnerIngAdapter);
@@ -148,8 +149,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         });
 
         //Strumenti Spinner
-        strum = new Strumento(); //oggetto passadati
-        ArrayList<SpinnerElem> strumList = db.getInstruments();   //arraylist con tutti gli strumenti disponibili (presi dal database)
+        strumList = db.getInstruments();   //arraylist con tutti gli strumenti disponibili (presi dal database)
         spStrumenti = findViewById(R.id.StrumSpinner);
         spinnerStrAdapter = new SpinnerAdapter(this, strumList);
         spStrumenti.setAdapter(spinnerStrAdapter);
@@ -198,7 +198,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
 
 
                 //la funz controllaSeEsiste ci dice se il nome del ckt passato esiste gia tra i myCkt
-                if (db.controllaSeEsiste(nomeText.getText().toString()) == true) {
+                if (db.controllaSeEsiste(nomeText.getText().toString())) {
 
                     Toast.makeText(getApplicationContext(), "nome Cocktail già esistente", Toast.LENGTH_LONG).show();
 
@@ -206,9 +206,9 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
 
                     nomeMyCkt = nomeText.getText().toString();
 
-                    if(!db.uploadMyCkt()){
+                    if (!db.uploadMyCkt()) {
                         Toast.makeText(getApplicationContext(), "errore nel caricamento del cocktail", Toast.LENGTH_LONG).show();
-                    }else{
+                    } else {
                         //todo inizializzare none,grado e array list di ingredienti e strumenti
                         Intent intent = new Intent(this, StepMyCocktail.class);
                         startActivity(intent);
@@ -218,16 +218,21 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.AddIng:
 
-                if (ingredient == null) {
-                    Toast.makeText(getApplicationContext(), "ERRORE", Toast.LENGTH_LONG).show();
+                if (ingredient.getIngName() == null) {
+                    ingredient.setIngName(ingredientList.get(0).getNome());
+                    ingredient.setIdIng(ingredientList.get(0).getId());
                 }
-                else{
-                    //controllo se abbiamo sia l'unita di misura che la quantita selezionati
-                    if (ingredient.getUnita_misura() == "" ^ ingredient.getQuantita() == "") {
-                        Toast.makeText(getApplicationContext(), "selezionare quantità e unità di misura", Toast.LENGTH_LONG).show();
-                    }
-                    else{
-                        //TODO: conrtollo se l'ingrediente è gia stato selezionato
+
+                if(ingredient.getUnita_misura() == null)
+                    ingredient.setUnita_misura("");
+
+                if(ingredient.getQuantita() == null)
+                    ingredient.setQuantita("");
+
+                if (ingredient.getUnita_misura().equals("") ^ ingredient.getQuantita().equals("")) {
+                    Toast.makeText(getApplicationContext(), "selezionare quantità e unità di misura", Toast.LENGTH_LONG).show();
+                } else {
+                    //TODO: controllo se l'ingrediente è gia stato selezionato
                         /*for (int i = 0; i < MyIngredients.size(); i++) {
                             if (ingredient.getIdIng() == MyIngredients.get(i).getIdIng()) {
                                 Toast.makeText(getApplicationContext(), "ingrediente già selezionato", Toast.LENGTH_LONG).show();
@@ -235,31 +240,36 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                             }
                         }*/
 
-                        //aggiungo l'ingrediente all'arraylist degli ingredienti del my cocktail
-                        MyIngredients.add(ingredient);
-                        ingredient = new IngRow(); //inizializzo l'oggetto utilizzato come passadati
+                    //aggiungo l'ingrediente all'arraylist degli ingredienti del my cocktail
+                    MyIngredients.add(ingredient);
+                    ingredient = new IngRow(); //inizializzo l'oggetto utilizzato come passadati
 
-                        System.out.println(MyIngredients.toString());
+                    System.out.println(MyIngredients.toString());
 
-                        //aggiorno la lista degli ingredienti
-                        if (MyIngredients.size() == 1) {
-                            iAdapter = new IngredientDeletableAdapter(this, MyIngredients);
-                            ingListView.setAdapter(iAdapter);
-                            ingListView.setFocusable(false);    //elimino focus sulla lista
-                        }
-                        if (MyIngredients.size() != 0 && MyIngredients.size() != 1)
-                            iAdapter.notifyDataSetChanged();
-
-                        //resetto tutti gli spinner riguardanti gli ingredienti
-                        spUnity.setSelection(0);
-                        spQuantity.setSelection(0);
-                        spIngrendient.setSelection(0);
-                        }
+                    //aggiorno la lista degli ingredienti
+                    if (MyIngredients.size() == 1) {
+                        iAdapter = new IngredientDeletableAdapter(this, MyIngredients);
+                        ingListView.setAdapter(iAdapter);
+                        ingListView.setFocusable(false);    //elimino focus sulla lista
                     }
+                    if (MyIngredients.size() != 0 && MyIngredients.size() != 1)
+                        iAdapter.notifyDataSetChanged();
+
+                    //resetto tutti gli spinner riguardanti gli ingredienti
+                    spUnity.setSelection(0);
+                    spQuantity.setSelection(0);
+                    spIngrendient.setSelection(0);
+                }
 
 
                 break;
             case R.id.AddStrum:
+
+                if (strum.getNome() == null) {
+                    strum.setNome(strumList.get(0).getNome());
+                    strum.setId(strumList.get(0).getId());
+                }
+
                 //aggiungo lo strumento all'arraylist degli strumenti del my cocktail
                 MyStrums.add(strum);
                 strum = new Strumento(); //inizializzo l'oggetto utilizzato come passadati
