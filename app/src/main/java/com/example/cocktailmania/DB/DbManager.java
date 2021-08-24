@@ -688,10 +688,10 @@ public class DbManager {
             comp = "(" + idCkt + "," + MyCocktail.MyIngredients.get(i).getIdIng() + "," + MyCocktail.MyIngredients.get(i).getQuantitaFloat() + "," + MyCocktail.MyIngredients.get(i).getUnita_misura() + "),";
 
         }
-
+        /*
         insert = "insert into Composizione (fk_cocktail,fk_ingrediente,quantita,unita_misura)" +
                 "values " + comp + ";";
-
+        */
         //todo: inserisco gli strumenti
 
 

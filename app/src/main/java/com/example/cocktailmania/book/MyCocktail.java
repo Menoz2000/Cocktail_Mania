@@ -200,16 +200,16 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                 //la funz controllaSeEsiste ci dice se il nome del ckt passato esiste gia tra i myCkt
                 if (db.controllaSeEsiste(nomeText.getText().toString())) {
 
-                    Toast.makeText(getApplicationContext(), "nome Cocktail già esistente", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Nome Cocktail già esistente", Toast.LENGTH_LONG).show();
 
                 } else {
 
                     nomeMyCkt = nomeText.getText().toString();
 
                     if (!db.uploadMyCkt()) {
-                        Toast.makeText(getApplicationContext(), "errore nel caricamento del cocktail", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Errore nel caricamento del cocktail", Toast.LENGTH_LONG).show();
                     } else {
-                        //todo inizializzare none,grado e array list di ingredienti e strumenti
+                        //todo inizializzare nome,grado e array list di ingredienti e strumenti
                         Intent intent = new Intent(this, StepMyCocktail.class);
                         startActivity(intent);
                     }
@@ -218,32 +218,42 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.AddIng:
 
+                //controllo se oggetto passadati contiene valori NULL
                 if (ingredient.getIngName() == null) {
                     ingredient.setIngName(ingredientList.get(0).getNome());
                     ingredient.setIdIng(ingredientList.get(0).getId());
                 }
 
-                if(ingredient.getUnita_misura() == null)
+                //controllo se aggiungo Unita NULL
+                if (ingredient.getUnita_misura() == null)
                     ingredient.setUnita_misura("");
 
-                if(ingredient.getQuantita() == null)
+                //controllo se aggiungo Quantita NULL
+                if (ingredient.getQuantita() == null)
                     ingredient.setQuantita("");
 
+                //controllo se uno tra i campi Unita di misura e Quantità è NULL
                 if (ingredient.getUnita_misura().equals("") ^ ingredient.getQuantita().equals("")) {
-                    Toast.makeText(getApplicationContext(), "selezionare quantità e unità di misura", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Aggiungere Quantità e Unità di misura", Toast.LENGTH_LONG).show();
                 } else {
-                    //TODO: controllo se l'ingrediente è gia stato selezionato
-                        /*for (int i = 0; i < MyIngredients.size(); i++) {
-                            if (ingredient.getIdIng() == MyIngredients.get(i).getIdIng()) {
-                                Toast.makeText(getApplicationContext(), "ingrediente già selezionato", Toast.LENGTH_LONG).show();
-                                break;
-                            }
-                        }*/
+                    //flag che indica che l'ingrediente che si vuole aggiungere è già presente nella lista degli ingredienti selezionati
+                    boolean flag = false;
+                    for (int i = 0; i < MyIngredients.size(); i++) {
+                        if (ingredient.getIdIng() == MyIngredients.get(i).getIdIng()) {
+                            Toast.makeText(getApplicationContext(), "Ingrediente già aggiunto", Toast.LENGTH_LONG).show();
+                            flag = true;
+                            break;  //break per terminare ciclo for
+                        }
+                    }
+                    //break per terminare il case dello switch senza aggiungere l'ingrediente
+                    if (flag)
+                        break;
 
                     //aggiungo l'ingrediente all'arraylist degli ingredienti del my cocktail
                     MyIngredients.add(ingredient);
                     ingredient = new IngRow(); //inizializzo l'oggetto utilizzato come passadati
 
+                    //scrittura in output degli ingredienti presenti nella lista dei selezionati
                     System.out.println(MyIngredients.toString());
 
                     //aggiorno la lista degli ingredienti
@@ -274,6 +284,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                 MyStrums.add(strum);
                 strum = new Strumento(); //inizializzo l'oggetto utilizzato come passadati
 
+                //scrittura in output degli strumenti presenti nella lista dei selezionati
                 System.out.println(MyStrums.toString());
 
                 //aggiorno la lista degli strumenti
