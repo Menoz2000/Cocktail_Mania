@@ -159,7 +159,7 @@
             android:minHeight="48dp" />
 
         <Button
-            android:id="@+id/OnButton"
+            android:id="@+id/AfterButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="GO" />

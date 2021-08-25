@@ -642,15 +642,16 @@ public class DbManager {
         ArrayList<String> elenco = new ArrayList<>();
 
         if (c != null) {
+            c.moveToFirst();
             while (c.moveToNext()) {
                 elenco.add(c.getString(0));
             }
             c.close();
-        }
 
-        for (int i = 0; i < elenco.size(); i++) {
-            if (elenco.get(i).equals(nomeNuovo)) {
-                return true;
+            for (int i = 0; i < elenco.size(); i++) {
+                if (elenco.get(i).equals(nomeNuovo)) {
+                    return true;
+                }
             }
         }
 
@@ -676,24 +677,37 @@ public class DbManager {
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
         idCkt = c.getInt(1);
+        c.close();
 
         System.out.println("-----------------");
         System.out.println(idCkt);
         System.out.println("-----------------");
 
-        //todo: inserico gli ingredienti
 
         for (int i = 0; i < MyCocktail.MyIngredients.size(); i++) {
-
-            comp = "(" + idCkt + "," + MyCocktail.MyIngredients.get(i).getIdIng() + "," + MyCocktail.MyIngredients.get(i).getQuantitaFloat() + "," + MyCocktail.MyIngredients.get(i).getUnita_misura() + "),";
+            if (i == 0) {
+                comp = idCkt + "," + MyCocktail.MyIngredients.get(i).getIdIng() + "," + MyCocktail.MyIngredients.get(i).getQuantitaFloat() + "," + MyCocktail.MyIngredients.get(i).getUnita_misura() + ")";
+            } else {
+                comp = ",(" + idCkt + "," + MyCocktail.MyIngredients.get(i).getIdIng() + "," + MyCocktail.MyIngredients.get(i).getQuantitaFloat() + "," + MyCocktail.MyIngredients.get(i).getUnita_misura();
+            }
 
         }
-        /*
-        insert = "insert into Composizione (fk_cocktail,fk_ingrediente,quantita,unita_misura)" +
-                "values " + comp + ";";
-        */
-        //todo: inserisco gli strumenti
 
+        insert = new StringBuilder().append("insert into Composizione (fk_cocktail,fk_ingrediente,quantita,unita_misura) values (").append(comp).append(");").toString();
+        db.execSQL(insert);
+
+
+        for (int i = 0; i < MyCocktail.MyStrums.size(); i++) {
+            if (i == 0) {
+                comp = idCkt + "," + MyCocktail.MyStrums.get(i).getId() + ")";
+            } else {
+                comp = ",(" + idCkt + "," + MyCocktail.MyStrums.get(i).getId();
+            }
+
+        }
+
+        insert = new StringBuilder().append("insert into Procurare (fk_cocktail, fk_strumento) values (").append(comp).append(");").toString();
+        db.execSQL(insert);
 
         return true;
     }

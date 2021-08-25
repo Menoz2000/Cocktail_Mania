@@ -1694,6 +1694,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable app_icon
 drawable avd_hide_password
 drawable avd_show_password
 drawable btn_checkbox_checked_mtrl
@@ -1849,6 +1850,7 @@ id ActionName
 id AddIng
 id AddStep
 id AddStrum
+id AfterButton
 id AlcolicGrade
 id AzioneImg
 id AzioneSpinner
@@ -1871,7 +1873,6 @@ id MyIngList
 id MyStepList
 id MyStrumList
 id NO_DEBUG
-id OnButton
 id OnStepButton
 id OrigName
 id OriginImage
@@ -2550,6 +2551,7 @@ menu like_bar
 menu my_cocktail_bar
 menu search_bar
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 string PrepTitle

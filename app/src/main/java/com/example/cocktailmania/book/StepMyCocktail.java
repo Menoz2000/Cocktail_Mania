@@ -1,8 +1,11 @@
 package com.example.cocktailmania.book;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.cocktailmania.R;
+import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.StepPrep;
+import com.example.cocktailmania.utility.Strumento;
 
 import android.os.Bundle;
 
@@ -12,6 +15,9 @@ public class StepMyCocktail extends AppCompatActivity {
 
     StepPrep passaggio;
     static ArrayList<StepPrep> passaggi;
+
+    ArrayList<IngRow> MyIngredientsCpy = new ArrayList<>(MyCocktail.MyIngredients);
+    ArrayList<Strumento> MyStrumsCpy = new ArrayList<>(MyCocktail.MyStrums);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

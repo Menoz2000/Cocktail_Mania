@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
 import com.example.cocktailmania.utility.GradeCocktail;
@@ -35,9 +36,9 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     private static final String TAG = "IngredientActivity";
     private final DbManager db = new DbManager(this);
 
+    Button afterButton;
     TextView nomeText;
     ImageView imgMyCkt;
-    Button uploadButton;
     Button addIngButton;
     Button addStrumButton;
     Spinner spIngrendient;
@@ -88,6 +89,9 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         //button addStrum
         addStrumButton = findViewById(R.id.AddStrum);
         addStrumButton.setOnClickListener(this);
+        //button avanti
+        afterButton=findViewById(R.id.AfterButton);
+        afterButton.setOnClickListener(this);
 
         //Ingredient Spinner
         ingredientList = db.getIngredients();   //arraylist con tutti gli ingredienti disponibili (presi dal database)
@@ -194,27 +198,25 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                 Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
                 break;
-            case R.id.OnButton:
 
+            case R.id.AfterButton:
 
                 //la funz controllaSeEsiste ci dice se il nome del ckt passato esiste gia tra i myCkt
                 if (db.controllaSeEsiste(nomeText.getText().toString())) {
 
+                    System.out.println("sono qui qui");
                     Toast.makeText(getApplicationContext(), "Nome Cocktail già esistente", Toast.LENGTH_LONG).show();
 
                 } else {
 
                     nomeMyCkt = nomeText.getText().toString();
-
-                    if (!db.uploadMyCkt()) {
-                        Toast.makeText(getApplicationContext(), "Errore nel caricamento del cocktail", Toast.LENGTH_LONG).show();
-                    } else {
-                        //todo inizializzare nome,grado e array list di ingredienti e strumenti
-                        Intent intent = new Intent(this, StepMyCocktail.class);
-                        startActivity(intent);
-                    }
+                    System.out.println("sono qui");
+                    Intent intent = new Intent(this, StepMyCocktail.class);
+                    startActivity(intent);
 
                 }
+
+
                 break;
             case R.id.AddIng:
 
