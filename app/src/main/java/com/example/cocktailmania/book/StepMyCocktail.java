@@ -7,14 +7,18 @@ import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.StepPrep;
 import com.example.cocktailmania.utility.Strumento;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
-public class StepMyCocktail extends AppCompatActivity {
+public class StepMyCocktail extends AppCompatActivity implements View.OnClickListener {
 
-    StepPrep passaggio;
     static ArrayList<StepPrep> passaggi;
+
+    Button aggiungiStep;
 
     ArrayList<IngRow> MyIngredientsCpy = new ArrayList<>(MyCocktail.MyIngredients);
     ArrayList<Strumento> MyStrumsCpy = new ArrayList<>(MyCocktail.MyStrums);
@@ -23,5 +27,22 @@ public class StepMyCocktail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_my_cocktail);
+
+        aggiungiStep = findViewById(R.id.AddStep);
+        aggiungiStep.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.AddStep:
+
+                Intent intent = new Intent(this, BuildStep.class);
+                startActivity(intent);
+
+                break;
+            default:
+                break;
+        }
     }
 }
