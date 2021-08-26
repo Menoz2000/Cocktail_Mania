@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.cocktailmania">
+    package="com.example.cocktailmania" >
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -12,13 +12,16 @@
         android:largeHeap="true"
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CocktailMania">
+        android:theme="@style/Theme.CocktailMania" >
+        <activity
+            android:name=".book.BuildStep"
+            android:exported="true" />
         <activity
             android:name=".book.StepMyCocktail"
             android:exported="true" />
         <activity android:name=".cocktail.StrumActivity" />
         <activity android:name=".book.MyCocktail" />
-        <activity android:name=".naviga.start">
+        <activity android:name=".naviga.start" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -16,5 +16,8 @@
     <string name="quantita">Quantità</string>
     <string name="unità">Unità</string>
     <string name="delete">Delete</string>
+    <string name="Azione">Azione</string>
+    <string name="aggiungi_ingredienti">Aggiungi Ingredienti</string>
+    <string name="aggiungi_strumenti">Aggiungi strumenti</string>
 
 </resources>

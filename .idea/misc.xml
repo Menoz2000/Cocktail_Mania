@@ -3,29 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_my_cocktail.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/add_button.xml" value="0.13645833333333332" />
-        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/ingredient_row.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/ingredient_row_deletable.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/single_item_grade.xml" value="0.22447916666666667" />
-        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/spinner_grade_row.xml" value="0.22447916666666667" />
-        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/spinner_item.xml" value="0.22447916666666667" />
-        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/strum_deletable_row.xml" value="0.13541666666666666" />
-        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/strum_row.xml" value="0.13541666666666666" />
-        <entry key="..\:/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/menu/my_cocktail_bar.xml" value="0.13645833333333332" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_build_step.xml" value="0.20052083333333334" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_my_cocktail.xml" value="0.20260416666666667" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_step_my_cocktail.xml" value="0.22" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/ingredient_row.xml" value="0.2608695652173913" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/spinner_item.xml" value="0.20260416666666667" />
-        <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2671875" />
-        <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2671875" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.23489583333333333" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.23489583333333333" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/drawable/ic_like_unchecked.xml" value="0.1" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/drawable/origin_custom_shape.xml" value="0.20092592592592592" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_add_cocktail.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_ingredient.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_ingredient_module.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_my_cocktail.xml" value="0.25" />
+        <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_my_cocktail.xml" value="0.33" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_start.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_step_my_cocktail.xml" value="0.25" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/activity_type_cocktail.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/add_button.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/item_grid_type_cocktail.xml" value="0.36666666666666664" />
@@ -35,8 +27,6 @@
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/spinner_item.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/layout/strum_row.xml" value="0.1" />
         <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/menu/my_cocktail_bar.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2671875" />
-        <entry key="..\:/Users/menoz/AndroidStudioProjects/Cocktail_Mania/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2671875" />
       </map>
     </option>
   </component>
