@@ -1,19 +1,18 @@
 package com.example.cocktailmania.book;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.cocktailmania.R;
-import com.example.cocktailmania.cocktail.StepCustomAdapter;
-import com.example.cocktailmania.cocktail.StrumAdapter;
-import com.example.cocktailmania.utility.IngRow;
-import com.example.cocktailmania.utility.NonScrollListView;
-import com.example.cocktailmania.utility.StepPrep;
-import com.example.cocktailmania.utility.Strumento;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cocktailmania.R;
+import com.example.cocktailmania.cocktail.StepCustomAdapter;
+import com.example.cocktailmania.utility.IngRow;
+import com.example.cocktailmania.utility.NonScrollListView;
+import com.example.cocktailmania.utility.StepPrep;
+import com.example.cocktailmania.utility.Strumento;
 
 import java.util.ArrayList;
 

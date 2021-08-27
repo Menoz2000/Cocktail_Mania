@@ -1,7 +1,5 @@
 package com.example.cocktailmania.book;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +7,10 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
-import com.example.cocktailmania.utility.NonScrollListView;
 import com.example.cocktailmania.utility.SpinnerElem;
 import com.example.cocktailmania.utility.StepPrep;
 import com.google.android.material.chip.Chip;
@@ -95,7 +94,7 @@ public class BuildStep extends AppCompatActivity {
                 while (i < MyCocktail.MyIngredients.size()) {
                     Chip control = (Chip) chipGroupIng.getChildAt(i);
                     if (control.isChecked()) {
-                        if(passaggio.getIng() == null)
+                        if (passaggio.getIng() == null)
                             passaggio.setIng(control.getText().toString());
                         else
                             passaggio.addIng(control.getText().toString());
