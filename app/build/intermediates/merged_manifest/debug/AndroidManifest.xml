@@ -23,6 +23,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.CocktailMania" >
         <activity
+            android:name="com.example.cocktailmania.book.BuildStep"
+            android:exported="true" />
+        <activity
             android:name="com.example.cocktailmania.book.StepMyCocktail"
             android:exported="true" />
         <activity android:name="com.example.cocktailmania.cocktail.StrumActivity" />

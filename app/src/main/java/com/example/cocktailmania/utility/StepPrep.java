@@ -1,12 +1,18 @@
 package com.example.cocktailmania.utility;
 
+import java.util.ArrayList;
+
 public class StepPrep {
     int cktId;
     int stepNum;
+    int idIngrediente;
     String ing;
+    int idAzione;
     String azione;
+    int idStrumento;
     String strumento;
     int azioneImg;
+    ArrayList<Integer> ingStep;
 
     public StepPrep() {
     }
@@ -18,6 +24,49 @@ public class StepPrep {
         this.azione = azione;
         this.strumento = strumento;
         this.azioneImg = azioneImg;
+    }
+
+    public StepPrep(int stepNum, String ing, int idAzione, String azione, int idStrumento, String strumento, int azioneImg, ArrayList<Integer> ingStep) {
+        this.stepNum = stepNum;
+        this.ing = ing;
+        this.idAzione = idAzione;
+        this.azione = azione;
+        this.idStrumento = idStrumento;
+        this.strumento = strumento;
+        this.azioneImg = azioneImg;
+        this.ingStep = ingStep;
+    }
+
+    public ArrayList<Integer> getIngStep() {
+        return ingStep;
+    }
+
+    public void setIngStep(ArrayList<Integer> ingStep) {
+        this.ingStep = ingStep;
+    }
+
+    public int getIdIngrediente() {
+        return idIngrediente;
+    }
+
+    public void setIdIngrediente(int idIngrediente) {
+        this.idIngrediente = idIngrediente;
+    }
+
+    public int getIdAzione() {
+        return idAzione;
+    }
+
+    public void setIdAzione(int idAzione) {
+        this.idAzione = idAzione;
+    }
+
+    public int getIdStrumento() {
+        return idStrumento;
+    }
+
+    public void setIdStrumento(int idStrumento) {
+        this.idStrumento = idStrumento;
     }
 
     public int getCktId() {

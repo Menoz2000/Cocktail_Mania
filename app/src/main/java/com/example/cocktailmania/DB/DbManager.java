@@ -712,6 +712,33 @@ public class DbManager {
         return true;
     }
 
+    public ArrayList<SpinnerElem> getActions() {
+        int cont = 0;
+        String query = "SELECT id,nome,img FROM Azione ORDER BY nome";
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        SpinnerElem Action;
+        ArrayList<SpinnerElem> elems = new ArrayList<>();
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                Action = new SpinnerElem(
+                        c.getInt(0),
+                        c.getString(1),
+                        c.getInt(2)
+                );
+
+                elems.add(cont, Action);
+                cont++;
+            }
+            c.close();
+        }
+
+        return elems;
+    }
+
 }
 
 

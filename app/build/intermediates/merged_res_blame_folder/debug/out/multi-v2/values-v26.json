@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\IdeaProjects\\Cocktail_Mania\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
+            "outputFile": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Andrea\\.gradle\\caches\\transforms-3\\ae902c507d20da9702824f76d0ab1248\\transformed\\appcompat-1.3.0\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\menoz\\.gradle\\caches\\transforms-3\\ae902c507d20da9702824f76d0ab1248\\transformed\\appcompat-1.3.0\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

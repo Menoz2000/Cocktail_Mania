@@ -1846,10 +1846,16 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable tropical_cocktail
 id ALT
+id ActionLabel
 id ActionName
+id AddActionGroup
 id AddIng
+id AddIngGroup
+id AddIngLabel
 id AddStep
 id AddStrum
+id AddStrumGroup
+id AddStrumLabel
 id AfterButton
 id AlcolicGrade
 id AzioneImg
@@ -1877,6 +1883,7 @@ id OnStepButton
 id OrigName
 id OriginImage
 id OriginList
+id PippoButton
 id QuantityIng
 id SHIFT
 id SHOW_ALL
@@ -2429,6 +2436,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_book
+layout activity_build_step
 layout activity_cocktail
 layout activity_cocktail_module
 layout activity_ingredient
@@ -2554,6 +2562,7 @@ mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+string Azione
 string PrepTitle
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -2582,6 +2591,8 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string aggiungi_ingredienti
+string aggiungi_strumenti
 string app_name
 string appbar_scrolling_view_behavior
 string book
