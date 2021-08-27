@@ -1,6 +1,7 @@
 package com.example.cocktailmania.utility;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class StepPrep {
     int cktId;
@@ -12,7 +13,7 @@ public class StepPrep {
     int idStrumento;
     String strumento;
     int azioneImg;
-    ArrayList<Integer> ingStep;
+    List<Integer> ingStep;
 
     public StepPrep() {
     }
@@ -26,7 +27,7 @@ public class StepPrep {
         this.azioneImg = azioneImg;
     }
 
-    public StepPrep(int stepNum, String ing, int idAzione, String azione, int idStrumento, String strumento, int azioneImg, ArrayList<Integer> ingStep) {
+    public StepPrep(int stepNum, String ing, int idAzione, String azione, int idStrumento, String strumento, int azioneImg, List<Integer> ingStep) {
         this.stepNum = stepNum;
         this.ing = ing;
         this.idAzione = idAzione;
@@ -37,11 +38,11 @@ public class StepPrep {
         this.ingStep = ingStep;
     }
 
-    public ArrayList<Integer> getIngStep() {
+    public List<Integer> getIngStep() {
         return ingStep;
     }
 
-    public void setIngStep(ArrayList<Integer> ingStep) {
+    public void setIngStep(List<Integer> ingStep) {
         this.ingStep = ingStep;
     }
 

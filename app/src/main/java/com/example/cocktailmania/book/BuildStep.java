@@ -34,6 +34,8 @@ public class BuildStep extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_step);
 
+        passaggio=new StepPrep();
+
         chipGroupIng = findViewById(R.id.AddIngGroup);
         chipGroupStrum = findViewById(R.id.AddStrumGroup);
 
@@ -61,6 +63,7 @@ public class BuildStep extends AppCompatActivity  {
             Chip chip = new Chip(this);
             chip.setText(MyCocktail.MyIngredients.get(i).getIngName());
             chip.setCheckable(true);
+            chip.setId(MyCocktail.MyIngredients.get(i).getIdIng());
             chipGroupIng.addView(chip);
         }
         chipGroupIng.setVisibility(View.VISIBLE);
@@ -68,6 +71,7 @@ public class BuildStep extends AppCompatActivity  {
         for (int i = 0; i < MyCocktail.MyStrums.size(); i++) {
             Chip chip = new Chip(this);
             chip.setText(MyCocktail.MyStrums.get(i).getNome());
+            chip.setId(MyCocktail.MyStrums.get(i).getId());
             chip.setCheckable(true);
             chipGroupStrum.addView(chip);
         }
@@ -79,10 +83,18 @@ public class BuildStep extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                passaggio.setIdStrumento(MyCocktail.MyStrums.get((chipGroupStrum.getCheckedChipId())-5).getId());
                 System.out.println("--------------------------------------------");
+                System.out.println(MyCocktail.MyStrums.size());
                 System.out.println(chipGroupStrum.getCheckedChipId());
-                System.out.println(MyCocktail.MyStrums.get((chipGroupStrum.getCheckedChipId())-5).getId());
+                passaggio.setIdStrumento(chipGroupStrum.getCheckedChipId());
+
+                System.out.println("--------------------------------------------");
+                System.out.println(MyCocktail.MyIngredients.size());
+                System.out.println(chipGroupIng.getCheckedChipIds());
+                passaggio.setIngStep(chipGroupIng.getCheckedChipIds());
+
+                passaggio.setStepNum((StepMyCocktail.passaggi.size())+1);
+
                 StepMyCocktail.passaggi.add(passaggio);
             }
         });
