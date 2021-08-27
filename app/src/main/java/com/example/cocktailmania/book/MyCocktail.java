@@ -24,6 +24,7 @@ import com.example.cocktailmania.utility.GradeCocktail;
 import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.NonScrollListView;
 import com.example.cocktailmania.utility.SpinnerElem;
+import com.example.cocktailmania.utility.StepPrep;
 import com.example.cocktailmania.utility.Strumento;
 
 import java.util.ArrayList;
@@ -56,6 +57,8 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     ArrayList<SpinnerElem> strumList = new ArrayList<>();
     Strumento strum = new Strumento();  //oggetto passadati
     public static ArrayList<Strumento> MyStrums = new ArrayList<>();     //arraylist con gli strumenti scelti dall'utente
+
+    static ArrayList<StepPrep> passaggi = new ArrayList<>();
 
     SpinnerAdapter spinnerIngAdapter;
     SpinnerAdapter spinnerStrAdapter;
@@ -90,7 +93,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         addStrumButton = findViewById(R.id.AddStrum);
         addStrumButton.setOnClickListener(this);
         //button avanti
-        afterButton=findViewById(R.id.AfterButton);
+        afterButton = findViewById(R.id.AfterButton);
         afterButton.setOnClickListener(this);
 
         //Ingredient Spinner
@@ -153,6 +156,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         });
 
         //Strumenti Spinner
+        //todo controllo su non inserire due strum uguali
         strumList = db.getInstruments();   //arraylist con tutti gli strumenti disponibili (presi dal database)
         spStrumenti = findViewById(R.id.StrumSpinner);
         spinnerStrAdapter = new SpinnerAdapter(this, strumList);
@@ -204,13 +208,11 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                 //la funz controllaSeEsiste ci dice se il nome del ckt passato esiste gia tra i myCkt
                 if (db.controllaSeEsiste(nomeText.getText().toString())) {
 
-                    System.out.println("sono qui qui");
                     Toast.makeText(getApplicationContext(), "Nome Cocktail già esistente", Toast.LENGTH_LONG).show();
 
                 } else {
 
                     nomeMyCkt = nomeText.getText().toString();
-                    System.out.println("sono qui");
                     Intent intent = new Intent(this, StepMyCocktail.class);
                     startActivity(intent);
 

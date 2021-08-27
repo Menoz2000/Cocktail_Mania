@@ -121,9 +121,9 @@ public class BuildStep extends AppCompatActivity {
                 //lascio NULL nei campi degli strumenti se nessuno selezionato
             }
 
-            passaggio.setStepNum((StepMyCocktail.passaggi.size()) + 1);
+            passaggio.setStepNum((MyCocktail.passaggi.size()) + 1);
 
-            StepMyCocktail.passaggi.add(passaggio);
+            MyCocktail.passaggi.add(passaggio);
 
             //torno all'activity precedente
             Intent intent = new Intent(this, StepMyCocktail.class);
