@@ -1,12 +1,10 @@
 package com.example.cocktailmania.utility;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class StepPrep {
     int cktId;
     int stepNum;
-    int idIngrediente;
     String ing;
     int idAzione;
     String azione;
@@ -44,14 +42,6 @@ public class StepPrep {
 
     public void setIngStep(List<Integer> ingStep) {
         this.ingStep = ingStep;
-    }
-
-    public int getIdIngrediente() {
-        return idIngrediente;
-    }
-
-    public void setIdIngrediente(int idIngrediente) {
-        this.idIngrediente = idIngrediente;
     }
 
     public int getIdAzione() {
@@ -133,9 +123,12 @@ public class StepPrep {
                 "cktId=" + cktId +
                 ", stepNum=" + stepNum +
                 ", ing='" + ing + '\'' +
+                ", idAzione=" + idAzione +
                 ", azione='" + azione + '\'' +
+                ", idStrumento=" + idStrumento +
                 ", strumento='" + strumento + '\'' +
                 ", azioneImg=" + azioneImg +
+                ", ingStep=" + ingStep +
                 '}';
     }
 }

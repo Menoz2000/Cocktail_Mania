@@ -2,6 +2,7 @@ package com.example.cocktailmania.book;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,6 +11,7 @@ import android.widget.Spinner;
 
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
+import com.example.cocktailmania.utility.NonScrollListView;
 import com.example.cocktailmania.utility.SpinnerElem;
 import com.example.cocktailmania.utility.StepPrep;
 import com.google.android.material.chip.Chip;
@@ -17,7 +19,7 @@ import com.google.android.material.chip.ChipGroup;
 
 import java.util.ArrayList;
 
-public class BuildStep extends AppCompatActivity  {
+public class BuildStep extends AppCompatActivity {
 
     private final DbManager db = new DbManager(this);
 
@@ -26,6 +28,7 @@ public class BuildStep extends AppCompatActivity  {
     ChipGroup chipGroupStrum;
     Button pippoButton;
     Spinner selectAzione;
+
     SpinnerAdapter spinnerAzAdapter;
     ArrayList<SpinnerElem> ActionList;
 
@@ -34,7 +37,7 @@ public class BuildStep extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_step);
 
-        passaggio=new StepPrep();
+        passaggio = new StepPrep();
 
         chipGroupIng = findViewById(R.id.AddIngGroup);
         chipGroupStrum = findViewById(R.id.AddStrumGroup);
@@ -79,24 +82,53 @@ public class BuildStep extends AppCompatActivity  {
         chipGroupStrum.setSingleSelection(true);
 
         pippoButton = findViewById(R.id.PippoButton);
-        pippoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        //click sul button
+        pippoButton.setOnClickListener(v -> {
 
-                System.out.println("--------------------------------------------");
-                System.out.println(MyCocktail.MyStrums.size());
-                System.out.println(chipGroupStrum.getCheckedChipId());
-                passaggio.setIdStrumento(chipGroupStrum.getCheckedChipId());
-
-                System.out.println("--------------------------------------------");
-                System.out.println(MyCocktail.MyIngredients.size());
-                System.out.println(chipGroupIng.getCheckedChipIds());
+            //System.out.println(MyCocktail.MyIngredients.size());
+            if (!chipGroupIng.getCheckedChipIds().isEmpty()) {
+                //System.out.println("--------------------------------------------");
+                //.out.println(chipGroupIng.getCheckedChipIds());
                 passaggio.setIngStep(chipGroupIng.getCheckedChipIds());
 
-                passaggio.setStepNum((StepMyCocktail.passaggi.size())+1);
+                int i = 0;
+                while (i < MyCocktail.MyIngredients.size()) {
+                    Chip control = (Chip) chipGroupIng.getChildAt(i);
+                    if (control.isChecked()) {
+                        if(passaggio.getIng() == null)
+                            passaggio.setIng(control.getText().toString());
+                        else
+                            passaggio.addIng(control.getText().toString());
+                    }
 
-                StepMyCocktail.passaggi.add(passaggio);
+                    i++;
+                }
+                //lascio NULL nei campi degli ingredienti se nessuno selezionato
             }
+
+            //System.out.println(MyCocktail.MyStrums.size());
+            if (chipGroupStrum.getCheckedChipId() != View.NO_ID) {
+                //System.out.println("--------------------------------------------");
+                //System.out.println(chipGroupStrum.getCheckedChipId());
+                passaggio.setIdStrumento(chipGroupStrum.getCheckedChipId());
+
+                int i = 0;
+                while (i < MyCocktail.MyStrums.size()) {
+                    Chip control = (Chip) chipGroupStrum.getChildAt(i);
+                    if (control.isChecked())
+                        passaggio.setStrumento(control.getText().toString());
+                    i++;
+                }
+                //lascio NULL nei campi degli strumenti se nessuno selezionato
+            }
+
+            passaggio.setStepNum((StepMyCocktail.passaggi.size()) + 1);
+
+            StepMyCocktail.passaggi.add(passaggio);
+
+            //torno all'activity precedente
+            Intent intent = new Intent(this, StepMyCocktail.class);
+            startActivity(intent);
         });
 
 
