@@ -1865,6 +1865,7 @@ id BOTTOM_START
 id CTRL
 id CktOrigin
 id DeleteIngButton
+id DeleteStep
 id DeleteStrumButton
 id FUNCTION
 id GradeName

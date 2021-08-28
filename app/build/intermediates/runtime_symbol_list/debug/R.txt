@@ -1864,6 +1864,7 @@ int id BOTTOM_START 0x7f080010
 int id CTRL 0x7f080011
 int id CktOrigin 0x7f080012
 int id DeleteIngButton 0x7f080013
+int id DeleteStep 0x7f08020b
 int id DeleteStrumButton 0x7f080014
 int id FUNCTION 0x7f080015
 int id GradeName 0x7f080016
