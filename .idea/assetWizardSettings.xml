@@ -79,8 +79,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\menoz\AndroidStudioProjects\Cocktail_Mania\app\src\main\res\drawable-v24\app_icon.png" />
-                                                <entry key="scalingPercent" value="68" />
+                                                <entry key="imagePath" value="C:\Users\menoz\AndroidStudioProjects\Cocktail_Mania\app\src\main\res\drawable\app_icon.png" />
+                                                <entry key="scalingPercent" value="70" />
                                               </map>
                                             </option>
                                           </PersistentState>

@@ -10,11 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
-import com.example.cocktailmania.cocktail.CocktailModule;
 import com.example.cocktailmania.cocktail.StepCustomAdapter;
 import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.NonScrollListView;
-import com.example.cocktailmania.utility.StepPrep;
 import com.example.cocktailmania.utility.Strumento;
 
 import java.util.ArrayList;
@@ -79,8 +77,8 @@ public class StepMyCocktail extends AppCompatActivity implements View.OnClickLis
 
                 db.uploadMyCkt();
 
-                intent=new Intent(this,MyCocktail.class);
-                intent.putExtra("list_cocktail",2);
+                intent = new Intent(this, MyCocktail.class);
+                intent.putExtra("list_cocktail", 2);
                 startActivity(intent);
 
                 break;

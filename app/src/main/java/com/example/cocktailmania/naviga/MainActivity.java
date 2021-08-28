@@ -22,7 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements OriginListAdapter.OnOriginListener{
+public class MainActivity extends AppCompatActivity implements OriginListAdapter.OnOriginListener {
     /* TODO: change app icon */
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements OriginListAdapter
         });
 
         recyclerView = findViewById(R.id.OriginList);
-        OriginListAdapter oAdapter = new OriginListAdapter(originCocktailArrayList, MainActivity.this,this);
+        OriginListAdapter oAdapter = new OriginListAdapter(originCocktailArrayList, MainActivity.this, this);
         LinearLayoutManager oLayoutManager = new LinearLayoutManager(getApplicationContext());
         oLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(oLayoutManager);

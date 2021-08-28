@@ -15,7 +15,7 @@ import com.example.cocktailmania.utility.OriginCocktail;
 
 import java.util.ArrayList;
 
-public class OriginListAdapter extends RecyclerView.Adapter{
+public class OriginListAdapter extends RecyclerView.Adapter {
 
 
     private final ArrayList<OriginCocktail> origini;
@@ -42,7 +42,7 @@ public class OriginListAdapter extends RecyclerView.Adapter{
         OriginCocktail currentElem = origini.get(position);
 
         //senza il try non funziona sul samsung di sonc
-        try{
+        try {
             myViewHolder.img.setImageResource(currentElem.getImg());
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,18 +57,18 @@ public class OriginListAdapter extends RecyclerView.Adapter{
         return origini.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView nome,id;
+        TextView nome, id;
         ImageView img;
         OnOriginListener onOriginListener;
 
         public ViewHolder(@NonNull View itemView, OnOriginListener onOriginListener) {
             super(itemView);
-            img=itemView.findViewById(R.id.OriginImage);
-            id= itemView.findViewById(R.id.idOrig);
-            nome=itemView.findViewById(R.id.OrigName);
-            this.onOriginListener=onOriginListener;
+            img = itemView.findViewById(R.id.OriginImage);
+            id = itemView.findViewById(R.id.idOrig);
+            nome = itemView.findViewById(R.id.OrigName);
+            this.onOriginListener = onOriginListener;
             itemView.setOnClickListener(this);
         }
 

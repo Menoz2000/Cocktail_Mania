@@ -27,6 +27,7 @@ public class IngRow {
     public String getQuantita() {
         return quantita;
     }
+
     public Float getQuantitaFloat() {
         return Float.parseFloat(quantita);
     }

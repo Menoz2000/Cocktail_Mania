@@ -9,9 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.cocktailmania.R;
-import com.example.cocktailmania.cocktail.CocktailAdapter;
 import com.example.cocktailmania.utility.CocktailElem;
-import com.example.cocktailmania.utility.TipoCocktail;
 
 import java.util.List;
 
@@ -33,7 +31,7 @@ public class GridCocktailAdapter extends ArrayAdapter<CocktailElem> {
 
         TextView id_cocktail = convertView.findViewById(R.id.idCocktail);
         TextView cocktail_name = convertView.findViewById(R.id.cocktailName);
-        ImageView image_cocktail=convertView.findViewById(R.id.imageCocktail);
+        ImageView image_cocktail = convertView.findViewById(R.id.imageCocktail);
         TextView grade_cocktail = convertView.findViewById(R.id.gradeCocktail);
 
         id_cocktail.setText(String.valueOf(sp.getId()));

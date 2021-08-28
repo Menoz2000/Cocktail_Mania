@@ -30,7 +30,7 @@ public class GridAdapter extends ArrayAdapter<TipoCocktail> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.single_item_grid_type, parent, false);
 
         TextView id_tipe = convertView.findViewById(R.id.idType);
-        ImageView image_tipe=convertView.findViewById(R.id.imageType);
+        ImageView image_tipe = convertView.findViewById(R.id.imageType);
         TextView tipe_name = convertView.findViewById(R.id.TypeName);
 
         id_tipe.setText(String.valueOf(sp.getId()));

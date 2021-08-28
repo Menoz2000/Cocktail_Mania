@@ -9,12 +9,15 @@ public class NonScrollGridView extends GridView {
     public NonScrollGridView(Context context) {
         super(context);
     }
+
     public NonScrollGridView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
+
     public NonScrollGridView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
+
     @Override
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int heightMeasureSpec_custom = MeasureSpec.makeMeasureSpec(
