@@ -87,7 +87,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "preferito integer NOT NULL DEFAULT 0," +
                 "iconico integer NOT NULL DEFAULT 0," +
                 "my_cocktail integer NOT NULL DEFAULT 0," +
-                "img integer NOT NULL," +
+                "img integer NOT NULL default " + R.drawable.ing_101 + "," +
                 "FOREIGN KEY (fk_origine) REFERENCES Origine(id)," +
                 "FOREIGN KEY (fk_gradoAlcolico) REFERENCES GradoAlcolico(id)," +
                 "FOREIGN KEY (fk_tipo) REFERENCES TipoCocktail(id)" +
@@ -117,7 +117,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(comando);
 
-        comando="CREATE TABLE Immagini_MyCocktail (" +
+        comando = "CREATE TABLE Immagini_MyCocktail (" +
                 "id integer," +
                 "img longblob" +
                 ");";

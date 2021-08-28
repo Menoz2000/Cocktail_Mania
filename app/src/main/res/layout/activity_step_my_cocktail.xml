@@ -27,7 +27,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:text="Rimuovi Step" />
+                android:text="Rimuovi Ultimo Step" />
 
             <Button
                 android:id="@+id/AddStep"

@@ -4,12 +4,12 @@
         "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\layout\\strum_deletable_row.xml"
     },
     {
-        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\merged_res\\debug\\drawable_strum_10.png.flat",
-        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\strum_10.png"
-    },
-    {
         "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_clear.xml.flat",
         "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\ic_clear.xml"
+    },
+    {
+        "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\merged_res\\debug\\drawable_strum_10.png.flat",
+        "source": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\src\\main\\res\\drawable\\strum_10.png"
     },
     {
         "merged": "C:\\Users\\menoz\\AndroidStudioProjects\\Cocktail_Mania\\app\\build\\intermediates\\merged_res\\debug\\layout_single_item_origin.xml.flat",

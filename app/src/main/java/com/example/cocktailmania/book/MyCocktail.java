@@ -58,7 +58,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     Strumento strum = new Strumento();  //oggetto passadati
     public static ArrayList<Strumento> MyStrums = new ArrayList<>();     //arraylist con gli strumenti scelti dall'utente
 
-    static ArrayList<StepPrep> passaggi = new ArrayList<>();
+    public static ArrayList<StepPrep> passaggi = new ArrayList<>();
 
     SpinnerAdapter spinnerIngAdapter;
     SpinnerAdapter spinnerStrAdapter;

@@ -125,6 +125,8 @@ public class BuildStep extends AppCompatActivity {
 
             MyCocktail.passaggi.add(passaggio);
 
+            System.out.println(passaggio.toString());
+
             //torno all'activity precedente
             Intent intent = new Intent(this, StepMyCocktail.class);
             startActivity(intent);

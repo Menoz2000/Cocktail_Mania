@@ -3,7 +3,6 @@ package com.example.cocktailmania.DB;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.widget.Spinner;
 
 import com.example.cocktailmania.book.MyCocktail;
 import com.example.cocktailmania.utility.CocktailElem;
@@ -664,7 +663,8 @@ public class DbManager {
         //todo controlli su insert e su select
 
         int idCkt;
-        String comp = "";
+        StringBuilder comp = new StringBuilder();
+        StringBuilder compCpy;
 
         //inserisco il cocktail
         String insert = "insert into Cocktail(nome,fk_gradoAlcolico,my_cocktail)" +
@@ -676,41 +676,72 @@ public class DbManager {
         String query = "SELECT id FROM Cocktail where my_cocktail=1 and nome like" + MyCocktail.nomeMyCkt;
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
-        idCkt = c.getInt(1);
+        idCkt = c.getInt(0);
         c.close();
-
-        System.out.println("-----------------");
-        System.out.println(idCkt);
-        System.out.println("-----------------");
 
 
         for (int i = 0; i < MyCocktail.MyIngredients.size(); i++) {
             if (i == 0) {
-                comp = idCkt + "," + MyCocktail.MyIngredients.get(i).getIdIng() + "," + MyCocktail.MyIngredients.get(i).getQuantitaFloat() + "," + MyCocktail.MyIngredients.get(i).getUnita_misura() + ")";
+                comp = new StringBuilder(idCkt + "," + MyCocktail.MyIngredients.get(i).getIdIng() + "," + MyCocktail.MyIngredients.get(i).getQuantitaFloat() + "," + MyCocktail.MyIngredients.get(i).getUnita_misura() + ")");
             } else {
-                comp = ",(" + idCkt + "," + MyCocktail.MyIngredients.get(i).getIdIng() + "," + MyCocktail.MyIngredients.get(i).getQuantitaFloat() + "," + MyCocktail.MyIngredients.get(i).getUnita_misura();
+                comp.append(",(").append(idCkt).append(",").append(MyCocktail.MyIngredients.get(i).getIdIng()).append(",").append(MyCocktail.MyIngredients.get(i).getQuantitaFloat()).append(",").append(MyCocktail.MyIngredients.get(i).getUnita_misura());
             }
 
         }
 
-        insert = new StringBuilder().append("insert into Composizione (fk_cocktail,fk_ingrediente,quantita,unita_misura) values (").append(comp).append(");").toString();
+        insert = "insert into Composizione (fk_cocktail,fk_ingrediente,quantita,unita_misura) values (" + comp + ");";
         db.execSQL(insert);
 
 
         for (int i = 0; i < MyCocktail.MyStrums.size(); i++) {
             if (i == 0) {
-                comp = idCkt + "," + MyCocktail.MyStrums.get(i).getId() + ")";
+                comp = new StringBuilder(idCkt + "," + MyCocktail.MyStrums.get(i).getId() + ")");
             } else {
-                comp = ",(" + idCkt + "," + MyCocktail.MyStrums.get(i).getId();
+                comp.append(",(").append(idCkt).append(",").append(MyCocktail.MyStrums.get(i).getId());
             }
 
         }
 
-        insert = new StringBuilder().append("insert into Procurare (fk_cocktail, fk_strumento) values (").append(comp).append(");").toString();
+        insert = "insert into Procurare (fk_cocktail, fk_strumento) values (" + comp + ");";
         db.execSQL(insert);
+
+
+        for (int i = 0; i < MyCocktail.passaggi.size(); i++) {
+
+
+            insert = "insert into preparazione(fk_cocktail,fk_azione,step";
+            comp = new StringBuilder(idCkt + "," + MyCocktail.passaggi.get(i).getIdAzione() + ", " + MyCocktail.passaggi.get(i).getStepNum());
+            if (MyCocktail.passaggi.get(i).getIdStrumento() != 0) {
+                insert += ",fk_strumento";
+                comp.append(", ").append(MyCocktail.passaggi.get(i).getIdStrumento());
+            }
+
+
+            if (!MyCocktail.passaggi.get(i).getIngStep().isEmpty()) {
+                //ho ingredienti
+                insert += ",fk_ingrediente) values (";
+
+                for (int j = 0; j < MyCocktail.passaggi.get(i).getIngStep().size(); j++) {
+                    compCpy = comp;
+
+                    compCpy.append(", ").append(MyCocktail.passaggi.get(i).getIngStep().get(j));
+                    System.out.println(insert + compCpy + ");");
+                    db.execSQL(insert + compCpy + ");");
+                }
+
+            } else {
+                //non ho ingredienti
+                insert += ") values (" + comp + ");";
+                System.out.println(insert);
+                db.execSQL(insert);
+            }
+
+
+        }
 
         return true;
     }
+
 
     public ArrayList<SpinnerElem> getActions() {
         int cont = 0;

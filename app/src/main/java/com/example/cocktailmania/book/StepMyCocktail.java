@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
 import com.example.cocktailmania.cocktail.CocktailModule;
 import com.example.cocktailmania.cocktail.StepCustomAdapter;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 
 public class StepMyCocktail extends AppCompatActivity implements View.OnClickListener {
 
-
+    DbManager db = new DbManager(this);
     Button aggiungiStep;
     Button rimuoviStep;
     Button finish;
@@ -49,7 +50,7 @@ public class StepMyCocktail extends AppCompatActivity implements View.OnClickLis
         rimuoviStep = findViewById(R.id.DeleteStep);
         rimuoviStep.setOnClickListener(this);
 
-        finish=findViewById(R.id.OnStepButton);
+        finish = findViewById(R.id.OnStepButton);
         finish.setOnClickListener(this);
     }
 
@@ -76,7 +77,10 @@ public class StepMyCocktail extends AppCompatActivity implements View.OnClickLis
 
             case R.id.OnStepButton:
 
-                intent = new Intent(this, CocktailModule.class);
+                db.uploadMyCkt();
+
+                intent=new Intent(this,MyCocktail.class);
+                intent.putExtra("list_cocktail",2);
                 startActivity(intent);
 
                 break;
