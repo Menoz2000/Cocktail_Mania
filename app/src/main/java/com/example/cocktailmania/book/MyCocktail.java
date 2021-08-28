@@ -76,6 +76,12 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_cocktail);
 
+        //RESETTO GLI ARRAYLIST STATICI
+        MyIngredients.clear();
+        MyStrums.clear();
+        passaggi.clear();
+        nomeMyCkt="";
+
         //uploadButton.findViewById(R.id.OnButton);
 
         ingListView = findViewById(R.id.MyIngList); //ListView con gli ingredienti
@@ -204,17 +210,20 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                 break;
 
             case R.id.AfterButton:
-
+                //todo:controllo se è stato inserito almeno un ingrediente e uno strumento
                 //la funz controllaSeEsiste ci dice se il nome del ckt passato esiste gia tra i myCkt
                 if (db.controllaSeEsiste(nomeText.getText().toString())) {
 
                     Toast.makeText(getApplicationContext(), "Nome Cocktail già esistente", Toast.LENGTH_LONG).show();
 
                 } else {
-
-                    nomeMyCkt = nomeText.getText().toString();
-                    Intent intent = new Intent(this, StepMyCocktail.class);
-                    startActivity(intent);
+                    if (nomeText.getText().toString().equals(""))
+                        Toast.makeText(getApplicationContext(), "Inserire Nome Cocktail", Toast.LENGTH_LONG).show();
+                    else {
+                        nomeMyCkt = nomeText.getText().toString();
+                        Intent intent = new Intent(this, StepMyCocktail.class);
+                        startActivity(intent);
+                    }
 
                 }
 

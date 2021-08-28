@@ -658,7 +658,7 @@ public class DbManager {
 
     }
 
-    public boolean uploadMyCkt() {
+    public void uploadMyCkt() {
 
         //todo controlli su insert e su select
 
@@ -701,7 +701,7 @@ public class DbManager {
 
         for (int i = 0; i < MyCocktail.MyStrums.size(); i++) {
             if (i == 0) {
-                comp = new StringBuilder(idCkt + "," + MyCocktail.MyStrums.get(i).getId() + ")");
+                comp = new StringBuilder(idCkt + "," + MyCocktail.MyStrums.get(i).getId());
             } else {
                 comp.append(",(").append(idCkt).append(",").append(MyCocktail.MyStrums.get(i).getId());
             }
@@ -723,13 +723,13 @@ public class DbManager {
             }
 
 
-            if (!MyCocktail.passaggi.get(i).getIngStep().isEmpty()) {
+            if (MyCocktail.passaggi.get(i).getIngStep() != null) {
                 //ho ingredienti
                 insert += ",fk_ingrediente) values (";
 
                 for (int j = 0; j < MyCocktail.passaggi.get(i).getIngStep().size(); j++) {
                     //compCpy = comp;
-                    compCpy.replace(0,compCpy.length(), String.valueOf(comp));
+                    compCpy.replace(0, compCpy.length(), String.valueOf(comp));
                     compCpy.append(", ").append(MyCocktail.passaggi.get(i).getIngStep().get(j));
                     System.out.println(insert + compCpy + ");");
                     db.execSQL(insert + compCpy + ");");
@@ -745,7 +745,6 @@ public class DbManager {
 
         }
 
-        return true;
     }
 
 
@@ -774,6 +773,35 @@ public class DbManager {
         }
 
         return elems;
+    }
+
+    public int isMyCkt(int id) {
+        int ris = 0;
+        String query = "SELECT my_cocktail " +
+                "FROM Cocktail " +
+                "where id=" + id;
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        if (c != null) {
+            c.moveToFirst();
+            do {
+                ris = c.getInt(0);
+            } while (c.moveToNext());
+            c.close();
+
+        }
+        return ris;
+    }
+
+    public void deleteCocktail(int id) {
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        String query = "DELETE FROM Cocktail " +
+                "WHERE id=" + id;
+
+        db.execSQL(query);
+
     }
 
 }

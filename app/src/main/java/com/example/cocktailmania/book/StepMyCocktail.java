@@ -10,12 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
+import com.example.cocktailmania.cocktail.CocktailActivity;
 import com.example.cocktailmania.cocktail.StepCustomAdapter;
-import com.example.cocktailmania.utility.IngRow;
 import com.example.cocktailmania.utility.NonScrollListView;
-import com.example.cocktailmania.utility.Strumento;
-
-import java.util.ArrayList;
 
 public class StepMyCocktail extends AppCompatActivity implements View.OnClickListener {
 
@@ -26,9 +23,6 @@ public class StepMyCocktail extends AppCompatActivity implements View.OnClickLis
     NonScrollListView MyStepListView;
     StepCustomAdapter arrayAdapter;
     Intent intent;
-
-    ArrayList<IngRow> MyIngredientsCpy = new ArrayList<>(MyCocktail.MyIngredients);
-    ArrayList<Strumento> MyStrumsCpy = new ArrayList<>(MyCocktail.MyStrums);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,12 +68,15 @@ public class StepMyCocktail extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.OnStepButton:
+                if(MyCocktail.passaggi.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Inserire almeno uno Step", Toast.LENGTH_LONG).show();
+                }else{
+                    db.uploadMyCkt();
 
-                db.uploadMyCkt();
-
-                intent = new Intent(this, MyCocktail.class);
-                intent.putExtra("list_cocktail", 2);
-                startActivity(intent);
+                    intent = new Intent(this, CocktailActivity.class);
+                    intent.putExtra("list_cocktail", 2);
+                    startActivity(intent);
+                }
 
                 break;
 

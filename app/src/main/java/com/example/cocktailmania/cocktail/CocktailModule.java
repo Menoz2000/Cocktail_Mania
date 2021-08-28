@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -27,11 +29,13 @@ public class CocktailModule extends AppCompatActivity {
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
     NonScrollListView SteplistView, IngListView, StrumListView;
+    Button delete;
     ArrayList<IngRow> ingredients;
     ArrayList<StepPrep> stepPrep;
     ArrayList<Strumento> instruments;
     int cktN;
     CocktailElem ckt;
+    int config;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +43,26 @@ public class CocktailModule extends AppCompatActivity {
         setContentView(R.layout.activity_cocktail_module);
 
         if (getIntent().hasExtra("selected_ckt")) {
-            cktN = getIntent().getIntExtra("selected_ckt",0);
+            cktN = getIntent().getIntExtra("selected_ckt", 0);
             stepPrep = db.getPrepCkt(cktN);
             ingredients = db.getIngredients(cktN);
             ckt = db.getSingleCocktail(cktN);
-            instruments=db.getInstruments(cktN);
+            instruments = db.getInstruments(cktN);
 
-            /*for (int i = 0; i < ingredients.size(); i++) {
-                System.out.println(ingredients.get(i).toString());
-            }*/
+            //controllo se è un My Cocktail per aggiungere il button CANCELLA COCKTAIL in fondo alla pagina
+            config = db.isMyCkt(cktN);
+            delete = findViewById(R.id.deleteCocktailButton);
+            if (config == 1){
+                delete.setVisibility(View.VISIBLE);
+                delete.setOnClickListener(v -> {
+                    db.deleteCocktail(cktN);
+
+                    Intent intent = new Intent(CocktailModule.this, CocktailActivity.class);
+                    intent.putExtra("list_cocktail", 2);
+                    startActivity(intent);
+                });
+            }else
+                delete.setVisibility(View.GONE);
 
             //passaggio dei dati alla grafica
             TextView textView = findViewById(R.id.StrumTitle);
@@ -118,14 +133,7 @@ public class CocktailModule extends AppCompatActivity {
         button.setChecked(ckt.isPreferito());
 
         //creo listener sul LikeButton che nel caso venga premuto cambia lo stato nel database
-        button.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            db.OnUpdateInvertPreferito(cktN, !isChecked);
-            /*if (isChecked) {
-                // The toggle is enabled
-            } else {
-                // The toggle is disabled
-            }*/
-        });
+        button.setOnCheckedChangeListener((buttonView, isChecked) -> db.OnUpdateInvertPreferito(cktN, !isChecked));
 
         return true;
     }

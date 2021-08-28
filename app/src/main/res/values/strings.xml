@@ -19,5 +19,6 @@
     <string name="Azione">Azione</string>
     <string name="aggiungi_ingredienti">Aggiungi Ingredienti</string>
     <string name="aggiungi_strumenti">Aggiungi strumenti</string>
+    <string name="cancella_cocktail">CANCELLA COCKTAIL</string>
 
 </resources>

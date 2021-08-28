@@ -19,4 +19,8 @@
         <item name="android:textColorSecondary">@color/like_button_unchecked</item>  // for unchecked
     </style>
 
+    <style name="DeleteCocktailButton" parent="Theme.AppCompat">
+        <item name="colorAccent">@color/delete_button</item>  // for checked
+    </style>
+
 </resources>

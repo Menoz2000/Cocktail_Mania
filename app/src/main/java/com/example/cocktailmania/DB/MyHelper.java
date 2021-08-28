@@ -13,6 +13,12 @@ public class MyHelper extends SQLiteOpenHelper {
     }
 
     @Override
+    public void onOpen(SQLiteDatabase db) {
+        super.onOpen(db);
+        db.execSQL("PRAGMA foreign_keys=ON");
+    }
+
+    @Override
     public void onCreate(SQLiteDatabase db) {
 
         String comando = "CREATE TABLE Ingrediente (" +
@@ -41,7 +47,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "quantita real," +
                 "unita_misura text," +
                 "PRIMARY KEY(fk_cocktail, fk_ingrediente)," +
-                "FOREIGN KEY (fk_cocktail) REFERENCES Cocktail(id)," +
+                "FOREIGN KEY (fk_cocktail) REFERENCES Cocktail(id) ON DELETE CASCADE," +
                 "FOREIGN KEY (fk_ingrediente) REFERENCES Ingrediente(id)" +
                 ");";
         db.execSQL(comando);
@@ -101,7 +107,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "    step integer NOT NULL ," +
                 "    fk_strumento integer," +
                 "    fk_azione integer," +
-                "    FOREIGN KEY (fk_cocktail) REFERENCES Cocktail(id)," +
+                "    FOREIGN KEY (fk_cocktail) REFERENCES Cocktail(id) ON DELETE CASCADE," +
                 "    FOREIGN KEY (fk_ingrediente) REFERENCES Ingrediente(id)," +
                 "    FOREIGN KEY (fk_strumento) REFERENCES Strumento(id)," +
                 "    FOREIGN KEY (fk_azione) REFERENCES Azione(id)" +
@@ -112,7 +118,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "fk_cocktail integer," +
                 "fk_strumento integer," +
                 "PRIMARY KEY (fk_cocktail, fk_strumento)," +
-                "FOREIGN KEY (fk_cocktail) REFERENCES Cocktail (id)," +
+                "FOREIGN KEY (fk_cocktail) REFERENCES Cocktail (id) ON DELETE CASCADE," +
                 "FOREIGN KEY (fk_strumento) REFERENCES Strumento(id)" +
                 ");";
         db.execSQL(comando);
