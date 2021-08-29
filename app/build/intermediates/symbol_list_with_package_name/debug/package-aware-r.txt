@@ -1063,6 +1063,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color like_button_checked
 color like_button_unchecked
 color material_blue_grey_800
@@ -1695,6 +1696,18 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable act_1
+drawable act_10
+drawable act_11
+drawable act_12
+drawable act_2
+drawable act_3
+drawable act_4
+drawable act_5
+drawable act_6
+drawable act_7
+drawable act_8
+drawable act_9
 drawable app_icon
 drawable avd_hide_password
 drawable avd_show_password
@@ -1733,8 +1746,6 @@ drawable ic_clear
 drawable ic_clock_black_24dp
 drawable ic_cocktail
 drawable ic_keyboard_black_24dp
-drawable ic_launcher_background
-drawable ic_launcher_foreground
 drawable ic_like_checked
 drawable ic_like_unchecked
 drawable ic_mtrl_checked_circle

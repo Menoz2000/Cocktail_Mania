@@ -52,7 +52,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(comando);
 
-        //TODO: delete DEFAULT image
+        //TODO: delete DEFAULT origin image
         comando = "CREATE TABLE Origine (" +
                 "id integer PRIMARY KEY," +
                 "nazione text NOT NULL," +
@@ -67,11 +67,10 @@ public class MyHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(comando);
 
-        //TODO: delete DEFAULT IMAGE from table
         comando = "CREATE TABLE Azione (" +
                 "    id integer PRIMARY KEY," +
                 "    nome text NOT NULL," +
-                "    img integer default " + R.drawable.ing_131 + "/*NOT NULL*/" +
+                "    img integer NOT NULL" +
                 ");";
         db.execSQL(comando);
 
@@ -277,20 +276,19 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(7, 'Martini'," + R.drawable.martini_cocktail + ");";
         db.execSQL(insert);
 
-        //TODO: add action image for each action
-        insert = "INSERT INTO Azione (id, nome)" +
-                "VALUES (1, 'Aggiungi')," +
-                "(2, 'Agita Bene')," +
-                "(3, 'Filtra')," +
-                "(4, 'Frulla')," +
-                "(5, 'Guarnisci')," +
-                "(6, 'Lascia Cadere')," +
-                "(7, 'Mescola')," +
-                "(8, 'Mescola Bene')," +
-                "(9, 'Pesta')," +
-                "(10, 'Riempi')," +
-                "(11, 'Spruzza')," +
-                "(12, 'Versa');";
+        insert = "INSERT INTO Azione (id, nome, img)" +
+                "VALUES (1, 'Aggiungi', " + R.drawable.act_1 + ")," +
+                "(2, 'Agita Bene', " + R.drawable.act_2 + ")," +
+                "(3, 'Filtra', " + R.drawable.act_3 + ")," +
+                "(4, 'Frulla', " + R.drawable.act_4 + ")," +
+                "(5, 'Guarnisci', " + R.drawable.act_5 + ")," +
+                "(6, 'Lascia Cadere', " + R.drawable.act_6 + ")," +
+                "(7, 'Mescola', " + R.drawable.act_7 + ")," +
+                "(8, 'Mescola Bene', " + R.drawable.act_8 + ")," +
+                "(9, 'Pesta', " + R.drawable.act_9 + ")," +
+                "(10, 'Riempi', " + R.drawable.act_10 + ")," +
+                "(11, 'Spruzza', " + R.drawable.act_11 + ")," +
+                "(12, 'Versa', " + R.drawable.act_12 + ");";
         db.execSQL(insert);
 
         insert = "INSERT INTO Strumento (id, nome, descrizione, capacita, img)" +

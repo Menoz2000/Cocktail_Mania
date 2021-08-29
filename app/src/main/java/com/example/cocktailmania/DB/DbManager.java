@@ -660,7 +660,7 @@ public class DbManager {
 
     public void uploadMyCkt() {
 
-        //todo controlli su insert e su select
+        //todo: controlli su insert e su select
 
         int idCkt;
         StringBuilder comp = new StringBuilder();

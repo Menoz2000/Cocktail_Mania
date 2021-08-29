@@ -80,7 +80,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         MyIngredients.clear();
         MyStrums.clear();
         passaggi.clear();
-        nomeMyCkt="";
+        nomeMyCkt = "";
 
         //uploadButton.findViewById(R.id.OnButton);
 
@@ -162,7 +162,6 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         });
 
         //Strumenti Spinner
-        //todo controllo su non inserire due strum uguali
         strumList = db.getInstruments();   //arraylist con tutti gli strumenti disponibili (presi dal database)
         spStrumenti = findViewById(R.id.StrumSpinner);
         spinnerStrAdapter = new SpinnerAdapter(this, strumList);
@@ -170,8 +169,6 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         spStrumenti.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(getApplicationContext(), strumList.get(position).getNome(), Toast.LENGTH_LONG).show();
-
                 strum.setId(strumList.get(position).getId());
                 strum.setNome(strumList.get(position).getNome());
             }
@@ -210,23 +207,33 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                 break;
 
             case R.id.AfterButton:
-                //todo:controllo se è stato inserito almeno un ingrediente e uno strumento
+                if (MyIngredients.size() == 0){
+                    //controllo se è stato inserito almeno un ingrediente
+                    Toast.makeText(getApplicationContext(), "Inserire ingrediente", Toast.LENGTH_LONG).show();
+                    break;
+                }
+                if (MyStrums.size() == 0){
+                    //controllo se è stato inserito almeno uno strumento
+                    Toast.makeText(getApplicationContext(), "Inserire strumento", Toast.LENGTH_LONG).show();
+                    break;
+                }
+
                 //la funz controllaSeEsiste ci dice se il nome del ckt passato esiste gia tra i myCkt
                 if (db.controllaSeEsiste(nomeText.getText().toString())) {
 
                     Toast.makeText(getApplicationContext(), "Nome Cocktail già esistente", Toast.LENGTH_LONG).show();
 
                 } else {
-                    if (nomeText.getText().toString().equals(""))
+                    if (nomeText.getText().toString().equals("")) {
                         Toast.makeText(getApplicationContext(), "Inserire Nome Cocktail", Toast.LENGTH_LONG).show();
-                    else {
+                        break;
+                    } else {
                         nomeMyCkt = nomeText.getText().toString();
                         Intent intent = new Intent(this, StepMyCocktail.class);
                         startActivity(intent);
                     }
 
                 }
-
 
                 break;
             case R.id.AddIng:
@@ -292,6 +299,19 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
                     strum.setNome(strumList.get(0).getNome());
                     strum.setId(strumList.get(0).getId());
                 }
+
+                //controllo se lo strumento selezionato è già presente
+                boolean flag = false;
+                for (int i = 0; i < MyStrums.size(); i++) {
+                    if (strum.getId() == MyStrums.get(i).getId()) {
+                        Toast.makeText(getApplicationContext(), "Strumento già aggiunto", Toast.LENGTH_LONG).show();
+                        flag = true;
+                        break;  //break per terminare ciclo for
+                    }
+                }
+                //break per terminare il case dello switch senza aggiungere lo strumento
+                if (flag)
+                    break;
 
                 //aggiungo lo strumento all'arraylist degli strumenti del my cocktail
                 MyStrums.add(strum);
