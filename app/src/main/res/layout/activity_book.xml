@@ -19,14 +19,18 @@
         <Button
             android:id="@+id/ckt_pref"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/preferiti" />
+            android:layout_height="70dp"
+            android:text="@string/preferiti"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/my_ckt"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/my_cocktail" />
+            android:layout_height="70dp"
+            android:text="@string/my_cocktail"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <!--
         <Button
