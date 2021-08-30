@@ -65,8 +65,8 @@ public class CocktailModule extends AppCompatActivity {
                 delete.setVisibility(View.GONE);
 
             //passaggio dei dati alla grafica
-            TextView textView = findViewById(R.id.StrumTitle);
-            textView.setText(ckt.getNome());
+            TextView title = findViewById(R.id.CocktailTitle);
+            title.setText(ckt.getNome());
 
             try {
                 ImageView imageView = findViewById(R.id.imgStrum);
@@ -75,8 +75,8 @@ public class CocktailModule extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            TextView textView1 = findViewById(R.id.AlcolicGrade);
-            textView1.setText(String.valueOf(ckt.getFk_gradoAlcolico()));
+            TextView gradeName = findViewById(R.id.AlcolicGrade);
+            gradeName.setText(String.valueOf(ckt.getFk_gradoAlcolico()));
 
             //NonScrollListView con gli strumenti necessari
             StrumListView = findViewById(R.id.list_instruments);
@@ -91,11 +91,13 @@ public class CocktailModule extends AppCompatActivity {
                 startActivity(i);
             });
 
-            TextView textView2 = findViewById(R.id.CktOrigin);
+            TextView originName = findViewById(R.id.CktOrigin);
+            TextView originLabel = findViewById(R.id.OriginLabel);
             if (ckt.getFk_origine() != null) {
-                textView2.setText(ckt.getFk_origine());
+                originName.setText(ckt.getFk_origine());
             } else {
-                textView2.setVisibility(TextView.GONE);
+                originName.setVisibility(TextView.GONE);
+                originLabel.setVisibility(TextView.GONE);
             }
 
             //NonScrollListView con gli ingredienti necessari

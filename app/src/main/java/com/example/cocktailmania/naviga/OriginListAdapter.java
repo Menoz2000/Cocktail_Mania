@@ -50,6 +50,7 @@ public class OriginListAdapter extends RecyclerView.Adapter {
 
         myViewHolder.nome.setText(currentElem.getNazione());
         myViewHolder.id.setText(String.valueOf(currentElem.getId()));
+        myViewHolder.img.setImageResource(currentElem.getImg());
     }
 
     @Override

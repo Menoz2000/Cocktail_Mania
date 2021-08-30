@@ -25,7 +25,7 @@ public class StrumActivity extends AppCompatActivity {
             Strumento s = db.getInstrument(strumN);
 
             //passaggio dei dati alla grafica
-            TextView textView = findViewById(R.id.StrumTitle);
+            TextView textView = findViewById(R.id.CocktailTitle);
             textView.setText(s.getNome());
 
             try {

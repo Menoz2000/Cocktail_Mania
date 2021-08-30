@@ -1743,6 +1743,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable friz_cocktail
+drawable grade_custom_shape
 drawable ic_add
 drawable ic_alcohol
 drawable ic_baseline_home_24
@@ -1840,6 +1841,11 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable orig_17
+drawable orig_19
+drawable orig_3
+drawable orig_4
+drawable orig_5
 drawable origin_custom_shape
 drawable short_cocktail
 drawable step_custom_shape
@@ -1881,10 +1887,12 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id CktOrigin
+id CocktailTitle
 id DeleteIngButton
 id DeleteStep
 id DeleteStrumButton
 id FUNCTION
+id GradeLabel
 id GradeName
 id GradeSpinner
 id GrigliaTipoCocktail
@@ -1900,6 +1908,7 @@ id NO_DEBUG
 id OnStepButton
 id OrigName
 id OriginImage
+id OriginLabel
 id OriginList
 id PippoButton
 id QuantityIng
@@ -1910,10 +1919,10 @@ id SHOW_PROGRESS
 id SYM
 id StepNumber
 id StepPrep
+id StrumLabel
 id StrumName
 id StrumSpinner
 id StrumText
-id StrumTitle
 id TOP_END
 id TOP_START
 id TypeIMG
@@ -2625,6 +2634,7 @@ string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
 string cocktail
+string cocktailImageDescription
 string delete
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -2633,6 +2643,7 @@ string fab_transformation_sheet_behavior
 string go
 string gradazione_alcolicaMaius
 string gradazione_alcolicaMin
+string grado_alcolico
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string imageMyCkt
@@ -2698,6 +2709,7 @@ string my_cocktail
 string naviga
 string nomeMyCkt
 string origine
+string origine_label
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2709,6 +2721,7 @@ string quantita
 string search_menu_title
 string status_bar_notification_info_overflow
 string strumentiMyCkt
+string strumenti_label
 string tipo_di_cocktail
 string unità
 style AlertDialog_AppCompat

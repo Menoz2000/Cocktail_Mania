@@ -24,5 +24,9 @@
     <string name="origine">Origine</string>
     <string name="tipo_di_cocktail">Tipo di cocktail</string>
     <string name="go">GO</string>
+    <string name="grado_alcolico">Grado alcolico:</string>
+    <string name="origine_label">Origine:</string>
+    <string name="strumenti_label">Strumenti:</string>
+    <string name="cocktailImageDescription">CocktailImage</string>
 
 </resources>

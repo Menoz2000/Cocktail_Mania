@@ -7,6 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--colore tema-->
     <color name="orange">#FB6B3D</color>
     <color name="dark_orange">#AE2A00</color>
 
@@ -14,24 +16,24 @@
     <color name="border_color">#FF000000</color>
 
     <!-- colore per item nella lista ingredienti di ogni cocktail -->
-    <color name="sfumatura2_ing">#FFEFB6</color>
-    <color name="sfumatura1_ing">#FFE074</color>
+    <color name="sfumatura2_ing">#8FACC865</color>
+    <color name="sfumatura1_ing">#8FACC865</color>
 
     <!-- colore per item nella lista step di ogni cocktail-->
-    <color name="sfumatura2_step">#AAD875</color>
-    <color name="sfumatura1_step">#78BC29</color>
+    <color name="sfumatura2_step">#FFFFFF</color>
+    <color name="sfumatura1_step">#FFFFFF</color>
 
     <!-- colore per item nella lista cocktail/ingredienti-->
-    <color name="sfumatura2_list">#9EA19B</color>
-    <color name="sfumatura1_list">#5A5A5A</color>
+    <color name="sfumatura2_list">#9BBDBC</color>
+    <color name="sfumatura1_list">#9BBDBC</color>
 
     <!-- colore per item nella lista strumenti di ogni cocktail-->
-    <color name="sfumatura2_str">#9EA19B</color>
-    <color name="sfumatura1_str">#5A5A5A</color>
+    <color name="sfumatura2_str">#A3F9C172</color>
+    <color name="sfumatura1_str">#A3F9C172</color>
 
     <!--for like button-->
-    <color name="like_button_checked">#DA0505</color>
-    <color name="like_button_unchecked">#5C5C5C</color>
+    <color name="like_button_checked">#EAC300</color>
+    <color name="like_button_unchecked">#FFFFFF</color>
 
     <!--for delete_cocktail button-->
     <color name="delete_button">#DA0505</color>

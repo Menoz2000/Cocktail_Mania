@@ -72,13 +72,6 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
                         startActivity(intent);
                         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                         break;
-
-                    case R.id.cocktailButton:
-                        intent = new Intent(CocktailActivity.this, CocktailActivity.class);
-                        intent.putExtra("list_cocktail", 0);
-                        startActivity(intent);
-                        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                        break;
                     default:
                         break;
                 }

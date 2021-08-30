@@ -64,7 +64,7 @@ public class TypeCocktailList extends AppCompatActivity {
 
                 //setto le informazione del grado alcolico
                 name.setText(selected.getNazione());
-                image.setVisibility(TextView.GONE);
+                image.setImageResource(selected.getImg());
             }
 
             //imposto la griglia dei cocktail
