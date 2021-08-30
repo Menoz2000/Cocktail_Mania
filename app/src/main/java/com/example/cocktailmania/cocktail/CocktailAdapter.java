@@ -36,7 +36,7 @@ public class CocktailAdapter extends RecyclerView.Adapter implements Filterable 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_cocktail_row, parent, false);
         return new ViewHolder(v, onCktListener);
     }
 

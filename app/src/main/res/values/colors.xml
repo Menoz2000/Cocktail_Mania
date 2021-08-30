@@ -7,6 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="orange">#FB6B3D</color>
+    <color name="dark_orange">#AE2A00</color>
 
     <!--colore bordi-->
     <color name="border_color">#FF000000</color>
@@ -18,6 +20,10 @@
     <!-- colore per item nella lista step di ogni cocktail-->
     <color name="sfumatura2_step">#AAD875</color>
     <color name="sfumatura1_step">#78BC29</color>
+
+    <!-- colore per item nella lista cocktail/ingredienti-->
+    <color name="sfumatura2_list">#9EA19B</color>
+    <color name="sfumatura1_list">#5A5A5A</color>
 
     <!-- colore per item nella lista strumenti di ogni cocktail-->
     <color name="sfumatura2_str">#9EA19B</color>

@@ -6,8 +6,8 @@
         android:color="@color/border_color" />
     <gradient
         android:angle="270"
-        android:endColor="@color/sfumatura1_str"
-        android:startColor="@color/sfumatura2_str"/>
+        android:endColor="@color/sfumatura1_list"
+        android:startColor="@color/sfumatura2_list"/>
     <corners
         android:bottomLeftRadius="7dp"
         android:bottomRightRadius="7dp"

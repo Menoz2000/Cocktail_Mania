@@ -1014,6 +1014,7 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color checkbox_themeable_attribute_color
+color dark_orange
 color delete_button
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
@@ -1154,6 +1155,7 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color orange
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1173,9 +1175,11 @@ color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
 color sfumatura1_ing
+color sfumatura1_list
 color sfumatura1_step
 color sfumatura1_str
 color sfumatura2_ing
+color sfumatura2_list
 color sfumatura2_step
 color sfumatura2_str
 color switch_thumb_disabled_material_dark
@@ -2482,7 +2486,8 @@ layout design_text_input_start_icon
 layout ingredient_row
 layout ingredient_row_deletable
 layout item_grid_type_cocktail
-layout list_row
+layout list_cocktail_row
+layout list_ingredient_row
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2625,7 +2630,9 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
-string gradazione_alcolicaMyCkt
+string go
+string gradazione_alcolicaMaius
+string gradazione_alcolicaMin
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string imageMyCkt
@@ -2690,6 +2697,7 @@ string mtrl_picker_toggle_to_year_selection
 string my_cocktail
 string naviga
 string nomeMyCkt
+string origine
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2701,6 +2709,7 @@ string quantita
 string search_menu_title
 string status_bar_notification_info_overflow
 string strumentiMyCkt
+string tipo_di_cocktail
 string unità
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

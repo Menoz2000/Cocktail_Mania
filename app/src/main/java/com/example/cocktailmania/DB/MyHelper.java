@@ -310,7 +310,6 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(39, 'Stir', 'È un cucchiaino lungo che ti tornerà utile in diverse occasioni come ad esempio mescolare i cocktails che non vanno shakerati (ha anche una spirale intorno alla lunghezza del manico, per facilitare la mescolatura), versare lo zucchero, pestare lo zucchero o altri ingredienti in un cocktail utilizzando il Muddler (il pestello) che si trova dalla parte opposta al cucchiaio e mescolare la base pestata in un cocktail.', " + R.drawable.strum_39 + ");";
         db.execSQL(insert);
 
-        //TODO: add all cocktail preparation
         insert = "INSERT INTO Preparazione (fk_cocktail, fk_ingrediente, fk_strumento, step, fk_azione)" +
                 "VALUES (2, 126, 10, 1, 12)," +
                 "(2, 180, 10, 2, 12)," +
@@ -331,11 +330,73 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(46, 130, 30, 2, 9)," +
                 "(46, 122, 31, 3, 10)," +
                 "(46, 15, 31, 4, 12)," +
-                "(46, 130, 31, 6, 5);";
+                "(46, 130, 31, 6, 5)," +
+                "(65, 122, 36, 1, 10)," +
+                "(65, 167, 36, 2, 12)," +
+                "(65, 123, 36, 2, 12)," +
+                "(65, 73, 36, 2, 12)," +
+                "(65, 101, 22, 5, 6)," +
+                "(65, 131, 22, 6, 5)," +
+                "(66, 122, 22, 1, 10)," +
+                "(66, 123, 22, 2, 12)," +
+                "(66, 175, 22, 3, 10)," +
+                "(66, 130, 22, 5, 5),"+
+                "(71, 42, 3, 1, 12),"+
+                "(71, 186, 3, 2, 1),"+
+                "(71, 110, 3, 3, 10),"+
+                "(71, 145, 3, 4, 12),"+
+                "(81, 122, 36, 1, 10),"+
+                "(81, 166, 36, 2, 12),"+
+                "(81, 20, 36, 2, 12),"+
+                "(81, 174, 36, 2, 12),"+
+                "(81, 130, 5, 5, 5),"+
+                "(83, 184, 22, 1, 1),"+
+                "(83, 120, 22, 1, 1),"+
+                "(83, 166, 22, 2, 12),"+
+                "(83, 166, 30, 3, 9),"+
+                "(83, 120, 30, 3, 9),"+
+                "(83, 184, 30, 3, 9),"+
+                "(83, 122, 22, 4, 10),"+
+                "(83, 153, 22, 5, 12),"+
+                "(83, 101, 22, 6, 10),"+
+                "(83, 120, 22, 7, 5),"+
+                "(83, 130, 22, 7, 5),"+
+                "(85, 122, 22, 1, 1),"+
+                "(85, 180, 22, 2, 12),"+
+                "(85, 125, 22, 2, 12),"+
+                "(85, 166, 22, 3, 1),"+
+                "(85, 130, 22, 4, 5),"+
+                "(94, 122, 22, 1, 10),"+
+                "(94, 138, 22, 2, 12),"+
+                "(94, 180, 22, 2, 12),"+
+                "(94, 169, 22, 3, 10),"+
+                "(94, 163, 22, 3, 10),"+
+                "(94, 126, 22, 4, 1),"+
+                "(94, 103, 22, 5, 5),"+
+                "(104, 122, 25, 1, 1),"+
+                "(104, 122, 36, 2, 1),"+
+                "(104, 156, 36, 3, 12),"+
+                "(104, 153, 36, 3, 12),"+
+                "(104, 57, 36, 3, 12),"+
+                "(104, 167, 36, 3, 12),"+
+                "(104, 166, 36, 3, 12),"+
+                "(104, 163, 36, 3, 12),"+
+                "(104, 77, 36, 3, 12),"+
+                "(104, 126, 36, 3, 12),"+
+                "(104, 4, 36, 3, 12),"+
+                "(104, 103, 25, 6, 5),"+
+                "(104, 102, 25, 6, 5);";
         db.execSQL(insert);
 
         insert = "INSERT INTO Preparazione (fk_cocktail, fk_strumento, step, fk_azione)" +
-                "VALUES (37, 39, 5, 8);";
+                "VALUES (37, 39, 5, 8)," +
+                "(65, 36, 3, 4)," +
+                "(65, 22, 4, 12)," +
+                "(66, 22, 4, 8),"+
+                "(81, 36, 3, 2),"+
+                "(81, 5, 4, 3),"+
+                "(104, 36, 4, 2),"+
+                "(104, 25, 5, 3);";
         db.execSQL(insert);
 
         insert = "INSERT INTO Preparazione (fk_cocktail, step, fk_azione)" +
@@ -407,6 +468,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(37,80)," +
                 "(65, 131)," +
                 "(66, 130)," +
+                "(81, 130)," +
                 "(83, 130)," +
                 "(85, 130)," +
                 "(94, 103)," +

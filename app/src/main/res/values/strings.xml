@@ -12,7 +12,8 @@
     <string name="imageMyCkt">IMAGE</string>
     <string name="ingredientiMyCkt">INGREDIENTI</string>
     <string name="strumentiMyCkt">STRUMENTI</string>
-    <string name="gradazione_alcolicaMyCkt">GRADAZIONE ALCOLICA</string>
+    <string name="gradazione_alcolicaMaius">GRADAZIONE ALCOLICA</string>
+    <string name="gradazione_alcolicaMin">Gradazione alcolica</string>
     <string name="quantita">Quantità</string>
     <string name="unità">Unità</string>
     <string name="delete">Delete</string>
@@ -20,5 +21,8 @@
     <string name="aggiungi_ingredienti">Aggiungi Ingredienti</string>
     <string name="aggiungi_strumenti">Aggiungi strumenti</string>
     <string name="cancella_cocktail">CANCELLA COCKTAIL</string>
+    <string name="origine">Origine</string>
+    <string name="tipo_di_cocktail">Tipo di cocktail</string>
+    <string name="go">GO</string>
 
 </resources>
