@@ -17,7 +17,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
 import com.example.cocktailmania.utility.GradeCocktail;
@@ -71,7 +70,6 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //final int[] idIngSelect = new int[1];  //id ingrediente selezionato
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_cocktail);
@@ -81,8 +79,6 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         MyStrums.clear();
         passaggi.clear();
         nomeMyCkt = "";
-
-        //uploadButton.findViewById(R.id.OnButton);
 
         ingListView = findViewById(R.id.MyIngList); //ListView con gli ingredienti
         strumListView = findViewById(R.id.MyStrumList); //ListView con gli strumenti
@@ -110,8 +106,6 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         spIngrendient.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(getApplicationContext(), ingredientList.get(position).getNome(), Toast.LENGTH_LONG).show();
-
                 ingredient.setIdIng(ingredientList.get(position).getId());
                 ingredient.setIngName(ingredientList.get(position).getNome());
             }
@@ -187,7 +181,6 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         spGrade.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(getApplicationContext(), strumList.get(position).getNome(), Toast.LENGTH_LONG).show();
                 gradoAlcolico.setId(gradeList.get(position).getId());
                 gradoAlcolico.setNome(gradeList.get(position).getNome());
             }
@@ -202,17 +195,18 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.imgUpload:
+                //TODO: save image my cocktail
                 Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
                 break;
 
             case R.id.AfterButton:
-                if (MyIngredients.size() == 0){
+                if (MyIngredients.size() == 0) {
                     //controllo se è stato inserito almeno un ingrediente
                     Toast.makeText(getApplicationContext(), "Inserire ingrediente", Toast.LENGTH_LONG).show();
                     break;
                 }
-                if (MyStrums.size() == 0){
+                if (MyStrums.size() == 0) {
                     //controllo se è stato inserito almeno uno strumento
                     Toast.makeText(getApplicationContext(), "Inserire strumento", Toast.LENGTH_LONG).show();
                     break;

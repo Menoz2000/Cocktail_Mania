@@ -33,8 +33,9 @@ com/example/cocktailmania/book/MyCocktail.java
  com.example.cocktailmania.book.MyCocktail$5
 com/example/cocktailmania/book/StrumDeletableAdapter.java
  com.example.cocktailmania.book.StrumDeletableAdapter
-com/example/cocktailmania/DB/DbManager.java
- com.example.cocktailmania.DB.DbManager
+com/example/cocktailmania/ingredient/IngredientActivity.java
+ com.example.cocktailmania.ingredient.IngredientActivity
+ com.example.cocktailmania.ingredient.IngredientActivity$1
 com/example/cocktailmania/book/BookActivity.java
  com.example.cocktailmania.book.BookActivity
 com/example/cocktailmania/book/SpinnerGradeAdapter.java
@@ -47,8 +48,8 @@ com/example/cocktailmania/cocktail/StrumActivity.java
  com.example.cocktailmania.cocktail.StrumActivity
 com/example/cocktailmania/cocktail/StepCustomAdapter.java
  com.example.cocktailmania.cocktail.StepCustomAdapter
-com/example/cocktailmania/book/StepMyCocktail.java
- com.example.cocktailmania.book.StepMyCocktail
+com/example/cocktailmania/cocktail/CocktailModule.java
+ com.example.cocktailmania.cocktail.CocktailModule
 com/example/cocktailmania/book/BuildStep.java
  com.example.cocktailmania.book.BuildStep
  com.example.cocktailmania.book.BuildStep$1
@@ -87,10 +88,9 @@ com/example/cocktailmania/cocktail/CocktailAdapter.java
  com.example.cocktailmania.cocktail.CocktailAdapter$ViewHolder
 com/example/cocktailmania/naviga/MainActivity.java
  com.example.cocktailmania.naviga.MainActivity
-com/example/cocktailmania/cocktail/CocktailModule.java
- com.example.cocktailmania.cocktail.CocktailModule
+com/example/cocktailmania/DB/DbManager.java
+ com.example.cocktailmania.DB.DbManager
+com/example/cocktailmania/book/StepMyCocktail.java
+ com.example.cocktailmania.book.StepMyCocktail
 com/example/cocktailmania/DB/MyHelper.java
  com.example.cocktailmania.DB.MyHelper
-com/example/cocktailmania/ingredient/IngredientActivity.java
- com.example.cocktailmania.ingredient.IngredientActivity
- com.example.cocktailmania.ingredient.IngredientActivity$1

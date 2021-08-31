@@ -138,7 +138,7 @@ public class MyHelper extends SQLiteOpenHelper {
     }
 
     private void inizializza(SQLiteDatabase db) {
-        //TODO: change Ingredient/Strumenti Image with white background
+        //TODO: change Acqua di Seltz and Angostura Image without white background
         String insert = "INSERT INTO Ingrediente (id, nome, grado_alcolico, fk_origine, img)" +
                 "VALUES (12, 'Beefeater Gin', 40, 5, " + R.drawable.ing_12 + ")," +
                 "(42, 'Irish Whiskey', 40, 19, " + R.drawable.ing_42 + ")," +
