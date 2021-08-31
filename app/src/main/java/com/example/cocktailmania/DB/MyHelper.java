@@ -52,11 +52,10 @@ public class MyHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(comando);
 
-        //TODO: delete DEFAULT origin image
         comando = "CREATE TABLE Origine (" +
                 "id integer PRIMARY KEY," +
                 "nazione text NOT NULL," +
-                "img integer NOT NULL DEFAULT " + R.drawable.ing_131 +
+                "img integer NOT NULL" +
                 ");";
         db.execSQL(comando);
 
@@ -139,7 +138,7 @@ public class MyHelper extends SQLiteOpenHelper {
     }
 
     private void inizializza(SQLiteDatabase db) {
-        //TODO: change Ingredient Image with white background
+        //TODO: change Ingredient/Strumenti Image with white background
         String insert = "INSERT INTO Ingrediente (id, nome, grado_alcolico, fk_origine, img)" +
                 "VALUES (12, 'Beefeater Gin', 40, 5, " + R.drawable.ing_12 + ")," +
                 "(42, 'Irish Whiskey', 40, 19, " + R.drawable.ing_42 + ")," +
@@ -202,37 +201,33 @@ public class MyHelper extends SQLiteOpenHelper {
                 "(175, 'Tonic', 0, 'Acqua tonica', " + R.drawable.ing_175 + ");";
         db.execSQL(insert);
 
-        //TODO: add ALL image for each nation
-        insert = "INSERT INTO Origine (id, nazione)" +
-                "VALUES (1, 'Italia')," +
-                "(2, 'Francia')," +
-                "(6, 'Barbados')," +
-                "(7, 'Perù')," +
-                "(8, 'Giappone')," +
-                "(9, 'In tutto il mondo')," +
-                "(10, 'Olanda')," +
-                "(11, 'Portogallo')," +
-                "(12, 'Trinidad e Tobago')," +
-                "(13, 'Russia')," +
-                "(14, 'Giamaica')," +
-                "(15, 'Porto Rico')," +
-                "(16, 'Caraibico')," +
-                "(18, 'Danimarca')," +
-                "(20, 'Guyana')," +
-                "(21, 'Scozia')," +
-                "(22,'Bermuda')," +
-                "(23, 'Spagna')," +
-                "(24, 'Israele')," +
-                "(25, 'Cuba')," +
-                "(26, 'Belgio');";
-        db.execSQL(insert);
-
         insert = "INSERT INTO Origine (id, nazione, img) " +
-                "VALUES (4, 'Stati Uniti', " + R.drawable.orig_4 + ")," +
-                "(5, 'Regno Unito', " + R.drawable.orig_5 + ")," +
+                "VALUES (1, 'Italia', " + R.drawable.orig_1 + ")," +
+                "(2, 'Francia', " + R.drawable.orig_2 + ")," +
                 "(3, 'Messico', " + R.drawable.orig_3 + ")," +
+                "(4, 'Stati Uniti', " + R.drawable.orig_4 + ")," +
+                "(5, 'Regno Unito', " + R.drawable.orig_5 + ")," +
+                "(6, 'Barbados', " + R.drawable.orig_6 + ")," +
+                "(7, 'Perù', " + R.drawable.orig_7 + ")," +
+                "(8, 'Giappone', " + R.drawable.orig_8 + ")," +
+                "(9, 'In tutto il mondo', " + R.drawable.orig_9 + ")," +
+                "(10, 'Olanda', " + R.drawable.orig_10 + ")," +
+                "(11, 'Portogallo', " + R.drawable.orig_11 + ")," +
+                "(12, 'Trinidad e Tobago', " + R.drawable.orig_12 + ")," +
+                "(13, 'Russia', " + R.drawable.orig_13 + ")," +
+                "(14, 'Giamaica', " + R.drawable.orig_14 + ")," +
+                "(15, 'Porto Rico', " + R.drawable.orig_15 + ")," +
+                "(16, 'Isole Caraibiche', " + R.drawable.orig_16 + ")," +
                 "(17, 'Brasile', " + R.drawable.orig_17 + ")," +
-                "(19, 'Irlanda', " + R.drawable.orig_19 + ");";
+                "(18, 'Danimarca', " + R.drawable.orig_18 + ")," +
+                "(19, 'Irlanda', " + R.drawable.orig_19 + ")," +
+                "(20, 'Guyana', " + R.drawable.orig_20 + ")," +
+                "(21, 'Scozia', " + R.drawable.orig_21 + ")," +
+                "(22,'Bermuda', " + R.drawable.orig_22 + ")," +
+                "(23, 'Spagna', " + R.drawable.orig_23 + ")," +
+                "(24, 'Israele', " + R.drawable.orig_24 + ")," +
+                "(25, 'Cuba', " + R.drawable.orig_25 + ")," +
+                "(26, 'Belgio', " + R.drawable.orig_26 + ");";
         db.execSQL(insert);
 
         insert = "INSERT INTO Cocktail (id, nome, fk_gradoAlcolico, img)" +
