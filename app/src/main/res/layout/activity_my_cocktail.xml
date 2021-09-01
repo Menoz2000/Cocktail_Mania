@@ -14,35 +14,41 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:labelFor="@id/cktName"
             android:text="@string/nomeMyCkt"
-            android:labelFor="@id/cktName"/>
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/cktName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="name"
             android:inputType="text"
-            android:minHeight="48dp"
-            android:autofillHints="name" />
+            android:minHeight="48dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/imageMyCkt"/>
+            android:text="@string/imageMyCkt"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imgUpload"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
-            android:contentDescription="Cocktail Image"
-            android:background="@drawable/origin_custom_shape"/>
+            android:background="@drawable/origin_custom_shape"
+            android:contentDescription="Cocktail Image" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:labelFor="@id/AzioneSpinner"
-            android:text="@string/ingredientiMyCkt" />
+            android:text="@string/ingredientiMyCkt"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/AzioneSpinner"
@@ -53,8 +59,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:baselineAligned="false">
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -67,7 +73,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:labelFor="@id/ingredientCkt"
-                    android:text="@string/quantita" />
+                    android:text="@string/quantita"
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/ingredientCkt"
@@ -86,7 +93,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:labelFor="@id/strumCkt"
-                    android:text="@string/unità" />
+                    android:text="@string/unità"
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/strumCkt"
@@ -101,25 +109,33 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/AddIng"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Aggiungi Ingrediente" />
+                android:background="@drawable/my_add_button"
+                android:text="@string/aggiungi_ingrediente"
+                android:textColor="@color/text_add_button" />
 
         </LinearLayout>
 
         <com.example.cocktailmania.utility.NonScrollListView
             android:id="@+id/MyIngList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:divider="#00000000"
+            android:dividerHeight="2dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:labelFor="@id/StrumSpinner"
             android:text="@string/strumentiMyCkt"
-            android:labelFor="@id/StrumSpinner"/>
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/StrumSpinner"
@@ -132,25 +148,33 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/AddStrum"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Aggiungi Strumento" />
+                android:background="@drawable/my_add_button"
+                android:text="@string/aggiungi_strumento"
+                android:textColor="@color/text_add_button" />
 
         </LinearLayout>
 
         <com.example.cocktailmania.utility.NonScrollListView
             android:id="@+id/MyStrumList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:divider="#00000000"
+            android:dividerHeight="2dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:labelFor="@id/GradeSpinner"
             android:text="@string/gradazione_alcolicaMaius"
-            android:labelFor="@id/GradeSpinner"/>
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/GradeSpinner"
@@ -158,11 +182,13 @@
             android:layout_height="wrap_content"
             android:minHeight="48dp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/AfterButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/go" />
+            android:background="@drawable/my_go_button"
+            android:text="@string/go"
+            android:textColor="@color/text_go_button" />
 
     </LinearLayout>
 </ScrollView>

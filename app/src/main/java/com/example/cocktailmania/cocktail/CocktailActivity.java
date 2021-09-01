@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,6 +56,13 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
                 switch (item.getItemId()) {
                     case R.id.navigaButton:
                         intent = new Intent(CocktailActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                        break;
+
+                    case R.id.cocktailButton:
+                        intent = new Intent(CocktailActivity.this, CocktailActivity.class);
+                        intent.putExtra("list_cocktail", 0); //visualizzazione senza my_cocktail
                         startActivity(intent);
                         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                         break;
@@ -123,7 +129,7 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
             inflater.inflate(R.menu.my_cocktail_bar, menu);
             MenuItem addItem = menu.findItem(R.id.add_myckt);
 
-            Button add_ckt = (Button) addItem.getActionView();
+            //Button add_ckt = (Button) addItem.getActionView();
 
             addItem.setOnMenuItemClickListener(item -> {
                 Intent intent = new Intent(this, MyCocktail.class);

@@ -993,6 +993,7 @@ color abc_tint_spinner
 color abc_tint_switch_track
 color accent_material_dark
 color accent_material_light
+color add_button
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
 color background_floating_material_dark
@@ -1000,7 +1001,9 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color book_button
 color border_color
+color border_go_button
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1062,11 +1065,13 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color go_button
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
 color like_button_checked
 color like_button_unchecked
+color loading
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1192,6 +1197,9 @@ color teal_200
 color teal_700
 color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
+color text_add_button
+color text_book_button
+color text_go_button
 color tooltip_background_dark
 color tooltip_background_light
 color white
@@ -1827,7 +1835,10 @@ drawable mtrl_navigation_bar_item_background
 drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
+drawable my_add_button
+drawable my_button_book
 drawable my_delete_cocktail_button
+drawable my_go_button
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -2641,8 +2652,12 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string add
+string aggiungi_ingrediente
 string aggiungi_ingredienti
+string aggiungi_step
 string aggiungi_strumenti
+string aggiungi_strumento
 string app_name
 string appbar_scrolling_view_behavior
 string book
@@ -2738,7 +2753,9 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string preferiti
 string prova
+string pubblica
 string quantita
+string rimuovi_ultimo_step
 string search_menu_title
 string status_bar_notification_info_overflow
 string strumentiMyCkt

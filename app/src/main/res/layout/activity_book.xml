@@ -16,29 +16,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ckt_pref"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/my_button_book"
             android:text="@string/preferiti"
+            android:textColor="@color/text_book_button"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/my_ckt"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/my_button_book"
             android:text="@string/my_cocktail"
+            android:textColor="@color/text_book_button"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
 
-        <!--
-        <Button
-            android:id="@+id/addCkt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ADD NEW COCKTAIL" />
-        -->
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -50,12 +51,8 @@
         android:layout_marginBottom="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
-
-        app:menu="@menu/bottom_menu" >
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
+        app:menu="@menu/bottom_menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

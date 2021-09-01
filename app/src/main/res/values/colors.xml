@@ -37,4 +37,20 @@
 
     <!--for delete_cocktail button-->
     <color name="delete_button">#DA0505</color>
+
+    <!--for loading item-->
+    <color name="loading">#9BBDBC</color>
+
+    <!--for buttons in book activity-->
+    <color name="book_button">#8FACC865</color>
+    <color name="text_book_button">#607136</color>
+
+    <!--for add buttons in myCocktail-->
+    <color name="add_button">#A3F9C172</color>
+    <color name="text_add_button">#A3AF6B0B</color>
+
+    <!--for GO buttons in myCocktail A3F9C172 A3AF6B0B-->
+    <color name="go_button">#A3FBF3E7</color>
+    <color name="text_go_button">#A3AF6B0B</color>
+    <color name="border_go_button">#A3AF6B0B</color>
 </resources>

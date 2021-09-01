@@ -28,5 +28,11 @@
     <string name="origine_label">Origine:</string>
     <string name="strumenti_label">Strumenti:</string>
     <string name="cocktailImageDescription">CocktailImage</string>
+    <string name="aggiungi_ingrediente">Aggiungi Ingrediente</string>
+    <string name="aggiungi_strumento">Aggiungi Strumento</string>
+    <string name="rimuovi_ultimo_step">Rimuovi Ultimo Step</string>
+    <string name="aggiungi_step">Aggiungi Step</string>
+    <string name="pubblica">PUBBLICA</string>
+    <string name="add">ADD</string>
 
 </resources>

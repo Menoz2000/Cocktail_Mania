@@ -992,6 +992,7 @@ int color abc_tint_spinner 0x7f050017
 int color abc_tint_switch_track 0x7f050018
 int color accent_material_dark 0x7f050019
 int color accent_material_light 0x7f05001a
+int color add_button 0x7f0500e8
 int color androidx_core_ripple_material_light 0x7f05001b
 int color androidx_core_secondary_text_default_material_light 0x7f05001c
 int color background_floating_material_dark 0x7f05001d
@@ -999,7 +1000,9 @@ int color background_floating_material_light 0x7f05001e
 int color background_material_dark 0x7f05001f
 int color background_material_light 0x7f050020
 int color black 0x7f050021
+int color book_button 0x7f0500e6
 int color border_color 0x7f050022
+int color border_go_button 0x7f0500ec
 int color bright_foreground_disabled_material_dark 0x7f050023
 int color bright_foreground_disabled_material_light 0x7f050024
 int color bright_foreground_inverse_material_dark 0x7f050025
@@ -1061,11 +1064,13 @@ int color error_color_material_dark 0x7f05005c
 int color error_color_material_light 0x7f05005d
 int color foreground_material_dark 0x7f05005e
 int color foreground_material_light 0x7f05005f
+int color go_button 0x7f0500e9
 int color highlighted_text_material_dark 0x7f050060
 int color highlighted_text_material_light 0x7f050061
 int color ic_launcher_background 0x7f050062
 int color like_button_checked 0x7f050063
 int color like_button_unchecked 0x7f050064
+int color loading 0x7f0500e5
 int color material_blue_grey_800 0x7f050065
 int color material_blue_grey_900 0x7f050066
 int color material_blue_grey_950 0x7f050067
@@ -1191,6 +1196,9 @@ int color teal_200 0x7f0500de
 int color teal_700 0x7f0500df
 int color test_mtrl_calendar_day 0x7f0500e0
 int color test_mtrl_calendar_day_selected 0x7f0500e1
+int color text_add_button 0x7f0500ea
+int color text_book_button 0x7f0500e7
+int color text_go_button 0x7f0500eb
 int color tooltip_background_dark 0x7f0500e2
 int color tooltip_background_light 0x7f0500e3
 int color white 0x7f0500e4
@@ -1826,7 +1834,10 @@ int drawable mtrl_navigation_bar_item_background 0x7f0700cf
 int drawable mtrl_popupmenu_background 0x7f0700d0
 int drawable mtrl_popupmenu_background_dark 0x7f0700d1
 int drawable mtrl_tabs_default_indicator 0x7f0700d2
+int drawable my_add_button 0x7f070113
+int drawable my_button_book 0x7f070112
 int drawable my_delete_cocktail_button 0x7f0700d3
+int drawable my_go_button 0x7f070114
 int drawable navigation_empty_icon 0x7f0700d4
 int drawable notification_action_background 0x7f0700d5
 int drawable notification_bg 0x7f0700d6
@@ -2640,8 +2651,12 @@ int string abc_searchview_description_voice 0x7f0f0019
 int string abc_shareactionprovider_share_with 0x7f0f001a
 int string abc_shareactionprovider_share_with_application 0x7f0f001b
 int string abc_toolbar_collapse_description 0x7f0f001c
+int string add 0x7f0f008b
+int string aggiungi_ingrediente 0x7f0f0086
 int string aggiungi_ingredienti 0x7f0f001d
+int string aggiungi_step 0x7f0f0088
 int string aggiungi_strumenti 0x7f0f001e
+int string aggiungi_strumento 0x7f0f0087
 int string app_name 0x7f0f001f
 int string appbar_scrolling_view_behavior 0x7f0f0020
 int string book 0x7f0f0021
@@ -2737,7 +2752,9 @@ int string path_password_eye_mask_visible 0x7f0f0074
 int string path_password_strike_through 0x7f0f0075
 int string preferiti 0x7f0f0076
 int string prova 0x7f0f0077
+int string pubblica 0x7f0f0089
 int string quantita 0x7f0f0078
+int string rimuovi_ultimo_step 0x7f0f008a
 int string search_menu_title 0x7f0f0079
 int string status_bar_notification_info_overflow 0x7f0f007a
 int string strumentiMyCkt 0x7f0f007b

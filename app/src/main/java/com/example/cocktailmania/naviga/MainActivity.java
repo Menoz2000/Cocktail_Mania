@@ -24,7 +24,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements OriginListAdapter.OnOriginListener {
     /* TODO: change app icon */
-    //TODO: finish to improve the graphic part
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
     Intent intent;

@@ -14,36 +14,48 @@
         <com.example.cocktailmania.utility.NonScrollListView
             android:id="@+id/MyStepList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:divider="#00000000"
+            android:dividerHeight="2dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/DeleteStep"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
-                android:text="Rimuovi Ultimo Step" />
+                android:background="@drawable/my_add_button"
+                android:text="@string/rimuovi_ultimo_step"
+                android:textColor="@color/text_add_button" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/AddStep"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
-                android:text="Aggiungi Step" />
+                android:background="@drawable/my_add_button"
+                android:text="@string/aggiungi_step"
+                android:textColor="@color/text_add_button" />
 
         </LinearLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/OnStepButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PUBBLICA" />
+            android:layout_marginTop="10dp"
+            android:background="@drawable/my_go_button"
+            android:text="@string/pubblica"
+            android:textColor="@color/text_go_button" />
 
     </LinearLayout>
 </ScrollView>

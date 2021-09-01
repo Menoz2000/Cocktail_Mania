@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.cocktailmania.R;
@@ -36,7 +36,7 @@ public class IngredientDeletableAdapter extends IngredientCustomAdapter {
         unity.setText(sp.getUnita_misura());
         ingredient_name.setText(sp.getIngName());
 
-        Button delButton = convertView.findViewById(R.id.DeleteIngButton);
+        ImageButton delButton = convertView.findViewById(R.id.DeleteIngButton);
         delButton.setOnClickListener(v -> {
             MyCocktail.MyIngredients.remove(position);
             notifyDataSetChanged();

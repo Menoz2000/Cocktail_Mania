@@ -35,16 +35,16 @@
             android:textAlignment="textStart"
             android:textSize="15sp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/DeleteStrumButton"
             android:layout_width="35dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
+            android:background="@null"
+            android:backgroundTint="#00000000"
             android:contentDescription="@string/delete"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            app:icon="@drawable/ic_clear"
-            app:iconGravity="textStart"
-            app:iconPadding="0dp" />
+            app:srcCompat="@drawable/ic_clear" />
+
+
     </LinearLayout>
 </LinearLayout>

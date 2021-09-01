@@ -5,25 +5,34 @@
       <map>
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2375" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/custom_shape.xml" value="0.18703703703703703" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/delete_item_button.xml" value="0.24375" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/grade_custom_shape.xml" value="0.19444444444444445" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/ic_clear.xml" value="0.29814814814814816" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/ic_like_checked.xml" value="0.1" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/ic_like_unchecked.xml" value="0.1" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/ingredient_custom_shape.xml" value="0.1935185185185185" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/my_add_button.xml" value="0.2856410256410256" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/my_button_book.xml" value="0.2856410256410256" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/my_delete_cocktail_button.xml" value="0.2942708333333333" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/my_go_button.xml" value="0.2856410256410256" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/step_custom_shape.xml" value="0.22135416666666666" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/strum_custom_shape.xml" value="0.23385416666666667" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/drawable/togglebutton_selector.xml" value="0.18703703703703703" />
-        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_build_step.xml" value="0.20052083333333334" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_book.xml" value="0.18642350557244175" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_build_step.xml" value="0.33" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_cocktail.xml" value="0.20520833333333333" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_cocktail_module.xml" value="0.1" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_ingredient.xml" value="0.1342451874366768" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_ingredient_module.xml" value="0.18642350557244175" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_main.xml" value="0.12222222222222222" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_my_cocktail.xml" value="0.20260416666666667" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_start.xml" value="0.1743659420289855" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_step_my_cocktail.xml" value="0.22" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_strum.xml" value="0.18642350557244175" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/activity_type_cocktail.xml" value="0.1342451874366768" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/add_button.xml" value="0.135258358662614" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/ingredient_row.xml" value="0.2608695652173913" />
-        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/ingredient_row_deletable.xml" value="0.1342451874366768" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/ingredient_row_deletable.xml" value="0.25846153846153846" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/item_grid_type_cocktail.xml" value="0.1342451874366768" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/list_cocktail_row.xml" value="0.25" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/list_ingredient_row.xml" value="0.12222222222222222" />
@@ -33,7 +42,9 @@
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/single_item_grade.xml" value="0.25" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/single_item_origin.xml" value="0.33" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/spinner_item.xml" value="0.20260416666666667" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/strum_deletable_row.xml" value="0.17073170731707318" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/layout/strum_row.xml" value="0.1342451874366768" />
+        <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/menu/bottom_menu.xml" value="0.22760416666666666" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/menu/like_bar.xml" value="0.21388888888888888" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/menu/my_cocktail_bar.xml" value="0.20520833333333333" />
         <entry key="..\:/IdeaProjects/Cocktail_Mania/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.23489583333333333" />

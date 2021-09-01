@@ -330,7 +330,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/D:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/clear/baseline_clear_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../../Programmi/AppData/Local/Android/Sdk/icons/material/materialicons/clear/baseline_clear_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -340,7 +340,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="4a4949" />
+                            <entry key="color" value="607136" />
                             <entry key="outputName" value="ic_clear" />
                             <entry key="sourceFile" value="C:\Users\menoz\Downloads\open-book.svg" />
                           </map>
