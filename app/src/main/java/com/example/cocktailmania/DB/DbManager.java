@@ -701,14 +701,14 @@ public class DbManager {
 
         for (int i = 0; i < MyCocktail.MyStrums.size(); i++) {
             if (i == 0) {
-                comp = new StringBuilder(idCkt + "," + MyCocktail.MyStrums.get(i).getId());
+                comp = new StringBuilder(idCkt + "," + MyCocktail.MyStrums.get(i).getId() + ")");
             } else {
-                comp.append(",(").append(idCkt).append(",").append(MyCocktail.MyStrums.get(i).getId());
+                comp.append(",(").append(idCkt).append(",").append(MyCocktail.MyStrums.get(i).getId()).append(")");
             }
 
         }
 
-        insert = "insert into Procurare (fk_cocktail, fk_strumento) values (" + comp + ");";
+        insert = "insert into Procurare (fk_cocktail, fk_strumento) values (" + comp + ";";
         db.execSQL(insert);
 
 
