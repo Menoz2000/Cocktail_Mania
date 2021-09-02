@@ -1768,6 +1768,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_open_book
 drawable ic_search
 drawable ic_search_black_24dp
+drawable ing_0
 drawable ing_101
 drawable ing_102
 drawable ing_103
@@ -1914,7 +1915,6 @@ id AddStrumLabel
 id AfterButton
 id AlcolicGrade
 id AzioneImg
-id AzioneSpinner
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
@@ -1930,6 +1930,7 @@ id GradeSpinner
 id GrigliaTipoCocktail
 id IngList
 id IngName
+id IngSpinner
 id IngText
 id IngredientList
 id META
@@ -1943,6 +1944,7 @@ id OriginImage
 id OriginLabel
 id OriginList
 id PippoButton
+id QuantitaSpinner
 id QuantityIng
 id SHIFT
 id SHOW_ALL
@@ -1960,6 +1962,8 @@ id TOP_START
 id TypeIMG
 id TypeName
 id TypeTitle
+id UnitaLabel
+id UnitaSpinner
 id UnityIng
 id accelerate
 id accessibility_action_clickable_span
@@ -2169,11 +2173,9 @@ id imageType
 id imageView
 id imgIng
 id imgStrum
-id imgUpload
 id info
 id ingRv
 id ingSottotitolo
-id ingredientCkt
 id ingredientiButton
 id init
 id invisible
@@ -2182,8 +2184,7 @@ id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
-id labelIngredient
-id labelStrum
+id labelQuantita
 id labeled
 id layout
 id left
@@ -2357,7 +2358,6 @@ id staticPostLayout
 id status_bar_latest_event_content
 id stop
 id stretch
-id strumCkt
 id submenuarrow
 id submit_area
 id tabMode

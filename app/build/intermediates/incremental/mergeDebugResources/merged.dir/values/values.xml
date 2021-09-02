@@ -1232,7 +1232,7 @@
     <string description="a11y string to indicate this button switches the user to choosing a year [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_year_selection">Tap to switch to selecting a year</string>
     <string name="my_cocktail">MY COCKTAIL</string>
     <string name="naviga">Naviga</string>
-    <string name="nomeMyCkt">NOME</string>
+    <string name="nomeMyCkt">NOME COCKTAIL</string>
     <string name="origine">Origine</string>
     <string name="origine_label">Origine:</string>
     <string name="password_toggle_content_description">Show password</string>

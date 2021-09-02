@@ -1,20 +1,15 @@
 package com.example.cocktailmania.book;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cocktailmania.DB.DbManager;
@@ -38,7 +33,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
 
     Button afterButton;
     TextView nomeText;
-    ImageView imgMyCkt;
+    //ImageView imgMyCkt;
     Button addIngButton;
     Button addStrumButton;
     Spinner spIngrendient;
@@ -86,8 +81,8 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         //nome cocktail
         nomeText = findViewById(R.id.cktName);
         //immagine cocktail
-        imgMyCkt = findViewById(R.id.imgUpload);
-        imgMyCkt.setOnClickListener(this);
+        //imgMyCkt = findViewById(R.id.imgUpload);
+        //imgMyCkt.setOnClickListener(this);
         //button addIng
         addIngButton = findViewById(R.id.AddIng);
         addIngButton.setOnClickListener(this);
@@ -100,7 +95,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
 
         //Ingredient Spinner
         ingredientList = db.getIngredients();   //arraylist con tutti gli ingredienti disponibili (presi dal database)
-        spIngrendient = findViewById(R.id.AzioneSpinner);
+        spIngrendient = findViewById(R.id.IngSpinner);
         spinnerIngAdapter = new SpinnerAdapter(this, ingredientList);
         spIngrendient.setAdapter(spinnerIngAdapter);
         spIngrendient.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -116,7 +111,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         });
 
         //Quantity Spinner
-        spQuantity = findViewById(R.id.ingredientCkt);
+        spQuantity = findViewById(R.id.QuantitaSpinner);
         //creo l'arraylist con tutte le quantità
         List<String> QList = new ArrayList<>(Arrays.asList("", "0.25", "0.50", "0.75", "1", "1.5", "2", "2.5"));
         for (int i = 3; i <= 100; i++)
@@ -137,7 +132,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         });
 
         //Unity Spinner
-        spUnity = findViewById(R.id.strumCkt);
+        spUnity = findViewById(R.id.UnitaSpinner);
         //creo arraylist con unità di misura
         List<String> UList = new ArrayList<>(Arrays.asList("", "parte", "spruzzo", "cucchi.", "pezzo", "pizzico"));
         ArrayAdapter<String> unityAdapter = new ArrayAdapter<>(this,
@@ -194,11 +189,10 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.imgUpload:
-                //TODO: save image my cocktail
+            /*case R.id.imgUpload:
                 Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
-                break;
+                break;*/
 
             case R.id.AfterButton:
                 if (MyIngredients.size() == 0) {
@@ -333,6 +327,7 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
         }
     }
 
+    /*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -341,21 +336,6 @@ public class MyCocktail extends AppCompatActivity implements View.OnClickListene
             imgMyCkt.setImageURI(selectedImage);
             imgMyCkt.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         }
-    }
+    }*/
 
 }
-
-/*
- * passaggi per inserire un myCocktail
- * nome e foto
- * ingredienti/guarnizioni con quantita
- * strumenti
- * (per lista "dinamica" ingredienti e strumenti: https://stackoverflow.com/questions/2250770/how-to-refresh-android-listview)
- * (per rimuovere gli ingredienti o strumenti: https://youtu.be/hJQmvRHF5xg)
- * categoria grado alcolico
- * preparazione con aggiunta step by step
- * opzione dove controlli il cocktail con tutte le caratteristiche e se vanno bene tasto pubblica
- *
- *
- * nella pagina con elenco di mycocktail ci deve essere in alto il pulsante per aggiungere un nuovo cocktail
- * e sotto l'elenco dei my cocktail fatti e ci deve essere l'opzione per eliminare i cocktail inseriti*/

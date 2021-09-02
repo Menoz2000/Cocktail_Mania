@@ -91,7 +91,7 @@ public class MyHelper extends SQLiteOpenHelper {
                 "preferito integer NOT NULL DEFAULT 0," +
                 "iconico integer NOT NULL DEFAULT 0," +
                 "my_cocktail integer NOT NULL DEFAULT 0," +
-                "img integer NOT NULL default " + R.drawable.ing_101 + "," +
+                "img integer NOT NULL default " + R.drawable.ing_0 + "," +
                 "FOREIGN KEY (fk_origine) REFERENCES Origine(id)," +
                 "FOREIGN KEY (fk_gradoAlcolico) REFERENCES GradoAlcolico(id)," +
                 "FOREIGN KEY (fk_tipo) REFERENCES TipoCocktail(id)" +
