@@ -118,4 +118,13 @@ public class CocktailAdapter extends RecyclerView.Adapter implements Filterable 
             notifyDataSetChanged();
         }
     };
+
+    public boolean setElems(ArrayList<CocktailElem> elems) {
+        if(this.elems.size() != elems.size()){
+            this.elems = elems;
+            return true;    //true --> gli oggetti non sono "uguali"
+        }
+
+        return false;   //false --> gli oggetti sono uguali
+    }
 }

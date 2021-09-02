@@ -30,7 +30,7 @@ public class IngredientActivity extends AppCompatActivity implements IngredientA
 
     Intent intent;
     RecyclerView recyclerView;
-    List<IngredientElem> elems;
+    ArrayList<IngredientElem> elems;
     IngredientAdapter ingredientAdapter;
     private static final String TAG = "IngredientActivity";
     private DbManager db = null;
@@ -72,28 +72,12 @@ public class IngredientActivity extends AppCompatActivity implements IngredientA
         });
 
         recyclerView = findViewById(R.id.ingRv);
-
-        elems = new ArrayList<>();
-
         db = new DbManager(this);
-
-        Cursor c = db.elencoIngredienti();
-        IngredientElem ing;
-        if (c != null) {
-            while (c.moveToNext()) {
-                ing = new IngredientElem(); // Note this addition
-                ing.setId(c.getInt(0));
-                ing.setImg(c.getInt(3));
-                ing.setNome(c.getString(1));
-                ing.setSottotitolo(c.getString(2));
-                elems.add(ing);
-            }
-            c.close();
-        }
+        elems = db.elencoIngredienti();
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        ingredientAdapter = new IngredientAdapter((ArrayList<IngredientElem>) elems, IngredientActivity.this, this);
+        ingredientAdapter = new IngredientAdapter(elems, IngredientActivity.this, this);
         recyclerView.setAdapter(ingredientAdapter);
 
     }

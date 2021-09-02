@@ -30,11 +30,28 @@ public class DbManager {
         helper = new MyHelper(context, DATABASE, null, VERSIONE_DATABASE);
     }
 
-    public Cursor elencoIngredienti() {
+    public ArrayList<IngredientElem> elencoIngredienti() {
         String query = "SELECT id,nome,sottotitolo,img FROM Ingrediente ORDER BY nome";
 
+        IngredientElem ing;
+        ArrayList<IngredientElem> elems = new ArrayList<>();
+
         SQLiteDatabase db = helper.getReadableDatabase();
-        return db.rawQuery(query, null);
+        Cursor c = db.rawQuery(query, null);
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                ing = new IngredientElem(); // Note this addition
+                ing.setId(c.getInt(0));
+                ing.setImg(c.getInt(3));
+                ing.setNome(c.getString(1));
+                ing.setSottotitolo(c.getString(2));
+                elems.add(ing);
+            }
+            c.close();
+        }
+
+        return elems;
     }
 
     public IngredientElem getSingleIngredient(int id) {
@@ -62,7 +79,7 @@ public class DbManager {
         return ing;
     }
 
-    public Cursor elencoCocktail(int config) {
+    public ArrayList<CocktailElem> elencoCocktail(int config) {
         String query = "SELECT * FROM Cocktail C LEFT JOIN GradoAlcolico G ON G.id=C.fk_gradoAlcolico ";
 
         /*passo alla prossima activity il tipo di lista che voglio:
@@ -77,10 +94,28 @@ public class DbManager {
         if (config == 2)
             query += "WHERE my_cocktail=1 ";
 
-
         query += "ORDER BY nome";
+
+        CocktailElem ckt;
+        ArrayList<CocktailElem> elems = new ArrayList<>();
+
         SQLiteDatabase db = helper.getReadableDatabase();
-        return db.rawQuery(query, null);
+        Cursor c = db.rawQuery(query, null);
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                ckt = new CocktailElem(); // Note this addition
+                ckt.setId(c.getInt(0));
+                ckt.setImg(c.getInt(8));
+                ckt.setNome(c.getString(1));
+                ckt.setFk_gradoAlcolico(c.getString(10));
+                elems.add(ckt);
+            }
+            c.close();
+        }
+
+        return elems;
+
     }
 
     public CocktailElem getSingleCocktail(int id) {

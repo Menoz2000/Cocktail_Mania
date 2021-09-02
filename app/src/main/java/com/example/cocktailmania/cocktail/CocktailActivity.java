@@ -1,7 +1,6 @@
 package com.example.cocktailmania.cocktail;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -24,13 +23,14 @@ import com.example.cocktailmania.utility.CocktailElem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CocktailActivity extends AppCompatActivity implements CocktailAdapter.OnCktListener {
 
+    DbManager db = new DbManager(this);
+
     Intent intent;
     RecyclerView recyclerView;
-    List<CocktailElem> elems;
+    ArrayList<CocktailElem> elems;
     CocktailAdapter cocktailAdapter;
     private static final String TAG = "CocktailActivity";
     int config;
@@ -86,27 +86,11 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
 
             recyclerView = findViewById(R.id.cktRv);
 
-            elems = new ArrayList<>();
-
-            DbManager db = new DbManager(this);
-
-            Cursor c = db.elencoCocktail(config);
-            CocktailElem ckt;
-            if (c != null) {
-                while (c.moveToNext()) {
-                    ckt = new CocktailElem(); // Note this addition
-                    ckt.setId(c.getInt(0));
-                    ckt.setImg(c.getInt(8));
-                    ckt.setNome(c.getString(1));
-                    ckt.setFk_gradoAlcolico(c.getString(10));
-                    elems.add(ckt);
-                }
-                c.close();
-            }
+            elems = db.elencoCocktail(config);
 
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
             recyclerView.setLayoutManager(linearLayoutManager);
-            cocktailAdapter = new CocktailAdapter((ArrayList<CocktailElem>) elems, CocktailActivity.this, this);
+            cocktailAdapter = new CocktailAdapter(elems, CocktailActivity.this, this);
             recyclerView.setAdapter(cocktailAdapter);
         }
 
@@ -162,8 +146,14 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
         return true;
     }
 
-    /*@Override
-    public void onBackPressed(){
-        super.onBackPressed();
-    }*/
+    @Override
+    public void onResume() {
+        super.onResume();
+        elems = db.elencoCocktail(config);
+        boolean ret = cocktailAdapter.setElems(elems);
+        if (ret)
+            cocktailAdapter.notifyDataSetChanged();
+
+    }
+
 }
