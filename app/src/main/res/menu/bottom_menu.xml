@@ -8,13 +8,13 @@
     <item
         android:id="@+id/cocktailButton"
         android:title="@string/cocktail"
-        android:icon="@drawable/ic_baseline_two_wheeler_24"/>
+        android:icon="@drawable/ic_cocktail"/>
     <item
         android:id="@+id/ingredientiButton"
         android:title="@string/ingredienti"
-        android:icon="@drawable/ic_baseline_branding_watermark_24"/>
+        android:icon="@drawable/ic_alcohol"/>
     <item
         android:id="@+id/bookButton"
         android:title="@string/book"
-        android:icon="@drawable/ic_baseline_turned_in_24"/>
+        android:icon="@drawable/ic_open_book"/>
 </menu>

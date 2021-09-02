@@ -7,4 +7,50 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--colore tema-->
+    <color name="orange">#FB6B3D</color>
+    <color name="dark_orange">#AE2A00</color>
+
+    <!--colore bordi-->
+    <color name="border_color">#FF000000</color>
+
+    <!-- colore per item nella lista ingredienti di ogni cocktail -->
+    <color name="sfumatura2_ing">#8FACC865</color>
+    <color name="sfumatura1_ing">#8FACC865</color>
+
+    <!-- colore per item nella lista step di ogni cocktail-->
+    <color name="sfumatura2_step">#FFFFFF</color>
+    <color name="sfumatura1_step">#FFFFFF</color>
+
+    <!-- colore per item nella lista cocktail/ingredienti-->
+    <color name="sfumatura2_list">#9BBDBC</color>
+    <color name="sfumatura1_list">#9BBDBC</color>
+
+    <!-- colore per item nella lista strumenti di ogni cocktail-->
+    <color name="sfumatura2_str">#A3F9C172</color>
+    <color name="sfumatura1_str">#A3F9C172</color>
+
+    <!--for like button-->
+    <color name="like_button_checked">#EAC300</color>
+    <color name="like_button_unchecked">#FFFFFF</color>
+
+    <!--for delete_cocktail button-->
+    <color name="delete_button">#DA0505</color>
+
+    <!--for loading item-->
+    <color name="loading">#9BBDBC</color>
+
+    <!--for buttons in book activity-->
+    <color name="book_button">#8FACC865</color>
+    <color name="text_book_button">#607136</color>
+
+    <!--for add buttons in myCocktail-->
+    <color name="add_button">#A3F9C172</color>
+    <color name="text_add_button">#A3AF6B0B</color>
+
+    <!--for GO buttons in myCocktail A3F9C172 A3AF6B0B-->
+    <color name="go_button">#A3FBF3E7</color>
+    <color name="text_go_button">#A3AF6B0B</color>
+    <color name="border_go_button">#A3AF6B0B</color>
 </resources>

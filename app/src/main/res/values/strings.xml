@@ -1,10 +1,38 @@
 <resources>
     <string name="app_name">Cocktail Mania</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="naviga">Naviga</string>
     <string name="cocktail">Cocktail</string>
     <string name="ingredienti">Ingredienti</string>
     <string name="book">Book</string>
+    <string name="prova">TextView</string>
+    <string name="PrepTitle">Preparazione</string>
+    <string name="preferiti">Preferiti</string>
+    <string name="my_cocktail">MY COCKTAIL</string>
+    <string name="nomeMyCkt">NOME COCKTAIL</string>
+    <string name="imageMyCkt">IMAGE</string>
+    <string name="ingredientiMyCkt">INGREDIENTI</string>
+    <string name="strumentiMyCkt">STRUMENTI</string>
+    <string name="gradazione_alcolicaMaius">GRADAZIONE ALCOLICA</string>
+    <string name="gradazione_alcolicaMin">Gradazione alcolica</string>
+    <string name="quantita">Quantità</string>
+    <string name="unità">Unità</string>
+    <string name="delete">Delete</string>
+    <string name="Azione">Azione</string>
+    <string name="aggiungi_ingredienti">Aggiungi Ingredienti</string>
+    <string name="aggiungi_strumenti">Aggiungi strumenti</string>
+    <string name="cancella_cocktail">CANCELLA COCKTAIL</string>
+    <string name="origine">Origine</string>
+    <string name="tipo_di_cocktail">Tipo di cocktail</string>
+    <string name="go">GO</string>
+    <string name="grado_alcolico">Grado alcolico:</string>
+    <string name="origine_label">Origine:</string>
+    <string name="strumenti_label">Strumenti:</string>
+    <string name="cocktailImageDescription">CocktailImage</string>
+    <string name="aggiungi_ingrediente">Aggiungi Ingrediente</string>
+    <string name="aggiungi_strumento">Aggiungi Strumento</string>
+    <string name="rimuovi_ultimo_step">Rimuovi Ultimo Step</string>
+    <string name="aggiungi_step">Aggiungi Step</string>
+    <string name="pubblica">PUBBLICA</string>
+    <string name="add">ADD</string>
 
 </resources>

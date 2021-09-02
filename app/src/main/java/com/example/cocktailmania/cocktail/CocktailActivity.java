@@ -1,54 +1,159 @@
 package com.example.cocktailmania.cocktail;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
+import android.widget.SearchView;
 
-import com.example.cocktailmania.ingredient.IngredientActivity;
-import com.example.cocktailmania.naviga.MainActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.cocktailmania.DB.DbManager;
 import com.example.cocktailmania.R;
 import com.example.cocktailmania.book.BookActivity;
+import com.example.cocktailmania.book.MyCocktail;
+import com.example.cocktailmania.ingredient.IngredientActivity;
+import com.example.cocktailmania.naviga.MainActivity;
+import com.example.cocktailmania.utility.CocktailElem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class CocktailActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class CocktailActivity extends AppCompatActivity implements CocktailAdapter.OnCktListener {
+
+    DbManager db = new DbManager(this);
 
     Intent intent;
+    RecyclerView recyclerView;
+    ArrayList<CocktailElem> elems;
+    CocktailAdapter cocktailAdapter;
+    private static final String TAG = "CocktailActivity";
+    int config;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cocktail);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.cocktailButton);
-        bottomNavigationView.setOnItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) item -> {
-            switch (item.getItemId()) {
+        if (getIntent().hasExtra("list_cocktail")) {
+            config = getIntent().getIntExtra("list_cocktail", 0);
 
-                case R.id.navigaButton:
-                    intent = new Intent(CocktailActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
-                    break;
+            BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+            /*se config == 0 sono nella pagina Cocktail
+              se config == 1 sono in Preferiti nella pagina Book
+              se config == 2 sono in My_Cocktail nella pagina Book*/
+            if (config == 0)
+                bottomNavigationView.setSelectedItemId(R.id.cocktailButton);
+            if (config == 1 || config == 2)
+                bottomNavigationView.setSelectedItemId(R.id.bookButton);
+            //set Listener on BottomNavigationView
+            bottomNavigationView.setOnItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) item -> {
+                switch (item.getItemId()) {
+                    case R.id.navigaButton:
+                        intent = new Intent(CocktailActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                        break;
 
-                case R.id.ingredientiButton:
-                    intent = new Intent(CocktailActivity.this, IngredientActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
-                    break;
+                    case R.id.cocktailButton:
+                        intent = new Intent(CocktailActivity.this, CocktailActivity.class);
+                        intent.putExtra("list_cocktail", 0); //visualizzazione senza my_cocktail
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                        break;
 
-                case R.id.bookButton:
-                    intent = new Intent(CocktailActivity.this, BookActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
-                    break;
+                    case R.id.ingredientiButton:
+                        intent = new Intent(CocktailActivity.this, IngredientActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                        break;
 
-                default:
-                    break;
-            }
-            return true;
-        });
+                    case R.id.bookButton:
+                        intent = new Intent(CocktailActivity.this, BookActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            });
+
+            recyclerView = findViewById(R.id.cktRv);
+
+            elems = db.elencoCocktail(config);
+
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+            recyclerView.setLayoutManager(linearLayoutManager);
+            cocktailAdapter = new CocktailAdapter(elems, CocktailActivity.this, this);
+            recyclerView.setAdapter(cocktailAdapter);
+        }
 
     }
+
+    @Override
+    public void OnCktClick(int position) {
+        Log.d(TAG, "OnCktClick: clicked.");
+
+        Intent intent = new Intent(this, CocktailModule.class);
+        intent.putExtra("selected_ckt", elems.get(position).getId());
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+
+        if (config == 2) {
+            inflater.inflate(R.menu.my_cocktail_bar, menu);
+            MenuItem addItem = menu.findItem(R.id.add_myckt);
+
+            //Button add_ckt = (Button) addItem.getActionView();
+
+            addItem.setOnMenuItemClickListener(item -> {
+                Intent intent = new Intent(this, MyCocktail.class);
+                startActivity(intent);
+                return false;
+            });
+        } else {
+            inflater.inflate(R.menu.search_bar, menu);
+        }
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+
+        SearchView searchView = (SearchView) searchItem.getActionView();
+
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                cocktailAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+        return true;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        elems = db.elencoCocktail(config);
+        boolean ret = cocktailAdapter.setElems(elems);
+        if (ret)
+            cocktailAdapter.notifyDataSetChanged();
+
+    }
+
 }
