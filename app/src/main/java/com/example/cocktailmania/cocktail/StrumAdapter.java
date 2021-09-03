@@ -13,6 +13,7 @@ import com.example.cocktailmania.utility.Strumento;
 import java.util.List;
 
 public class StrumAdapter extends ArrayAdapter<Strumento> {
+    //adapter per gli elementi della lista degli strumenti
     Context context;
     List<Strumento> strumElems;
 
@@ -30,7 +31,7 @@ public class StrumAdapter extends ArrayAdapter<Strumento> {
 
         TextView id_strum = convertView.findViewById(R.id.idStrum);
         TextView strum_name = convertView.findViewById(R.id.StrumName);
-
+        //setto i campi del layout
         id_strum.setText(String.valueOf(sp.getId()));
         strum_name.setText(sp.getNome());
 

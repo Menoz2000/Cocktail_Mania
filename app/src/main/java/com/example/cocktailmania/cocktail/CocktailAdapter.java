@@ -19,9 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CocktailAdapter extends RecyclerView.Adapter implements Filterable {
-
+    //adapter per la lista dei cocktail
     private ArrayList<CocktailElem> elems;
-    private ArrayList<CocktailElem> elemsCpy;
+    private final ArrayList<CocktailElem> elemsCpy;
     Context context;
     private final OnCktListener onCktListener;
 
@@ -45,7 +45,7 @@ public class CocktailAdapter extends RecyclerView.Adapter implements Filterable 
         CocktailAdapter.ViewHolder myViewHolder = (CocktailAdapter.ViewHolder) holder;
 
         CocktailElem currentElem = elems.get(position);
-
+        //setto i campi del layout
         myViewHolder.img.setImageResource(currentElem.getImg());
         myViewHolder.nome.setText(currentElem.getNome());
         myViewHolder.gradoAlcolico.setText(currentElem.getFk_gradoAlcolico());

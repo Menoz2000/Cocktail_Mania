@@ -9,7 +9,7 @@ import android.os.Handler;
 import com.example.cocktailmania.R;
 
 public class start extends AppCompatActivity {
-
+    //pagina iniziale di caricamento
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

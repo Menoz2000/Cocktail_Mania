@@ -13,6 +13,7 @@ import com.example.cocktailmania.utility.IngRow;
 import java.util.List;
 
 public class IngredientCustomAdapter extends ArrayAdapter<IngRow> {
+    //adapter pergli elementi della lista degli ingredienti del cocktail selezionato
     Context context;
     List<IngRow> ingList;
 
@@ -32,7 +33,7 @@ public class IngredientCustomAdapter extends ArrayAdapter<IngRow> {
         TextView ingredient_name = convertView.findViewById(R.id.IngText);
         TextView quantity = convertView.findViewById(R.id.QuantityIng);
         TextView unity = convertView.findViewById(R.id.UnityIng);
-
+        //setto i campi del layout
         id_ing.setText(String.valueOf(sp.getIdIng()));
         quantity.setText(String.valueOf(sp.getQuantita()));
         unity.setText(sp.getUnita_misura());

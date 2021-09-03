@@ -16,8 +16,7 @@ import com.example.cocktailmania.utility.OriginCocktail;
 import java.util.ArrayList;
 
 public class OriginListAdapter extends RecyclerView.Adapter {
-
-
+    //adapter per la recyclerview con le origini dei cocktail
     private final ArrayList<OriginCocktail> origini;
     Context context;
     private final OnOriginListener onOriginListener;
@@ -41,16 +40,16 @@ public class OriginListAdapter extends RecyclerView.Adapter {
 
         OriginCocktail currentElem = origini.get(position);
 
-        //senza il try non funziona sul samsung di sonc
+        //setto immagine origine
         try {
             myViewHolder.img.setImageResource(currentElem.getImg());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        //setto gli altri campi del layout
         myViewHolder.nome.setText(currentElem.getNazione());
         myViewHolder.id.setText(String.valueOf(currentElem.getId()));
-        myViewHolder.img.setImageResource(currentElem.getImg());
     }
 
     @Override
@@ -73,7 +72,6 @@ public class OriginListAdapter extends RecyclerView.Adapter {
             itemView.setOnClickListener(this);
         }
 
-
         @Override
         public void onClick(View v) {
             onOriginListener.OnOriginClick(getAdapterPosition());
@@ -85,5 +83,3 @@ public class OriginListAdapter extends RecyclerView.Adapter {
     }
 
 }
-
-

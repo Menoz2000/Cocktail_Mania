@@ -26,24 +26,23 @@ public class MainActivity extends AppCompatActivity implements OriginListAdapter
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
     Intent intent;
-    NonScrollGridView TypeGridView;
-    NonScrollListView GradeListView;
-    RecyclerView recyclerView;
-    ArrayList<TipoCocktail> tipoCocktailArrayList;
-    ArrayList<GradeCocktail> gradeCocktailArrayList;
-    ArrayList<OriginCocktail> originCocktailArrayList;
+    NonScrollGridView TypeGridView; //griglia dei tipi di cocktail
+    NonScrollListView GradeListView;    //lista dei gradi alcolici dei cocktail
+    RecyclerView recyclerView;  //lista orizzontale delle origini
+    ArrayList<TipoCocktail> tipoCocktailArrayList;  //arraylist con i tipi di cocktail
+    ArrayList<GradeCocktail> gradeCocktailArrayList;    //arraylist con i gradi alcolici dei cocktail
+    ArrayList<OriginCocktail> originCocktailArrayList;  //arraylist con le origini dei cocktail
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //prendo i dati dal database
-        tipoCocktailArrayList = db.getType();
-        gradeCocktailArrayList = db.getGrades();
-        originCocktailArrayList = db.getOrigin();
+        tipoCocktailArrayList = db.getType();       //interrogo database (tutti i tipi di cocktail)
+        gradeCocktailArrayList = db.getGrades();    //interrogo database (tutti i gradi alcolici dei cocktail)
+        originCocktailArrayList = db.getOrigin();   //interrogo database (tutte le origini dei cocktail)
 
-
+        //gestione menù in basso
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.navigaButton);
         bottomNavigationView.setOnItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) item -> {
@@ -83,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements OriginListAdapter
         TypeGridView.setClickable(true);
         TypeGridView.setOnItemClickListener((parent, view, position, id) -> {
             Intent i = new Intent(MainActivity.this, TypeCocktailList.class);
-            int[] val = {0, tipoCocktailArrayList.get(position).getId()}; //array con {config, id}
+            int[] val = {0, tipoCocktailArrayList.get(position).getId()}; //array con {config, id tipo}
             i.putExtra("cocktail", val);
             startActivity(i);
         });
@@ -97,11 +96,12 @@ public class MainActivity extends AppCompatActivity implements OriginListAdapter
         GradeListView.setClickable(true);
         GradeListView.setOnItemClickListener((parent, view, position, id) -> {
             Intent i = new Intent(MainActivity.this, TypeCocktailList.class);
-            int[] val = {1, gradeCocktailArrayList.get(position).getId()}; //array con {config, id}
+            int[] val = {1, gradeCocktailArrayList.get(position).getId()}; //array con {config, id grado}
             i.putExtra("cocktail", val);
             startActivity(i);
         });
 
+        //lista orizzontale con le origini
         recyclerView = findViewById(R.id.OriginList);
         OriginListAdapter oAdapter = new OriginListAdapter(originCocktailArrayList, MainActivity.this, this);
         LinearLayoutManager oLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -112,10 +112,11 @@ public class MainActivity extends AppCompatActivity implements OriginListAdapter
 
     }
 
+    //click su una origine di un cocktail
     @Override
     public void OnOriginClick(int position) {
         Intent i = new Intent(MainActivity.this, TypeCocktailList.class);
-        int[] val = {2, originCocktailArrayList.get(position).getId()}; //array con {config, id}
+        int[] val = {2, originCocktailArrayList.get(position).getId()}; //array con {config, id origine}
         i.putExtra("cocktail", val);
         startActivity(i);
     }

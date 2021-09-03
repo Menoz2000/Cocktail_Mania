@@ -14,6 +14,7 @@ import com.example.cocktailmania.utility.CocktailElem;
 import java.util.List;
 
 public class GridCocktailAdapter extends ArrayAdapter<CocktailElem> {
+    //adapter per gli elementi della griglia dei cocktail
     Context context;
     List<CocktailElem> elems;
 
@@ -33,7 +34,7 @@ public class GridCocktailAdapter extends ArrayAdapter<CocktailElem> {
         TextView cocktail_name = convertView.findViewById(R.id.cocktailName);
         ImageView image_cocktail = convertView.findViewById(R.id.imageCocktail);
         TextView grade_cocktail = convertView.findViewById(R.id.gradeCocktail);
-
+        //setto i campi del layout
         id_cocktail.setText(String.valueOf(sp.getId()));
         cocktail_name.setText(sp.getNome());
         image_cocktail.setImageResource(sp.getImg());

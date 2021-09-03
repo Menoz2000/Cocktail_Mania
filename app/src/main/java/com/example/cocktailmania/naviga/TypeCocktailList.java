@@ -19,11 +19,11 @@ import com.example.cocktailmania.utility.TipoCocktail;
 import java.util.ArrayList;
 
 public class TypeCocktailList extends AppCompatActivity {
-
+    //activity con i cocktail appartenti al tipo/grado/origine selezionata
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
-    ArrayList<CocktailElem> cocktailElems;
-    NonScrollGridView gridView;
+    ArrayList<CocktailElem> cocktailElems;  //arraylist con i cocktail
+    NonScrollGridView gridView; //griglia con i cocktail
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,12 +35,13 @@ public class TypeCocktailList extends AppCompatActivity {
             ImageView image = findViewById(R.id.TypeIMG);
 
             int[] val = getIntent().getIntArrayExtra("cocktail");
+            //interrogazione a database (cocktail)
             cocktailElems = db.getCocktail(val[0], val[1]); //passo al metodo la configurazione e l'id
 
             //tipo cocktail
             if (val[0] == 0) {
                 TipoCocktail selected;
-                selected = db.getType(val[1]);
+                selected = db.getType(val[1]); //prendo i dati sul tipo
 
                 //setto le informazione del tipo
                 name.setText(selected.getNome());
@@ -50,7 +51,7 @@ public class TypeCocktailList extends AppCompatActivity {
             //grado alcolico
             if (val[0] == 1) {
                 GradeCocktail selected;
-                selected = db.getGrade(val[1]);
+                selected = db.getGrade(val[1]); //prendo i dati sul grado
 
                 //setto le informazione del grado alcolico
                 name.setText(selected.getNome());
@@ -60,7 +61,7 @@ public class TypeCocktailList extends AppCompatActivity {
             //origine
             if (val[0] == 2) {
                 OriginCocktail selected;
-                selected = db.getOrigin(val[1]);
+                selected = db.getOrigin(val[1]);    //prendo i dati sull'origine
 
                 //setto le informazione del grado alcolico
                 name.setText(selected.getNazione());
@@ -75,6 +76,7 @@ public class TypeCocktailList extends AppCompatActivity {
             //rendo la lista cliccabile
             gridView.setClickable(true);
             gridView.setOnItemClickListener((parent, view, position, id) -> {
+                //passo all'activity le informazioni su un cocktail
                 Intent i = new Intent(TypeCocktailList.this, CocktailModule.class);
                 i.putExtra("selected_ckt", cocktailElems.get(position).getId());
                 startActivity(i);
@@ -83,4 +85,3 @@ public class TypeCocktailList extends AppCompatActivity {
         }
     }
 }
-

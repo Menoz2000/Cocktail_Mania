@@ -11,7 +11,7 @@ import com.example.cocktailmania.R;
 import com.example.cocktailmania.utility.Strumento;
 
 public class StrumActivity extends AppCompatActivity {
-
+    //activity in cui si mostrano le informazioni su uno strumento
     private final DbManager db = new DbManager(this);
 
     @Override
@@ -22,31 +22,36 @@ public class StrumActivity extends AppCompatActivity {
         if (getIntent().hasExtra("selected_strum")) {
             int strumN = getIntent().getIntExtra("selected_strum", 0);
 
-            Strumento s = db.getInstrument(strumN);
+            Strumento s = db.getInstrument(strumN); //interrogo database (info sullo strumento selezionato)
 
             //passaggio dei dati alla grafica
-            TextView textView = findViewById(R.id.CocktailTitle);
-            textView.setText(s.getNome());
 
+            //nome dello strumento
+            TextView strumName = findViewById(R.id.CocktailTitle);
+            strumName.setText(s.getNome());
+
+            //immagine strumento
             try {
-                ImageView imageView = findViewById(R.id.imgStrum);
-                imageView.setImageResource(s.getImg());
+                ImageView strumImage = findViewById(R.id.imgStrum);
+                strumImage.setImageResource(s.getImg());
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            TextView textView1 = findViewById(R.id.capacita);
+            //capacità del bicchiere
+            TextView strumCapacity = findViewById(R.id.capacita);
             if (s.getCapacita() != null) {
-                textView1.setText(s.getCapacita());
+                strumCapacity.setText(s.getCapacita());
             } else {
-                textView1.setVisibility(TextView.GONE);
+                strumCapacity.setVisibility(TextView.GONE);
             }
 
-            TextView textView2 = findViewById(R.id.descrizioneStrum);
+            //descrizione dello strumento
+            TextView strumDesc = findViewById(R.id.descrizioneStrum);
             if (s.getDescrizione() != null) {
-                textView2.setText(s.getDescrizione());
+                strumDesc.setText(s.getDescrizione());
             } else {
-                textView2.setVisibility(TextView.GONE);
+                strumDesc.setVisibility(TextView.GONE);
             }
 
         }

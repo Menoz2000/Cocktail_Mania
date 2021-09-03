@@ -14,6 +14,7 @@ import com.example.cocktailmania.utility.TipoCocktail;
 import java.util.List;
 
 public class GridAdapter extends ArrayAdapter<TipoCocktail> {
+    //adapter gli elementi della lista dei tipi di cocktail
     Context context;
     List<TipoCocktail> tipeElems;
 
@@ -32,7 +33,7 @@ public class GridAdapter extends ArrayAdapter<TipoCocktail> {
         TextView id_tipe = convertView.findViewById(R.id.idType);
         ImageView image_tipe = convertView.findViewById(R.id.imageType);
         TextView tipe_name = convertView.findViewById(R.id.TypeName);
-
+        //setto i campi del layout
         id_tipe.setText(String.valueOf(sp.getId()));
         image_tipe.setImageResource(sp.getImg());
         tipe_name.setText(sp.getNome());

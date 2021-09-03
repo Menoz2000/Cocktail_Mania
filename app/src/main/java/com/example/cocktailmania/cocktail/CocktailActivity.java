@@ -29,9 +29,9 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
     DbManager db = new DbManager(this);
 
     Intent intent;
-    RecyclerView recyclerView;
-    ArrayList<CocktailElem> elems;
-    CocktailAdapter cocktailAdapter;
+    RecyclerView recyclerView;  //view dei cocktail
+    ArrayList<CocktailElem> elems;  //arraylist con tutti i cocktail
+    CocktailAdapter cocktailAdapter;    //adapter per la lista
     private static final String TAG = "CocktailActivity";
     int config;
 
@@ -41,8 +41,10 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
         setContentView(R.layout.activity_cocktail);
 
         if (getIntent().hasExtra("list_cocktail")) {
+            //salvo la configurazione della lista
             config = getIntent().getIntExtra("list_cocktail", 0);
 
+            //gestione menù in basso
             BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
             /*se config == 0 sono nella pagina Cocktail
               se config == 1 sono in Preferiti nella pagina Book
@@ -84,10 +86,10 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
                 return true;
             });
 
+            elems = db.elencoCocktail(config);  //interrogazione a database (tutti i cocktail in base alla configurazione)
+
+            //gestione lista cocktail
             recyclerView = findViewById(R.id.cktRv);
-
-            elems = db.elencoCocktail(config);
-
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
             recyclerView.setLayoutManager(linearLayoutManager);
             cocktailAdapter = new CocktailAdapter(elems, CocktailActivity.this, this);
@@ -96,6 +98,7 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
 
     }
 
+    //gestione click su un cocktail
     @Override
     public void OnCktClick(int position) {
         Log.d(TAG, "OnCktClick: clicked.");
@@ -105,31 +108,32 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
         startActivity(intent);
     }
 
+    //gestione barra in alto
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
 
+        //in caso di My Cocktail inserisce la barra dei my cocktail (aggiunta cocktail)
         if (config == 2) {
             inflater.inflate(R.menu.my_cocktail_bar, menu);
             MenuItem addItem = menu.findItem(R.id.add_myckt);
 
-            //Button add_ckt = (Button) addItem.getActionView();
-
+            //click sul pulsante di aggiunta cocktail
             addItem.setOnMenuItemClickListener(item -> {
-                Intent intent = new Intent(this, MyCocktail.class);
+                Intent intent = new Intent(this, MyCocktail.class); //passo all'activity di creazione cocktail
                 startActivity(intent);
                 return false;
             });
         } else {
+            //barra con la sola ricerca
             inflater.inflate(R.menu.search_bar, menu);
         }
 
+        //gestione pulsante ricerca
         MenuItem searchItem = menu.findItem(R.id.action_search);
-
         SearchView searchView = (SearchView) searchItem.getActionView();
-
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
-
+        //gestion click sul pulsante
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -146,14 +150,17 @@ public class CocktailActivity extends AppCompatActivity implements CocktailAdapt
         return true;
     }
 
+    //gestione click su pulsante 'indietro'
     @Override
     public void onResume() {
         super.onResume();
-        elems = db.elencoCocktail(config);
-        boolean ret = cocktailAdapter.setElems(elems);
-        if (ret)
-            cocktailAdapter.notifyDataSetChanged();
-
+        //se ci troviamo nella pagina dei Preferiti
+        if (config == 1) {
+            elems = db.elencoCocktail(config); //rinterrogo il database per modifiche
+            boolean ret = cocktailAdapter.setElems(elems);
+            if (ret)
+                cocktailAdapter.notifyDataSetChanged(); //aggiorno la lista dei cocktail
+        }
     }
 
 }

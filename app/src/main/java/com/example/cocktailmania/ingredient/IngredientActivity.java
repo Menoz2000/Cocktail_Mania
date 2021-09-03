@@ -96,7 +96,6 @@ public class IngredientActivity extends AppCompatActivity implements IngredientA
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.search_bar, menu);
 
-
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
