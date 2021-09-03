@@ -13,6 +13,7 @@ import com.example.cocktailmania.utility.GradeCocktail;
 import java.util.ArrayList;
 
 public class SpinnerGradeAdapter extends ArrayAdapter<GradeCocktail> {
+    //adapter per lo spinner con i gradi alcolici
     Context context;
     ArrayList<GradeCocktail> elems;
 
@@ -31,6 +32,7 @@ public class SpinnerGradeAdapter extends ArrayAdapter<GradeCocktail> {
         TextView id = convertView.findViewById(R.id.spinnerGradeId);
         TextView text = convertView.findViewById(R.id.spinnerGradeText);
 
+        //setto i campi del layout
         id.setText(String.valueOf(sp.getId()));
         text.setText(sp.getNome());
 
@@ -47,10 +49,10 @@ public class SpinnerGradeAdapter extends ArrayAdapter<GradeCocktail> {
         TextView id = convertView.findViewById(R.id.spinnerGradeId);
         TextView text = convertView.findViewById(R.id.spinnerGradeText);
 
+        //setto i campi del layout
         id.setText(String.valueOf(sp.getId()));
         text.setText(sp.getNome());
 
         return convertView;
     }
-
 }

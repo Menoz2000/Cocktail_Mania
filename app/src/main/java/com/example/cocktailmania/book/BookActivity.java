@@ -21,6 +21,7 @@ public class BookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
+        //gestione menù in basso
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.bookButton);
         bottomNavigationView.setOnItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) item -> {
@@ -52,21 +53,17 @@ public class BookActivity extends AppCompatActivity {
             return true;
         });
 
-        Button button = findViewById(R.id.ckt_pref);
-        button.setOnClickListener(v -> openActivityCkt(1));
+        //pulsante Preferiti
+        Button PrefButton = findViewById(R.id.ckt_pref);
+        PrefButton.setOnClickListener(v -> openActivityCkt(1));
 
-        Button button1 = findViewById(R.id.my_ckt);
-        button1.setOnClickListener(v -> openActivityCkt(2));
+        //pulsante My Cocktail
+        Button MyCktButton = findViewById(R.id.my_ckt);
+        MyCktButton.setOnClickListener(v -> openActivityCkt(2));
 
-        /*
-        Button button2 = findViewById(R.id.addCkt);
-        button2.setOnClickListener(v -> {
-            Intent intent = new Intent(this, MyCocktail.class);
-            startActivity(intent);
-        });
-        */
     }
 
+    //per aprire l'acitivity selezionata in base al pulsante
     public void openActivityCkt(int n) {
         Intent intent = new Intent(this, CocktailActivity.class);
         intent.putExtra("list_cocktail", n);

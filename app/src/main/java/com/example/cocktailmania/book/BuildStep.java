@@ -19,17 +19,18 @@ import com.google.android.material.chip.ChipGroup;
 import java.util.ArrayList;
 
 public class BuildStep extends AppCompatActivity {
+    //activity per costruire lo step del My Cocktail
 
     private final DbManager db = new DbManager(this);
 
-    StepPrep passaggio;
-    ChipGroup chipGroupIng;
-    ChipGroup chipGroupStrum;
-    Button pippoButton;
-    Spinner selectAzione;
+    StepPrep passaggio; //oggetto "passadati"
+    ChipGroup chipGroupIng; //per selezionare gli ingredienti
+    ChipGroup chipGroupStrum;   //per selezionare lo strumento
+    Button pubblica_button; //bottone PUBBLICA
+    Spinner selectAzione;   //spinner per selezionare l'azione
 
-    SpinnerAdapter spinnerAzAdapter;
-    ArrayList<SpinnerElem> ActionList;
+    SpinnerAdapter spinnerAzAdapter;    //adapter per lo spinner degli strumenti
+    ArrayList<SpinnerElem> ActionList;  //arraylist con gli tutte le azioni (tramite interrogazione database)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,18 +39,21 @@ public class BuildStep extends AppCompatActivity {
 
         passaggio = new StepPrep();
 
+        //gestione chipGroup
         chipGroupIng = findViewById(R.id.AddIngGroup);
         chipGroupStrum = findViewById(R.id.AddStrumGroup);
 
+        //interrogazione a databse
         ActionList = db.getActions();
 
+        //gestione spinner Azioni
         selectAzione = findViewById(R.id.AddActionGroup);
         spinnerAzAdapter = new SpinnerAdapter(this, ActionList);
         selectAzione.setAdapter(spinnerAzAdapter);
         selectAzione.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                //prendo i dati dell'azione selezionata
                 passaggio.setIdAzione(ActionList.get(position).getId());
                 passaggio.setAzione(ActionList.get(position).getNome());
                 passaggio.setAzioneImg(ActionList.get(position).getImg());
@@ -61,6 +65,7 @@ public class BuildStep extends AppCompatActivity {
             }
         });
 
+        //gestione chipGroup degli ingredienti
         for (int i = 0; i < MyCocktail.MyIngredients.size(); i++) {
             Chip chip = new Chip(this);
             chip.setText(MyCocktail.MyIngredients.get(i).getIngName());
@@ -70,6 +75,7 @@ public class BuildStep extends AppCompatActivity {
         }
         chipGroupIng.setVisibility(View.VISIBLE);
 
+        //gestione chipGroup degli strumenti
         for (int i = 0; i < MyCocktail.MyStrums.size(); i++) {
             Chip chip = new Chip(this);
             chip.setText(MyCocktail.MyStrums.get(i).getNome());
@@ -80,14 +86,12 @@ public class BuildStep extends AppCompatActivity {
         chipGroupStrum.setVisibility(View.VISIBLE);
         chipGroupStrum.setSingleSelection(true);
 
-        pippoButton = findViewById(R.id.PippoButton);
-        //click sul button
-        pippoButton.setOnClickListener(v -> {
 
-            //System.out.println(MyCocktail.MyIngredients.size());
+        pubblica_button = findViewById(R.id.PippoButton);
+        //click sul button PUBBLICA
+        pubblica_button.setOnClickListener(v -> {
+            //prendo i dati degli ingredienti per quello step
             if (!chipGroupIng.getCheckedChipIds().isEmpty()) {
-                //System.out.println("--------------------------------------------");
-                //.out.println(chipGroupIng.getCheckedChipIds());
                 passaggio.setIngStep(chipGroupIng.getCheckedChipIds());
 
                 int i = 0;
@@ -105,10 +109,8 @@ public class BuildStep extends AppCompatActivity {
                 //lascio NULL nei campi degli ingredienti se nessuno selezionato
             }
 
-            //System.out.println(MyCocktail.MyStrums.size());
+            //prendo i dati dello strumento per quello step
             if (chipGroupStrum.getCheckedChipId() != View.NO_ID) {
-                //System.out.println("--------------------------------------------");
-                //System.out.println(chipGroupStrum.getCheckedChipId());
                 passaggio.setIdStrumento(chipGroupStrum.getCheckedChipId());
 
                 int i = 0;
@@ -121,19 +123,20 @@ public class BuildStep extends AppCompatActivity {
                 //lascio NULL nei campi degli strumenti se nessuno selezionato
             }
 
+            //imposto il numero dello step
             passaggio.setStepNum((MyCocktail.passaggi.size()) + 1);
 
+            //aggiungo l'oggetto passadati all'arraylist statico con tutti gli step
             MyCocktail.passaggi.add(passaggio);
 
-            System.out.println(passaggio.toString());
+            //stampa di prova: passaggio
+            //System.out.println(passaggio.toString());
 
             //torno all'activity precedente
             Intent intent = new Intent(this, StepMyCocktail.class);
             startActivity(intent);
         });
 
-
     }
-
 
 }

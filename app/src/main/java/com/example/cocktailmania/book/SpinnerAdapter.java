@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.example.cocktailmania.R;
 import com.example.cocktailmania.utility.SpinnerElem;
 
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 
 
 public class SpinnerAdapter extends ArrayAdapter<SpinnerElem> {
+    //adapter per lo spinner "standard" con immagine e nome
     Context context;
     ArrayList<SpinnerElem> elems;
 
@@ -23,7 +26,7 @@ public class SpinnerAdapter extends ArrayAdapter<SpinnerElem> {
     }
 
     @Override
-    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+    public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
 
         SpinnerElem sp = getItem(position);
 
@@ -34,6 +37,7 @@ public class SpinnerAdapter extends ArrayAdapter<SpinnerElem> {
         TextView text = convertView.findViewById(R.id.spinnerText);
         ImageView i1 = convertView.findViewById(R.id.spinnerImage);
 
+        //setto i campi del layout
         id.setText(String.valueOf(sp.getId()));
         text.setText(sp.getNome());
         i1.setImageResource(sp.getImg());
@@ -52,11 +56,11 @@ public class SpinnerAdapter extends ArrayAdapter<SpinnerElem> {
         TextView text = convertView.findViewById(R.id.spinnerText);
         ImageView i1 = convertView.findViewById(R.id.spinnerImage);
 
+        //setto i campi del layout
         id.setText(String.valueOf(sp.getId()));
         text.setText(sp.getNome());
         i1.setImageResource(sp.getImg());
 
         return convertView;
     }
-
 }
