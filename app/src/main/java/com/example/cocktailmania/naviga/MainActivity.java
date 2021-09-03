@@ -23,7 +23,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements OriginListAdapter.OnOriginListener {
-    /* TODO: change app icon */
     private static final String TAG = "CocktailModule";
     private final DbManager db = new DbManager(this);
     Intent intent;
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements OriginListAdapter
 
         //prendo i dati dal database
         tipoCocktailArrayList = db.getType();
-        gradeCocktailArrayList = db.getGrade();
+        gradeCocktailArrayList = db.getGrades();
         originCocktailArrayList = db.getOrigin();
 
 

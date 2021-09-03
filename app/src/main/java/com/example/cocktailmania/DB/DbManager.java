@@ -24,12 +24,13 @@ public class DbManager {
     private final static String DATABASE = "Ingrediente";
     private final static int VERSIONE_DATABASE = 2;
 
-
+    //costruttore con cui ci colleghiamo al db
     public DbManager(Context context) {
 
         helper = new MyHelper(context, DATABASE, null, VERSIONE_DATABASE);
     }
 
+    //elenco degli ingredienti
     public ArrayList<IngredientElem> elencoIngredienti() {
         String query = "SELECT id,nome,sottotitolo,img FROM Ingrediente ORDER BY nome";
 
@@ -54,6 +55,8 @@ public class DbManager {
         return elems;
     }
 
+
+    //prelevo un singolo ingrediente
     public IngredientElem getSingleIngredient(int id) {
         String query = "SELECT i.id,nome,i.img,sottotitolo,descrizione,nazione,grado_alcolico FROM Ingrediente i LEFT JOIN Origine o ON i.fk_origine=o.id WHERE i.id=" + id;
 
@@ -79,6 +82,7 @@ public class DbManager {
         return ing;
     }
 
+    //mi restituisce un elenco di cocktail in base al valore di config
     public ArrayList<CocktailElem> elencoCocktail(int config) {
         String query = "SELECT * FROM Cocktail C LEFT JOIN GradoAlcolico G ON G.id=C.fk_gradoAlcolico ";
 
@@ -118,6 +122,7 @@ public class DbManager {
 
     }
 
+    //prelevo un singolo cocktail
     public CocktailElem getSingleCocktail(int id) {
         String query = "SELECT C.id,C.nome,G.gradazione,O.nazione,T.nome,C.preferito,C.iconico,C.my_cocktail,C.img " +
                 "FROM Cocktail C " +
@@ -155,6 +160,7 @@ public class DbManager {
         return ckt;
     }
 
+    //preleva dal db l'elenco degli step di preparazione per un determinato cocktail
     public ArrayList<StepPrep> getPrepCkt(int id) {
 
         int cont = 1, contIng = 0;
@@ -217,6 +223,7 @@ public class DbManager {
 
     }
 
+    //preleva gli ingredienti di un determinato cocktail
     public ArrayList<IngRow> getIngredients(int id) {
         int cont = 0;
         IngRow ing;
@@ -261,11 +268,11 @@ public class DbManager {
 
     }
 
+    //selezione o deselezione di un cocktail tra i preferiti, modifica del valore nel db
     public void OnUpdateInvertPreferito(int id, boolean chk) {
 
         int n = 0;
-        if (!chk)
-            n = 1;
+        if (!chk) n = 1;
 
         String query = "UPDATE Cocktail SET preferito=" + n + " WHERE id=" + id;
 
@@ -274,6 +281,7 @@ public class DbManager {
 
     }
 
+    //preleva uno strumento richiesto
     public Strumento getInstrument(int id) {
         //query per tutti i dati di un ingrediente specifico
         String query = "SELECT s.nome, s.img, s.descrizione, s.capacita " +
@@ -300,6 +308,8 @@ public class DbManager {
         return str;
     }
 
+
+    //preleva gli strumenti da utilizzare per un cocktail
     public ArrayList<Strumento> getInstruments(int id) {
         int cont = 0;
         Strumento strum;
@@ -340,7 +350,7 @@ public class DbManager {
         return arrStrum;
 
     }
-
+    //preleva i tipi di cocktail
     public ArrayList<TipoCocktail> getType() {
         int cont = 0;
         TipoCocktail tipe;
@@ -378,6 +388,7 @@ public class DbManager {
         return arrTipe;
     }
 
+    //preleva un singolo tipo di cocktail
     public TipoCocktail getType(int id) {
 
         TipoCocktail tipe = new TipoCocktail();
@@ -406,7 +417,8 @@ public class DbManager {
         return tipe;
     }
 
-    public ArrayList<GradeCocktail> getGrade() {
+    //preleva i gradi alcolici dei cocktail
+    /*public ArrayList<GradeCocktail> getGrade() {
         int cont = 0;
         GradeCocktail grade;
         ArrayList<GradeCocktail> arrGrade = new ArrayList<>();
@@ -442,8 +454,35 @@ public class DbManager {
         }
 
         return arrGrade;
+    }*/
+
+    public ArrayList<GradeCocktail> getGrades() {
+        int cont = 0;
+        String query = "SELECT id,gradazione FROM GradoAlcolico ORDER BY id";
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        GradeCocktail grade;
+        ArrayList<GradeCocktail> elems = new ArrayList<>();
+
+        if (c != null) {
+            while (c.moveToNext()) {
+                grade = new GradeCocktail(
+                        c.getInt(0),
+                        c.getString(1)
+                );
+
+                elems.add(cont, grade);
+                cont++;
+            }
+            c.close();
+        }
+
+        return elems;
     }
 
+    //preleva un grado alcolico
     public GradeCocktail getGrade(int id) {
 
         GradeCocktail grd = new GradeCocktail();
@@ -471,6 +510,7 @@ public class DbManager {
         return grd;
     }
 
+    //preleva un cocktail in base al tipo
     public ArrayList<CocktailElem> getCocktail(int config, int type) {
         int cont = 0;
         CocktailElem elem;
@@ -518,6 +558,7 @@ public class DbManager {
 
     }
 
+    //preleva una lista di orgini
     public ArrayList<OriginCocktail> getOrigin() {
         int cont = 0;
         OriginCocktail origin;
@@ -561,6 +602,8 @@ public class DbManager {
         return arrOrigin;
     }
 
+
+    //preleva una singola lista
     public OriginCocktail getOrigin(int id) {
 
         OriginCocktail orig = new OriginCocktail();
@@ -589,6 +632,7 @@ public class DbManager {
         return orig;
     }
 
+    //preleva una lista di strumenti
     public ArrayList<SpinnerElem> getInstruments() {
         int cont = 0;
         String query = "SELECT id,nome,img FROM Strumento ORDER BY nome";
@@ -616,6 +660,7 @@ public class DbManager {
         return elems;
     }
 
+    //preleva gli ingredienti per lo spinner
     public ArrayList<SpinnerElem> getIngredients() {
         int cont = 0;
         String query = "SELECT id,nome,img FROM Ingrediente ORDER BY nome";
@@ -643,31 +688,6 @@ public class DbManager {
         return elems;
     }
 
-    public ArrayList<GradeCocktail> getGrades() {
-        int cont = 0;
-        String query = "SELECT id,gradazione FROM GradoAlcolico ORDER BY id";
-
-        SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor c = db.rawQuery(query, null);
-
-        GradeCocktail grade;
-        ArrayList<GradeCocktail> elems = new ArrayList<>();
-
-        if (c != null) {
-            while (c.moveToNext()) {
-                grade = new GradeCocktail(
-                        c.getInt(0),
-                        c.getString(1)
-                );
-
-                elems.add(cont, grade);
-                cont++;
-            }
-            c.close();
-        }
-
-        return elems;
-    }
 
     public boolean controllaSeEsiste(String nomeNuovo) {
         String query = "SELECT nome FROM Cocktail where my_cocktail=1";
@@ -694,8 +714,6 @@ public class DbManager {
     }
 
     public void uploadMyCkt() {
-
-        //todo: controlli su insert e su select
 
         int idCkt;
         StringBuilder comp = new StringBuilder();
