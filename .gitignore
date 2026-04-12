@@ -1,0 +1,14 @@
+# IDE
+.idea/
+*.iml
+*.iws
+
+# Gradle e Build
+.gradle/
+build/
+app/build/
+local.properties
+
+# File di sistema Mac/Windows
+.DS_Store
+Thumbs.db
